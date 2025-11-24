@@ -2,5 +2,9 @@
 
 [ext_resource type="Script" uid="uid://d0ef8aldsf06x" path="res://Scripts/Main.gd" id="1_r150o"]
 
-[node name="Node3D" type="Node3D"]
+[node name="Main" type="Node3D"]
 script = ExtResource("1_r150o")
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="GridMap" type="GridMap" parent="."]

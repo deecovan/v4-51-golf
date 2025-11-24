@@ -2,6 +2,8 @@
 
 ## 25-11-24
 
+- Play with lights in golf_tiles scene
+
 - Add blank Main scene with script
 
 - Remember Display/Window section 
