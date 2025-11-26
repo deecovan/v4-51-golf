@@ -20,6 +20,11 @@ func _ready() -> void:
 	$Wheel3Dfr.wheel_friction_slip = fric_slip_front
 	$Wheel3Drl.wheel_friction_slip = fric_slip_rear
 	$Wheel3Drr.wheel_friction_slip = fric_slip_rear
+	## Set Center of Mass from CoM Node
+	## Move it Forward to oversteer
+	## Backward for understeer but less rear slip
+	center_of_mass_mode = RigidBody3D.CENTER_OF_MASS_MODE_CUSTOM
+	center_of_mass = $CenterOfMass.position
 	
 func _process(delta: float) -> void:
 	steering = move_toward(

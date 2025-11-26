@@ -1,6 +1,9 @@
 # v4-51-golf GitHub repo
 
 ## 25.11.26 - Add Velicle
+- Continue Center of Mass 07:27 in video
+- Continue Camera gimble
+
 - Fix Reloading messages and signals 
 - Enable Occlusion Culling with 256 rays
 - @REMEMBER to set Vehicle Phys.Material
