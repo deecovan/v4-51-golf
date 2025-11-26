@@ -1,10 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://dexp0d75btgj0"]
+[gd_scene load_steps=11 format=3 uid="uid://dexp0d75btgj0"]
 
 [ext_resource type="Script" uid="uid://d0ef8aldsf06x" path="res://Scripts/Main.gd" id="1_r150o"]
 [ext_resource type="MeshLibrary" uid="uid://c2cgp27k6adat" path="res://Scenes/golf_tiles.tres" id="2_kln2b"]
 [ext_resource type="PackedScene" uid="uid://nkr4juodvwg5" path="res://Scenes/Ball.tscn" id="3_kln2b"]
 [ext_resource type="PackedScene" uid="uid://c2u3c52wwav41" path="res://Scenes/ui.tscn" id="4_rgh2o"]
-[ext_resource type="PackedScene" uid="uid://cxiw7r605doqo" path="res://Scenes/arrow.tscn" id="5_pbw6q"]
 [ext_resource type="PackedScene" uid="uid://d1tqw4jcecxpq" path="res://Scenes/camera_gimbal.tscn" id="6_v1gob"]
 [ext_resource type="PackedScene" uid="uid://bt677ol3pn1iu" path="res://Scenes/Vehicle.tscn" id="10_bmxlf"]
 
@@ -57,8 +56,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 4, -4)
 [node name="Ball" parent="." instance=ExtResource("3_kln2b")]
 
 [node name="UI" parent="." instance=ExtResource("4_rgh2o")]
-
-[node name="Arrow" parent="." instance=ExtResource("5_pbw6q")]
 
 [node name="CameraGimbal" parent="." instance=ExtResource("6_v1gob")]
 

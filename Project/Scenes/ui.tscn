@@ -1,8 +1,6 @@
-[gd_scene load_steps=11 format=4 uid="uid://c2u3c52wwav41"]
+[gd_scene load_steps=7 format=4 uid="uid://c2u3c52wwav41"]
 
 [ext_resource type="Script" uid="uid://bxgxdgj8xpxwf" path="res://Scripts/ui.gd" id="1_nf4gj"]
-[ext_resource type="FontFile" uid="uid://dlgkspckhvbp4" path="res://Assets/Xolonium-Regular.ttf" id="1_tspac"]
-[ext_resource type="Texture2D" uid="uid://dh0n8w1m6ms12" path="res://Assets/bar_green.png" id="2_vxdsv"]
 
 [sub_resource type="Image" id="Image_dvm57"]
 data = {
@@ -260,27 +258,24 @@ cache/0/85/0/kerning_overrides/85/0 = Vector2(0, 0)
 font = SubResource("FontFile_hgyor")
 font_size = 85
 
-[sub_resource type="LabelSettings" id="LabelSettings_50w6v"]
-font = ExtResource("1_tspac")
-font_size = 30
-
-[sub_resource type="LabelSettings" id="LabelSettings_s22t2"]
-font = ExtResource("1_tspac")
-font_size = 30
-
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("1_nf4gj")
 
 [node name="Message" type="Label" parent="."]
-visible = false
-offset_left = 329.0
-offset_top = 271.0
-offset_right = 1441.0
-offset_bottom = 377.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -556.0
+offset_top = -53.0
+offset_right = 556.0
+offset_bottom = 53.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Get Ready!"
 label_settings = SubResource("LabelSettings_iyui8")
+horizontal_alignment = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 15
@@ -295,20 +290,3 @@ theme_override_constants/margin_bottom = 20
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
-
-[node name="Shots" type="Label" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "Shots: 0
-"
-label_settings = SubResource("LabelSettings_50w6v")
-
-[node name="PowerBar" type="TextureProgressBar" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-value = 75.0
-fill_mode = 3
-texture_progress = ExtResource("2_vxdsv")
-
-[node name="PowerLabel" type="Label" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "Power"
-label_settings = SubResource("LabelSettings_s22t2")
