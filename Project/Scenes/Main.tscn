@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dexp0d75btgj0"]
+[gd_scene load_steps=12 format=3 uid="uid://dexp0d75btgj0"]
 
 [ext_resource type="Script" uid="uid://d0ef8aldsf06x" path="res://Scripts/Main.gd" id="1_r150o"]
 [ext_resource type="MeshLibrary" uid="uid://c2cgp27k6adat" path="res://Scenes/golf_tiles.tres" id="2_kln2b"]
@@ -24,6 +24,9 @@ glow_enabled = true
 height = 0.5
 radius = 0.8
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_v1gob"]
+size = Vector3(200, 1, 200)
+
 [node name="Main" type="Node3D"]
 script = ExtResource("1_r150o")
 
@@ -31,7 +34,7 @@ script = ExtResource("1_r150o")
 environment = SubResource("Environment_grg3l")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+transform = Transform3D(-0.104528, 0.861281, -0.497261, 0, 0.5, 0.866025, 0.994522, 0.0905242, -0.0522642, 200, 200, 200)
 shadow_enabled = true
 
 [node name="Course" type="GridMap" parent="."]
@@ -51,15 +54,21 @@ shape = SubResource("CylinderShape3D_pbw6q")
 debug_color = Color(1, 0, 1, 0.419608)
 
 [node name="Tee" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 4, -4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 5.38639, -4)
 
 [node name="Ball" parent="." instance=ExtResource("3_kln2b")]
+mass = 0.3
 
 [node name="UI" parent="." instance=ExtResource("4_rgh2o")]
 
 [node name="CameraGimbal" parent="." instance=ExtResource("6_v1gob")]
 
 [node name="Vehicle" parent="." instance=ExtResource("10_bmxlf")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -5.02633, 2.09756, -2.91351)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -5.02633, 3.94586, 10.9881)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_v1gob")
 
 [connection signal="stopped" from="Ball" to="." method="_on_ball_stopped"]

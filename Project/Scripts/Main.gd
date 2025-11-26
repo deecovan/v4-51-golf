@@ -4,9 +4,6 @@ extends Node3D
 
 var angle_change = 1
 var power_change = 1
-var shots = 0
-var power = 0
-var hole_dir = 0
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -24,6 +21,8 @@ func _process(_delta):
 	$CameraGimbal.position = $Vehicle.position
 			
 ## Functions
+
+## @SIGNAL Ball.stopped.emit()
 func _on_ball_stopped() -> void:
 	pass
 
@@ -31,8 +30,8 @@ func _on_hole_body_entered(body):
 	if body.name == "Ball":
 		print_debug('Ball _on_hole_body_entered')
 
+## Fullscreen and Reload Scene
 func use_main_controls(_event) -> void:
-	## Fullscreen and Reload
 	if Input.is_action_just_pressed('reload'):
 		print_debug('Reloading scene...')
 		get_tree().reload_current_scene()
