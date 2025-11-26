@@ -11,7 +11,7 @@ var hole_dir = 0
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	$Ball.position = $Tee.position
-	$CameraGimbal/GimbalInner.rotation.x = -1
+	$CameraGimbal/GimbalInner.rotation.x = -0.5
 	$CameraGimbal.rotation = $Vehicle.rotation
 	$UI.show_message("Get Ready!")
 			
