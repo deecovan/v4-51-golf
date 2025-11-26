@@ -19,7 +19,8 @@ radial_segments = 32
 albedo_color = Color(0.768627, 0.737255, 0.839216, 1)
 metallic = 1.0
 
-[node name="VehicleBody3D" type="VehicleBody3D"]
+[node name="Vehicle" type="VehicleBody3D"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1.36496, 0, 0, 0, -4.01128e-08, -0.471132, 0, 0.917674, -2.05938e-08, 0, 0.297697, -0.93688)
