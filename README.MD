@@ -1,5 +1,13 @@
 # v4-51-golf GitHub repo
 
+## @CONTINUE 
+- Add Ball normal
+- Add complex interface
+  - Game settings
+  - Car settings
+  - Ball settings
+- Start draw 1x1 course
+
 ## 25.11.26 - Add Velicle
 - Add Center of Mass with node
 - Juicy:
@@ -20,7 +28,7 @@
   - @TODO smooth gimble
 - Add Car Values settings Tested for 1000 kg 3x2m car
   - Tested for 1000 kg 3x2m car
-  - [See Image](./Car_Values_Settings.png)
+  - [See Image](./Docs/Car_Values_Settings.png)
 
 - Add Steering, Acc/Brake controls
 - Clean up Scripts and Scenes
@@ -40,9 +48,9 @@
   - Drive and bounce the ball 
   - Hit the opponent's gate
   - 1x1 ELO rated duels
-2. Build your own Field
-  - The Fields are built with 3D Grids
-  - City driving between the Fields
+2. Build your own Course
+  - The Courses are built with 3D Grids
+  - City driving between the Courses
   - StreetRacing duels in the City
 
 ## 25.11.25
