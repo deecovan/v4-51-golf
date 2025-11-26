@@ -2,14 +2,10 @@ extends Node3D
 
 @export var mouse_sensitivity = 150
 
-var angle_change = 1
-var power_change = 1
-
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	$Ball.position = $Tee.position
 	$CameraGimbal/GimbalInner.rotation.x = -0.5
-	$CameraGimbal.rotation = $Vehicle.rotation
 	$UI.show_message("Get Ready!")
 			
 func _input(_event):
@@ -19,6 +15,7 @@ func _process(_delta):
 	if Input.mouse_mode == Input.MOUSE_MODE_VISIBLE:
 		return
 	$CameraGimbal.position = $Vehicle.position
+	$CameraGimbal.rotation = $Vehicle.rotation
 			
 ## Functions
 

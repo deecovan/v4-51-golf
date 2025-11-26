@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dexp0d75btgj0"]
+[gd_scene load_steps=11 format=3 uid="uid://dexp0d75btgj0"]
 
 [ext_resource type="Script" uid="uid://d0ef8aldsf06x" path="res://Scripts/Main.gd" id="1_r150o"]
 [ext_resource type="MeshLibrary" uid="uid://c2cgp27k6adat" path="res://Scenes/golf_tiles.tres" id="2_kln2b"]
@@ -24,9 +24,6 @@ glow_enabled = true
 height = 0.5
 radius = 0.8
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_v1gob"]
-size = Vector3(200, 1, 200)
-
 [node name="Main" type="Node3D"]
 script = ExtResource("1_r150o")
 
@@ -42,7 +39,7 @@ mesh_library = ExtResource("2_kln2b")
 cell_size = Vector3(10, 1, 10)
 cell_scale = 10.0
 data = {
-"cells": PackedInt32Array(65535, 65535, 22, 65535, 65534, 24, 65535, 65533, 24, 65535, 65532, 24, 65535, 65531, 655375, 0, 65531, 1048600, 1, 65531, 1048600, 65534, 65531, 1048600, 65533, 65531, 1048576, 65533, 65530, 0, 65534, 65530, 1441816, 65535, 65530, 1441812, 0, 65530, 1441816, 1, 65530, 1441816, 2, 65530, 1441792, 2, 65532, 12, 2, 65531, 1441813)
+"cells": PackedInt32Array(65535, 65535, 22, 65535, 65534, 24, 65535, 65533, 4, 65535, 65532, 24, 65535, 65531, 655375, 0, 65531, 1048613, 1, 65531, 1048600, 65534, 65531, 1048600, 65533, 65531, 1048576, 65533, 65530, 0, 65534, 65530, 1441816, 65535, 65530, 1441812, 0, 65530, 1048612, 1, 65530, 1441816, 2, 65530, 1441792, 2, 65532, 12, 2, 65531, 1441813)
 }
 
 [node name="Hole" type="Area3D" parent="."]
@@ -64,11 +61,6 @@ mass = 0.3
 [node name="CameraGimbal" parent="." instance=ExtResource("6_v1gob")]
 
 [node name="Vehicle" parent="." instance=ExtResource("10_bmxlf")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -5.02633, 3.94586, 10.9881)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-shape = SubResource("BoxShape3D_v1gob")
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -5.02633, 3.94586, -3.54959)
 
 [connection signal="stopped" from="Ball" to="." method="_on_ball_stopped"]

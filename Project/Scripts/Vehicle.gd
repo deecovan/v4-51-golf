@@ -14,6 +14,7 @@ extends VehicleBody3D
 @export var fric_flip_rear = 0.5
 
 
+
 func _ready() -> void:
 	## Setup car values
 	mass = car_mass
