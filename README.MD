@@ -1,12 +1,13 @@
 # v4-51-golf GitHub repo
 
 ## 25.11.26 - Add Velicle
+- Fix Reloading messages and signals 
+- Enable Occlusion Culling with 256 rays
 - @REMEMBER to set Vehicle Phys.Material
   - Friction 0.01
   - Bounce 0.5
   - Linea Dump 0.5
   - ALL wheels: Wheel Roll Influence 0.01
-  - Friction Sleep Front 1 and Rear 0.75
 
 - Test Export
 - Fix CameraGimble to Car

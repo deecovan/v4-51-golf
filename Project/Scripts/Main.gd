@@ -23,15 +23,15 @@ func _process(_delta):
 func _on_ball_stopped() -> void:
 	pass
 
+## @SIGNAL Ball._on_hole_body_entered(body)
 func _on_hole_body_entered(body):
 	if body.name == "Ball":
-		print_debug('Ball _on_hole_body_entered')
+		reload_scene('Eagle! Reloading...')
 
 ## Fullscreen and Reload Scene
 func use_main_controls(_event) -> void:
 	if Input.is_action_just_pressed('reload'):
-		reload_scene('Reloading scene...')
-		get_tree().reload_current_scene()
+		reload_scene('Reloading...')
 	if Input.is_action_just_pressed('screen'):
 		var mode := DisplayServer.window_get_mode()
 		var is_window: bool = mode != DisplayServer.WINDOW_MODE_FULLSCREEN
@@ -40,4 +40,5 @@ func use_main_controls(_event) -> void:
 			
 func reload_scene(message):
 	$UI.show_message(message)
+	await get_tree().create_timer(2).timeout
 	get_tree().call_deferred("reload_current_scene")

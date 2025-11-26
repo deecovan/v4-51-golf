@@ -9,9 +9,9 @@ extends VehicleBody3D
 ## Car Mass
 @export var car_mass = 1000
 ## Front wheels friction slip ratio
-@export var fric_slip_front = 1 ## 0.75-1
+@export var fric_slip_front = 0.75 # 1 ## 0.75-1
 ## Front wheels friction slip ratio
-@export var fric_slip_rear = 0.75 ## 0.5-0.75
+@export var fric_slip_rear = 0.5 # 0.75 ## 0.5-0.75
 
 func _ready() -> void:
 	## Setup car values
@@ -30,6 +30,5 @@ func _process(delta: float) -> void:
 	engine_force = Input.get_axis("brake", "accelerate") * MAX_POWER
 	## Car fell off course!
 	if position.y < -20:
-		Timer
 		get_parent().reload_scene("Car is out! Reloading...")
 	

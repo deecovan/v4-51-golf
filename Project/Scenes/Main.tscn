@@ -63,4 +63,5 @@ mass = 0.3
 [node name="Vehicle" parent="." instance=ExtResource("10_bmxlf")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -5.02633, 3.94586, -3.54959)
 
+[connection signal="body_entered" from="Hole" to="." method="_on_hole_body_entered"]
 [connection signal="stopped" from="Ball" to="." method="_on_ball_stopped"]
