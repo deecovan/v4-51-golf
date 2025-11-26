@@ -25,6 +25,8 @@ func _ready() -> void:
 	## Backward for understeer but less rear slip
 	center_of_mass_mode = RigidBody3D.CENTER_OF_MASS_MODE_CUSTOM
 	center_of_mass = $CenterOfMass.position
+	## Randomize initial rotation
+	rotation = randomis(rotation, PI)
 	
 func _process(delta: float) -> void:
 	steering = move_toward(
@@ -37,3 +39,6 @@ func _process(delta: float) -> void:
 	if position.y < -20:
 		get_parent().reload_scene("Car is out! Reloading...")
 	
+func randomis(v: Vector3, mult) -> Vector3:
+	return v + mult * Vector3(
+		(randf()-0.49)/10,(randf()-0.49)/10,(randf()-0.49)/10)

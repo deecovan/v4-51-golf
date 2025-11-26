@@ -1,6 +1,7 @@
 extends Node3D
 
 @export var mouse_sensitivity = 150
+@export var camera_lerp = 5
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -11,11 +12,12 @@ func _ready():
 func _input(_event):
 	use_main_controls(_event)
 				
-func _process(_delta):
+func _process(delta):
 	if Input.mouse_mode == Input.MOUSE_MODE_VISIBLE:
 		return
-	$CameraGimbal.position = $Vehicle.position
-	$CameraGimbal.rotation = $Vehicle.rotation
+	$CameraGimbal.position = $CameraGimbal.position.lerp(
+		$Vehicle.position, delta * camera_lerp)
+	$CameraGimbal.rotation.y = $Vehicle.rotation.y
 			
 ## Functions
 

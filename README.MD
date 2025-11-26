@@ -1,8 +1,11 @@
 # v4-51-golf GitHub repo
 
 ## 25.11.26 - Add Velicle
-- Continue Center of Mass 07:27 in video
-- Continue Camera gimble
+- Add Center of Mass with node
+- Juicy:
+   - Smooth Camera gimble rotation
+   - Add Gimble Light
+   - Test export
 
 - Fix Reloading messages and signals 
 - Enable Occlusion Culling with 256 rays
