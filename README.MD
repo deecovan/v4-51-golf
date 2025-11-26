@@ -41,5 +41,3 @@
 
 ## 25.11.25
 - Remake Golf3D from the book
-
-
