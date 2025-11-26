@@ -30,10 +30,14 @@ func _on_hole_body_entered(body):
 ## Fullscreen and Reload Scene
 func use_main_controls(_event) -> void:
 	if Input.is_action_just_pressed('reload'):
-		print_debug('Reloading scene...')
+		reload_scene('Reloading scene...')
 		get_tree().reload_current_scene()
 	if Input.is_action_just_pressed('screen'):
 		var mode := DisplayServer.window_get_mode()
 		var is_window: bool = mode != DisplayServer.WINDOW_MODE_FULLSCREEN
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN \
 			if is_window else DisplayServer.WINDOW_MODE_WINDOWED)
+			
+func reload_scene(message):
+	$UI.show_message(message)
+	get_tree().call_deferred("reload_current_scene")

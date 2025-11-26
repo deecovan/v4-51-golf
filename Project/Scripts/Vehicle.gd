@@ -4,30 +4,32 @@ extends VehicleBody3D
 @export var MAX_STEER  = 0.8
 ## Maximum Power per Traction wheel
 @export var MAX_POWER = 5000
-## Used for delta * dmod calculation
-@export var dmod = 3
+## Steering speed
+@export var SPD_STEER = 3
 ## Car Mass
 @export var car_mass = 1000
 ## Front wheels friction slip ratio
-@export var fric_flip_front = 0.75
+@export var fric_slip_front = 1 ## 0.75-1
 ## Front wheels friction slip ratio
-@export var fric_flip_rear = 0.5
-
-
+@export var fric_slip_rear = 0.75 ## 0.5-0.75
 
 func _ready() -> void:
 	## Setup car values
 	mass = car_mass
-	$Wheel3Dfl.wheel_friction_slip = fric_flip_front
-	$Wheel3Dfr.wheel_friction_slip = fric_flip_front
-	$Wheel3Drl.wheel_friction_slip = fric_flip_rear
-	$Wheel3Drr.wheel_friction_slip = fric_flip_rear
+	$Wheel3Dfl.wheel_friction_slip = fric_slip_front
+	$Wheel3Dfr.wheel_friction_slip = fric_slip_front
+	$Wheel3Drl.wheel_friction_slip = fric_slip_rear
+	$Wheel3Drr.wheel_friction_slip = fric_slip_rear
 	
 func _process(delta: float) -> void:
 	steering = move_toward(
 		steering,
 		Input.get_axis("steer_right", "steer_left") * MAX_STEER,
-		delta * dmod
+		delta * SPD_STEER
 		)
 	engine_force = Input.get_axis("brake", "accelerate") * MAX_POWER
+	## Car fell off course!
+	if position.y < -20:
+		Timer
+		get_parent().reload_scene("Car is out! Reloading...")
 	
