@@ -78,7 +78,7 @@ func change_state(new_state):
 			power = 0
 		SHOOT:
 			$Arrow.hide()
-			$Ball.shoot($Arrow.rotation.y, power / 15)
+			$Ball.shoot($Arrow.rotation.y, power / 5.0)
 			shots += 1
 			$UI.update_shots(shots)
 		WIN:

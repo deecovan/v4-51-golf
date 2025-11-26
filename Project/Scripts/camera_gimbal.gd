@@ -14,8 +14,8 @@ func _input(event):
 func _process(delta):
 	zoom = clamp(zoom, 0.1, 2.0)
 	scale = Vector3.ONE * zoom
-	var y = Input.get_axis("cam_left", "cam_right")
+	var y = Input.get_axis("ui_left", "ui_right")
 	rotate_y(y * cam_speed * delta)
-	var x = Input.get_axis("cam_up", "cam_down")
+	var x = Input.get_axis("ui_up", "ui_down")
 	$GimbalInner.rotate_x(x * cam_speed * delta)
 	$GimbalInner.rotation.x = clamp($GimbalInner.rotation.x, -PI / 2, -0.2)

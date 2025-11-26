@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dnlal1v72dih1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c180c"]
+albedo_color = Color(0.157274, 0.157274, 0.157274, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_krx02"]
+material = SubResource("StandardMaterial3D_c180c")
+top_radius = 0.3
+bottom_radius = 0.3
+height = 0.2
+radial_segments = 32
+
+[node name="Wheel3D" type="VehicleWheel3D"]
+wheel_radius = 0.3
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("CylinderMesh_krx02")

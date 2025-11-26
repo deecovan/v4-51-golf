@@ -1,5 +1,6 @@
-[gd_scene load_steps=10 format=4 uid="uid://c2u3c52wwav41"]
+[gd_scene load_steps=11 format=4 uid="uid://c2u3c52wwav41"]
 
+[ext_resource type="Script" uid="uid://bxgxdgj8xpxwf" path="res://Scripts/ui.gd" id="1_nf4gj"]
 [ext_resource type="FontFile" uid="uid://dlgkspckhvbp4" path="res://Assets/Xolonium-Regular.ttf" id="1_tspac"]
 [ext_resource type="Texture2D" uid="uid://dh0n8w1m6ms12" path="res://Assets/bar_green.png" id="2_vxdsv"]
 
@@ -268,6 +269,7 @@ font = ExtResource("1_tspac")
 font_size = 30
 
 [node name="UI" type="CanvasLayer"]
+script = ExtResource("1_nf4gj")
 
 [node name="Message" type="Label" parent="."]
 visible = false
