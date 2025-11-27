@@ -4,8 +4,10 @@
 - Added Engine Power curve overlay 
   - call_draw_curve(curve: Array)
 
+@TODO Compare ALL Vehicle vars with current saved working
+
 - Add complex interface
-  - Game settings
+  - Game settings [in progress]
   - Car settings
   - Ball settings
 

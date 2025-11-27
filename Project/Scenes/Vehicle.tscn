@@ -208,10 +208,10 @@ transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, -1)
 shape = SubResource("ConvexPolygonShape3D_6k0ix")
 
 [node name="CenterOfMass" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.04346e-08, 0.145341, -0.805677)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.27734e-08, 0.296197, -0.489269)
 
 [node name="Wheel3Dfl" parent="." instance=ExtResource("1_c180c")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 0.1, 0.589808)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 0.1, 0.6)
 use_as_steering = true
 wheel_rest_length = 0.04
 suspension_travel = 0.08
@@ -219,7 +219,7 @@ suspension_stiffness = 160.0
 suspension_max_force = 16000.0
 
 [node name="Wheel3Dfr" parent="." instance=ExtResource("1_c180c")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 0.1, 0.589808)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 0.1, 0.6)
 use_as_steering = true
 wheel_rest_length = 0.04
 suspension_travel = 0.08

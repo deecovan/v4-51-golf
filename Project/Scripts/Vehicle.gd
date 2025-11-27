@@ -25,7 +25,7 @@ extends VehicleBody3D
 ## Rear
 @export var damp_compr_rear = 0.7
 @export var damp_relax_rear = 0.77
-
+## Rest, Travel, Stiff, MaxV
 @export var rest_front = 0.8
 @export var rest_rear = 0.8
 @export var travel_front = 0.1
@@ -35,49 +35,52 @@ extends VehicleBody3D
 @export var max_force_front = 16000
 @export var max_force_rear = 14000
 
-var power_curve = [
-	0.0, 0.1, 0.2, 0.3, 0.5, 0.8, 
-	0.9, 1.0, 0.9, 0.7, 0.3, 0.0 
+
+var power_curve: Array = [
+	0.03, 0.06, 0.12, 0.25, 0.50, 
+	0.70, 0.85, 0.95, 1.00, 0.95, 
+	0.85, 0.55, 0.20, 0.05, 0.01 
 ]
 
 func _ready() -> void:
 	## Setup car values
 	mass = car_mass/grav_mod
 	gravity_scale = grav_mod
+	## @TODO Compare ALL Vehicle vars with current saved working
 	## Grip
-	$Wheel3Dfl.wheel_friction_slip = fric_slip_front
-	$Wheel3Dfr.wheel_friction_slip = fric_slip_front
-	$Wheel3Drl.wheel_friction_slip = fric_slip_rear
-	$Wheel3Drr.wheel_friction_slip = fric_slip_rear
-	## Damper
-	$Wheel3Dfl.damping_compression = damp_compr_front
-	$Wheel3Dfr.damping_compression = damp_compr_front
-	$Wheel3Drl.damping_compression = damp_compr_rear
-	$Wheel3Drr.damping_compression = damp_compr_front
-	$Wheel3Dfl.damping_relaxation = damp_relax_rear
-	$Wheel3Dfr.damping_relaxation = damp_relax_rear
-	$Wheel3Drl.damping_relaxation = damp_relax_rear
-	$Wheel3Drr.damping_relaxation = damp_relax_rear
-	## Rest
-	$Wheel3Dfl.wheel_rest_length = rest_front
-	$Wheel3Dfr.wheel_rest_length = rest_front
-	$Wheel3Drl.wheel_rest_length = rest_rear
-	$Wheel3Drr.wheel_rest_length = rest_rear
-	## Travel
-	$Wheel3Dfl.suspension_travel = travel_front
-	$Wheel3Dfr.suspension_travel = travel_front
-	$Wheel3Drl.suspension_travel = travel_rear
-	$Wheel3Drr.suspension_travel = travel_rear
-	## Stiffness
-	$Wheel3Dfl.suspension_stiffness = stiff_front
-	$Wheel3Dfr.suspension_stiffness = stiff_front
-	$Wheel3Drl.suspension_stiffness = stiff_rear
-	$Wheel3Drr.suspension_stiffness = stiff_rear
-	## Maximum suspension force
-	$Wheel3Dfl.suspension_max_force = max_force_front
-	$Wheel3Dfr.suspension_max_force = max_force_front
-	$Wheel3Drl.suspension_max_force = max_force_rear
-	$Wheel3Drr.suspension_max_force = max_force_rear
+	#$Wheel3Dfl.wheel_friction_slip = fric_slip_front
+	#$Wheel3Dfr.wheel_friction_slip = fric_slip_front
+	#$Wheel3Drl.wheel_friction_slip = fric_slip_rear
+	#$Wheel3Drr.wheel_friction_slip = fric_slip_rear
+	### Damper
+	#$Wheel3Dfl.damping_compression = damp_compr_front
+	#$Wheel3Dfr.damping_compression = damp_compr_front
+	#$Wheel3Drl.damping_compression = damp_compr_rear
+	#$Wheel3Drr.damping_compression = damp_compr_front
+	#$Wheel3Dfl.damping_relaxation = damp_relax_rear
+	#$Wheel3Dfr.damping_relaxation = damp_relax_rear
+	#$Wheel3Drl.damping_relaxation = damp_relax_rear
+	#$Wheel3Drr.damping_relaxation = damp_relax_rear
+	### Rest
+	#$Wheel3Dfl.wheel_rest_length = rest_front
+	#$Wheel3Dfr.wheel_rest_length = rest_front
+	#$Wheel3Drl.wheel_rest_length = rest_rear
+	#$Wheel3Drr.wheel_rest_length = rest_rear
+	### Travel
+	#$Wheel3Dfl.suspension_travel = travel_front
+	#$Wheel3Dfr.suspension_travel = travel_front
+	#$Wheel3Drl.suspension_travel = travel_rear
+	#$Wheel3Drr.suspension_travel = travel_rear
+	### Stiffness
+	#$Wheel3Dfl.suspension_stiffness = stiff_front
+	#$Wheel3Dfr.suspension_stiffness = stiff_front
+	#$Wheel3Drl.suspension_stiffness = stiff_rear
+	#$Wheel3Drr.suspension_stiffness = stiff_rear
+	### Maximum suspension force
+	#$Wheel3Dfl.suspension_max_force = max_force_front
+	#$Wheel3Dfr.suspension_max_force = max_force_front
+	#$Wheel3Drl.suspension_max_force = max_force_rear
+	#$Wheel3Drr.suspension_max_force = max_force_rear
 	## Set Center of Mass from CoM Node
 	## Move it Forward to oversteer
 	## Backward for understeer but less rear slip
@@ -86,6 +89,7 @@ func _ready() -> void:
 	## Randomize initial rotation
 	rotation = randomis(rotation, PI)
 	
+	$"../UI".call_draw_curve(power_curve)
 	
 func _process(delta: float) -> void:
 	steering = move_toward(
