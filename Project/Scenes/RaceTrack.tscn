@@ -1,50 +1,24 @@
-[gd_scene load_steps=27 format=3 uid="uid://10sd56h600qm"]
+[gd_scene load_steps=21 format=3 uid="uid://10sd56h600qm"]
 
 [ext_resource type="Script" uid="uid://d0ef8aldsf06x" path="res://Scripts/Main.gd" id="1_lcopb"]
+[ext_resource type="PackedScene" uid="uid://cqj403us21hwa" path="res://Sky/world_environment.tscn" id="2_3r45q"]
+[ext_resource type="PackedScene" uid="uid://q6tnkaolbn1r" path="res://Scenes/200_sqm.tscn" id="3_3r45q"]
 [ext_resource type="PackedScene" uid="uid://c2u3c52wwav41" path="res://Scenes/ui.tscn" id="3_60okl"]
-[ext_resource type="PackedScene" uid="uid://cifiwns1s4tgv" path="res://Kenny/kenney_city-kit-roads/Models/GLB format/road-curve-intersection-barrier.glb" id="3_qbk1e"]
-[ext_resource type="PackedScene" uid="uid://coiwxhrw6jy7b" path="res://Kenny/kenney_city-kit-roads/Models/GLB format/road-curve-intersection.glb" id="4_6kfjr"]
+[ext_resource type="PackedScene" uid="uid://cifiwns1s4tgv" path="res://Kenney/kenney_city-kit-roads/Models/road-curve-intersection-barrier.glb" id="3_qbk1e"]
 [ext_resource type="PackedScene" uid="uid://nkr4juodvwg5" path="res://Scenes/Ball.tscn" id="4_ukrk6"]
 [ext_resource type="PackedScene" uid="uid://d1tqw4jcecxpq" path="res://Scenes/camera_gimbal.tscn" id="5_hoy10"]
-[ext_resource type="PackedScene" uid="uid://bdm6jb5mmdksm" path="res://Kenny/kenney_city-kit-roads/Models/GLB format/road-curve-pavement.glb" id="5_jgqhl"]
-[ext_resource type="PackedScene" uid="uid://bt677ol3pn1iu" path="res://Scenes/Vehicle.tscn" id="6_qbk1e"]
-[ext_resource type="PackedScene" uid="uid://c6265qppa8gqi" path="res://Kenny/kenney_city-kit-roads/Models/GLB format/road-curve.glb" id="6_xi473"]
-[ext_resource type="PackedScene" uid="uid://nbypsboniw12" path="res://Kenny/kenney_city-kit-roads/Models/FBX format/road-driveway-single-barrier.fbx" id="9_0ay6i"]
-[ext_resource type="PackedScene" uid="uid://usbfrsq4rksm" path="res://Kenny/kenney_city-kit-roads/Models/FBX format/road-curve-intersection.fbx" id="10_cekcr"]
-[ext_resource type="PackedScene" uid="uid://bs5yr82bda2sg" path="res://Kenny/kenney_city-kit-roads/Models/FBX format/road-split-barrier.fbx" id="13_8mkt3"]
-[ext_resource type="PackedScene" uid="uid://drn4bbavdrq14" path="res://Kenny/road_slant_curve_2.tscn" id="13_wxtyk"]
-[ext_resource type="PackedScene" uid="uid://cthhyvrwpgql2" path="res://Kenny/road_intersection_barrier.tscn" id="14_1xjur"]
-[ext_resource type="PackedScene" uid="uid://c203mnkgpa8jr" path="res://Kenny/road_slant_flat_curve_2.tscn" id="14_3r45q"]
-[ext_resource type="PackedScene" uid="uid://wnufxhxp52c2" path="res://Kenny/kenney_city-kit-roads/Models/FBX format/road-straight.fbx" id="14_v1eeo"]
-[ext_resource type="PackedScene" uid="uid://bhvbvexqgkpat" path="res://Kenny/road_curve_barrier_2.tscn" id="14_wxtyk"]
-[ext_resource type="PackedScene" uid="uid://ka4fopsnbuk4" path="res://Kenny/kenney_city-kit-roads/Models/FBX format/road-bend-sidewalk.fbx" id="15_ea4aw"]
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_bmxlf"]
-sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
-ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
-
-[sub_resource type="Sky" id="Sky_wxtyk"]
-sky_material = SubResource("ProceduralSkyMaterial_bmxlf")
-
-[sub_resource type="Environment" id="Environment_grg3l"]
-background_mode = 2
-sky = SubResource("Sky_wxtyk")
-tonemap_mode = 2
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_hoy10"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hoy10"]
-diffuse_mode = 1
-specular_mode = 1
-albedo_color = Color(0.45, 0.308925, 0.1935, 1)
-
-[sub_resource type="QuadMesh" id="QuadMesh_qbk1e"]
-material = SubResource("StandardMaterial3D_hoy10")
-size = Vector2(200, 200)
-orientation = 1
-
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_6kfjr"]
-data = PackedVector3Array(100, 0, 100, -100, 0, 100, 100, 0, -100, -100, 0, 100, -100, 0, -100, 100, 0, -100)
+[ext_resource type="PackedScene" uid="uid://bdm6jb5mmdksm" path="res://Kenney/kenney_city-kit-roads/Models/road-curve-pavement.glb" id="5_jgqhl"]
+[ext_resource type="PackedScene" uid="uid://c6265qppa8gqi" path="res://Kenney/kenney_city-kit-roads/Models/road-curve.glb" id="6_xi473"]
+[ext_resource type="PackedScene" uid="uid://dpma2p7iln1eu" path="res://Kenney/kenney_city-kit-roads/Models/road-driveway-single-barrier.glb" id="9_0ay6i"]
+[ext_resource type="PackedScene" uid="uid://coiwxhrw6jy7b" path="res://Kenney/kenney_city-kit-roads/Models/road-curve-intersection.glb" id="10_cekcr"]
+[ext_resource type="PackedScene" uid="uid://dvpwj3y0xvpgt" path="res://Kenney/kenney_city-kit-roads/Models/road-split-barrier.glb" id="13_8mkt3"]
+[ext_resource type="PackedScene" uid="uid://drn4bbavdrq14" path="res://Kenney/road_slant_curve_2.tscn" id="13_wxtyk"]
+[ext_resource type="PackedScene" uid="uid://cthhyvrwpgql2" path="res://Kenney/road_intersection_barrier.tscn" id="14_1xjur"]
+[ext_resource type="PackedScene" uid="uid://c203mnkgpa8jr" path="res://Kenney/road_slant_flat_curve_2.tscn" id="14_3r45q"]
+[ext_resource type="PackedScene" uid="uid://bwodoi5j6h2q7" path="res://Kenney/kenney_city-kit-roads/Models/road-straight.glb" id="14_v1eeo"]
+[ext_resource type="PackedScene" uid="uid://bhvbvexqgkpat" path="res://Kenney/road_curve_barrier_2.tscn" id="14_wxtyk"]
+[ext_resource type="PackedScene" uid="uid://cuo47o1j8k1kd" path="res://Kenney/kenney_city-kit-roads/Models/road-bend.glb" id="15_ea4aw"]
+[ext_resource type="PackedScene" uid="uid://bt677ol3pn1iu" path="res://Scenes/Vehicle.tscn" id="19_1xjur"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_pbw6q"]
 height = 0.5
@@ -53,30 +27,9 @@ radius = 0.8
 [node name="Main" type="Node3D"]
 script = ExtResource("1_lcopb")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_grg3l")
+[node name="WorldEnvironment" parent="." instance=ExtResource("2_3r45q")]
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.104528, 0.861281, -0.497261, 0, 0.5, 0.866025, 0.994522, 0.0905242, -0.0522642, 200, 200, 200)
-light_color = Color(0.73859, 0.73859, 0.73859, 1)
-light_energy = 0.6
-light_indirect_energy = 0.8
-light_specular = 2.0
-shadow_transmittance_bias = 0.1
-shadow_blur = 2.0
-directional_shadow_mode = 0
-directional_shadow_split_3 = 0.4
-
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
-collision_layer = 255
-collision_mask = 255
-physics_material_override = SubResource("PhysicsMaterial_hoy10")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
-mesh = SubResource("QuadMesh_qbk1e")
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_6kfjr")
+[node name="200sqm" parent="." instance=ExtResource("3_3r45q")]
 
 [node name="Road" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.04798, 0, -11.3685)
@@ -84,7 +37,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.04798, 0, -11.3685)
 [node name="road-curve-intersection-barrier2" parent="Road" instance=ExtResource("3_qbk1e")]
 transform = Transform3D(-4.37114e-07, 0, -10, 0, 10, 0, 10, 0, -4.37114e-07, 30, 0, -9)
 
-[node name="road-curve-intersection2" parent="Road" instance=ExtResource("4_6kfjr")]
+[node name="road-curve-intersection2" parent="Road" instance=ExtResource("10_cekcr")]
 transform = Transform3D(-4.37114e-07, 0, -10, 0, 10, 0, 10, 0, -4.37114e-07, 30, 0, -29)
 
 [node name="road-curve-pavement2" parent="Road" instance=ExtResource("5_jgqhl")]
@@ -170,8 +123,8 @@ mass = 0.3
 [node name="CameraGimbal" parent="." instance=ExtResource("5_hoy10")]
 transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, -5, 5, -4)
 
-[node name="Vehicle" parent="." instance=ExtResource("6_qbk1e")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 4, -3.5)
+[node name="Vehicle" parent="." instance=ExtResource("19_1xjur")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.0602802, 1.472, -3.95083)
 
 [connection signal="body_entered" from="Hole" to="." method="_on_hole_body_entered"]
 [connection signal="stopped" from="Ball" to="." method="_on_ball_stopped"]

@@ -1,12 +1,19 @@
 # v4-51-golf GitHub repo
 
 ## @CONTINUE 
-- Add Ball normal
 - Add complex interface
   - Game settings
   - Car settings
   - Ball settings
-- Start draw 1x1 course
+
+## 25.11.27
+- Added Ball normal
+- Added wheel normal
+- Added Dodge car model
+- Added export variables, almost all
+- Car rescaled to 0.8x
+  - @REMEMBER values tested with Dodge scaled 0.8 1000kg 1.5G
+- Main and RaceTrack rebuilt 
 
 ## 25.11.26 - Add Velicle
 - Add Center of Mass with node

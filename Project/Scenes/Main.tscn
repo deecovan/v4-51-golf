@@ -1,23 +1,13 @@
-[gd_scene load_steps=11 format=3 uid="uid://dexp0d75btgj0"]
+[gd_scene load_steps=10 format=3 uid="uid://dexp0d75btgj0"]
 
 [ext_resource type="Script" uid="uid://d0ef8aldsf06x" path="res://Scripts/Main.gd" id="1_r150o"]
+[ext_resource type="PackedScene" uid="uid://cqj403us21hwa" path="res://Sky/world_environment.tscn" id="2_jw32o"]
 [ext_resource type="MeshLibrary" uid="uid://c2cgp27k6adat" path="res://Scenes/golf_tiles.tres" id="2_kln2b"]
+[ext_resource type="PackedScene" uid="uid://q6tnkaolbn1r" path="res://Scenes/200_sqm.tscn" id="3_50glp"]
 [ext_resource type="PackedScene" uid="uid://nkr4juodvwg5" path="res://Scenes/Ball.tscn" id="3_kln2b"]
 [ext_resource type="PackedScene" uid="uid://c2u3c52wwav41" path="res://Scenes/ui.tscn" id="4_rgh2o"]
 [ext_resource type="PackedScene" uid="uid://d1tqw4jcecxpq" path="res://Scenes/camera_gimbal.tscn" id="6_v1gob"]
 [ext_resource type="PackedScene" uid="uid://bt677ol3pn1iu" path="res://Scenes/Vehicle.tscn" id="10_bmxlf"]
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_v1gob"]
-sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
-ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
-
-[sub_resource type="Sky" id="Sky_4kpch"]
-sky_material = SubResource("ProceduralSkyMaterial_v1gob")
-
-[sub_resource type="Environment" id="Environment_jw32o"]
-background_mode = 2
-sky = SubResource("Sky_4kpch")
-tonemap_mode = 2
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_pbw6q"]
 height = 0.5
@@ -26,19 +16,9 @@ radius = 0.8
 [node name="Main" type="Node3D"]
 script = ExtResource("1_r150o")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_jw32o")
+[node name="WorldEnvironment" parent="." instance=ExtResource("2_jw32o")]
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.104528, 0.861281, -0.497261, 0, 0.5, 0.866025, 0.994522, 0.0905239, -0.052264, 200, 200, 200)
-light_color = Color(0.73859, 0.73859, 0.73859, 1)
-light_energy = 0.6
-light_indirect_energy = 0.8
-light_specular = 2.0
-shadow_transmittance_bias = 0.1
-shadow_blur = 2.0
-directional_shadow_mode = 0
-directional_shadow_split_3 = 0.4
+[node name="200sqm" parent="." instance=ExtResource("3_50glp")]
 
 [node name="Course" type="GridMap" parent="."]
 mesh_library = ExtResource("2_kln2b")
@@ -69,7 +49,7 @@ mass = 0.3
 transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, -5, 5, -4)
 
 [node name="Vehicle" parent="." instance=ExtResource("10_bmxlf")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -5, 4, -3.5)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -4.9812, 3.80142, -3.218)
 
 [connection signal="body_entered" from="Hole" to="." method="_on_hole_body_entered"]
 [connection signal="stopped" from="Ball" to="." method="_on_ball_stopped"]

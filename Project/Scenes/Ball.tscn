@@ -1,11 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://nkr4juodvwg5"]
+[gd_scene load_steps=7 format=3 uid="uid://nkr4juodvwg5"]
 
 [ext_resource type="Script" uid="uid://brmuvwjej8v7k" path="res://Scripts/ball.gd" id="1_7nh6h"]
+[ext_resource type="Texture2D" uid="uid://c6bn4sm7gdfpx" path="res://Assets/ball_normal_map.png" id="2_eb1ap"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_rmwm4"]
 bounce = 1.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rmwm4"]
+normal_enabled = true
+normal_texture = ExtResource("2_eb1ap")
 backlight = Color(0.468777, 0.468777, 0.468777, 1)
 
 [sub_resource type="SphereMesh" id="SphereMesh_rmwm4"]
