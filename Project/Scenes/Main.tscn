@@ -7,18 +7,17 @@
 [ext_resource type="PackedScene" uid="uid://d1tqw4jcecxpq" path="res://Scenes/camera_gimbal.tscn" id="6_v1gob"]
 [ext_resource type="PackedScene" uid="uid://bt677ol3pn1iu" path="res://Scenes/Vehicle.tscn" id="10_bmxlf"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_bmxlf"]
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_v1gob"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
 ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
 
 [sub_resource type="Sky" id="Sky_4kpch"]
-sky_material = SubResource("ProceduralSkyMaterial_bmxlf")
+sky_material = SubResource("ProceduralSkyMaterial_v1gob")
 
-[sub_resource type="Environment" id="Environment_grg3l"]
+[sub_resource type="Environment" id="Environment_jw32o"]
 background_mode = 2
 sky = SubResource("Sky_4kpch")
 tonemap_mode = 2
-glow_enabled = true
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_pbw6q"]
 height = 0.5
@@ -28,19 +27,18 @@ radius = 0.8
 script = ExtResource("1_r150o")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_grg3l")
+environment = SubResource("Environment_jw32o")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.104528, 0.861281, -0.497261, 0, 0.5, 0.866025, 0.994522, 0.0905242, -0.0522642, 200, 200, 200)
+transform = Transform3D(-0.104528, 0.861281, -0.497261, 0, 0.5, 0.866025, 0.994522, 0.0905239, -0.052264, 200, 200, 200)
 light_color = Color(0.73859, 0.73859, 0.73859, 1)
 light_energy = 0.6
 light_indirect_energy = 0.8
 light_specular = 2.0
-shadow_enabled = true
 shadow_transmittance_bias = 0.1
 shadow_blur = 2.0
+directional_shadow_mode = 0
 directional_shadow_split_3 = 0.4
-directional_shadow_blend_splits = true
 
 [node name="Course" type="GridMap" parent="."]
 mesh_library = ExtResource("2_kln2b")

@@ -3,7 +3,7 @@ extends VehicleBody3D
 ## Maximum Steering angle in Radians
 @export var MAX_STEER  = 0.8
 ## Maximum Power per Traction wheel
-@export var MAX_POWER = 5000
+@export var MAX_POWER = 10000
 ## Steering speed
 @export var SPD_STEER = 3
 ## Car Mass
