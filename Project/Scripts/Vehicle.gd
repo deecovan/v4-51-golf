@@ -35,6 +35,11 @@ extends VehicleBody3D
 @export var max_force_front = 16000
 @export var max_force_rear = 14000
 
+var power_curve = [
+	0.0, 0.1, 0.2, 0.3, 0.5, 0.8, 
+	0.9, 1.0, 0.9, 0.7, 0.3, 0.0 
+]
+
 func _ready() -> void:
 	## Setup car values
 	mass = car_mass/grav_mod

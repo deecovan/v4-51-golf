@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=4 uid="uid://c2u3c52wwav41"]
+[gd_scene load_steps=8 format=4 uid="uid://c2u3c52wwav41"]
 
 [ext_resource type="Script" uid="uid://bxgxdgj8xpxwf" path="res://Scripts/ui.gd" id="1_nf4gj"]
+[ext_resource type="Script" uid="uid://cwhmf0iu4u1ho" path="res://Scripts/Draw.gd" id="2_qdvrb"]
 
 [sub_resource type="Image" id="Image_dvm57"]
 data = {
@@ -262,6 +263,7 @@ font_size = 85
 script = ExtResource("1_nf4gj")
 
 [node name="Message" type="Label" parent="."]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -290,3 +292,10 @@ theme_override_constants/margin_bottom = 20
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
+
+[node name="Draw" type="Control" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(170, 120)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+script = ExtResource("2_qdvrb")

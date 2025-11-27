@@ -5,12 +5,19 @@ extends Node3D
 @export var camera_rotation = -0.5
 @export var camera_zoom = 0.15
 
+var power_curve: Array = [
+	0.03, 0.06, 0.12, 0.25, 0.50, 
+	0.70, 0.85, 0.95, 1.00, 0.95, 
+	0.85, 0.55, 0.20, 0.05, 0.01 
+]
+
 func _ready():
 	#Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	$Ball.position = $Tee.position
 	$CameraGimbal/GimbalInner.rotation.x = camera_rotation
 	$CameraGimbal.zoom = camera_zoom
 	$UI.show_message("Get Ready!")
+	$UI.call_draw_curve(power_curve)
 			
 func _input(_event):
 	use_main_controls(_event)

@@ -1,6 +1,9 @@
 # v4-51-golf GitHub repo
 
 ## @CONTINUE 
+- Added Engine Power curve overlay 
+  - call_draw_curve(curve: Array)
+
 - Add complex interface
   - Game settings
   - Car settings
