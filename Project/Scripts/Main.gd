@@ -10,13 +10,11 @@ func _ready():
 func _input(_event):
 	use_main_controls(_event)
 				
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_pressed('restore'):
 		$UI.show_message("Restoring...")
 		$Vehicle.position.y = $Vehicle.position.y + 1
 		$Vehicle.rotation.z = 0
-			
-## Functions
 
 ## @SIGNAL Ball.stopped.emit()
 func _on_ball_stopped() -> void:

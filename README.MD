@@ -3,6 +3,8 @@
 ## 25.11.28 
 @TODO Compare ALL Vehicle vars with current saved working
 
+- Tested Setup Vehicle3D  and its PhysicsMaterial values
+
 - Fixed Camera Gimble follow the Car
   - separate lerp for each axe
   - keyboard camera rotation

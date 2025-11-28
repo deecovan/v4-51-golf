@@ -2,27 +2,34 @@ extends VehicleBody3D
 
 ## @REMEMBER values tested with Dodge scaled 0.8 1000kg 1.5G
 ## Maximum Power per Traction wheel
-@export var MAX_POWER = 5000 # per each Traction wheel
-## Steering speed
+## Car Mass as real_car_mass/grav_mod
+@export var real_car_mass = 1000
+@export var grav_mod = 1.5
+## Maximum Steering speed
 @export var SPD_STEER = 3
 ## Maximum Steering angle in Radians
 @export var MAX_STEER  = 0.6
-## Car Mass as car_mass/grav_mod
-@export var car_mass = 1000
-@export var grav_mod = 1.5
 
-## Front wheels friction slip ratio
+## Next values used for reconfiguring the Vehicle3Ds values
+@export var car_linear_damp = 0.5
+@export var car_angular_damp = 0.5
+@export var car_friction = 0.01
+@export var car_rough = false
+@export var car_bounce = 0.5
+@export var car_absorb = false
+
+## Next values used for reconfiguring the Wheel3Ds values
+## Front wheels friction slip ratio ## 0.65
 @export var fric_slip_front = 0.6
-## Rear wheels friction slip ratio
+## Rear wheels friction slip ratio ## 0.65
 @export var fric_slip_rear = 0.5
-
 ## Typical racing car damper ratios are 0.65-0.7 
 ## in ride where 1 is 100% critical damping
-## Front wheels damper compression
+## Front wheels damper compression ## 0.8
 @export var damp_compr_front = 0.8
-## Front wheels damper relaxation
+## Front wheels damper relaxation ## 0.88
 @export var damp_relax_front = 0.88
-## Rear
+## Rear ## 0.7 0.77
 @export var damp_compr_rear = 0.7
 @export var damp_relax_rear = 0.77
 ## Rest, Travel, Stiff, MaxV
@@ -35,7 +42,9 @@ extends VehicleBody3D
 @export var max_force_front = 16000
 @export var max_force_rear = 14000
 
-
+## MAX_POWER Used as power for gears (as PFG) 
+@export var MAX_POWER = 5000 # per each Traction wheel
+## Array values of Used power for PFG 
 var power_curve: Array = [
 	0.03, 0.06, 0.12, 0.25, 0.50, 
 	0.70, 0.85, 0.95, 1.00, 0.95, 
@@ -43,10 +52,18 @@ var power_curve: Array = [
 ]
 
 func _ready() -> void:
-	## Setup car values
-	mass = car_mass/grav_mod
+	## Setup Vehicle3D values
+	mass = real_car_mass/grav_mod
 	gravity_scale = grav_mod
-	## @TODO Compare ALL Vehicle vars with current saved working
+	linear_damp = car_linear_damp
+	angular_damp = car_angular_damp
+	## Setup Vehicle3D Physics Material
+	physics_material_override.friction = car_friction
+	physics_material_override.rough = car_rough
+	physics_material_override.bounce = car_bounce
+	physics_material_override.absorbent = car_absorb
+	
+	## Setup Wheel2Ds Front and Rear values
 	## Grip
 	#$Wheel3Dfl.wheel_friction_slip = fric_slip_front
 	#$Wheel3Dfr.wheel_friction_slip = fric_slip_front
