@@ -1,8 +1,14 @@
 # v4-51-golf GitHub repo
 
 ## 25.11.28 Planned
+
 + Add Camera Pan with Mouse 
-* Add Gears, physics, visuals
+
++ Tested fixed values:
+  - match_power=power_curve, 
+  - Rest, Travel, Stiff, MaxV
+
+1. Add Gears, physics, visuals
   - Using added engine power graph
   - Auto gearbox with auto clutch
   - Interface to change gears ratio

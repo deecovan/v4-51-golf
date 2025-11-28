@@ -14,7 +14,16 @@ func _process(_delta):
 	if Input.is_action_just_pressed('restore'):
 		$UI.show_message("Restoring...")
 		$Vehicle.position.y = $Vehicle.position.y + 1
-		$Vehicle.rotation.z = 0
+		$Vehicle.position = Vector3(
+			$Vehicle.position.x + randf(),
+			$Vehicle.position.y + 1,
+			$Vehicle.position.z +  randf())
+		$Vehicle.rotation = Vector3(
+			0,
+			$Vehicle.rotation.y,
+			0)
+		$Vehicle.constant_force = Vector3.ZERO
+		$Vehicle.constant_torque = Vector3.ZERO
 	if Input.is_action_just_pressed('help'):
 		$UI.show_message_again()
 

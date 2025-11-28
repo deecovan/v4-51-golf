@@ -1,10 +1,10 @@
 extends Node3D
 
 ## Keyboard controlled Rotation and Zoom
-@export var camera_speed = PI / 2
-@export var zoom_speed = 0.01
-@export var camera_rotation = -0.6
 @export var camera_zoom = 0.2
+@export var zoom_speed = 0.05
+@export var camera_rotation = -0.6
+@export var camera_speed = PI / 2
 ## Mouse controlled Rotation sensivity and direction
 @export var mouse_sensivity = 5000
 ## -1 normal or +1 inversed

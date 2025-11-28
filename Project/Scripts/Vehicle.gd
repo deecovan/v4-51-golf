@@ -5,7 +5,6 @@ var speedtometer_label
 ## Car Mass as real_car_mass/grav_mod
 ## 1742 kg at 1G ## 3,841 lbs. Dodge Challenger
 ## Scaled to 80% 1742*0.8=1393.6
-## Fix this Dodge values 100kph/2sec but max150kph WTF?
 @export var real_car_mass = 1393.6 
 @export var grav_mod = 1.5
 ## Maximum Steering speed
@@ -31,27 +30,27 @@ var speedtometer_label
 ## Typical racing car damper ratios are 0.65-0.7 
 ## in ride where 1 is 100% critical damping
 ## Front wheels damper compression ## 0.8
-@export var damp_compr_front = 0.8
+@export var damp_compr_front = 0.5
 ## Front wheels damper relaxation ## 0.88
-@export var damp_relax_front = 0.88
+@export var damp_relax_front = 0.6
 ## Rear ## 0.7 0.77
-@export var damp_compr_rear = 0.6
-@export var damp_relax_rear = 0.66
+@export var damp_compr_rear = 0.3
+@export var damp_relax_rear = 0.4
 ## Rest, Travel, Stiff, MaxV
-@export var rest_front = 0.05
-@export var rest_rear = 0.06
-@export var travel_front = 0.08
+@export var rest_front = 0.075
+@export var rest_rear = 0.08
+@export var travel_front = 0.085
 @export var travel_rear = 0.09
-@export var stiff_front = 120
-@export var stiff_rear = 140
-@export var max_force_front = 30000
-@export var max_force_rear = 20000
+@export var stiff_front = 160
+@export var stiff_rear = 120
+@export var max_force_front = 40000
+@export var max_force_rear = 30000
 
 ## MAX_POWER Used as power for gears (as PFG) 
-@export var MAX_POWER = 18000.0 # per each Traction wheel
-## Max Speed for this car is 360kph
+@export var MAX_POWER = 20000.0 # per each Traction wheel
+## Max Speed for this car is 100ms(360kph)
 @export var MAX_SPEED = 100.0
-## Must have 100kph in 3.5 seconds
+## Must have 28ms(100kph) in 3.5 seconds
 
 ## Array values of Used power for PFG 
 var power_curve: Array = [
@@ -136,12 +135,15 @@ func _process(delta: float) -> void:
 		engine_force = lerp(engine_force, MAX_POWER, pedal_speed * delta)
 		pedal_text = "Accel"
 		## Match force to power_curve
+		var max_curve_index = power_curve.size() - 5
 		var speed_index = clamp( ## clamp maximal values
-			2 + linear_velocity.length() / 8, ## Velocity/8 for maximal gear 
-			2, power_curve.size() - 2)        ## Test it again
+			## for maximal gear, starting from index 2, limited to index -5
+			2 + linear_velocity.length()/(MAX_SPEED/max_curve_index),  
+			2, power_curve.size() - 5)      ## Test it again
 		var match_power = power_curve[speed_index] * MAX_POWER
 		engine_force = clamp(engine_force, 0, match_power)
-		printt(int(linear_velocity.length()),speed_index, match_power)
+		## Tested fixed values: match_power=power_curve, Rest, Travel, Stiff, MaxV
+		#printt(int(linear_velocity.length()),speed_index, match_power)
 	elif Input.is_action_pressed("brake"):
 		engine_force = lerp(engine_force, -MAX_POWER, pedal_speed * delta)
 		pedal_text = "Brake"
