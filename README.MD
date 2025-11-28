@@ -1,9 +1,13 @@
 # v4-51-golf GitHub repo
 
 ## 25.11.28 
-@TODO Compare ALL Vehicle vars with current saved working
+* Add complex interface
+  - Game settings [in progress]
+  - Car settings
+  - Ball settings
 
-- Tested Setup Vehicle3D  and its PhysicsMaterial values
+- Tested Setup Vehicle3D and its PhysicsMaterial values
+- Tested Setup Wheel3Ds values
 
 - Fixed Camera Gimble follow the Car
   - separate lerp for each axe
@@ -13,10 +17,6 @@
   - call_draw_curve(curve: Array)
 
 
-- Add complex interface
-  - Game settings [in progress]
-  - Car settings
-  - Ball settings
 
 ## 25.11.27
 - Added Ball normal

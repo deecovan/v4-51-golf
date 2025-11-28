@@ -1,18 +1,19 @@
 extends Node3D
 
+## Keyboard controlled Rotation and Zoom
 @export var cam_speed = PI / 2
 @export var zoom_speed = 0.01
-
-@export var camera_lerpx = 3
-@export var camera_lerpy = 2
-@export var camera_lerpz = 5
-@export var camera_rotation = -0.5
+@export var camera_rotation = -0.6
 @export var camera_zoom = 0.15
-
 var gimbal_rotation_x: float
 var gimbal_rotation_y: float
 var vehicle_rotation_x: float
 var vehicle_rotation_y: float
+
+## Camera Follow lerp speed
+@export var camera_lerpx = 3
+@export var camera_lerpy = 2
+@export var camera_lerpz = 5
 
 var zoom: float
 

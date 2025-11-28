@@ -17,7 +17,7 @@ func _integrate_forces(state):
 		stopped.emit()
 		state.linear_velocity = Vector3.ZERO
 	## Ball fell off course!
-	if position.y < -20:
+	if position.y < 1:
 		get_parent().reload_scene("Ball is out! Reloading...")
 		
 ## Functions

@@ -33,14 +33,14 @@ extends VehicleBody3D
 @export var damp_compr_rear = 0.7
 @export var damp_relax_rear = 0.77
 ## Rest, Travel, Stiff, MaxV
-@export var rest_front = 0.8
-@export var rest_rear = 0.8
-@export var travel_front = 0.1
+@export var rest_front = 0.05
+@export var rest_rear = 0.06
+@export var travel_front = 0.08
 @export var travel_rear = 0.1
 @export var stiff_front = 160
-@export var stiff_rear = 160
-@export var max_force_front = 16000
-@export var max_force_rear = 14000
+@export var stiff_rear = 140
+@export var max_force_front = 12000
+@export var max_force_rear = 10000
 
 ## MAX_POWER Used as power for gears (as PFG) 
 @export var MAX_POWER = 5000 # per each Traction wheel
@@ -79,33 +79,36 @@ func _ready() -> void:
 	$Wheel3Drl.damping_relaxation = damp_relax_rear
 	$Wheel3Drr.damping_relaxation = damp_relax_rear
 	### Rest
-	#$Wheel3Dfl.wheel_rest_length = rest_front
-	#$Wheel3Dfr.wheel_rest_length = rest_front
-	#$Wheel3Drl.wheel_rest_length = rest_rear
-	#$Wheel3Drr.wheel_rest_length = rest_rear
+	$Wheel3Dfl.wheel_rest_length = rest_front
+	$Wheel3Dfr.wheel_rest_length = rest_front
+	$Wheel3Drl.wheel_rest_length = rest_rear
+	$Wheel3Drr.wheel_rest_length = rest_rear
 	### Travel
-	#$Wheel3Dfl.suspension_travel = travel_front
-	#$Wheel3Dfr.suspension_travel = travel_front
-	#$Wheel3Drl.suspension_travel = travel_rear
-	#$Wheel3Drr.suspension_travel = travel_rear
+	$Wheel3Dfl.suspension_travel = travel_front
+	$Wheel3Dfr.suspension_travel = travel_front
+	$Wheel3Drl.suspension_travel = travel_rear
+	$Wheel3Drr.suspension_travel = travel_rear
 	### Stiffness
-	#$Wheel3Dfl.suspension_stiffness = stiff_front
-	#$Wheel3Dfr.suspension_stiffness = stiff_front
-	#$Wheel3Drl.suspension_stiffness = stiff_rear
-	#$Wheel3Drr.suspension_stiffness = stiff_rear
-	### Maximum suspension force
-	#$Wheel3Dfl.suspension_max_force = max_force_front
-	#$Wheel3Dfr.suspension_max_force = max_force_front
-	#$Wheel3Drl.suspension_max_force = max_force_rear
-	#$Wheel3Drr.suspension_max_force = max_force_rear
-	## Set Center of Mass from CoM Node
+	$Wheel3Dfl.suspension_stiffness = stiff_front
+	$Wheel3Dfr.suspension_stiffness = stiff_front
+	$Wheel3Drl.suspension_stiffness = stiff_rear
+	$Wheel3Drr.suspension_stiffness = stiff_rear
+	### Maximum Suspension force
+	$Wheel3Dfl.suspension_max_force = max_force_front
+	$Wheel3Dfr.suspension_max_force = max_force_front
+	$Wheel3Drl.suspension_max_force = max_force_rear
+	$Wheel3Drr.suspension_max_force = max_force_rear
+	
+	## Set Center of Mass from CenterOfMass Node
 	## Move it Forward to oversteer
 	## Backward for understeer but less rear slip
 	center_of_mass_mode = RigidBody3D.CENTER_OF_MASS_MODE_CUSTOM
 	center_of_mass = $CenterOfMass.position
+	
 	## Randomize initial rotation
 	rotation = randomis(rotation, PI)
 	
+	## Init PFG screen
 	$"../UI".call_draw_curve(power_curve)
 	
 func _process(delta: float) -> void:
@@ -116,7 +119,7 @@ func _process(delta: float) -> void:
 		)
 	engine_force = Input.get_axis("brake", "accelerate") * MAX_POWER
 	## Car fell off course!
-	if position.y < -20:
+	if position.y < 1:
 		get_parent().reload_scene("Car is out! Reloading...")
 	
 func randomis(v: Vector3, mult) -> Vector3:
