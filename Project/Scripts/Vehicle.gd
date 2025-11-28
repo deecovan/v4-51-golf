@@ -65,19 +65,19 @@ func _ready() -> void:
 	
 	## Setup Wheel2Ds Front and Rear values
 	## Grip
-	#$Wheel3Dfl.wheel_friction_slip = fric_slip_front
-	#$Wheel3Dfr.wheel_friction_slip = fric_slip_front
-	#$Wheel3Drl.wheel_friction_slip = fric_slip_rear
-	#$Wheel3Drr.wheel_friction_slip = fric_slip_rear
+	$Wheel3Dfl.wheel_friction_slip = fric_slip_front
+	$Wheel3Dfr.wheel_friction_slip = fric_slip_front
+	$Wheel3Drl.wheel_friction_slip = fric_slip_rear
+	$Wheel3Drr.wheel_friction_slip = fric_slip_rear
 	### Damper
-	#$Wheel3Dfl.damping_compression = damp_compr_front
-	#$Wheel3Dfr.damping_compression = damp_compr_front
-	#$Wheel3Drl.damping_compression = damp_compr_rear
-	#$Wheel3Drr.damping_compression = damp_compr_front
-	#$Wheel3Dfl.damping_relaxation = damp_relax_rear
-	#$Wheel3Dfr.damping_relaxation = damp_relax_rear
-	#$Wheel3Drl.damping_relaxation = damp_relax_rear
-	#$Wheel3Drr.damping_relaxation = damp_relax_rear
+	$Wheel3Dfl.damping_compression = damp_compr_front
+	$Wheel3Dfr.damping_compression = damp_compr_front
+	$Wheel3Drl.damping_compression = damp_compr_rear
+	$Wheel3Drr.damping_compression = damp_compr_rear
+	$Wheel3Dfl.damping_relaxation = damp_relax_front
+	$Wheel3Dfr.damping_relaxation = damp_relax_front
+	$Wheel3Drl.damping_relaxation = damp_relax_rear
+	$Wheel3Drr.damping_relaxation = damp_relax_rear
 	### Rest
 	#$Wheel3Dfl.wheel_rest_length = rest_front
 	#$Wheel3Dfr.wheel_rest_length = rest_front
