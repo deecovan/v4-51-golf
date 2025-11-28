@@ -1,15 +1,10 @@
 extends Node3D
 
 @export var mouse_sensitivity = 150
-@export var camera_lerp = 5
-@export var camera_rotation = -0.5
-@export var camera_zoom = 0.15
 
 func _ready():
 	#Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	$Ball.position = $Tee.position
-	$CameraGimbal/GimbalInner.rotation.x = camera_rotation
-	$CameraGimbal.zoom = camera_zoom
 	$UI.show_message("Get Ready!")
 			
 func _input(_event):
@@ -20,10 +15,6 @@ func _process(delta):
 		$UI.show_message("Restoring...")
 		$Vehicle.position.y = $Vehicle.position.y + 1
 		$Vehicle.rotation.z = 0
-		
-	$CameraGimbal.position = $CameraGimbal.position.lerp(
-		$Vehicle.position, delta * camera_lerp)
-	$CameraGimbal.rotation.y = $Vehicle.rotation.y
 			
 ## Functions
 

@@ -1,10 +1,15 @@
 # v4-51-golf GitHub repo
 
-## @CONTINUE 
+## 25.11.28 
+@TODO Compare ALL Vehicle vars with current saved working
+
+- Fixed Camera Gimble follow the Car
+  - separate lerp for each axe
+  - keyboard camera rotation
+
 - Added Engine Power curve overlay 
   - call_draw_curve(curve: Array)
 
-@TODO Compare ALL Vehicle vars with current saved working
 
 - Add complex interface
   - Game settings [in progress]

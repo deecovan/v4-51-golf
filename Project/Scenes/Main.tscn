@@ -18,8 +18,6 @@ script = ExtResource("1_r150o")
 
 [node name="WorldEnvironment" parent="." instance=ExtResource("2_jw32o")]
 
-[node name="200sqm" parent="." instance=ExtResource("3_50glp")]
-
 [node name="Course" type="GridMap" parent="."]
 mesh_library = ExtResource("2_kln2b")
 cell_size = Vector3(10, 1, 10)
@@ -36,6 +34,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.41, 0)
 shape = SubResource("CylinderShape3D_pbw6q")
 debug_color = Color(1, 0, 1, 0.419608)
 
+[node name="Vehicle" parent="." instance=ExtResource("10_bmxlf")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -4.9812, 3.80142, -3.218)
+
+[node name="CameraGimbal" parent="." instance=ExtResource("6_v1gob")]
+transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, -5, 5, -4)
+
+[node name="200sqm" parent="." instance=ExtResource("3_50glp")]
+
 [node name="UI" parent="." instance=ExtResource("4_rgh2o")]
 
 [node name="Tee" type="Marker3D" parent="."]
@@ -44,12 +50,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 5, -4)
 [node name="Ball" parent="." instance=ExtResource("3_kln2b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 5, -4)
 mass = 0.3
-
-[node name="CameraGimbal" parent="." instance=ExtResource("6_v1gob")]
-transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, -5, 5, -4)
-
-[node name="Vehicle" parent="." instance=ExtResource("10_bmxlf")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -4.9812, 3.80142, -3.218)
 
 [connection signal="body_entered" from="Hole" to="." method="_on_hole_body_entered"]
 [connection signal="stopped" from="Ball" to="." method="_on_ball_stopped"]
