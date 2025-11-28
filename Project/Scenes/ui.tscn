@@ -439,16 +439,14 @@ horizontal_alignment = 1
 
 [node name="Label" type="Label" parent="Message"]
 layout_mode = 1
-anchors_preset = 13
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -137.5
-offset_top = -16.5
-offset_right = 137.5
-offset_bottom = 160.5
+offset_left = -129.5
+offset_top = -16.0
+offset_right = 145.5
+offset_bottom = 319.0
 grow_horizontal = 2
-grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.6)
 text = "F1 -- me show again
@@ -456,7 +454,8 @@ text = "F1 -- me show again
 
 
 WASD -- drive
-Arrows -- pan camera
+Hold RMB -- pan camera
+Arrow keys -- pan camera
 MouseScroll -- zoom camera
 PageUp/PageDown  -- zoom camera
 R -- restore car

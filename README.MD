@@ -1,8 +1,8 @@
 # v4-51-golf GitHub repo
 
 ## 25.11.28 Planned
-0. Add Camera Pan with Mouse 
-1. Add Gears, physics, visuals
++ Add Camera Pan with Mouse 
+* Add Gears, physics, visuals
   - Using added engine power graph
   - Auto gearbox with auto clutch
   - Interface to change gears ratio

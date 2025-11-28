@@ -9,7 +9,9 @@ var speedtometer_label
 @export var real_car_mass = 1393.6 
 @export var grav_mod = 1.5
 ## Maximum Steering speed
-@export var SPD_STEER = 3
+@export var steer_speed = 3
+@export var pedal_speed = 1
+@export var coasting_speed = 0.01
 ## Maximum Steering angle in Radians
 @export var MAX_STEER  = 0.6
 
@@ -46,14 +48,16 @@ var speedtometer_label
 @export var max_force_rear = 20000
 
 ## MAX_POWER Used as power for gears (as PFG) 
-@export var MAX_POWER = 12000 # per each Traction wheel
+@export var MAX_POWER = 18000.0 # per each Traction wheel
+## Max Speed for this car is 360kph
+@export var MAX_SPEED = 100.0
 ## Must have 100kph in 3.5 seconds
 
 ## Array values of Used power for PFG 
 var power_curve: Array = [
 	0.06, 0.12, 0.25, 0.50, 0.70, 
 	0.85, 0.95, 1.00, 1.00, 0.95, 
-	0.85, 0.60, 0.30, 0.1, 0.01 
+	0.85, 0.60, 0.30, 0.10, 0.01, 0.00 
 ]
 
 func _ready() -> void:
@@ -123,14 +127,37 @@ func _process(delta: float) -> void:
 	steering = move_toward(
 		steering,
 		Input.get_axis("steer_right", "steer_left") * MAX_STEER,
-		delta * SPD_STEER
+		delta * steer_speed
 		)
-	engine_force = Input.get_axis("brake", "accelerate") * MAX_POWER
+	
+	## Match Vehicle speed to power_curve to get engine_force
+	var pedal_text
+	if Input.is_action_pressed("accelerate"):
+		engine_force = lerp(engine_force, MAX_POWER, pedal_speed * delta)
+		pedal_text = "Accel"
+		## Match force to power_curve
+		var speed_index = clamp( ## clamp maximal values
+			2 + linear_velocity.length() / 8, ## Velocity/8 for maximal gear 
+			2, power_curve.size() - 2)        ## Test it again
+		var match_power = power_curve[speed_index] * MAX_POWER
+		engine_force = clamp(engine_force, 0, match_power)
+		printt(int(linear_velocity.length()),speed_index, match_power)
+	elif Input.is_action_pressed("brake"):
+		engine_force = lerp(engine_force, -MAX_POWER, pedal_speed * delta)
+		pedal_text = "Brake"
+	## Else: Coasting
+	else: 
+		engine_force = 0.0
+		pedal_text = "Coast"
+	## Update UI
+	speedtometer_label.text = (
+		pedal_text + ' ' + 
+		str(int(engine_force)) + ' f, ' +
+		str(int(linear_velocity.length()*3.6)) + ' kph ' )
+	
 	## Car fell off course!
 	if position.y < 0:
 		get_parent().reload_scene("Car is out! Reloading...")
-	## Update UI
-	speedtometer_label.text = str(int(linear_velocity.length()*3.6)) + ' kph'
 	
 func randomis(v: Vector3, mult) -> Vector3:
 	return v + mult * Vector3(
