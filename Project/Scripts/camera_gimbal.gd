@@ -32,9 +32,10 @@ func _input(event):
 func _process(delta):
 	## Gimbal follow the car, but rotation is modified by player's keyboard
 	scale = Vector3.ONE * zoom
-	position.x = lerp(position.x,$"../Vehicle".position.x, delta * camera_lerpx)
-	position.y = lerp(position.y,$"../Vehicle".position.y, delta * camera_lerpy)
-	position.z = lerp(position.z,$"../Vehicle".position.z, delta * camera_lerpz)
+	position = $"../Vehicle".position
+	#position.x = lerp(position.x,$"../Vehicle".position.x, delta * camera_lerpx)
+	#position.y = lerp(position.y,$"../Vehicle".position.y, delta * camera_lerpy)
+	#position.z = lerp(position.z,$"../Vehicle".position.z, delta * camera_lerpz)
 	vehicle_rotation_x = $"../Vehicle".rotation.x
 	vehicle_rotation_y = $"../Vehicle".rotation.y
 	var x = Input.get_axis("ui_up", "ui_down")

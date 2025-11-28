@@ -2,10 +2,11 @@ extends VehicleBody3D
 
 var speedtometer_label
 
-## @REMEMBER values tested with Dodge scaled 0.8 1000kg 1.5G
-## Maximum Power per Traction wheel
 ## Car Mass as real_car_mass/grav_mod
-@export var real_car_mass = 1742 ## kg at 1G ## 3,841 lbs. Dodge Challenger
+## 1742 kg at 1G ## 3,841 lbs. Dodge Challenger
+## Scaled to 80% 1742*0.8=1393.6
+## Fix this Dodge values 100kph/2sec but max140kph WTF?
+@export var real_car_mass = 1393.6 
 @export var grav_mod = 1.5
 ## Maximum Steering speed
 @export var SPD_STEER = 3
@@ -22,9 +23,9 @@ var speedtometer_label
 
 ## Next values used for reconfiguring the Wheel3Ds values
 ## Front wheels friction slip ratio ## 0.65
-@export var fric_slip_front = 0.6
+@export var fric_slip_front = 1.4
 ## Rear wheels friction slip ratio ## 0.65
-@export var fric_slip_rear = 0.5
+@export var fric_slip_rear = 1.6
 ## Typical racing car damper ratios are 0.65-0.7 
 ## in ride where 1 is 100% critical damping
 ## Front wheels damper compression ## 0.8
@@ -32,20 +33,20 @@ var speedtometer_label
 ## Front wheels damper relaxation ## 0.88
 @export var damp_relax_front = 0.88
 ## Rear ## 0.7 0.77
-@export var damp_compr_rear = 0.7
-@export var damp_relax_rear = 0.77
+@export var damp_compr_rear = 0.6
+@export var damp_relax_rear = 0.66
 ## Rest, Travel, Stiff, MaxV
 @export var rest_front = 0.05
-@export var rest_rear = 0.06
+@export var rest_rear = 0.04
 @export var travel_front = 0.08
-@export var travel_rear = 0.1
+@export var travel_rear = 0.06
 @export var stiff_front = 160
 @export var stiff_rear = 140
-@export var max_force_front = 12000
-@export var max_force_rear = 14000
+@export var max_force_front = 30000
+@export var max_force_rear = 15000
 
 ## MAX_POWER Used as power for gears (as PFG) 
-@export var MAX_POWER = 7500 # per each Traction wheel
+@export var MAX_POWER = 12000 # per each Traction wheel
 ## Must have 100kph in 3.5 seconds
 
 ## Array values of Used power for PFG 

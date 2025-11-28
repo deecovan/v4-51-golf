@@ -209,7 +209,7 @@ transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, -1)
 shape = SubResource("ConvexPolygonShape3D_6k0ix")
 
 [node name="CenterOfMass" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.27734e-08, 0.296197, -0.489269)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3116e-08, 0.296197, -0.264415)
 
 [node name="Wheel3Dfl" parent="." instance=ExtResource("1_c180c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 0.1, 0.6)
