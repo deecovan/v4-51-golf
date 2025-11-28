@@ -1,7 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://cdhtpcx2m0k6p"]
+[gd_scene load_steps=7 format=3 uid="uid://cdhtpcx2m0k6p"]
 
 [ext_resource type="PhysicsMaterial" uid="uid://d0owwbf1xc8d8" path="res://Scenes/Brown_material_physics.tres" id="1_63jhf"]
 [ext_resource type="BoxMesh" uid="uid://dlo746sokmrvn" path="res://Materials/Brown_mesh.tres" id="2_kk5n2"]
+[ext_resource type="Texture2D" uid="uid://38gs6rf3d6kb" path="res://Images/asphalt.png" id="3_kk5n2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kk5n2"]
+albedo_texture = ExtResource("3_kk5n2")
+uv1_scale = Vector3(10, 10, 10)
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_6lh4y"]
+material = SubResource("StandardMaterial3D_kk5n2")
+size = Vector3(1000, 0.19, 500)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_63jhf"]
 size = Vector3(1000, 0.19, 1000)
@@ -12,8 +22,14 @@ collision_mask = 255
 physics_material_override = ExtResource("1_63jhf")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 250)
 mesh = ExtResource("2_kk5n2")
 
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -250)
+mesh = SubResource("BoxMesh_6lh4y")
+
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+visible = false
 shape = SubResource("BoxShape3D_63jhf")
 debug_color = Color(0, 1, 0.278431, 0.533333)

@@ -2,11 +2,7 @@
 
 ## 25.11.28 Planned
 
-+ Add Camera Pan with Mouse 
-
-+ Tested fixed values:
-  - match_power=power_curve, 
-  - Rest, Travel, Stiff, MaxV
+* Testing Physics Boxes
 
 1. Add Gears, physics, visuals
   - Using added engine power graph
@@ -19,6 +15,10 @@
   - Game settings 
 
 ### Finished
+- Tested fixed values:
+  - match_power=power_curve, 
+  - Rest, Travel, Stiff, MaxV
+- Add Camera Pan with Mouse 
 - Updated, Upgraded, Exported
 - Tested Setup Vehicle3D and its PhysicsMaterial values
 - Tested Setup Wheel3Ds values

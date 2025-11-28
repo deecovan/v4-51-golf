@@ -1,0 +1,7 @@
+[gd_resource type="BoxMesh" load_steps=2 format=3 uid="uid://ci50nnksox62m"]
+
+[ext_resource type="Material" uid="uid://caldmuoeteasm" path="res://Scenes/Asphalt_material.tres" id="1_4mo5g"]
+
+[resource]
+material = ExtResource("1_4mo5g")
+size = Vector3(10, 0.19, 10)

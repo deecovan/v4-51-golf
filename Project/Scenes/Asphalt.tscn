@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=3 uid="uid://chslqxxtesmdt"]
+
+[ext_resource type="BoxMesh" uid="uid://ci50nnksox62m" path="res://Scenes/Asphalt_mesh.tres" id="1_gr6gc"]
+[ext_resource type="PhysicsMaterial" uid="uid://delcgvgaet1be" path="res://Scenes/Asphalt_physics_material.tres" id="2_v6x6o"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ihmxn"]
+data = PackedVector3Array(-5, 0.095, 5, 5, 0.095, 5, -5, -0.095, 5, 5, 0.095, 5, 5, -0.095, 5, -5, -0.095, 5, 5, 0.095, -5, -5, 0.095, -5, 5, -0.095, -5, -5, 0.095, -5, -5, -0.095, -5, 5, -0.095, -5, 5, 0.095, 5, 5, 0.095, -5, 5, -0.095, 5, 5, 0.095, -5, 5, -0.095, -5, 5, -0.095, 5, -5, 0.095, -5, -5, 0.095, 5, -5, -0.095, -5, -5, 0.095, 5, -5, -0.095, 5, -5, -0.095, -5, 5, 0.095, 5, -5, 0.095, 5, 5, 0.095, -5, -5, 0.095, 5, -5, 0.095, -5, 5, 0.095, -5, -5, -0.095, 5, 5, -0.095, 5, -5, -0.095, -5, 5, -0.095, 5, 5, -0.095, -5, -5, -0.095, -5)
+
+[node name="Asphalt" type="MeshInstance3D"]
+
+[node name="Square" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_gr6gc")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Square"]
+physics_material_override = ExtResource("2_v6x6o")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Square/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_ihmxn")
+
+[node name="Square2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0)
+mesh = ExtResource("1_gr6gc")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Square2"]
+physics_material_override = ExtResource("2_v6x6o")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Square2/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_ihmxn")
+
+[node name="Square3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 10)
+mesh = ExtResource("1_gr6gc")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Square3"]
+physics_material_override = ExtResource("2_v6x6o")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Square3/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_ihmxn")
+
+[node name="Square4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
+mesh = ExtResource("1_gr6gc")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Square4"]
+physics_material_override = ExtResource("2_v6x6o")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Square4/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_ihmxn")
