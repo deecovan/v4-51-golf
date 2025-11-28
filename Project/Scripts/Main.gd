@@ -15,6 +15,8 @@ func _process(_delta):
 		$UI.show_message("Restoring...")
 		$Vehicle.position.y = $Vehicle.position.y + 1
 		$Vehicle.rotation.z = 0
+	if Input.is_action_just_pressed('help'):
+		$UI.show_message_again()
 
 ## @SIGNAL Ball.stopped.emit()
 func _on_ball_stopped() -> void:

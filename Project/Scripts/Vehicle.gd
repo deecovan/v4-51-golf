@@ -16,7 +16,7 @@ var speedtometer_label
 ## Next values used for reconfiguring the Vehicle3Ds values
 @export var car_linear_damp = 0.5
 @export var car_angular_damp = 0.5
-@export var car_friction = 0.01
+@export var car_friction = 0.0
 @export var car_rough = false
 @export var car_bounce = 0.5
 @export var car_absorb = false
@@ -37,13 +37,13 @@ var speedtometer_label
 @export var damp_relax_rear = 0.66
 ## Rest, Travel, Stiff, MaxV
 @export var rest_front = 0.05
-@export var rest_rear = 0.04
+@export var rest_rear = 0.06
 @export var travel_front = 0.08
-@export var travel_rear = 0.06
-@export var stiff_front = 160
+@export var travel_rear = 0.09
+@export var stiff_front = 120
 @export var stiff_rear = 140
 @export var max_force_front = 30000
-@export var max_force_rear = 15000
+@export var max_force_rear = 20000
 
 ## MAX_POWER Used as power for gears (as PFG) 
 @export var MAX_POWER = 12000 # per each Traction wheel
@@ -51,9 +51,9 @@ var speedtometer_label
 
 ## Array values of Used power for PFG 
 var power_curve: Array = [
-	0.03, 0.06, 0.12, 0.25, 0.50, 
-	0.70, 0.85, 0.95, 1.00, 0.95, 
-	0.85, 0.55, 0.20, 0.05, 0.01 
+	0.06, 0.12, 0.25, 0.50, 0.70, 
+	0.85, 0.95, 1.00, 1.00, 0.95, 
+	0.85, 0.60, 0.30, 0.1, 0.01 
 ]
 
 func _ready() -> void:

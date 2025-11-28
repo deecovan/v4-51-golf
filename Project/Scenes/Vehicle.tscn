@@ -197,7 +197,6 @@ continuous_cd = true
 linear_damp = 0.5
 angular_damp = 0.5
 script = ExtResource("1_krx02")
-car_friction = 0.0
 
 [node name="Dodge" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, -1)

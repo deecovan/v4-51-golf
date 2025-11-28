@@ -10,3 +10,8 @@ func show_message(text):
 	$Message.show()
 	await get_tree().create_timer(2).timeout
 	$Message.hide()
+	
+func show_message_again():
+	$Message.show()
+	await get_tree().create_timer(5).timeout
+	$Message.hide()
