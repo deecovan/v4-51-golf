@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 func call_draw_curve(curve: Array):
-	var draw_node = $MarginContainer/VBoxContainer/Draw
+	var draw_node = $MarginContainer/VBoxContainer/PFG
 	draw_node.curve_array = curve
 	draw_node.queue_redraw()
 

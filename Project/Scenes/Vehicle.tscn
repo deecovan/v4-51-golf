@@ -197,6 +197,7 @@ continuous_cd = true
 linear_damp = 0.5
 angular_damp = 0.5
 script = ExtResource("1_krx02")
+car_friction = 0.0
 
 [node name="Dodge" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, -1)
@@ -213,6 +214,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.27734e-08, 0.296197, -0.48
 [node name="Wheel3Dfl" parent="." instance=ExtResource("1_c180c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 0.1, 0.6)
 use_as_steering = true
+wheel_roll_influence = 0.1
+wheel_radius = 0.5
+wheel_rest_length = 0.15
+wheel_friction_slip = 10.5
 suspension_travel = 0.08
 suspension_stiffness = 160.0
 suspension_max_force = 12000.0
@@ -220,6 +225,10 @@ suspension_max_force = 12000.0
 [node name="Wheel3Dfr" parent="." instance=ExtResource("1_c180c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 0.1, 0.6)
 use_as_steering = true
+wheel_roll_influence = 0.1
+wheel_radius = 0.5
+wheel_rest_length = 0.15
+wheel_friction_slip = 10.5
 suspension_travel = 0.08
 suspension_stiffness = 160.0
 suspension_max_force = 12000.0
@@ -227,15 +236,23 @@ suspension_max_force = 12000.0
 [node name="Wheel3Drl" parent="." instance=ExtResource("1_c180c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 0.1, -2.3)
 use_as_traction = true
-wheel_rest_length = 0.06
+wheel_roll_influence = 0.1
+wheel_radius = 0.5
+wheel_rest_length = 0.15
+wheel_friction_slip = 10.5
 suspension_stiffness = 140.0
+suspension_max_force = 14000.0
 damping_compression = 0.7
 damping_relaxation = 0.77
 
 [node name="Wheel3Drr" parent="." instance=ExtResource("1_c180c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 0.1, -2.3)
 use_as_traction = true
-wheel_rest_length = 0.06
+wheel_roll_influence = 0.1
+wheel_radius = 0.5
+wheel_rest_length = 0.15
+wheel_friction_slip = 10.5
 suspension_stiffness = 140.0
+suspension_max_force = 14000.0
 damping_compression = 0.7
 damping_relaxation = 0.77
