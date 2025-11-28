@@ -5,7 +5,7 @@ var speedtometer_label
 ## Car Mass as real_car_mass/grav_mod
 ## 1742 kg at 1G ## 3,841 lbs. Dodge Challenger
 ## Scaled to 80% 1742*0.8=1393.6
-## Fix this Dodge values 100kph/2sec but max140kph WTF?
+## Fix this Dodge values 100kph/2sec but max150kph WTF?
 @export var real_car_mass = 1393.6 
 @export var grav_mod = 1.5
 ## Maximum Steering speed
