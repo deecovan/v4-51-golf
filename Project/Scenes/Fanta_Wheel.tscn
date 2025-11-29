@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://c4nshb085yca4"]
+
+[ext_resource type="PackedScene" uid="uid://d26i8yn2uw3nf" path="res://Import/car_wheel.fbx" id="1_8sec2"]
+
+[node name="Wheel3D" type="VehicleWheel3D"]
+wheel_roll_influence = 0.01
+wheel_radius = 0.4
+suspension_travel = 0.1
+suspension_stiffness = 100.0
+suspension_max_force = 10000.0
+damping_compression = 0.8
+
+[node name="car_wheel" parent="." instance=ExtResource("1_8sec2")]
+transform = Transform3D(0.5, 0, 0, 0, -0.5, -7.54979e-08, 0, 7.54979e-08, -0.5, 0, 0, 0)

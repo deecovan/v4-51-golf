@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://bjwpijsychgvi"]
+
+[ext_resource type="Texture2D" uid="uid://cjaeda1v1q3i5" path="res://Assets/wheel_texture.png" id="1_ib45v"]
+[ext_resource type="Texture2D" uid="uid://ct0bl0lvrk5ot" path="res://Assets/wheel_normal_map.png" id="2_3ok0q"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c180c"]
+albedo_texture = ExtResource("1_ib45v")
+metallic_specular = 0.15
+metallic_texture_channel = 4
+roughness = 0.3
+roughness_texture = ExtResource("2_3ok0q")
+roughness_texture_channel = 4
+emission_texture = ExtResource("2_3ok0q")
+normal_enabled = true
+normal_texture = ExtResource("2_3ok0q")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_krx02"]
+material = SubResource("StandardMaterial3D_c180c")
+top_radius = 0.375
+bottom_radius = 0.375
+height = 0.3
+radial_segments = 32
+rings = 1
+
+[node name="Wheel3D" type="VehicleWheel3D"]
+wheel_roll_influence = 0.01
+wheel_radius = 0.4
+wheel_rest_length = 0.05
+wheel_friction_slip = 0.65
+suspension_travel = 0.1
+suspension_stiffness = 100.0
+suspension_max_force = 10000.0
+damping_compression = 0.8
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("CylinderMesh_krx02")

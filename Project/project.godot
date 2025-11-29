@@ -16,7 +16,7 @@ general/updates_per_second=30
 
 config/name="Golf"
 config/version="4.41"
-run/main_scene="res://Scenes/Main.tscn"
+run/main_scene="uid://cb02p0fygii8s"
 run/print_header=false
 config/features=PackedStringArray("4.4", "Forward Plus")
 run/max_fps=30

@@ -1,5 +1,14 @@
 # v4-51-golf GitHub repo
 
+## 25.11.289 Fanta Supercar
+- Added Fanta blender model
+  - Wheels
+  - Car body
+  - @BUG with collision!!!
+- New physics for Fanta
+- Tested max speed 320KPH
+  - used MAX_SPEED 140ms(500KPH)
+
 ## @TODO
 1. Add Gears, physics, visuals
   - Using added engine power graph

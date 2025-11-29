@@ -5,9 +5,9 @@ var speedtometer_label
 ## Car Mass as real_car_mass/grav_mod
 ## 1250 kg at 1G
 ## Scaled to 80% 1250*0.8=1000
-@export var real_car_mass = 1000 
+@export var real_car_mass = 1100 
 @export var grav_mod = 1.5
-## Maximum Steering speed
+## Maximum Steering speedss
 @export var steer_speed = 3
 @export var pedal_speed = 1
 @export var coasting_speed = 0.01
@@ -24,9 +24,9 @@ var speedtometer_label
 
 ## Next values used for reconfiguring the Wheel3Ds values
 ## Front wheels friction slip ratio ## 0.65
-@export var fric_slip_front = 1.4
+@export var fric_slip_front = 2.2
 ## Rear wheels friction slip ratio ## 0.65
-@export var fric_slip_rear = 1.6
+@export var fric_slip_rear = 2.0
 ## Typical racing car damper ratios are 0.65-0.7 
 ## in ride where 1 is 100% critical damping
 ## Front wheels damper compression ## 0.8
@@ -34,22 +34,22 @@ var speedtometer_label
 ## Front wheels damper relaxation ## 0.88
 @export var damp_relax_front = 0.6
 ## Rear ## 0.7 0.77
-@export var damp_compr_rear = 0.3
-@export var damp_relax_rear = 0.4
+@export var damp_compr_rear = 0.4
+@export var damp_relax_rear = 0.5
 ## Rest, Travel, Stiff, MaxV
 @export var rest_front = 0.075
 @export var rest_rear = 0.08
-@export var travel_front = 0.085
-@export var travel_rear = 0.09
-@export var stiff_front = 160
-@export var stiff_rear = 120
-@export var max_force_front = 40000
-@export var max_force_rear = 30000
+@export var travel_front = 0.1
+@export var travel_rear = 0.1
+@export var stiff_front = 120
+@export var stiff_rear = 110
+@export var max_force_front = 20000
+@export var max_force_rear = 20000
 
 ## MAX_POWER Used as power for gears (as PFG) 
 @export var MAX_POWER = 20000.0 # per each Traction wheel
-## SuperSpeed for this car is 100ms(400kph) 
-@export var MAX_SPEED = 100.0
+## SuperSpeed for this car is 140ms(500KPH) 
+@export var MAX_SPEED = 140.0
 ## Must have 28ms(100kph) in 3.5 seconds
 
 ## Array values of Used power for PFG 
