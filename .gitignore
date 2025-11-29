@@ -72,3 +72,5 @@ Thumbs.db
 *.mov
 *.wmv
 
+# Blender backups
+*.blend1
