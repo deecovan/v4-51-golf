@@ -1,8 +1,9 @@
 [gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://d2t3sfe6er582"]
 
-[ext_resource type="Texture2D" uid="uid://b33ysulnw2h1i" path="res://Scenes/Asphalt_compressed_texture_2d.tres" id="1_dffrd"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_nfsar"]
+load_path = "res://.godot/imported/asphalt.png-de1d23f2d5304e14c8b44aeb7f7670d6.bptc.ctex"
 
 [resource]
 albedo_color = Color(0.74978, 0.74978, 0.74978, 1)
-albedo_texture = ExtResource("1_dffrd")
+albedo_texture = SubResource("CompressedTexture2D_nfsar")
 uv1_scale = Vector3(2, 2, 2)
