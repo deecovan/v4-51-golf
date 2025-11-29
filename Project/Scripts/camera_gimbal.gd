@@ -3,7 +3,7 @@ extends Node3D
 ## Keyboard controlled Rotation and Zoom
 @export var camera_zoom = 0.2
 @export var zoom_speed = 0.05
-@export var camera_rotation = -0.6
+@export var camera_rotation = -0.5
 @export var camera_speed = PI / 2
 ## Mouse controlled Rotation sensivity and direction
 @export var mouse_sensivity = 5000
@@ -15,9 +15,9 @@ var vehicle_rotation_x: float
 var vehicle_rotation_y: float
 
 ## Camera Follow lerp speed
-@export var camera_lerpx = 3
-@export var camera_lerpy = 3
-@export var camera_lerpz = 3
+@export var camera_lerpx = 8
+@export var camera_lerpz = 8
+@export var camera_lerpy = 4
 
 var zoom: float
 

@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://djhjrcq01vwan"]
+
+[ext_resource type="PhysicsMaterial" uid="uid://cqhjhdih0x35w" path="res://Scenes/Brown_physics.tres" id="1_dtygt"]
+[ext_resource type="BoxMesh" uid="uid://b0dsjp7cismob" path="res://Scenes/Bitum_mesh.tres" id="2_dtygt"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cr4m1"]
+size = Vector3(16, 0.19, 16)
+
+[node name="Bitum" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+physics_material_override = ExtResource("1_dtygt")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_cr4m1")
+
+[node name="Square" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -4)
+mesh = ExtResource("2_dtygt")
+skeleton = NodePath("../..")
+
+[node name="Square2" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -4)
+mesh = ExtResource("2_dtygt")
+skeleton = NodePath("../..")
+
+[node name="Square3" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4)
+mesh = ExtResource("2_dtygt")
+skeleton = NodePath("../..")
+
+[node name="Square4" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 4)
+mesh = ExtResource("2_dtygt")
+skeleton = NodePath("../..")

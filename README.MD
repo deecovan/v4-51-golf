@@ -1,9 +1,6 @@
 # v4-51-golf GitHub repo
 
-## 25.11.28 Planned
-
-* Testing Physics Boxes
-
+## @TODO
 1. Add Gears, physics, visuals
   - Using added engine power graph
   - Auto gearbox with auto clutch
@@ -13,6 +10,12 @@
   - Car settings using Vehicle2D vars in the script
   - Ball settings
   - Game settings 
+
+## 25.11.29 Need to chill a day
+- Tested Physics Boxes
+  - Physics NOT WORK between StaticBody3D and VehicleBody3D
+- Fixed Textures, Shadows, AA, Import
+  - Reimport crashed and killed textures
 
 ### Finished
 - Tested fixed values:

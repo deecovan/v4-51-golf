@@ -1,0 +1,8 @@
+[gd_resource type="BoxMesh" load_steps=2 format=3 uid="uid://bdiivb33jc1us"]
+
+[ext_resource type="Material" uid="uid://dnsoc0llbwvt7" path="res://Scenes/RoadI_material.tres" id="1_12rr8"]
+
+[resource]
+lightmap_size_hint = Vector2i(84, 47)
+material = ExtResource("1_12rr8")
+size = Vector3(8, 0.19, 8)

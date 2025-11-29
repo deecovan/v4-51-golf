@@ -1,8 +1,10 @@
 [gd_scene load_steps=13 format=4 uid="uid://bt677ol3pn1iu"]
 
-[ext_resource type="PhysicsMaterial" uid="uid://dwws8lng50cpk" path="res://Materials/Vehicle_physics.tres" id="1_6k0ix"]
 [ext_resource type="PackedScene" uid="uid://dnlal1v72dih1" path="res://Scenes/Wheel.tscn" id="1_c180c"]
 [ext_resource type="Script" uid="uid://bncc623e3stif" path="res://Scripts/Vehicle.gd" id="1_krx02"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_krx02"]
+friction = 0.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_neqff"]
 resource_name = "Roof_Black"
@@ -189,13 +191,9 @@ points = PackedVector3Array(1.2792, 0.43165, 1.66589, 1.27494, 0.285238, 1.55607
 
 [node name="Vehicle" type="VehicleBody3D"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
-mass = 670.0
-physics_material_override = ExtResource("1_6k0ix")
-gravity_scale = 1.5
+physics_material_override = SubResource("PhysicsMaterial_krx02")
 center_of_mass_mode = 1
 continuous_cd = true
-linear_damp = 0.5
-angular_damp = 0.5
 script = ExtResource("1_krx02")
 
 [node name="Dodge" type="MeshInstance3D" parent="."]
@@ -208,50 +206,50 @@ transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, -1)
 shape = SubResource("ConvexPolygonShape3D_6k0ix")
 
 [node name="CenterOfMass" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.66238e-10, 0.296197, 0.00762203)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
 
 [node name="Wheel3Dfl" parent="." instance=ExtResource("1_c180c")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 0.1, 0.6)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 0.05, 0.579927)
 use_as_steering = true
 wheel_roll_influence = 0.1
-wheel_radius = 0.5
 wheel_rest_length = 0.15
-wheel_friction_slip = 10.5
-suspension_travel = 0.08
-suspension_stiffness = 160.0
-suspension_max_force = 12000.0
+wheel_friction_slip = 1.5
+suspension_travel = 0.2
+suspension_stiffness = 5.88
+suspension_max_force = 6000.0
+damping_compression = 0.83
 
 [node name="Wheel3Dfr" parent="." instance=ExtResource("1_c180c")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 0.1, 0.6)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 0.05, 0.579927)
 use_as_steering = true
 wheel_roll_influence = 0.1
-wheel_radius = 0.5
 wheel_rest_length = 0.15
-wheel_friction_slip = 10.5
-suspension_travel = 0.08
-suspension_stiffness = 160.0
-suspension_max_force = 12000.0
+wheel_friction_slip = 1.5
+suspension_travel = 0.2
+suspension_stiffness = 5.88
+suspension_max_force = 6000.0
+damping_compression = 0.83
 
 [node name="Wheel3Drl" parent="." instance=ExtResource("1_c180c")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 0.1, -2.3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 0.055, -2.34684)
 use_as_traction = true
 wheel_roll_influence = 0.1
-wheel_radius = 0.5
 wheel_rest_length = 0.15
-wheel_friction_slip = 10.5
-suspension_stiffness = 140.0
-suspension_max_force = 14000.0
-damping_compression = 0.7
+wheel_friction_slip = 1.5
+suspension_travel = 0.2
+suspension_stiffness = 5.88
+suspension_max_force = 6000.0
+damping_compression = 0.83
 damping_relaxation = 0.77
 
 [node name="Wheel3Drr" parent="." instance=ExtResource("1_c180c")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 0.1, -2.3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 0.055, -2.34684)
 use_as_traction = true
 wheel_roll_influence = 0.1
-wheel_radius = 0.5
 wheel_rest_length = 0.15
-wheel_friction_slip = 10.5
-suspension_stiffness = 140.0
-suspension_max_force = 14000.0
-damping_compression = 0.7
+wheel_friction_slip = 1.5
+suspension_travel = 0.2
+suspension_stiffness = 5.88
+suspension_max_force = 6000.0
+damping_compression = 0.83
 damping_relaxation = 0.77

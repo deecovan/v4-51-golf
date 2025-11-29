@@ -1,0 +1,8 @@
+[gd_resource type="BoxMesh" load_steps=2 format=3 uid="uid://b0dsjp7cismob"]
+
+[ext_resource type="Material" uid="uid://d3ajard5hkhny" path="res://Scenes/Bitum_material_3d.tres" id="1_y5fh5"]
+
+[resource]
+lightmap_size_hint = Vector2i(84, 47)
+material = ExtResource("1_y5fh5")
+size = Vector3(8, 0.19, 8)

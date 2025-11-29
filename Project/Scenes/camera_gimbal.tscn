@@ -11,17 +11,21 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 
 
 [node name="OmniLight3D" type="OmniLight3D" parent="GimbalInner"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 16.7616, 53.7779, 9.3228)
+light_color = Color(1, 1, 0.85098, 1)
 light_energy = 6.0
 light_indirect_energy = 8.0
 light_volumetric_fog_energy = 12.0
 light_specular = 1.0
+shadow_enabled = true
 shadow_bias = 0.5
 shadow_opacity = 0.5
 shadow_blur = 4.0
 distance_fade_enabled = true
 distance_fade_begin = 10.0
 distance_fade_length = 40.0
-omni_range = 80.0
+omni_range = 100.0
+omni_shadow_mode = 0
 
 [node name="Camera3D" type="Camera3D" parent="GimbalInner"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 40.7819)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 40)
+fov = 65.0

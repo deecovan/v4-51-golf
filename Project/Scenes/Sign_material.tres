@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bqg0e3h3p4r25"]
+
+[resource]
+albedo_color = Color(1, 1, 0.25098, 1)
+metallic = 0.5
+roughness = 0.5
+roughness_texture_channel = 4
+rim_enabled = true
+uv1_scale = Vector3(3, 3, 3)
+uv1_triplanar = true

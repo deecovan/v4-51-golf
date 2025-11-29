@@ -1,0 +1,1546 @@
+[gd_scene load_steps=7 format=3 uid="uid://btws7edbjvv2w"]
+
+[ext_resource type="PackedScene" uid="uid://bqv87j216dsug" path="res://Scenes/Brown.tscn" id="1_0anrj"]
+[ext_resource type="PackedScene" uid="uid://chslqxxtesmdt" path="res://Scenes/Asphalt.tscn" id="2_4pinq"]
+[ext_resource type="PackedScene" uid="uid://dyfi7qijn161q" path="res://Scenes/RoadI.tscn" id="3_6b742"]
+[ext_resource type="PackedScene" uid="uid://cu6l1dgjtpjbo" path="res://Scenes/RoadIB.tscn" id="4_50k2u"]
+[ext_resource type="PackedScene" uid="uid://djhjrcq01vwan" path="res://Scenes/Bitum.tscn" id="5_nht15"]
+[ext_resource type="PackedScene" uid="uid://b53stiy4efih3" path="res://Scenes/BiitumI.tscn" id="6_7wqx2"]
+
+[node name="Squares" type="MeshInstance3D"]
+
+[node name="Brown" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0, 0)
+
+[node name="Brown2" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29, 0, 0)
+
+[node name="Brown3" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45, 0, 0)
+
+[node name="Brown4" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61, 0, 0)
+
+[node name="Brown5" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0, 16)
+
+[node name="Brown6" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29, 0, 16)
+
+[node name="Brown7" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45, 0, 16)
+
+[node name="Brown8" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61, 0, 16)
+
+[node name="Brown9" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0, 32)
+
+[node name="Brown10" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29, 0, 32)
+
+[node name="Brown11" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45, 0, 32)
+
+[node name="Brown12" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61, 0, 32)
+
+[node name="Brown13" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0, 48)
+
+[node name="Brown14" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29, 0, 48)
+
+[node name="Brown15" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45, 0, 48)
+
+[node name="Brown16" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61, 0, 48)
+
+[node name="Asphalt" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+
+[node name="Asphalt2" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, 0)
+
+[node name="Asphalt4" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 16)
+
+[node name="Asphalt5" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, 16)
+
+[node name="Asphalt3" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, 0)
+
+[node name="Asphalt6" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51, 0, 0)
+
+[node name="Asphalt7" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, 16)
+
+[node name="Asphalt8" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51, 0, 16)
+
+[node name="Asphalt9" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, 32)
+
+[node name="Asphalt10" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51, 0, 32)
+
+[node name="Asphalt11" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, 48)
+
+[node name="Asphalt12" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51, 0, 48)
+
+[node name="Asphalt13" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 32)
+
+[node name="Asphalt14" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, 32)
+
+[node name="Asphalt15" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 48)
+
+[node name="Asphalt16" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, 48)
+
+[node name="RoadI" parent="." instance=ExtResource("3_6b742")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 64)
+
+[node name="RoadI2" parent="." instance=ExtResource("3_6b742")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, 64)
+
+[node name="RoadI3" parent="." instance=ExtResource("3_6b742")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, 64)
+
+[node name="RoadI4" parent="." instance=ExtResource("3_6b742")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51, 0, 64)
+
+[node name="RoadIB" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 80)
+
+[node name="RoadIB2" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, 80)
+
+[node name="RoadIB3" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, 80)
+
+[node name="RoadIB4" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51, 0, 80)
+
+[node name="RoadIB5" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 96)
+
+[node name="RoadIB6" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, 96)
+
+[node name="RoadIB7" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, 96)
+
+[node name="RoadIB8" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51, 0, 96)
+
+[node name="RoadIB9" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 112)
+
+[node name="RoadIB10" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, 112)
+
+[node name="RoadIB11" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, 112)
+
+[node name="RoadIB12" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51, 0, 112)
+
+[node name="Asphalt17" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 67, 0, 0)
+
+[node name="Asphalt18" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 83, 0, 0)
+
+[node name="Asphalt19" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 67, 0, 16)
+
+[node name="Asphalt20" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 83, 0, 16)
+
+[node name="Asphalt21" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 99, 0, 0)
+
+[node name="Asphalt22" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 115, 0, 0)
+
+[node name="Asphalt23" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 99, 0, 16)
+
+[node name="Asphalt24" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 115, 0, 16)
+
+[node name="Asphalt25" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 99, 0, 32)
+
+[node name="Asphalt26" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 115, 0, 32)
+
+[node name="Asphalt27" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 99, 0, 48)
+
+[node name="Asphalt28" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 115, 0, 48)
+
+[node name="Asphalt29" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 67, 0, 32)
+
+[node name="Asphalt30" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 83, 0, 32)
+
+[node name="Asphalt31" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 67, 0, 48)
+
+[node name="Asphalt32" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 83, 0, 48)
+
+[node name="RoadI5" parent="." instance=ExtResource("3_6b742")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 67, 0, 64)
+
+[node name="RoadI6" parent="." instance=ExtResource("3_6b742")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 83, 0, 64)
+
+[node name="RoadI7" parent="." instance=ExtResource("3_6b742")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 99, 0, 64)
+
+[node name="RoadI8" parent="." instance=ExtResource("3_6b742")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 115, 0, 64)
+
+[node name="RoadIB13" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 67, 0, 80)
+
+[node name="RoadIB14" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 83, 0, 80)
+
+[node name="RoadIB15" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 99, 0, 80)
+
+[node name="RoadIB16" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 115, 0, 80)
+
+[node name="RoadIB17" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 67, 0, 96)
+
+[node name="RoadIB18" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 83, 0, 96)
+
+[node name="RoadIB19" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 99, 0, 96)
+
+[node name="RoadIB20" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 115, 0, 96)
+
+[node name="RoadIB21" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 67, 0, 112)
+
+[node name="RoadIB22" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 83, 0, 112)
+
+[node name="RoadIB23" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 99, 0, 112)
+
+[node name="RoadIB24" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 115, 0, 112)
+
+[node name="Asphalt33" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 131, 0, 0)
+
+[node name="Asphalt34" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 147, 0, 0)
+
+[node name="Asphalt35" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 131, 0, 16)
+
+[node name="Asphalt36" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 147, 0, 16)
+
+[node name="Asphalt37" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 163, 0, 0)
+
+[node name="Asphalt38" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 179, 0, 0)
+
+[node name="Asphalt39" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 163, 0, 16)
+
+[node name="Asphalt40" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 179, 0, 16)
+
+[node name="Asphalt41" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 163, 0, 32)
+
+[node name="Asphalt42" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 179, 0, 32)
+
+[node name="Asphalt43" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 163, 0, 48)
+
+[node name="Asphalt44" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 179, 0, 48)
+
+[node name="Asphalt45" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 131, 0, 32)
+
+[node name="Asphalt46" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 147, 0, 32)
+
+[node name="Asphalt47" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 131, 0, 48)
+
+[node name="Asphalt48" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 147, 0, 48)
+
+[node name="RoadI9" parent="." instance=ExtResource("3_6b742")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 131, 0, 64)
+
+[node name="RoadI10" parent="." instance=ExtResource("3_6b742")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 147, 0, 64)
+
+[node name="RoadI11" parent="." instance=ExtResource("3_6b742")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 163, 0, 64)
+
+[node name="RoadI12" parent="." instance=ExtResource("3_6b742")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 179, 0, 64)
+
+[node name="RoadIB25" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 131, 0, 80)
+
+[node name="RoadIB26" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 147, 0, 80)
+
+[node name="RoadIB27" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 163, 0, 80)
+
+[node name="RoadIB28" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 179, 0, 80)
+
+[node name="RoadIB29" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 131, 0, 96)
+
+[node name="RoadIB30" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 147, 0, 96)
+
+[node name="RoadIB31" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 163, 0, 96)
+
+[node name="RoadIB32" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 179, 0, 96)
+
+[node name="RoadIB33" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 131, 0, 112)
+
+[node name="RoadIB34" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 147, 0, 112)
+
+[node name="RoadIB35" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 163, 0, 112)
+
+[node name="RoadIB36" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 179, 0, 112)
+
+[node name="Asphalt49" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 195, 0, 0)
+
+[node name="Asphalt50" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 211, 0, 0)
+
+[node name="Asphalt51" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 195, 0, 16)
+
+[node name="Asphalt52" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 211, 0, 16)
+
+[node name="Asphalt53" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 227, 0, 0)
+
+[node name="Asphalt54" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 243, 0, 0)
+
+[node name="Asphalt55" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 227, 0, 16)
+
+[node name="Asphalt56" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 243, 0, 16)
+
+[node name="Asphalt57" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 227, 0, 32)
+
+[node name="Asphalt58" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 243, 0, 32)
+
+[node name="Asphalt59" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 227, 0, 48)
+
+[node name="Asphalt60" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 243, 0, 48)
+
+[node name="Asphalt61" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 195, 0, 32)
+
+[node name="Asphalt62" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 211, 0, 32)
+
+[node name="Asphalt63" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 195, 0, 48)
+
+[node name="Asphalt64" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 211, 0, 48)
+
+[node name="RoadI13" parent="." instance=ExtResource("3_6b742")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 195, 0, 64)
+
+[node name="RoadI14" parent="." instance=ExtResource("3_6b742")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 211, 0, 64)
+
+[node name="RoadI15" parent="." instance=ExtResource("3_6b742")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 227, 0, 64)
+
+[node name="RoadI16" parent="." instance=ExtResource("3_6b742")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 243, 0, 64)
+
+[node name="RoadIB37" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 195, 0, 80)
+
+[node name="RoadIB38" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 211, 0, 80)
+
+[node name="RoadIB39" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 227, 0, 80)
+
+[node name="RoadIB40" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 243, 0, 80)
+
+[node name="RoadIB41" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 195, 0, 96)
+
+[node name="RoadIB42" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 211, 0, 96)
+
+[node name="RoadIB43" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 227, 0, 96)
+
+[node name="RoadIB44" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 243, 0, 96)
+
+[node name="RoadIB45" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 195, 0, 112)
+
+[node name="RoadIB46" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 211, 0, 112)
+
+[node name="RoadIB47" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 227, 0, 112)
+
+[node name="Asphalt65" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 259, 0, 0)
+
+[node name="Asphalt66" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 275, 0, 0)
+
+[node name="Asphalt67" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 259, 0, 16)
+
+[node name="Asphalt68" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 275, 0, 16)
+
+[node name="Asphalt69" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 291, 0, 0)
+
+[node name="Asphalt70" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 307, 0, 0)
+
+[node name="Asphalt71" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 291, 0, 16)
+
+[node name="Asphalt72" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 307, 0, 16)
+
+[node name="Asphalt73" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 291, 0, 32)
+
+[node name="Asphalt74" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 307, 0, 32)
+
+[node name="Asphalt75" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 291, 0, 48)
+
+[node name="Asphalt76" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 307, 0, 48)
+
+[node name="Asphalt77" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 259, 0, 32)
+
+[node name="Asphalt78" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 275, 0, 32)
+
+[node name="Asphalt79" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 259, 0, 48)
+
+[node name="Asphalt80" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 275, 0, 48)
+
+[node name="RoadI17" parent="." instance=ExtResource("3_6b742")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 259, 0, 64)
+
+[node name="RoadI18" parent="." instance=ExtResource("3_6b742")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 275, 0, 64)
+
+[node name="RoadI19" parent="." instance=ExtResource("3_6b742")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 291, 0, 64)
+
+[node name="RoadI20" parent="." instance=ExtResource("3_6b742")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 307, 0, 64)
+
+[node name="RoadIB49" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 259, 0, 80)
+
+[node name="RoadIB50" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 275, 0, 80)
+
+[node name="RoadIB51" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 291, 0, 80)
+
+[node name="RoadIB52" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 307, 0, 80)
+
+[node name="RoadIB53" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 259, 0, 96)
+
+[node name="RoadIB54" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 275, 0, 96)
+
+[node name="RoadIB55" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 291, 0, 96)
+
+[node name="RoadIB56" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 307, 0, 96)
+
+[node name="RoadIB57" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 259, 0, 112)
+
+[node name="RoadIB58" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 275, 0, 112)
+
+[node name="RoadIB59" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 291, 0, 112)
+
+[node name="RoadIB60" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 307, 0, 112)
+
+[node name="Asphalt81" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 323, 0, 0)
+
+[node name="Asphalt82" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 339, 0, 0)
+
+[node name="Asphalt83" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 323, 0, 16)
+
+[node name="Asphalt84" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 339, 0, 16)
+
+[node name="Asphalt85" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 355, 0, 0)
+
+[node name="Asphalt86" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 371, 0, 0)
+
+[node name="Asphalt87" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 355, 0, 16)
+
+[node name="Asphalt88" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 371, 0, 16)
+
+[node name="Asphalt89" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 355, 0, 32)
+
+[node name="Asphalt90" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 371, 0, 32)
+
+[node name="Asphalt91" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 355, 0, 48)
+
+[node name="Asphalt92" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 371, 0, 48)
+
+[node name="Asphalt93" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 323, 0, 32)
+
+[node name="Asphalt94" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 339, 0, 32)
+
+[node name="Asphalt95" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 323, 0, 48)
+
+[node name="Asphalt96" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 339, 0, 48)
+
+[node name="RoadI21" parent="." instance=ExtResource("3_6b742")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 323, 0, 64)
+
+[node name="RoadI22" parent="." instance=ExtResource("3_6b742")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 339, 0, 64)
+
+[node name="RoadI23" parent="." instance=ExtResource("3_6b742")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 355, 0, 64)
+
+[node name="RoadI24" parent="." instance=ExtResource("3_6b742")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 371, 0, 64)
+
+[node name="RoadIB61" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 323, 0, 80)
+
+[node name="RoadIB62" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 339, 0, 80)
+
+[node name="RoadIB63" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 355, 0, 80)
+
+[node name="RoadIB64" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 371, 0, 80)
+
+[node name="RoadIB65" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 323, 0, 96)
+
+[node name="RoadIB66" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 339, 0, 96)
+
+[node name="RoadIB67" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 355, 0, 96)
+
+[node name="RoadIB68" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 371, 0, 96)
+
+[node name="RoadIB69" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 323, 0, 112)
+
+[node name="RoadIB70" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 339, 0, 112)
+
+[node name="RoadIB71" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 355, 0, 112)
+
+[node name="RoadIB72" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 371, 0, 112)
+
+[node name="Asphalt97" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 387, 0, 0)
+
+[node name="Asphalt98" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 403, 0, 0)
+
+[node name="Asphalt99" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 387, 0, 16)
+
+[node name="Asphalt100" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 403, 0, 16)
+
+[node name="Asphalt101" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 419, 0, 0)
+
+[node name="Asphalt102" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 435, 0, 0)
+
+[node name="Asphalt103" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 419, 0, 16)
+
+[node name="Asphalt104" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 435, 0, 16)
+
+[node name="Asphalt105" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 419, 0, 32)
+
+[node name="Asphalt106" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 435, 0, 32)
+
+[node name="Asphalt107" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 419, 0, 48)
+
+[node name="Asphalt108" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 435, 0, 48)
+
+[node name="Asphalt109" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 387, 0, 32)
+
+[node name="Asphalt110" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 403, 0, 32)
+
+[node name="Asphalt111" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 387, 0, 48)
+
+[node name="Asphalt112" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 403, 0, 48)
+
+[node name="RoadI25" parent="." instance=ExtResource("3_6b742")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 387, 0, 64)
+
+[node name="RoadI26" parent="." instance=ExtResource("3_6b742")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 403, 0, 64)
+
+[node name="RoadI27" parent="." instance=ExtResource("3_6b742")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 419, 0, 64)
+
+[node name="RoadI28" parent="." instance=ExtResource("3_6b742")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 435, 0, 64)
+
+[node name="RoadIB73" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 387, 0, 80)
+
+[node name="RoadIB74" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 403, 0, 80)
+
+[node name="RoadIB75" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 419, 0, 80)
+
+[node name="RoadIB76" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 435, 0, 80)
+
+[node name="RoadIB77" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 387, 0, 96)
+
+[node name="RoadIB78" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 403, 0, 96)
+
+[node name="RoadIB79" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 419, 0, 96)
+
+[node name="RoadIB80" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 435, 0, 96)
+
+[node name="RoadIB81" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 387, 0, 112)
+
+[node name="RoadIB82" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 403, 0, 112)
+
+[node name="RoadIB83" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 419, 0, 112)
+
+[node name="RoadIB84" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 435, 0, 112)
+
+[node name="Asphalt113" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 451, 0, 0)
+
+[node name="Asphalt114" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 467, 0, 0)
+
+[node name="Asphalt115" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 451, 0, 16)
+
+[node name="Asphalt116" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 467, 0, 16)
+
+[node name="Asphalt117" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 483, 0, 0)
+
+[node name="Asphalt118" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 499, 0, 0)
+
+[node name="Asphalt119" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 483, 0, 16)
+
+[node name="Asphalt120" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 499, 0, 16)
+
+[node name="Asphalt121" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 483, 0, 32)
+
+[node name="Asphalt122" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 499, 0, 32)
+
+[node name="Asphalt123" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 483, 0, 48)
+
+[node name="Asphalt124" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 499, 0, 48)
+
+[node name="Asphalt125" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 451, 0, 32)
+
+[node name="Asphalt126" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 467, 0, 32)
+
+[node name="Asphalt127" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 451, 0, 48)
+
+[node name="Asphalt128" parent="." instance=ExtResource("2_4pinq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 467, 0, 48)
+
+[node name="RoadI29" parent="." instance=ExtResource("3_6b742")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 451, 0, 64)
+
+[node name="RoadI30" parent="." instance=ExtResource("3_6b742")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 467, 0, 64)
+
+[node name="RoadI31" parent="." instance=ExtResource("3_6b742")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 483, 0, 64)
+
+[node name="RoadI32" parent="." instance=ExtResource("3_6b742")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 499, 0, 64)
+
+[node name="RoadIB85" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 451, 0, 80)
+
+[node name="RoadIB86" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 467, 0, 80)
+
+[node name="RoadIB87" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 483, 0, 80)
+
+[node name="RoadIB88" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 499, 0, 80)
+
+[node name="RoadIB89" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 451, 0, 96)
+
+[node name="RoadIB90" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 467, 0, 96)
+
+[node name="RoadIB91" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 483, 0, 96)
+
+[node name="RoadIB92" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 499, 0, 96)
+
+[node name="RoadIB93" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 451, 0, 112)
+
+[node name="RoadIB94" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 467, 0, 112)
+
+[node name="RoadIB95" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 483, 0, 112)
+
+[node name="RoadIB96" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 499, 0, 112)
+
+[node name="RoadIB48" parent="." instance=ExtResource("4_50k2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 243, 0, 112)
+
+[node name="Bitum" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0, 96)
+
+[node name="Bitum2" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29, 0, 96)
+
+[node name="Bitum3" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45, 0, 96)
+
+[node name="Bitum4" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61, 0, 96)
+
+[node name="Bitum9" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0, 111.906)
+
+[node name="Bitum10" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29, 0, 111.906)
+
+[node name="Bitum11" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45, 0, 111.906)
+
+[node name="Bitum12" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61, 0, 111.906)
+
+[node name="Bitum5" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0, 80)
+
+[node name="Bitum6" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29, 0, 80)
+
+[node name="Bitum7" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45, 0, 80)
+
+[node name="Bitum8" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61, 0, 80)
+
+[node name="BitumI" parent="." instance=ExtResource("6_7wqx2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0, 64)
+
+[node name="BitumI2" parent="." instance=ExtResource("6_7wqx2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29, 0, 64)
+
+[node name="BitumI3" parent="." instance=ExtResource("6_7wqx2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45, 0, 64)
+
+[node name="BitumI4" parent="." instance=ExtResource("6_7wqx2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61, 0, 64)
+
+[node name="Brown17" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -77, 0, 0)
+
+[node name="Brown18" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -93, 0, 0)
+
+[node name="Brown19" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -109, 0, 0)
+
+[node name="Brown20" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -125, 0, 0)
+
+[node name="Brown21" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -77, 0, 16)
+
+[node name="Brown22" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -93, 0, 16)
+
+[node name="Brown23" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -109, 0, 16)
+
+[node name="Brown24" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -125, 0, 16)
+
+[node name="Brown25" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -77, 0, 32)
+
+[node name="Brown26" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -93, 0, 32)
+
+[node name="Brown27" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -109, 0, 32)
+
+[node name="Brown28" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -125, 0, 32)
+
+[node name="Brown29" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -77, 0, 48)
+
+[node name="Brown30" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -93, 0, 48)
+
+[node name="Brown31" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -109, 0, 48)
+
+[node name="Brown32" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -125, 0, 48)
+
+[node name="Bitum13" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -77, 0, 96)
+
+[node name="Bitum14" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -93, 0, 96)
+
+[node name="Bitum15" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -109, 0, 96)
+
+[node name="Bitum16" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -125, 0, 96)
+
+[node name="Bitum17" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -77, 0, 111.906)
+
+[node name="Bitum18" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -93, 0, 111.906)
+
+[node name="Bitum19" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -109, 0, 111.906)
+
+[node name="Bitum20" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -125, 0, 111.906)
+
+[node name="Bitum21" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -77, 0, 80)
+
+[node name="Bitum22" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -93, 0, 80)
+
+[node name="Bitum23" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -109, 0, 80)
+
+[node name="Bitum24" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -125, 0, 80)
+
+[node name="BitumI5" parent="." instance=ExtResource("6_7wqx2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -77, 0, 64)
+
+[node name="BitumI6" parent="." instance=ExtResource("6_7wqx2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -93, 0, 64)
+
+[node name="BitumI7" parent="." instance=ExtResource("6_7wqx2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -109, 0, 64)
+
+[node name="BitumI8" parent="." instance=ExtResource("6_7wqx2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -125, 0, 64)
+
+[node name="Brown33" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -141, 0, 0)
+
+[node name="Brown34" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -157, 0, 0)
+
+[node name="Brown35" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -173, 0, 0)
+
+[node name="Brown36" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -189, 0, 0)
+
+[node name="Brown37" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -141, 0, 16)
+
+[node name="Brown38" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -157, 0, 16)
+
+[node name="Brown39" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -173, 0, 16)
+
+[node name="Brown40" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -189, 0, 16)
+
+[node name="Brown41" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -141, 0, 32)
+
+[node name="Brown42" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -157, 0, 32)
+
+[node name="Brown43" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -173, 0, 32)
+
+[node name="Brown44" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -189, 0, 32)
+
+[node name="Brown45" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -141, 0, 48)
+
+[node name="Brown46" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -157, 0, 48)
+
+[node name="Brown47" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -173, 0, 48)
+
+[node name="Brown48" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -189, 0, 48)
+
+[node name="Bitum25" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -141, 0, 96)
+
+[node name="Bitum26" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -157, 0, 96)
+
+[node name="Bitum27" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -173, 0, 96)
+
+[node name="Bitum28" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -189, 0, 96)
+
+[node name="Bitum29" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -141, 0, 111.906)
+
+[node name="Bitum30" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -157, 0, 111.906)
+
+[node name="Bitum31" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -173, 0, 111.906)
+
+[node name="Bitum32" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -189, 0, 111.906)
+
+[node name="Bitum33" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -141, 0, 80)
+
+[node name="Bitum34" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -157, 0, 80)
+
+[node name="Bitum35" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -173, 0, 80)
+
+[node name="Bitum36" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -189, 0, 80)
+
+[node name="BitumI9" parent="." instance=ExtResource("6_7wqx2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -141, 0, 64)
+
+[node name="BitumI10" parent="." instance=ExtResource("6_7wqx2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -157, 0, 64)
+
+[node name="BitumI11" parent="." instance=ExtResource("6_7wqx2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -173, 0, 64)
+
+[node name="BitumI12" parent="." instance=ExtResource("6_7wqx2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -189, 0, 64)
+
+[node name="Brown49" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -205, 0, 0)
+
+[node name="Brown50" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -221, 0, 0)
+
+[node name="Brown51" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -237, 0, 0)
+
+[node name="Brown52" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -253, 0, 0)
+
+[node name="Brown53" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -205, 0, 16)
+
+[node name="Brown54" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -221, 0, 16)
+
+[node name="Brown55" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -237, 0, 16)
+
+[node name="Brown56" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -253, 0, 16)
+
+[node name="Brown57" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -205, 0, 32)
+
+[node name="Brown58" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -221, 0, 32)
+
+[node name="Brown59" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -237, 0, 32)
+
+[node name="Brown60" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -253, 0, 32)
+
+[node name="Brown61" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -205, 0, 48)
+
+[node name="Brown62" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -221, 0, 48)
+
+[node name="Brown63" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -237, 0, 48)
+
+[node name="Brown64" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -253, 0, 48)
+
+[node name="Bitum37" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -205, 0, 96)
+
+[node name="Bitum38" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -221, 0, 96)
+
+[node name="Bitum39" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -237, 0, 96)
+
+[node name="Bitum40" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -253, 0, 96)
+
+[node name="Bitum41" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -205, 0, 111.906)
+
+[node name="Bitum42" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -221, 0, 111.906)
+
+[node name="Bitum43" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -237, 0, 111.906)
+
+[node name="Bitum44" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -253, 0, 111.906)
+
+[node name="Bitum45" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -205, 0, 80)
+
+[node name="Bitum46" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -221, 0, 80)
+
+[node name="Bitum47" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -237, 0, 80)
+
+[node name="Bitum48" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -253, 0, 80)
+
+[node name="BitumI13" parent="." instance=ExtResource("6_7wqx2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -205, 0, 64)
+
+[node name="BitumI14" parent="." instance=ExtResource("6_7wqx2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -221, 0, 64)
+
+[node name="BitumI15" parent="." instance=ExtResource("6_7wqx2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -237, 0, 64)
+
+[node name="BitumI16" parent="." instance=ExtResource("6_7wqx2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -253, 0, 64)
+
+[node name="Brown65" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -269, 0, 0)
+
+[node name="Brown66" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -285, 0, 0)
+
+[node name="Brown67" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -301, 0, 0)
+
+[node name="Brown68" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -317, 0, 0)
+
+[node name="Brown69" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -269, 0, 16)
+
+[node name="Brown70" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -285, 0, 16)
+
+[node name="Brown71" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -301, 0, 16)
+
+[node name="Brown72" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -317, 0, 16)
+
+[node name="Brown73" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -269, 0, 32)
+
+[node name="Brown74" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -285, 0, 32)
+
+[node name="Brown75" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -301, 0, 32)
+
+[node name="Brown76" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -317, 0, 32)
+
+[node name="Brown77" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -269, 0, 48)
+
+[node name="Brown78" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -285, 0, 48)
+
+[node name="Brown79" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -301, 0, 48)
+
+[node name="Brown80" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -317, 0, 48)
+
+[node name="Bitum49" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -269, 0, 96)
+
+[node name="Bitum50" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -285, 0, 96)
+
+[node name="Bitum51" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -301, 0, 96)
+
+[node name="Bitum52" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -317, 0, 96)
+
+[node name="Bitum53" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -269, 0, 111.906)
+
+[node name="Bitum54" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -285, 0, 111.906)
+
+[node name="Bitum55" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -301, 0, 111.906)
+
+[node name="Bitum56" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -317, 0, 111.906)
+
+[node name="Bitum57" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -269, 0, 80)
+
+[node name="Bitum58" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -285, 0, 80)
+
+[node name="Bitum59" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -301, 0, 80)
+
+[node name="Bitum60" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -317, 0, 80)
+
+[node name="BitumI17" parent="." instance=ExtResource("6_7wqx2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -269, 0, 64)
+
+[node name="BitumI18" parent="." instance=ExtResource("6_7wqx2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -285, 0, 64)
+
+[node name="BitumI19" parent="." instance=ExtResource("6_7wqx2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -301, 0, 64)
+
+[node name="BitumI20" parent="." instance=ExtResource("6_7wqx2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -317, 0, 64)
+
+[node name="Brown81" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -333, 0, 0)
+
+[node name="Brown82" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -349, 0, 0)
+
+[node name="Brown83" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -365, 0, 0)
+
+[node name="Brown84" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -381, 0, 0)
+
+[node name="Brown85" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -333, 0, 16)
+
+[node name="Brown86" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -349, 0, 16)
+
+[node name="Brown87" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -365, 0, 16)
+
+[node name="Brown88" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -381, 0, 16)
+
+[node name="Brown89" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -333, 0, 32)
+
+[node name="Brown90" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -349, 0, 32)
+
+[node name="Brown91" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -365, 0, 32)
+
+[node name="Brown92" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -381, 0, 32)
+
+[node name="Brown93" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -333, 0, 48)
+
+[node name="Brown94" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -349, 0, 48)
+
+[node name="Brown95" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -365, 0, 48)
+
+[node name="Brown96" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -381, 0, 48)
+
+[node name="Bitum61" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -333, 0, 96)
+
+[node name="Bitum62" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -349, 0, 96)
+
+[node name="Bitum63" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -365, 0, 96)
+
+[node name="Bitum64" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -381, 0, 96)
+
+[node name="Bitum65" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -333, 0, 111.906)
+
+[node name="Bitum66" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -349, 0, 111.906)
+
+[node name="Bitum67" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -365, 0, 111.906)
+
+[node name="Bitum68" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -381, 0, 111.906)
+
+[node name="Bitum69" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -333, 0, 80)
+
+[node name="Bitum70" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -349, 0, 80)
+
+[node name="Bitum71" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -365, 0, 80)
+
+[node name="Bitum72" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -381, 0, 80)
+
+[node name="BitumI21" parent="." instance=ExtResource("6_7wqx2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -333, 0, 64)
+
+[node name="BitumI22" parent="." instance=ExtResource("6_7wqx2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -349, 0, 64)
+
+[node name="BitumI23" parent="." instance=ExtResource("6_7wqx2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -365, 0, 64)
+
+[node name="BitumI24" parent="." instance=ExtResource("6_7wqx2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -381, 0, 64)
+
+[node name="Brown97" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -397, 0, 0)
+
+[node name="Brown98" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -413, 0, 0)
+
+[node name="Brown99" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -429, 0, 0)
+
+[node name="Brown100" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -445, 0, 0)
+
+[node name="Brown101" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -397, 0, 16)
+
+[node name="Brown102" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -413, 0, 16)
+
+[node name="Brown103" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -429, 0, 16)
+
+[node name="Brown104" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -445, 0, 16)
+
+[node name="Brown105" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -397, 0, 32)
+
+[node name="Brown106" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -413, 0, 32)
+
+[node name="Brown107" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -429, 0, 32)
+
+[node name="Brown108" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -445, 0, 32)
+
+[node name="Brown109" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -397, 0, 48)
+
+[node name="Brown110" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -413, 0, 48)
+
+[node name="Brown111" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -429, 0, 48)
+
+[node name="Brown112" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -445, 0, 48)
+
+[node name="Bitum73" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -397, 0, 96)
+
+[node name="Bitum74" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -413, 0, 96)
+
+[node name="Bitum75" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -429, 0, 96)
+
+[node name="Bitum76" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -445, 0, 96)
+
+[node name="Bitum77" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -397, 0, 111.906)
+
+[node name="Bitum78" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -413, 0, 111.906)
+
+[node name="Bitum79" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -429, 0, 111.906)
+
+[node name="Bitum80" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -445, 0, 111.906)
+
+[node name="Bitum81" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -397, 0, 80)
+
+[node name="Bitum82" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -413, 0, 80)
+
+[node name="Bitum83" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -429, 0, 80)
+
+[node name="Bitum84" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -445, 0, 80)
+
+[node name="BitumI25" parent="." instance=ExtResource("6_7wqx2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -397, 0, 64)
+
+[node name="BitumI26" parent="." instance=ExtResource("6_7wqx2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -413, 0, 64)
+
+[node name="BitumI27" parent="." instance=ExtResource("6_7wqx2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -429, 0, 64)
+
+[node name="BitumI28" parent="." instance=ExtResource("6_7wqx2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -445, 0, 64)
+
+[node name="Brown113" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -461, 0, 0)
+
+[node name="Brown114" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -477, 0, 0)
+
+[node name="Brown115" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -493, 0, 0)
+
+[node name="Brown116" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -509, 0, 0)
+
+[node name="Brown117" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -461, 0, 16)
+
+[node name="Brown118" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -477, 0, 16)
+
+[node name="Brown119" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -493, 0, 16)
+
+[node name="Brown120" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -509, 0, 16)
+
+[node name="Brown121" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -461, 0, 32)
+
+[node name="Brown122" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -477, 0, 32)
+
+[node name="Brown123" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -493, 0, 32)
+
+[node name="Brown124" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -509, 0, 32)
+
+[node name="Brown125" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -461, 0, 48)
+
+[node name="Brown126" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -477, 0, 48)
+
+[node name="Brown127" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -493, 0, 48)
+
+[node name="Brown128" parent="." instance=ExtResource("1_0anrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -509, 0, 48)
+
+[node name="Bitum85" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -461, 0, 96)
+
+[node name="Bitum86" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -477, 0, 96)
+
+[node name="Bitum87" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -493, 0, 96)
+
+[node name="Bitum88" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -509, 0, 96)
+
+[node name="Bitum89" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -461, 0, 111.906)
+
+[node name="Bitum90" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -477, 0, 111.906)
+
+[node name="Bitum91" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -493, 0, 111.906)
+
+[node name="Bitum92" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -509, 0, 111.906)
+
+[node name="Bitum93" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -461, 0, 80)
+
+[node name="Bitum94" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -477, 0, 80)
+
+[node name="Bitum95" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -493, 0, 80)
+
+[node name="Bitum96" parent="." instance=ExtResource("5_nht15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -509, 0, 80)
+
+[node name="BitumI29" parent="." instance=ExtResource("6_7wqx2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -461, 0, 64)
+
+[node name="BitumI30" parent="." instance=ExtResource("6_7wqx2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -477, 0, 64)
+
+[node name="BitumI31" parent="." instance=ExtResource("6_7wqx2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -493, 0, 64)
+
+[node name="BitumI32" parent="." instance=ExtResource("6_7wqx2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -509, 0, 64)

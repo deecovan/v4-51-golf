@@ -1,7 +1,10 @@
-[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://di1ojlcnenbpa"]
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://d2c2q6j1nuu8w"]
 
-[ext_resource type="Texture2D" uid="uid://4fcwx13j65ou" path="res://Images/brown.png" id="1_yqebv"]
+[ext_resource type="Texture2D" uid="uid://jft7c4w03f6a" path="res://Scenes/Brown_compressed_texture_2d.tres" id="1_yqebv"]
 
 [resource]
 albedo_color = Color(0.661081, 0.661081, 0.661081, 1)
 albedo_texture = ExtResource("1_yqebv")
+uv1_scale = Vector3(0.165, 0.165, 0.165)
+uv1_offset = Vector3(-0.265, 0, -0.85)
+uv1_triplanar = true

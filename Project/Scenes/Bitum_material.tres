@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://errd2wi80t2m"]
+
+[ext_resource type="Texture2D" uid="uid://c5qia7h7w2b2d" path="res://Scenes/Bitum_compressed_texture_2d.tres" id="1_ccfqy"]
+
+[resource]
+albedo_color = Color(0.74978, 0.74978, 0.74978, 1)
+albedo_texture = ExtResource("1_ccfqy")
+uv1_scale = Vector3(5, 5, 5)
+uv1_triplanar = true

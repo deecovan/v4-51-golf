@@ -16,8 +16,8 @@ normal_texture = ExtResource("2_0spkt")
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_krx02"]
 material = SubResource("StandardMaterial3D_c180c")
-top_radius = 0.35
-bottom_radius = 0.35
+top_radius = 0.375
+bottom_radius = 0.375
 height = 0.3
 radial_segments = 32
 rings = 1

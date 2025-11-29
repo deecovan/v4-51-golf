@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=3 uid="uid://cu6l1dgjtpjbo"]
+
+[ext_resource type="PhysicsMaterial" uid="uid://dc4ryen62a01q" path="res://Scenes/Asphalt_physics.tres" id="1_dqoqi"]
+[ext_resource type="BoxMesh" uid="uid://e6x4jlkx215f" path="res://Scenes/RoadIB_mesh.tres" id="3_shxpw"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_h7nin"]
+size = Vector3(16, 0.19, 16)
+
+[node name="RoadIB" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+physics_material_override = ExtResource("1_dqoqi")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+visible = false
+shape = SubResource("BoxShape3D_h7nin")
+
+[node name="Square0" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 4)
+mesh = ExtResource("3_shxpw")
+skeleton = NodePath("../..")
+
+[node name="Square1" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4)
+mesh = ExtResource("3_shxpw")
+skeleton = NodePath("../..")
+
+[node name="Square2" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -4)
+mesh = ExtResource("3_shxpw")
+skeleton = NodePath("../..")
+
+[node name="Square3" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -4)
+mesh = ExtResource("3_shxpw")
+skeleton = NodePath("../..")
