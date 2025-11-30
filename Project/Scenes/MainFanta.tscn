@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cb02p0fygii8s"]
+[gd_scene load_steps=13 format=3 uid="uid://cb02p0fygii8s"]
 
 [ext_resource type="Script" uid="uid://d0ef8aldsf06x" path="res://Scripts/Main.gd" id="1_ojqsg"]
 [ext_resource type="PackedScene" uid="uid://cqj403us21hwa" path="res://Sky/world_environment.tscn" id="2_o8rth"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b16bbxfwqe2mt" path="res://Scenes/stones_short.tscn" id="4_yabwv"]
 [ext_resource type="PackedScene" uid="uid://6gxcdxc80sgn" path="res://Scenes/sign_highway_wide.tscn" id="5_hblro"]
 [ext_resource type="PackedScene" uid="uid://btws7edbjvv2w" path="res://Scenes/squares.tscn" id="6_3scko"]
+[ext_resource type="PackedScene" uid="uid://cv01vjimybqxg" path="res://Scenes/terra.tscn" id="7_o8rth"]
 [ext_resource type="PackedScene" uid="uid://d1tqw4jcecxpq" path="res://Scenes/camera_gimbal.tscn" id="7_t81v0"]
 [ext_resource type="PackedScene" uid="uid://bybuvtl2qbgos" path="res://Scenes/Fanta.tscn" id="8_g750u"]
 [ext_resource type="PackedScene" uid="uid://c2u3c52wwav41" path="res://Scenes/ui.tscn" id="9_dl63y"]
@@ -61,6 +62,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2, 500, 0, 56)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2, -500, 0, 56)
 
 [node name="Squares" parent="." instance=ExtResource("6_3scko")]
+
+[node name="Terra" parent="." instance=ExtResource("7_o8rth")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 184)
 
 [node name="Hole" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.999, 0.5, -33.259)

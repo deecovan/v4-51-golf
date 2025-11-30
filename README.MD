@@ -1,5 +1,8 @@
 # v4-51-golf GitHub repo
 
+## Shaders
+- Added Your first 3D shader to Terra mech
+
 ## 25.11.289 Fanta Supercar
 - Added Fanta blender model
   - Wheels
