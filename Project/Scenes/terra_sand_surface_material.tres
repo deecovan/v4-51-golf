@@ -1,0 +1,17 @@
+[gd_resource type="ShaderMaterial" load_steps=5 format=3 uid="uid://coe5g71vgrhm1"]
+
+[ext_resource type="Shader" uid="uid://brdw6m2waxkwr" path="res://Shaders/terra.gdshader" id="1_gcjbx"]
+[ext_resource type="FastNoiseLite" uid="uid://mpwmb7g3mjaw" path="res://Shaders/new_fast_noise_lite.tres" id="2_ue20e"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_gcjbx"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_pg0co"]
+as_normal_map = true
+noise = ExtResource("2_ue20e")
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_gcjbx")
+shader_parameter/height_scale = 2.0
+shader_parameter/noise = SubResource("NoiseTexture2D_gcjbx")
+shader_parameter/normalmap = SubResource("NoiseTexture2D_pg0co")

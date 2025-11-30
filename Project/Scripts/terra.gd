@@ -1,9 +1,10 @@
-extends Node3D
+extends MeshInstance3D
+
+@export var noised = 1.0/20
 
 func _ready():
-		var map_data = $StaticBody3D/CollisionShape3D.shape.map_data
+		var cs = $StaticBody3D/CollisionShape3D
 		var i = 0
-		for v in map_data:
-			map_data[i] = map_data[i] + randf()/2
+		for v in cs.shape.map_data:
+			cs.shape.map_data[i] = cs.shape.map_data[i] + randf() * noised
 			i = i + 1
-		print(var_to_str(map_data))

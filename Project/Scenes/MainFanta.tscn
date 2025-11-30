@@ -64,7 +64,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2, -500, 0, 56)
 [node name="Squares" parent="." instance=ExtResource("6_3scko")]
 
 [node name="Terra" parent="." instance=ExtResource("7_o8rth")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 184)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 59, 0, 184)
 
 [node name="Hole" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.999, 0.5, -33.259)

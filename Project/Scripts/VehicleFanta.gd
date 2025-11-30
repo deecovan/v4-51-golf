@@ -24,7 +24,7 @@ var speedtometer_label
 
 ## Next values used for reconfiguring the Wheel3Ds values
 ## Front wheels friction slip ratio ## 0.65
-@export var fric_slip_front = 2.2
+@export var fric_slip_front = 2.4
 ## Rear wheels friction slip ratio ## 0.65
 @export var fric_slip_rear = 2.0
 ## Typical racing car damper ratios are 0.65-0.7 
