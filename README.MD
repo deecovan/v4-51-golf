@@ -1,6 +1,8 @@
 # v4-51-golf GitHub repo
 
-## Shaders
+## 25.11.31 Shaders and Noises
+- Adeded noise to terra's collisionshape3d
+- Added viewport's modes with [F6] key
 - Added Your first 3D shader to Terra mech
 
 ## 25.11.289 Fanta Supercar

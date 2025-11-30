@@ -37,7 +37,7 @@ func _on_hole_body_entered(body):
 		reload_scene('Eagle! Reloading...')
 
 ## Fullscreen and Reload Scene
-func use_main_controls(event) -> void:
+func use_main_controls(_event) -> void:
 	if Input.is_action_just_pressed('reload'):
 		reload_scene('Reloading...')
 	if Input.is_action_just_pressed('screen'):

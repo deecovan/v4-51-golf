@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	$MarginContainer/Help.text = (str(Engine.get_frames_per_second())
 		+ ' fps [F1] help')
 
