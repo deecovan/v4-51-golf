@@ -1,6 +1,7 @@
 # v4-51-golf GitHub repo
 
 ## 25.11.31 Shaders and Noises
+- Terra proto tested exported looks great
 - Adeded noise to terra's collisionshape3d
 - Added viewport's modes with [F6] key
 - Added Your first 3D shader to Terra mech
