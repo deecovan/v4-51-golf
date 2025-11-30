@@ -8,7 +8,7 @@ varying vec2 tex_position;
 void vertex() {
 	tex_position = VERTEX.xz / 3.0 + 0.5;
 	float height = texture(noise, tex_position).x;
-	VERTEX.y += height * height_scale - 0.5;
+	VERTEX.y += height * height_scale;
 	if (VERTEX.z > 63.0) {
 		VERTEX.y = 0.0;
 	}

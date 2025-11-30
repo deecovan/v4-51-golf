@@ -37,7 +37,7 @@ func _on_hole_body_entered(body):
 		reload_scene('Eagle! Reloading...')
 
 ## Fullscreen and Reload Scene
-func use_main_controls(_event) -> void:
+func use_main_controls(event) -> void:
 	if Input.is_action_just_pressed('reload'):
 		reload_scene('Reloading...')
 	if Input.is_action_just_pressed('screen'):
@@ -45,6 +45,12 @@ func use_main_controls(_event) -> void:
 		var is_window: bool = mode != DisplayServer.WINDOW_MODE_FULLSCREEN
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN \
 			if is_window else DisplayServer.WINDOW_MODE_WINDOWED)
+	# Optional: Toggle between debug draw modes using a key press (e.g., 'P')
+	if Input.is_action_just_pressed('viewport'):
+		var viewport = get_viewport()
+		# Cycle through the available debug draw modes
+		# (DEBUG_DRAW_DISABLED, DEBUG_DRAW_WIREFRAME, DEBUG_DRAW_OVERDRAW, DEBUG_DRAW_UNSHADED)
+		viewport.debug_draw = (viewport.debug_draw + 1) % 5
 			
 func reload_scene(message):
 	$UI.show_message(message)
