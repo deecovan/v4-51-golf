@@ -45,14 +45,14 @@ var speedtometer_label
 @export var travel_rear = 0.09
 @export var stiff_front = 160
 @export var stiff_rear = 120
-@export var max_force_front = 40000
-@export var max_force_rear = 30000
+@export var max_force_front = 60000
+@export var max_force_rear = 40000
 
 ## MAX_POWER Used as power for gears (as PFG) 
-@export var MAX_POWER = 750.0 # per each Traction wheel
-## SuperSpeed for this car is 75ms(300kph) 
-@export var MAX_SPEED = 75.0
-## Must have 28ms(100kph) in 3.5 seconds
+## SuperSpeed for this car is 100ms(360kph) 
+@export var MAX_SPEED = 100.0
+@export var MAX_POWER = 700.0 # per each Traction wheel
+### TESTED 699f 205kph, 4sec to 100kph
 
 ## Array values of Used power for PFG 
 var power_curve: Array = [

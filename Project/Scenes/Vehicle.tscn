@@ -212,12 +212,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.271501, 0)
 [node name="Wheel3Dfl" parent="." instance=ExtResource("1_c180c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 0.11, 0.579927)
 use_as_steering = true
-suspension_max_force = 40000.0
+suspension_max_force = 60000.0
 
 [node name="Wheel3Dfr" parent="." instance=ExtResource("1_c180c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 0.11, 0.579927)
 use_as_steering = true
-suspension_max_force = 40000.0
+suspension_max_force = 60000.0
 
 [node name="Wheel3Drl" parent="." instance=ExtResource("1_c180c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 0.11, -2.34684)
