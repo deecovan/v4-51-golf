@@ -1,5 +1,9 @@
 # v4-51-golf GitHub repo
 
+## 25.12.02
+- Add Blender Spa project
+- Export and test stright forward track
+
 ## 25.12.01 Start refactoring
 - Branch refactor
   - Refactor project files
