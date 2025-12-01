@@ -10,20 +10,27 @@
     - Fanta scene
       - Both using Gravity scale 2.0 
       - Deleted grav_mod var
+
       - Current values when Tested both cars 
 
 	## Vehicle.gd
 
 	TESTED 699f 205kph, 4sec to 100kph
+
 	MAX_SPEED = 100.0
+
 	MAX_POWER = 700.0 # per each Traction wheel
+
 	First gear 0-33kph
 
 	## VehicleFanta.gd
 
 	TESTED 799f 235kph, 4.5sec to 100kph
+
 	MAX_SPEED = 125.0
+
 	MAX_POWER = 800.0 # per each Traction wheel
+
 	First gear 0-40kph
 
 ## 25.11.31 Tag landgen-00 
