@@ -1,5 +1,12 @@
 # v4-51-golf GitHub repo
 
+## 25.12.01 Start refactoring
+- Branch refactor
+  - Refactor project files
+- Branch gimbal
+  - Make Gimbal module
+  - Make Gimbal and Camera settings overlay
+
 ## 25.11.31 Tag landgen-00 
 - Start building LandGen Chank generation Tool
 
