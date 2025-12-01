@@ -3,6 +3,10 @@
 ## 25.12.01 Start refactoring
 - Branch refactor
   - Refactor project files
+    - Main scene
+    - Fanta scene
+    - Vehicles scenes
+    - Wheels scenes
 - Branch gimbal
   - Make Gimbal module
   - Make Gimbal and Camera settings overlay
