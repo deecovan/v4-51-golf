@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://c87smutbsv8rh"]
 
 [ext_resource type="Material" uid="uid://coe5g71vgrhm1" path="res://Scenes/terra_sand_surface_material.tres" id="1_g2yeo"]
-[ext_resource type="Script" uid="uid://ce0kx8wg4fqe7" path="res://Scripts/terra.gd" id="2_g2yeo"]
+[ext_resource type="Script" uid="uid://ce0kx8wg4fqe7" path="res://Scripts/terra_tool.gd" id="2_g2yeo"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_rppjw"]
 size = Vector2(130, 128)

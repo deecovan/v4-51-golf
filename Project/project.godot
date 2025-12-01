@@ -28,7 +28,7 @@ boot_splash/minimum_display_time=3000
 
 [display]
 
-window/size/viewport_width=1280
+window/size/viewport_width=800
 window/size/mode=2
 window/size/initial_position_type=4
 window/stretch/mode="viewport"
@@ -174,10 +174,8 @@ common/physics_ticks_per_second=30
 
 textures/canvas_textures/default_texture_filter=0
 textures/webp_compression/lossless_compression_factor=75.0
-lights_and_shadows/directional_shadow/soft_shadow_filter_quality=3
-lights_and_shadows/directional_shadow/soft_shadow_filter_quality.mobile=3
-lights_and_shadows/positional_shadow/soft_shadow_filter_quality=3
-lights_and_shadows/positional_shadow/soft_shadow_filter_quality.mobile=3
+lights_and_shadows/directional_shadow/soft_shadow_filter_quality=0
+lights_and_shadows/positional_shadow/soft_shadow_filter_quality=0
 textures/default_filters/use_nearest_mipmap_filter=true
 textures/default_filters/anisotropic_filtering_level=4
 textures/default_filters/texture_mipmap_bias=-0.25
@@ -185,5 +183,4 @@ textures/decals/filter=0
 textures/light_projectors/filter=0
 occlusion_culling/occlusion_rays_per_thread=256
 environment/defaults/default_clear_color=Color(0, 0, 0, 1)
-anti_aliasing/quality/screen_space_aa=1
 occlusion_culling/use_occlusion_culling=true
