@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d0ef8aldsf06x" path="res://Scripts/Main.gd" id="1_ojqsg"]
 [ext_resource type="PackedScene" uid="uid://cqj403us21hwa" path="res://Sky/world_environment.tscn" id="2_o8rth"]
-[ext_resource type="MeshLibrary" uid="uid://c2cgp27k6adat" path="res://Scenes/golf_tiles.tres" id="3_3kqjl"]
+[ext_resource type="MeshLibrary" uid="uid://c2cgp27k6adat" path="res://Materials/golf_tiles.tres" id="3_3kqjl"]
 [ext_resource type="PackedScene" uid="uid://b16bbxfwqe2mt" path="res://Scenes/stones_short.tscn" id="4_yabwv"]
 [ext_resource type="PackedScene" uid="uid://6gxcdxc80sgn" path="res://Scenes/sign_highway_wide.tscn" id="5_hblro"]
 [ext_resource type="PackedScene" uid="uid://btws7edbjvv2w" path="res://Scenes/squares.tscn" id="6_3scko"]

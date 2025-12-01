@@ -1,6 +1,6 @@
 [gd_resource type="BoxMesh" load_steps=2 format=3 uid="uid://ntpoa7eo6nx3"]
 
-[ext_resource type="Material" uid="uid://dnsoc0llbwvt7" path="res://Scenes/RoadI_material.tres" id="1_4m8e2"]
+[ext_resource type="Material" uid="uid://dnsoc0llbwvt7" path="res://Materials/RoadI_material.tres" id="1_4m8e2"]
 
 [resource]
 lightmap_size_hint = Vector2i(84, 47)

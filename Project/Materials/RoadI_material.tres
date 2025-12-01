@@ -1,10 +1,10 @@
 [gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dnsoc0llbwvt7"]
 
-[ext_resource type="Texture2D" uid="uid://l40n35vck5hw" path="res://Images/RoadI.png" id="1_hu8jk"]
+[ext_resource type="Texture2D" uid="uid://ceiq224sfks5p" path="res://Materials/RoadI_compressed_texture_2d.tres" id="1_fim4u"]
 
 [resource]
 albedo_color = Color(0.74978, 0.74978, 0.74978, 1)
-albedo_texture = ExtResource("1_hu8jk")
+albedo_texture = ExtResource("1_fim4u")
 uv1_scale = Vector3(0.23, 0.23, 0.23)
 uv1_offset = Vector3(0, 0, 2.5)
 uv1_triplanar = true

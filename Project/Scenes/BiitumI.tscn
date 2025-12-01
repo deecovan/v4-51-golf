@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://b53stiy4efih3"]
 
-[ext_resource type="PhysicsMaterial" uid="uid://d4e10cdfll3in" path="res://Scenes/BitumI_physics_material.tres" id="1_j6ru4"]
-[ext_resource type="BoxMesh" uid="uid://cb671i8txfebf" path="res://Scenes/BitumI_mesh.tres" id="2_5semg"]
-[ext_resource type="Material" uid="uid://8tkt2r7wnlhp" path="res://Scenes/BitumI_material_3d.tres" id="3_j6ru4"]
-[ext_resource type="BoxMesh" uid="uid://b0dsjp7cismob" path="res://Scenes/Bitum_mesh.tres" id="4_6n00s"]
-[ext_resource type="Material" uid="uid://d3ajard5hkhny" path="res://Scenes/Bitum_material_3d.tres" id="5_46ku4"]
+[ext_resource type="PhysicsMaterial" uid="uid://d4e10cdfll3in" path="res://Materials/BitumI_physics_material.tres" id="1_j6ru4"]
+[ext_resource type="BoxMesh" uid="uid://cb671i8txfebf" path="res://Materials/BitumI_mesh.tres" id="2_5semg"]
+[ext_resource type="Material" uid="uid://8tkt2r7wnlhp" path="res://Materials/BitumI_material_3d.tres" id="3_j6ru4"]
+[ext_resource type="BoxMesh" uid="uid://b0dsjp7cismob" path="res://Materials/Bitum_mesh.tres" id="4_6n00s"]
+[ext_resource type="Material" uid="uid://d3ajard5hkhny" path="res://Materials/Bitum_material_3d.tres" id="5_46ku4"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_h7nin"]
 size = Vector3(16, 0.19, 16)

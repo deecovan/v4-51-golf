@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=4 uid="uid://6gxcdxc80sgn"]
 
 [ext_resource type="PackedScene" uid="uid://dvhwdq0h3rhh4" path="res://Assets/sign-highway-wide.glb" id="1_dpo7r"]
-[ext_resource type="Material" uid="uid://bqg0e3h3p4r25" path="res://Scenes/Sign_material.tres" id="2_tfqff"]
+[ext_resource type="Material" uid="uid://bqg0e3h3p4r25" path="res://Materials/Sign_material.tres" id="2_tfqff"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8no7j"]
 resource_name = "colormap"

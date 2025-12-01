@@ -51,6 +51,7 @@ var speedtometer_label
 @export var MAX_SPEED = 125.0
 @export var MAX_POWER = 800.0 # per each Traction wheel
 ### TESTED 799f 235kph, 4.5sec to 100kph
+### First gear 0-40kph
 
 ## Array values of Used power for PFG 
 var power_curve: Array = [

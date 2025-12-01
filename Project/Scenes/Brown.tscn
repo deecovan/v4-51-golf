@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://bqv87j216dsug"]
 
-[ext_resource type="BoxMesh" uid="uid://deus5fbtf32hp" path="res://Scenes/Brown_mesh.tres" id="1_p23u7"]
-[ext_resource type="PhysicsMaterial" uid="uid://cqhjhdih0x35w" path="res://Scenes/Brown_physics.tres" id="1_ur1a3"]
-[ext_resource type="Material" uid="uid://d2c2q6j1nuu8w" path="res://Scenes/Brown_material.tres" id="3_ur1a3"]
+[ext_resource type="BoxMesh" uid="uid://deus5fbtf32hp" path="res://Materials/Brown_mesh.tres" id="1_p23u7"]
+[ext_resource type="PhysicsMaterial" uid="uid://cqhjhdih0x35w" path="res://Materials/Brown_physics.tres" id="1_ur1a3"]
+[ext_resource type="Material" uid="uid://d2c2q6j1nuu8w" path="res://Materials/Brown_material.tres" id="3_ur1a3"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cr4m1"]
 size = Vector3(16, 0.19, 16)

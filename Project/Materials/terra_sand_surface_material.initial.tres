@@ -2,7 +2,7 @@
 
 [ext_resource type="Shader" uid="uid://6sqkb3by82s6" path="res://Shaders/terra_sand.gdshader" id="1_ue20e"]
 [ext_resource type="Texture2D" uid="uid://cgtlsh65qmmel" path="res://Shaders/terra_sand_noise_texture_2d.tres" id="2_dlulq"]
-[ext_resource type="Texture2D" uid="uid://nxuvgbguilnf" path="res://Scenes/terra_sand_normal_texture_2d.tres" id="3_ue20e"]
+[ext_resource type="Texture2D" uid="uid://nxuvgbguilnf" path="res://Materials/terra_sand_normal_texture_2d.tres" id="3_ue20e"]
 
 [resource]
 render_priority = 0

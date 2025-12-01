@@ -1,6 +1,6 @@
 [gd_resource type="BoxMesh" load_steps=2 format=3 uid="uid://b5oihxtmef01l"]
 
-[ext_resource type="Material" uid="uid://d2t3sfe6er582" path="res://Scenes/Asphalt_material.tres" id="1_4mo5g"]
+[ext_resource type="Material" uid="uid://d2t3sfe6er582" path="res://Materials/Asphalt_material.tres" id="1_4mo5g"]
 
 [resource]
 lightmap_size_hint = Vector2i(104, 57)

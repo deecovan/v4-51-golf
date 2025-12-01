@@ -1,6 +1,6 @@
 [gd_resource type="ArrayMesh" load_steps=3 format=4 uid="uid://c6klsjcmwn5un"]
 
-[ext_resource type="Material" uid="uid://errd2wi80t2m" path="res://Scenes/Bitum_material.tres" id="1_m31qx"]
+[ext_resource type="Material" uid="uid://errd2wi80t2m" path="res://Materials/Bitum_material.tres" id="1_m31qx"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_5tll1"]
 _surfaces = [{
