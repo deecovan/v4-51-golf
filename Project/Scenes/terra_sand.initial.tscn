@@ -2,7 +2,7 @@
 
 [ext_resource type="PlaneMesh" uid="uid://cngk36k3y8314" path="res://Scenes/terra_sand_mesh.tres" id="1_3suyl"]
 [ext_resource type="Material" uid="uid://c2kgi5q384wpx" path="res://Scenes/terra_sand_surface_material.initial.tres" id="1_g2yeo"]
-[ext_resource type="Script" uid="uid://ce0kx8wg4fqe7" path="res://Scripts/terra_tool.gd" id="2_g2yeo"]
+[ext_resource type="Script" uid="uid://ce0kx8wg4fqe7" path="res://Scripts/terra_collision_gen.gd" id="2_g2yeo"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_g1p57"]
 friction = 0.1

@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=4 uid="uid://c2u3c52wwav41"]
 
-[ext_resource type="Script" uid="uid://bxgxdgj8xpxwf" path="res://Scripts/ui.gd" id="1_nf4gj"]
-[ext_resource type="Script" uid="uid://cwhmf0iu4u1ho" path="res://Scripts/Draw.gd" id="2_qdvrb"]
+[ext_resource type="Script" uid="uid://bxgxdgj8xpxwf" path="res://Scripts/ui_canvas.gd" id="1_nf4gj"]
+[ext_resource type="Script" uid="uid://cwhmf0iu4u1ho" path="res://Scripts/draw_graph.gd" id="2_qdvrb"]
 
 [sub_resource type="Image" id="Image_dvm57"]
 data = {
