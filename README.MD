@@ -3,6 +3,8 @@
 ## 25.12.01 Start refactoring
 - Branch refactor
   - Refactor project files
+    * Root files
+      * LFS and gitignore files 
     - Main scene
     - Fanta scene
     - Vehicles scenes
