@@ -5,8 +5,10 @@
   - Refactor project files
     * Root files
       * LFS and gitignore files 
-    - Main scene
-    - Fanta scene
+    * Main scene
+    * Fanta scene
+      - Both using Gravity scale 2.0 
+      - Deleted grav_mod var 
     - Vehicles scenes
     - Wheels scenes
 - Branch gimbal

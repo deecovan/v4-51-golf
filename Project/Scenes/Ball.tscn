@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://nkr4juodvwg5"]
 
 [ext_resource type="Script" uid="uid://brmuvwjej8v7k" path="res://Scripts/ball.gd" id="1_7nh6h"]
-[ext_resource type="Texture2D" uid="uid://c6bn4sm7gdfpx" path="res://Assets/ball_normal_map.png" id="2_eb1ap"]
+[ext_resource type="Texture2D" uid="uid://c6bn4sm7gdfpx" path="res://Assets/courses/ball_normal_map.png" id="2_eb1ap"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_rmwm4"]
 bounce = 1.0

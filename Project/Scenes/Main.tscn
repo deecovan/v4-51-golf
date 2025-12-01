@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dexp0d75btgj0"]
+[gd_scene load_steps=13 format=3 uid="uid://dexp0d75btgj0"]
 
 [ext_resource type="Script" uid="uid://d0ef8aldsf06x" path="res://Scripts/Main.gd" id="1_r150o"]
 [ext_resource type="PackedScene" uid="uid://cqj403us21hwa" path="res://Sky/world_environment.tscn" id="2_jw32o"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://6gxcdxc80sgn" path="res://Scenes/sign_highway_wide.tscn" id="5_4kpch"]
 [ext_resource type="PackedScene" uid="uid://btws7edbjvv2w" path="res://Scenes/squares.tscn" id="5_bmxlf"]
 [ext_resource type="PackedScene" uid="uid://d1tqw4jcecxpq" path="res://Scenes/camera_gimbal.tscn" id="6_v1gob"]
+[ext_resource type="PackedScene" uid="uid://cv01vjimybqxg" path="res://Scenes/terra.tscn" id="7_4kpch"]
 [ext_resource type="PackedScene" uid="uid://bt677ol3pn1iu" path="res://Scenes/Vehicle.tscn" id="10_bmxlf"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_pbw6q"]
@@ -62,6 +63,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2, -500, 0, 56)
 
 [node name="Squares" parent="." instance=ExtResource("5_bmxlf")]
 
+[node name="Terra" parent="." instance=ExtResource("7_4kpch")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 59, 0, 184)
+
 [node name="Hole" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.999, 0.5, -33.259)
 
@@ -70,10 +74,10 @@ shape = SubResource("CylinderShape3D_pbw6q")
 debug_color = Color(1, 0, 1, 0.419608)
 
 [node name="Vehicle" parent="." instance=ExtResource("10_bmxlf")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 503.203, 0.752014, 57.9543)
+transform = Transform3D(-1.19209e-07, 0, -1, 0, 1, 0, 1, 0, -1.19209e-07, 503, 1.87879, 56.0536)
 
 [node name="CameraGimbal" parent="." instance=ExtResource("6_v1gob")]
-transform = Transform3D(1, 0, -3.49692e-07, 0, 1, 0, 3.49692e-07, 0, 1, 505.007, 5, 58.0284)
+transform = Transform3D(-2.18557e-07, 0, -1, 0, 1, 0, 1, 0, -2.18557e-07, 522.437, 9, 56.1033)
 
 [node name="UI" parent="." instance=ExtResource("4_rgh2o")]
 
@@ -81,8 +85,6 @@ transform = Transform3D(1, 0, -3.49692e-07, 0, 1, 0, 3.49692e-07, 0, 1, 505.007,
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 5, -4)
 
 [node name="Ball" parent="." instance=ExtResource("3_kln2b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 5, -4)
-mass = 0.3
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.95443, 2.67255, -5.10882)
 
 [connection signal="body_entered" from="Hole" to="." method="_on_hole_body_entered"]
-[connection signal="stopped" from="Ball" to="." method="_on_ball_stopped"]

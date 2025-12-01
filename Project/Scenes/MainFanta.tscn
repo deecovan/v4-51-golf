@@ -74,7 +74,7 @@ shape = SubResource("CylinderShape3D_pbw6q")
 debug_color = Color(1, 0, 1, 0.419608)
 
 [node name="CameraGimbal" parent="." instance=ExtResource("7_t81v0")]
-transform = Transform3D(1, 0, -3.49692e-07, 0, 1, 0, 3.49692e-07, 0, 1, 505.007, 5, 58.0284)
+transform = Transform3D(-3.93403e-07, 0, -1, 0, 1, 0, 1, 0, -3.93403e-07, 505.007, 5, 58.0284)
 
 [node name="Vehicle" parent="." instance=ExtResource("8_g750u")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 502.581, 2.64739, 56.102)

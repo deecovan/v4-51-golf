@@ -2,11 +2,13 @@ extends VehicleBody3D
 
 var speedtometer_label
 
-## Car Mass as real_car_mass/grav_mod
-## 1250 kg at 1G
-## Scaled to 80% 1250*0.8=1000
-@export var real_car_mass = 1000 
-@export var grav_mod = 1.5
+## Used https://baza-gai.com.ua/catalog/dodge/challenger/specs#spec-2578
+## Challenger R/T Super Track Pack 1970
+## 0-100kph 5.5sec max_speed 202kph (127mph)
+## Car Mass 1495 kg 
+@export var real_car_mass = 1450
+## Need to fix this phys model
+@export var grav_scale = 2.0
 ## Maximum Steering speed
 @export var steer_speed = 3
 @export var pedal_speed = 1
@@ -26,13 +28,13 @@ var speedtometer_label
 ## Front wheels friction slip ratio ## 0.65
 @export var fric_slip_front = 1.4
 ## Rear wheels friction slip ratio ## 0.65
-@export var fric_slip_rear = 1.6
+@export var fric_slip_rear = 1.8
 ## Typical racing car damper ratios are 0.65-0.7 
 ## in ride where 1 is 100% critical damping
 ## Front wheels damper compression ## 0.8
-@export var damp_compr_front = 0.5
+@export var damp_compr_front = 0.8
 ## Front wheels damper relaxation ## 0.88
-@export var damp_relax_front = 0.6
+@export var damp_relax_front = 0.88
 ## Rear ## 0.7 0.77
 @export var damp_compr_rear = 0.3
 @export var damp_relax_rear = 0.4
@@ -47,9 +49,9 @@ var speedtometer_label
 @export var max_force_rear = 30000
 
 ## MAX_POWER Used as power for gears (as PFG) 
-@export var MAX_POWER = 20000.0 # per each Traction wheel
-## SuperSpeed for this car is 100ms(400kph) 
-@export var MAX_SPEED = 100.0
+@export var MAX_POWER = 750.0 # per each Traction wheel
+## SuperSpeed for this car is 75ms(300kph) 
+@export var MAX_SPEED = 75.0
 ## Must have 28ms(100kph) in 3.5 seconds
 
 ## Array values of Used power for PFG 
@@ -60,11 +62,9 @@ var power_curve: Array = [
 ]
 
 func _ready() -> void:
-	
 	if true:
 		## Setup Vehicle3D values
-		mass = real_car_mass/grav_mod
-		gravity_scale = grav_mod
+		gravity_scale = grav_scale
 		linear_damp = car_linear_damp
 		angular_damp = car_angular_damp
 		## Setup Vehicle3D Physics Material
@@ -121,7 +121,7 @@ func _ready() -> void:
 	## Init PFG screen
 	$"../UI".call_draw_curve(power_curve)
 	speedtometer_label = $"../UI/MarginContainer/VBoxContainer/Speedometer/Label"
-	
+		
 func _process(delta: float) -> void:
 	steering = move_toward(
 		steering,

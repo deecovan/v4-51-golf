@@ -13,6 +13,9 @@ var gimbal_rotation_x: float
 var gimbal_rotation_y: float
 var vehicle_rotation_x: float
 var vehicle_rotation_y: float
+## Link objects
+var vehicle: VehicleBody3D
+var gimbal_inner: Node3D
 
 ## Camera Follow lerp speed
 @export var camera_lerpx = 8
@@ -22,10 +25,12 @@ var vehicle_rotation_y: float
 var zoom: float
 
 func _ready() -> void:
-	$GimbalInner.rotation.x = camera_rotation
+	vehicle = $"../Vehicle"
+	gimbal_inner = $GimbalInner
 	zoom = camera_zoom
-	gimbal_rotation_x = $GimbalInner.rotation.x
-	gimbal_rotation_y = $GimbalInner.rotation.y
+	gimbal_inner.rotation.x = camera_rotation
+	gimbal_rotation_x = gimbal_inner.rotation.x
+	gimbal_rotation_y = gimbal_inner.rotation.y
 
 func _input(event):
 	if event.is_action_pressed("cam_zoom_in"):
@@ -37,16 +42,16 @@ func _process(delta):
 	## Gimbal follow the car, but rotation is modified by player's keyboard
 	scale = Vector3.ONE * zoom
 	position.x = lerp(
-		position.x, $"../Vehicle".position.x, 
+		position.x, vehicle.position.x, 
 		delta * camera_lerpx)
 	position.y = lerp(
-		position.y, $"../Vehicle".position.y, 
+		position.y, vehicle.position.y, 
 		delta * camera_lerpy)
 	position.z =  lerp(
-		position.z, $"../Vehicle".position.z, 
+		position.z, vehicle.position.z, 
 		delta * camera_lerpz)
-	vehicle_rotation_x = $"../Vehicle".rotation.x
-	vehicle_rotation_y = $"../Vehicle".rotation.y
+	vehicle_rotation_x = vehicle.rotation.x
+	vehicle_rotation_y = vehicle.rotation.y
 	
 	## Keyboard Gimbal rotation
 	var x = Input.get_axis("ui_up", "ui_down")
@@ -63,6 +68,6 @@ func _process(delta):
 		 	mouse_direction * mouse_velocity.y / mouse_sensivity)
 
 	## Apply Gimbal rotation
-	$GimbalInner.rotation.x = gimbal_rotation_x + vehicle_rotation_x
-	$GimbalInner.rotation.y = gimbal_rotation_y + vehicle_rotation_y
+	gimbal_inner.rotation.x = gimbal_rotation_x + vehicle_rotation_x
+	gimbal_inner.rotation.y = gimbal_rotation_y + vehicle_rotation_y
 		

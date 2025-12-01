@@ -20,7 +20,7 @@ run/main_scene="uid://cb02p0fygii8s"
 run/print_header=false
 config/features=PackedStringArray("4.4", "Forward Plus")
 run/max_fps=30
-boot_splash/bg_color=Color(1, 1, 1, 1)
+boot_splash/bg_color=Color(0.772549, 0.662745, 0.415686, 1)
 boot_splash/fullsize=false
 boot_splash/image="uid://bllvjdvktpodv"
 config/icon="uid://bllvjdvktpodv"
@@ -166,6 +166,11 @@ viewport={
 ]
 }
 
+[internationalization]
+
+rendering/defaults/default_clear_color=Color(0.535944, 0.447176, 0.243825, 1)
+rendering/bg_color=Color(0.772549, 0.662745, 0.415686, 1)
+
 [physics]
 
 common/physics_ticks_per_second=30
@@ -182,5 +187,5 @@ textures/default_filters/texture_mipmap_bias=-0.25
 textures/decals/filter=0
 textures/light_projectors/filter=0
 occlusion_culling/occlusion_rays_per_thread=256
-environment/defaults/default_clear_color=Color(0, 0, 0, 1)
+environment/defaults/default_clear_color=Color(0.535944, 0.447176, 0.243825, 1)
 occlusion_culling/use_occlusion_culling=true

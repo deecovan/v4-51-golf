@@ -5,8 +5,8 @@ var speedtometer_label
 ## Car Mass as real_car_mass/grav_mod
 ## 1250 kg at 1G
 ## Scaled to 80% 1250*0.8=1000
-@export var real_car_mass = 1100 
-@export var grav_mod = 1.5
+@export var real_car_mass = 1250 
+@export var grav_scale = 2.0
 ## Maximum Steering speedss
 @export var steer_speed = 3
 @export var pedal_speed = 1
@@ -24,9 +24,9 @@ var speedtometer_label
 
 ## Next values used for reconfiguring the Wheel3Ds values
 ## Front wheels friction slip ratio ## 0.65
-@export var fric_slip_front = 2.4
+@export var fric_slip_front = 1.4
 ## Rear wheels friction slip ratio ## 0.65
-@export var fric_slip_rear = 2.0
+@export var fric_slip_rear = 1.8
 ## Typical racing car damper ratios are 0.65-0.7 
 ## in ride where 1 is 100% critical damping
 ## Front wheels damper compression ## 0.8
@@ -47,10 +47,10 @@ var speedtometer_label
 @export var max_force_rear = 20000
 
 ## MAX_POWER Used as power for gears (as PFG) 
-@export var MAX_POWER = 20000.0 # per each Traction wheel
-## SuperSpeed for this car is 140ms(500KPH) 
-@export var MAX_SPEED = 140.0
-## Must have 28ms(100kph) in 3.5 seconds
+@export var MAX_POWER = 1000.0 # per each Traction wheel
+## SuperSpeed for this car is 111(400KPH) 
+@export var MAX_SPEED = 111.0
+## Must have 28ms(100kph) in 5.5 seconds
 
 ## Array values of Used power for PFG 
 var power_curve: Array = [
@@ -63,8 +63,7 @@ func _ready() -> void:
 	
 	if true:
 		## Setup Vehicle3D values
-		mass = real_car_mass/grav_mod
-		gravity_scale = grav_mod
+		gravity_scale = grav_scale
 		linear_damp = car_linear_damp
 		angular_damp = car_angular_damp
 		## Setup Vehicle3D Physics Material
