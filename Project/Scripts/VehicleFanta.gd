@@ -139,7 +139,7 @@ func _process(delta: float) -> void:
 		var speed_index = clamp( ## clamp maximal values
 			## for maximal gear, starting from index 2, limited to index -5
 			2 + linear_velocity.length()/(MAX_SPEED/max_curve_index),  
-			2, power_curve.size() - 5)      ## Test it again
+			2, power_curve.size() - 5)      ## @TESTED
 		var match_power = power_curve[speed_index] * MAX_POWER
 		engine_force = clamp(engine_force, 0, match_power)
 		## Tested fixed values: match_power=power_curve, Rest, Travel, Stiff, MaxV
