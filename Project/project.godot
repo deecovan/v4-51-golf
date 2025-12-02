@@ -40,6 +40,10 @@ window/vsync/vsync_mode=0
 
 movie_writer/fps=30
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/physics_collision_import_generator/plugin.cfg")
+
 [importer_defaults]
 
 3d_texture={

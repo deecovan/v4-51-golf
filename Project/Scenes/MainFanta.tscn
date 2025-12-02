@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://btws7edbjvv2w" path="res://Scenes/squares.tscn" id="6_3scko"]
 [ext_resource type="PackedScene" uid="uid://cv01vjimybqxg" path="res://Scenes/terra.tscn" id="7_o8rth"]
 [ext_resource type="PackedScene" uid="uid://d1tqw4jcecxpq" path="res://Scenes/camera_gimbal.tscn" id="7_t81v0"]
-[ext_resource type="PackedScene" uid="uid://dgqbcmufvq6qd" path="res://Scenes/spa_idea.tscn" id="8_3kqjl"]
+[ext_resource type="PackedScene" uid="uid://dy8ifo4lo2dgt" path="res://Scenes/Spa.Height.tscn" id="8_3kqjl"]
 [ext_resource type="PackedScene" uid="uid://bybuvtl2qbgos" path="res://Scenes/Fanta.tscn" id="8_g750u"]
 [ext_resource type="PackedScene" uid="uid://c2u3c52wwav41" path="res://Scenes/ui.tscn" id="9_dl63y"]
 [ext_resource type="PackedScene" uid="uid://nkr4juodvwg5" path="res://Scenes/Ball.tscn" id="10_ftbrk"]
@@ -57,18 +57,21 @@ transform = Transform3D(-4.37114e-08, -3.85487e-10, -1, 9.53674e-08, 1, -3.85491
 [node name="Gates" type="Node3D" parent="Elements"]
 
 [node name="sign-highway-wide" parent="Elements/Gates" instance=ExtResource("5_hblro")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2, 500, 0, 24)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2, 500, 0, 57.4752)
+
+[node name="sign-highway-wide3" parent="Elements/Gates" instance=ExtResource("5_hblro")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2, 500, 0, 0.649336)
 
 [node name="sign-highway-wide2" parent="Elements/Gates" instance=ExtResource("5_hblro")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2, -500, 0, 24)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2, -512.751, -0.199437, 59.9723)
 
 [node name="Squares" parent="." instance=ExtResource("6_3scko")]
 
 [node name="Terra" parent="." instance=ExtResource("7_o8rth")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 59, 0, 184)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 59, 0.15, 184)
 
-[node name="Spa-idea" parent="." instance=ExtResource("8_3kqjl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 500, 0, 24)
+[node name="SpaHeight" parent="." instance=ExtResource("8_3kqjl")]
+transform = Transform3D(-4.37114e-08, -0.0174524, 0.999848, 0, 0.999848, 0.0174524, -1, 7.62869e-10, -4.37047e-08, 467.941, 1, -31.6283)
 
 [node name="Hole" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.999, 0.5, -33.259)
@@ -81,7 +84,7 @@ debug_color = Color(1, 0, 1, 0.419608)
 transform = Transform3D(-3.93403e-07, 0, -1, 0, 1, 0, 1, 0, -3.93403e-07, 505.007, 5, 24)
 
 [node name="Vehicle" parent="." instance=ExtResource("8_g750u")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 502.581, 2.647, 24)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 502.581, 2.647, 57.4968)
 
 [node name="UI" parent="." instance=ExtResource("9_dl63y")]
 

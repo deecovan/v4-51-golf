@@ -1,6 +1,21 @@
 # v4-51-golf GitHub repo
 
 ## 25.12.02 Godot Spa
+- Tested: SpaHeight looks great, SpaFlat broken
+
+- @REMEMBER! Using large GLB with collisions export/import steps: 
+  - GLB Blender export
+  - Physics Collision Import Generator 
+    - add-on in GoDot
+    - Enable it from Project Plugins
+  - Add GLB from FileSystem to scene
+  - Open it to edit, OPEN ANYWAY if confirm
+  - Remove unnecessary nodes
+  - Generate collisions from central-top menu
+    - from Mesh, Create collision shape
+    - use Static body child, trimesh
+  - Save as, new scene, than add it to the project
+
 - Create Spa and Spa Height track
   - Path-based
   - Standart materials, without textures

@@ -158,7 +158,7 @@ func _process(delta: float) -> void:
 		str(int(linear_velocity.length()*3.6)) + ' kph ' )
 	
 	## Car fell off course!
-	if position.y < 0:
+	if position.y < -50:
 		get_parent().reload_scene("Car is out! Reloading...")
 	
 func randomis(v: Vector3, mult) -> Vector3:
