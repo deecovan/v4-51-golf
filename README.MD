@@ -6,9 +6,9 @@
   - Select car
 2. Also used as Escape menu
 
-## Prepare branch overlays
+## Fanta v1.1
 - Re-export Fanta Car and Wheel from Blender
-- Update Fanta physics:
+- Update Fanta v1.1 physics:
   - re-Import Car and Wheel models 
     - using Physics Collision Import Generator
   - Generate new Car body collisions
