@@ -1,18 +1,19 @@
 extends VehicleBody3D
 
 var speedtometer_label
+var reverse =  false
 
 @export var grav_scale = 2.0
 ## Maximum Steering speedss
 @export var steer_speed = 1.4
 @export var pedal_speed = 0.75
-@export var brake_force = 10.0
+@export var brake_force = 8.0
 @export var engine_brake_speed = 2.0
+@export var mult_slip_rear = 1.75
 @export var engine_coast = 0.1
 @export var coasting_speed = 0.01
 ## Maximum Steering angle in Radians
 @export var MAX_STEER  = 0.6
-
 ## Next values used for reconfiguring the Vehicle3Ds values
 @export var car_linear_damp = 0.5
 @export var car_angular_damp = 0.5
@@ -23,27 +24,28 @@ var speedtometer_label
 
 ## Next values used for reconfiguring the Wheel3Ds values
 ## Front wheels friction slip ratio ## 0.65
-@export var fric_slip_front = 1
+@export var fric_slip_front = 1.25
 ## Rear wheels friction slip ratio ## 0.65
-@export var fric_slip_rear = 1
+## Using with multiply or divide to mult_slip_rear
+@export var fric_slip_rear = 0.7 
 ## Typical racing car damper ratios are 0.65-0.7 
 ## in ride where 1 is 100% critical damping
 ## Front wheels damper compression ## 0.8
-@export var damp_compr_front = 0.5
+@export var damp_compr_front = 0.8
 ## Front wheels damper relaxation ## 0.88
-@export var damp_relax_front = 0.6
+@export var damp_relax_front = 0.7
 ## Rear ## 0.7 0.77
-@export var damp_compr_rear = 0.4
-@export var damp_relax_rear = 0.5
+@export var damp_compr_rear = 0.7
+@export var damp_relax_rear = 0.6
 ## Rest, Travel, Stiff, MaxV
-@export var rest_front = 0.075
-@export var rest_rear = 0.08
-@export var travel_front = 0.12
-@export var travel_rear = 0.12
-@export var stiff_front = 110
-@export var stiff_rear = 100
-@export var max_force_front = 9000
-@export var max_force_rear = 9000
+@export var rest_front = 0.08
+@export var rest_rear = 0.09
+@export var travel_front = 0.09
+@export var travel_rear = 0.1
+@export var stiff_front = 150
+@export var stiff_rear = 125
+@export var max_force_front = 10000
+@export var max_force_rear = 10000
 
 ## MAX_POWER Used as power for gears (as PFG) 
 ## SuperSpeed for this car is 100ms(360KPH) 
@@ -127,12 +129,16 @@ func _physics_process(delta: float) -> void:
 		Input.get_axis("steer_right", "steer_left") * MAX_STEER,
 		delta * steer_speed
 		)
+	if Input.is_action_just_pressed("reverse"):
+		reverse = !reverse
 	
 	## Reset wheel_friction_slip before speed changes
 	$Wheel3Drl.wheel_friction_slip = fric_slip_rear
 	$Wheel3Drr.wheel_friction_slip = fric_slip_rear
 	## Match Vehicle speed to power_curve to get engine_force
 	var pedal_text
+	## Remove reverse
+	engine_force = abs(engine_force)
 	if Input.is_action_pressed("accelerate"):
 		engine_force = lerp(engine_force, MAX_POWER, pedal_speed * delta)
 		pedal_text = "Accel"
@@ -146,8 +152,8 @@ func _physics_process(delta: float) -> void:
 		engine_force = clamp(engine_force, 0, match_power)
 		brake = 0.0
 		## @HACK Simulate speed
-		$Wheel3Drl.wheel_friction_slip = fric_slip_rear * 1.5
-		$Wheel3Drr.wheel_friction_slip = fric_slip_rear * 1.5
+		$Wheel3Drl.wheel_friction_slip = fric_slip_rear * mult_slip_rear
+		$Wheel3Drr.wheel_friction_slip = fric_slip_rear * mult_slip_rear
 		## Else: Braking with Engine LERP down
 	elif Input.is_action_pressed("brake"):
 		engine_force = lerp(
@@ -155,13 +161,16 @@ func _physics_process(delta: float) -> void:
 		brake = brake_force
 		pedal_text = "Brake"
 		## @HACK Simulate drag
-		$Wheel3Drl.wheel_friction_slip = fric_slip_rear / 2.0
-		$Wheel3Drr.wheel_friction_slip = fric_slip_rear / 2.0
+		$Wheel3Drl.wheel_friction_slip = fric_slip_rear / mult_slip_rear
+		$Wheel3Drr.wheel_friction_slip = fric_slip_rear / mult_slip_rear
 	## Else: Coasting with Engine LERP down
 	else: 
 		brake = 0.0
 		engine_force = lerp(engine_force, 0.0, engine_coast * delta)
 		pedal_text = "Coast"
+	## Apply reverse
+	if reverse:
+		engine_force = - engine_force
 	## Update UI
 	speedtometer_label.text = (
 		pedal_text + ' ' + 

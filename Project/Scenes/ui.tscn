@@ -454,6 +454,7 @@ text = "[F1] help [F5] restart scene [F6] debug view
 
 
 WASD -- drive
+X -- reverse
 Hold RMB -- pan camera
 Arrow keys -- pan camera
 MouseScroll -- zoom camera

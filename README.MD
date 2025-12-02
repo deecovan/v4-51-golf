@@ -8,6 +8,15 @@
 
 ## Prepare branch overlays
 - Re-export Fanta Car and Wheel from Blender
+- Update Fanta physics:
+  - re-Import Car and Wheel models 
+    - using Physics Collision Import Generator
+  - Generate new Car body collisions
+  - Simulate braking drift and speeding grip:
+    - Add mult_slip_rear multiplier
+    - Change suspension values
+    - other improvements
+- Add reverse engine control 
 
 - Update Lights
 - Merfe ZC's branch
