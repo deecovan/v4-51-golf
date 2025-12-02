@@ -1,6 +1,11 @@
 # v4-51-golf GitHub repo
 
 ## 25.12.02
+- Create Spa and Spa Height track
+  - Path-based
+  - Standart materials, without textures
+  - Using [video](https://www.youtube.com/watch?v=uJMPLeL8G6M)
+
 - Add Blender Spa project
 - Export and test stright forward track
 
