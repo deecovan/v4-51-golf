@@ -5,8 +5,10 @@ var speedtometer_label
 @export var grav_scale = 2.0
 ## Maximum Steering speedss
 @export var steer_speed = 1.4
+@export var pedal_speed = 0.75
 @export var brake_force = 10.0
-@export var pedal_speed = 1
+@export var engine_brake_speed = 2.0
+@export var engine_coast = 0.1
 @export var coasting_speed = 0.01
 ## Maximum Steering angle in Radians
 @export var MAX_STEER  = 0.6
@@ -21,9 +23,9 @@ var speedtometer_label
 
 ## Next values used for reconfiguring the Wheel3Ds values
 ## Front wheels friction slip ratio ## 0.65
-@export var fric_slip_front = 1.3
+@export var fric_slip_front = 1
 ## Rear wheels friction slip ratio ## 0.65
-@export var fric_slip_rear = 1.45
+@export var fric_slip_rear = 1
 ## Typical racing car damper ratios are 0.65-0.7 
 ## in ride where 1 is 100% critical damping
 ## Front wheels damper compression ## 0.8
@@ -44,8 +46,8 @@ var speedtometer_label
 @export var max_force_rear = 9000
 
 ## MAX_POWER Used as power for gears (as PFG) 
-## SuperSpeed for this car is 125ms(450KPH) 
-@export var MAX_SPEED = 125.0
+## SuperSpeed for this car is 100ms(360KPH) 
+@export var MAX_SPEED = 100.0
 @export var MAX_POWER = 800.0 # per each Traction wheel
 ### TESTED 799f 235kph, 4.5sec to 100kph
 ### First gear 0-40kph
@@ -126,6 +128,9 @@ func _physics_process(delta: float) -> void:
 		delta * steer_speed
 		)
 	
+	## Reset wheel_friction_slip before speed changes
+	$Wheel3Drl.wheel_friction_slip = fric_slip_rear
+	$Wheel3Drr.wheel_friction_slip = fric_slip_rear
 	## Match Vehicle speed to power_curve to get engine_force
 	var pedal_text
 	if Input.is_action_pressed("accelerate"):
@@ -140,16 +145,22 @@ func _physics_process(delta: float) -> void:
 		var match_power = power_curve[speed_index] * MAX_POWER
 		engine_force = clamp(engine_force, 0, match_power)
 		brake = 0.0
-		## Tested fixed values: match_power=power_curve, Rest, Travel, Stiff, MaxV
-		#printt(int(linear_velocity.length()),speed_index, match_power)
+		## @HACK Simulate speed
+		$Wheel3Drl.wheel_friction_slip = fric_slip_rear * 1.5
+		$Wheel3Drr.wheel_friction_slip = fric_slip_rear * 1.5
+		## Else: Braking with Engine LERP down
 	elif Input.is_action_pressed("brake"):
-		#engine_force = lerp(engine_force, -MAX_POWER, pedal_speed * delta)
+		engine_force = lerp(
+			engine_force, 0.0, engine_brake_speed * delta)
 		brake = brake_force
 		pedal_text = "Brake"
+		## @HACK Simulate drag
+		$Wheel3Drl.wheel_friction_slip = fric_slip_rear / 2
+		$Wheel3Drr.wheel_friction_slip = fric_slip_rear / 2
 	## Else: Coasting with Engine LERP down
 	else: 
 		brake = 0.0
-		engine_force = lerp(engine_force, 0.0, pedal_speed * delta)
+		engine_force = lerp(engine_force, 0.0, engine_coast * delta)
 		pedal_text = "Coast"
 	## Update UI
 	speedtometer_label.text = (

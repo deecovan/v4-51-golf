@@ -12,7 +12,9 @@
 - Upgrade Meshes from Project menu
 - Delete unused Car mass 
   - Used default 40kg
+
 - Improve Coasting with Engine LERP down
+  - Add engine_brake_speed, engine_coast, coasting_speed
 
 - Test Export with Lights 
   - 60 FPS settings
