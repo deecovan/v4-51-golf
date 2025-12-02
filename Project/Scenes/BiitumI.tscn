@@ -1,13 +1,28 @@
-[gd_scene load_steps=7 format=3 uid="uid://b53stiy4efih3"]
+[gd_scene load_steps=9 format=3 uid="uid://b53stiy4efih3"]
 
 [ext_resource type="PhysicsMaterial" uid="uid://d4e10cdfll3in" path="res://Materials/BitumI_physics_material.tres" id="1_j6ru4"]
 [ext_resource type="BoxMesh" uid="uid://cb671i8txfebf" path="res://Materials/BitumI_mesh.tres" id="2_5semg"]
 [ext_resource type="Material" uid="uid://8tkt2r7wnlhp" path="res://Materials/BitumI_material_3d.tres" id="3_j6ru4"]
-[ext_resource type="BoxMesh" uid="uid://b0dsjp7cismob" path="res://Materials/Bitum_mesh.tres" id="4_6n00s"]
 [ext_resource type="Material" uid="uid://d3ajard5hkhny" path="res://Materials/Bitum_material_3d.tres" id="5_46ku4"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_h7nin"]
 size = Vector3(16, 0.19, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_o1wyn"]
+load_path = "res://.godot/imported/bitumI.png-37f4ad8eb8b9e7a389e387fa5bcca224.bptc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bpr6w"]
+albedo_color = Color(0.74978, 0.74978, 0.74978, 1)
+albedo_texture = SubResource("CompressedTexture2D_o1wyn")
+uv1_scale = Vector3(0.19, 0.19, 0.19)
+uv1_offset = Vector3(0, 0, 2.495)
+uv1_triplanar = true
+uv2_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_5semg"]
+lightmap_size_hint = Vector2i(84, 47)
+material = SubResource("StandardMaterial3D_bpr6w")
+size = Vector3(8, 0.19, 8)
 
 [node name="BitumI" type="Node3D"]
 
@@ -32,10 +47,10 @@ surface_material_override/0 = ExtResource("3_j6ru4")
 
 [node name="Square4" type="MeshInstance3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 4)
-mesh = ExtResource("4_6n00s")
+mesh = SubResource("BoxMesh_5semg")
 surface_material_override/0 = ExtResource("5_46ku4")
 
 [node name="Square5" type="MeshInstance3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4)
-mesh = ExtResource("4_6n00s")
+mesh = SubResource("BoxMesh_5semg")
 surface_material_override/0 = ExtResource("5_46ku4")

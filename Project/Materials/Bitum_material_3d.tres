@@ -1,10 +1,10 @@
 [gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://d3ajard5hkhny"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_20qej"]
+[ext_resource type="Texture2D" uid="uid://dyrruux1dhqp5" path="res://Materials/Bitum_compressed_texture_2d.tres" id="1_xi521"]
 
 [resource]
 albedo_color = Color(0.74978, 0.74978, 0.74978, 1)
-albedo_texture = SubResource("CompressedTexture2D_20qej")
+albedo_texture = ExtResource("1_xi521")
 uv1_scale = Vector3(0.23, 0.23, 0.23)
 uv1_offset = Vector3(0, 0, 2.5)
 uv1_triplanar = true

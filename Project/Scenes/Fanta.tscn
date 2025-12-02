@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=4 uid="uid://bybuvtl2qbgos"]
 
 [ext_resource type="Script" uid="uid://g1b5fmyreevn" path="res://Scripts/VehicleFanta.gd" id="1_txrvn"]
-[ext_resource type="Texture2D" uid="uid://do6oimow4qltx" path="res://Import/UV-sharp.png" id="2_txrvn"]
+[ext_resource type="Texture2D" uid="uid://lyt8l820n4yl" path="res://Import/UV-sharp.png" id="2_txrvn"]
 [ext_resource type="PackedScene" uid="uid://c4nshb085yca4" path="res://Scenes/Fanta_Wheel.tscn" id="3_txrvn"]
 [ext_resource type="PackedScene" uid="uid://bnj10rk4ojq0v" path="res://Scenes/Fanta_Wheel_R.tscn" id="4_hfgqs"]
 
