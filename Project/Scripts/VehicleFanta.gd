@@ -2,10 +2,6 @@ extends VehicleBody3D
 
 var speedtometer_label
 
-## Car Mass as real_car_mass/grav_mod
-## 1250 kg at 1G
-## Scaled to 80% 1250*0.8=1000
-@export var real_car_mass = 1250 
 @export var grav_scale = 2.0
 ## Maximum Steering speedss
 @export var steer_speed = 1.4
