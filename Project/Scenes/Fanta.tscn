@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=4 uid="uid://bybuvtl2qbgos"]
 
 [ext_resource type="Script" uid="uid://g1b5fmyreevn" path="res://Scripts/VehicleFanta.gd" id="1_txrvn"]
-[ext_resource type="Texture2D" uid="uid://lyt8l820n4yl" path="res://Import/UV-sharp.png" id="2_txrvn"]
+[ext_resource type="Texture2D" uid="uid://do6oimow4qltx" path="res://Import/UV-sharp.png" id="2_txrvn"]
 [ext_resource type="PackedScene" uid="uid://c4nshb085yca4" path="res://Scenes/Fanta_Wheel.tscn" id="3_txrvn"]
 [ext_resource type="PackedScene" uid="uid://bnj10rk4ojq0v" path="res://Scenes/Fanta_Wheel_R.tscn" id="4_hfgqs"]
 
@@ -67,6 +67,7 @@ skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.891927, -6.38335e-08, 0.489895, -0.73017)
+visible = false
 shape = SubResource("BoxShape3D_txrvn")
 debug_color = Color(0, 1, 0.345098, 0.419608)
 
@@ -76,6 +77,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
 [node name="Wheel3Dfl" parent="." instance=ExtResource("4_hfgqs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9, 0.0439357, 0.63)
 use_as_steering = true
+wheel_radius = 0.42
 wheel_rest_length = 0.075
 wheel_friction_slip = 1.0
 suspension_travel = 0.1
@@ -87,6 +89,7 @@ damping_relaxation = 0.6
 [node name="Wheel3Dfr" parent="." instance=ExtResource("3_txrvn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9, 0.0439357, 0.63)
 use_as_steering = true
+wheel_radius = 0.42
 wheel_rest_length = 0.075
 wheel_friction_slip = 1.0
 suspension_stiffness = 120.0
@@ -97,6 +100,7 @@ damping_relaxation = 0.6
 [node name="Wheel3Drr" parent="." instance=ExtResource("3_txrvn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9, 0.0439357, -2.37)
 use_as_traction = true
+wheel_radius = 0.42
 wheel_rest_length = 0.08
 wheel_friction_slip = 1.0
 suspension_stiffness = 110.0
@@ -107,6 +111,7 @@ damping_relaxation = 0.4
 [node name="Wheel3Drl" parent="." instance=ExtResource("4_hfgqs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9, 0.0439357, -2.37)
 use_as_traction = true
+wheel_radius = 0.42
 wheel_rest_length = 0.08
 wheel_friction_slip = 1.0
 suspension_travel = 0.1

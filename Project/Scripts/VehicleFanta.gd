@@ -8,7 +8,7 @@ var speedtometer_label
 @export var real_car_mass = 1250 
 @export var grav_scale = 2.0
 ## Maximum Steering speedss
-@export var steer_speed = 3
+@export var steer_speed = 1.4
 @export var pedal_speed = 1
 @export var coasting_speed = 0.01
 ## Maximum Steering angle in Radians
@@ -24,9 +24,9 @@ var speedtometer_label
 
 ## Next values used for reconfiguring the Wheel3Ds values
 ## Front wheels friction slip ratio ## 0.65
-@export var fric_slip_front = 1.4
+@export var fric_slip_front = 1.3
 ## Rear wheels friction slip ratio ## 0.65
-@export var fric_slip_rear = 1.8
+@export var fric_slip_rear = 1.45
 ## Typical racing car damper ratios are 0.65-0.7 
 ## in ride where 1 is 100% critical damping
 ## Front wheels damper compression ## 0.8
@@ -39,12 +39,12 @@ var speedtometer_label
 ## Rest, Travel, Stiff, MaxV
 @export var rest_front = 0.075
 @export var rest_rear = 0.08
-@export var travel_front = 0.1
-@export var travel_rear = 0.1
-@export var stiff_front = 120
-@export var stiff_rear = 110
-@export var max_force_front = 60000
-@export var max_force_rear = 40000
+@export var travel_front = 0.12
+@export var travel_rear = 0.12
+@export var stiff_front = 110
+@export var stiff_rear = 100
+@export var max_force_front = 9000
+@export var max_force_rear = 9000
 
 ## MAX_POWER Used as power for gears (as PFG) 
 ## SuperSpeed for this car is 125ms(450KPH) 
@@ -122,7 +122,7 @@ func _ready() -> void:
 	$"../UI".call_draw_curve(power_curve)
 	speedtometer_label = $"../UI/MarginContainer/VBoxContainer/Speedometer/Label"
 	
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	steering = move_toward(
 		steering,
 		Input.get_axis("steer_right", "steer_left") * MAX_STEER,
@@ -142,14 +142,17 @@ func _process(delta: float) -> void:
 			2, power_curve.size() - 5)      ## @TESTED
 		var match_power = power_curve[speed_index] * MAX_POWER
 		engine_force = clamp(engine_force, 0, match_power)
+		brake=0.0
 		## Tested fixed values: match_power=power_curve, Rest, Travel, Stiff, MaxV
 		#printt(int(linear_velocity.length()),speed_index, match_power)
 	elif Input.is_action_pressed("brake"):
-		engine_force = lerp(engine_force, -MAX_POWER, pedal_speed * delta)
+		#engine_force = lerp(engine_force, -MAX_POWER, pedal_speed * delta)
+		brake=12.0
 		pedal_text = "Brake"
 	## Else: Coasting
 	else: 
-		engine_force = 0.0
+		#engine_force = 0.0
+		brake =0.0
 		pedal_text = "Coast"
 	## Update UI
 	speedtometer_label.text = (
