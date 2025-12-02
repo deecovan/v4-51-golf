@@ -1,7 +1,6 @@
 [gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://d3ajard5hkhny"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_20qej"]
-load_path = "res://.godot/imported/bitum.png-16735f716162d41e6091309770e48274.bptc.ctex"
 
 [resource]
 albedo_color = Color(0.74978, 0.74978, 0.74978, 1)
