@@ -2,7 +2,7 @@
 
 ## 25.12.02 Godot Spa
 - Tested: SpaHeight looks great, SpaFlat broken
-
+- Tested: SpaFlat v1.1 lorks great!
 - @REMEMBER! Using large GLB with collisions export/import steps: 
   - GLB Blender export
   - Physics Collision Import Generator 
