@@ -1,6 +1,10 @@
 # v4-51-golf GitHub repo
 
 ## Begin Overlays
+- Update Lights
+- Upgrade Meshes from Project menu
+- Test Export with Lights 
+  - 60 FPS settings
 - Starting menu
   - Select scene
   - Select car
