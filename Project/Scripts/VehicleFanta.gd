@@ -5,6 +5,7 @@ var speedtometer_label
 @export var grav_scale = 2.0
 ## Maximum Steering speedss
 @export var steer_speed = 1.4
+@export var brake_force = 10.0
 @export var pedal_speed = 1
 @export var coasting_speed = 0.01
 ## Maximum Steering angle in Radians
@@ -138,17 +139,17 @@ func _physics_process(delta: float) -> void:
 			2, power_curve.size() - 5)      ## @TESTED
 		var match_power = power_curve[speed_index] * MAX_POWER
 		engine_force = clamp(engine_force, 0, match_power)
-		brake=0.0
+		brake = 0.0
 		## Tested fixed values: match_power=power_curve, Rest, Travel, Stiff, MaxV
 		#printt(int(linear_velocity.length()),speed_index, match_power)
 	elif Input.is_action_pressed("brake"):
 		#engine_force = lerp(engine_force, -MAX_POWER, pedal_speed * delta)
-		brake=12.0
+		brake = brake_force
 		pedal_text = "Brake"
-	## Else: Coasting
+	## Else: Coasting with Engine LERP down
 	else: 
-		#engine_force = 0.0
-		brake =0.0
+		brake = 0.0
+		engine_force = lerp(engine_force, 0.0, pedal_speed * delta)
 		pedal_text = "Coast"
 	## Update UI
 	speedtometer_label.text = (

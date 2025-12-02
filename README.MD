@@ -1,14 +1,21 @@
 # v4-51-golf GitHub repo
 
 ## Begin Overlays
-- Update Lights
-- Upgrade Meshes from Project menu
-- Test Export with Lights 
-  - 60 FPS settings
-- Starting menu
+1. Starting menu
   - Select scene
   - Select car
-- Also used as Escape menu
+2. Also used as Escape menu
+
+## Prepare branch overlays
+- Update Lights
+- Merfe ZC's branch
+- Upgrade Meshes from Project menu
+- Delete unused Car mass 
+  - Used default 40kg
+- Improve Coasting with Engine LERP down
+
+- Test Export with Lights 
+  - 60 FPS settings
 
 ## 25.12.02 Godot Spa
 - Tested: SpaHeight looks great, SpaFlat broken
