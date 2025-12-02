@@ -37,7 +37,6 @@ window/dpi/allow_hidpi=false
 window/vsync/vsync_mode=0
 
 [editor]
-
 movie_writer/fps=30
 
 [editor_plugins]
