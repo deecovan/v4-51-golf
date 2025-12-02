@@ -28,5 +28,5 @@ script = ExtResource("2_g2yeo")
 physics_material_override = SubResource("PhysicsMaterial_g1p57")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0.1, 0)
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
 shape = SubResource("HeightMapShape3D_0dp1x")

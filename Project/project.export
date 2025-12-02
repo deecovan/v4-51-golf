@@ -19,8 +19,8 @@ config/version="4.41"
 run/main_scene="uid://cb02p0fygii8s"
 run/print_header=false
 config/features=PackedStringArray("4.4", "Forward Plus")
-run/max_fps=30
-boot_splash/bg_color=Color(1, 1, 1, 1)
+run/max_fps=60
+boot_splash/bg_color=Color(0.772549, 0.662745, 0.415686, 1)
 boot_splash/fullsize=false
 boot_splash/image="uid://bllvjdvktpodv"
 config/icon="uid://bllvjdvktpodv"
@@ -37,8 +37,11 @@ window/dpi/allow_hidpi=false
 window/vsync/vsync_mode=0
 
 [editor]
+movie_writer/fps=60
 
-movie_writer/fps=30
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/physics_collision_import_generator/plugin.cfg")
 
 [importer_defaults]
 
@@ -166,9 +169,14 @@ viewport={
 ]
 }
 
+[internationalization]
+
+rendering/defaults/default_clear_color=Color(0.535944, 0.447176, 0.243825, 1)
+rendering/bg_color=Color(0.772549, 0.662745, 0.415686, 1)
+
 [physics]
 
-common/physics_ticks_per_second=30
+common/physics_ticks_per_second=60
 
 [rendering]
 
@@ -184,6 +192,6 @@ textures/default_filters/texture_mipmap_bias=-0.25
 textures/decals/filter=0
 textures/light_projectors/filter=0
 occlusion_culling/occlusion_rays_per_thread=256
-environment/defaults/default_clear_color=Color(0, 0, 0, 1)
+environment/defaults/default_clear_color=Color(0.535944, 0.447176, 0.243825, 1)
 anti_aliasing/quality/screen_space_aa=1
 occlusion_culling/use_occlusion_culling=true

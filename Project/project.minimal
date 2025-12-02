@@ -20,7 +20,7 @@ run/main_scene="uid://cb02p0fygii8s"
 run/print_header=false
 config/features=PackedStringArray("4.4", "Forward Plus")
 run/max_fps=30
-boot_splash/bg_color=Color(1, 1, 1, 1)
+boot_splash/bg_color=Color(0.772549, 0.662745, 0.415686, 1)
 boot_splash/fullsize=false
 boot_splash/image="uid://bllvjdvktpodv"
 config/icon="uid://bllvjdvktpodv"
@@ -39,6 +39,10 @@ window/vsync/vsync_mode=0
 [editor]
 
 movie_writer/fps=30
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/physics_collision_import_generator/plugin.cfg")
 
 [importer_defaults]
 
@@ -166,6 +170,11 @@ viewport={
 ]
 }
 
+[internationalization]
+
+rendering/defaults/default_clear_color=Color(0.535944, 0.447176, 0.243825, 1)
+rendering/bg_color=Color(0.772549, 0.662745, 0.415686, 1)
+
 [physics]
 
 common/physics_ticks_per_second=30
@@ -175,15 +184,12 @@ common/physics_ticks_per_second=30
 textures/canvas_textures/default_texture_filter=0
 textures/webp_compression/lossless_compression_factor=75.0
 lights_and_shadows/directional_shadow/soft_shadow_filter_quality=0
-lights_and_shadows/directional_shadow/soft_shadow_filter_quality.mobile=0
 lights_and_shadows/positional_shadow/soft_shadow_filter_quality=0
-lights_and_shadows/positional_shadow/soft_shadow_filter_quality.mobile=0
 textures/default_filters/use_nearest_mipmap_filter=true
 textures/default_filters/anisotropic_filtering_level=4
 textures/default_filters/texture_mipmap_bias=-0.25
 textures/decals/filter=0
 textures/light_projectors/filter=0
 occlusion_culling/occlusion_rays_per_thread=256
-environment/defaults/default_clear_color=Color(0, 0, 0, 1)
-anti_aliasing/quality/screen_space_aa=0
+environment/defaults/default_clear_color=Color(0.535944, 0.447176, 0.243825, 1)
 occlusion_culling/use_occlusion_culling=true

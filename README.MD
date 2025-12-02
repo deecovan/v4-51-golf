@@ -1,8 +1,18 @@
 # v4-51-golf GitHub repo
 
+## Begin Overlays
+- Update Lights
+- Upgrade Meshes from Project menu
+- Test Export with Lights 
+  - 60 FPS settings
+- Starting menu
+  - Select scene
+  - Select car
+- Also used as Escape menu
+
 ## 25.12.02 Godot Spa
 - Tested: SpaHeight looks great, SpaFlat broken
-
+- Tested: SpaFlat v1.1 lorks great!
 - @REMEMBER! Using large GLB with collisions export/import steps: 
   - GLB Blender export
   - Physics Collision Import Generator 
