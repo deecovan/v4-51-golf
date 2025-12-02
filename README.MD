@@ -7,6 +7,8 @@
 2. Also used as Escape menu
 
 ## Prepare branch overlays
+- Re-export Fanta Car and Wheel from Blender
+
 - Update Lights
 - Merfe ZC's branch
 - Upgrade Meshes from Project menu

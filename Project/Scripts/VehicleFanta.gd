@@ -155,8 +155,8 @@ func _physics_process(delta: float) -> void:
 		brake = brake_force
 		pedal_text = "Brake"
 		## @HACK Simulate drag
-		$Wheel3Drl.wheel_friction_slip = fric_slip_rear / 2
-		$Wheel3Drr.wheel_friction_slip = fric_slip_rear / 2
+		$Wheel3Drl.wheel_friction_slip = fric_slip_rear / 2.0
+		$Wheel3Drr.wheel_friction_slip = fric_slip_rear / 2.0
 	## Else: Coasting with Engine LERP down
 	else: 
 		brake = 0.0
