@@ -5,6 +5,7 @@
   - [F7] next scene
 - Update project.* files
 - Moved Pow sound to th Rear bamper
+- Last update for lights and sounds feels juicy
 
 ### Improved v1.1
 - Sound and Visual improvements in version 1.1
