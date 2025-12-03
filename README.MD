@@ -4,8 +4,10 @@
 - Add WheelController to Vehicle
   - Add Slop indicators
   - Add Slip sounds to wheels
-- Next:
+- Add EngineController for engine sounds:
+  - Sound Scale from velocity, Volume from power
 
+- Next:
 1. Starting menu
   - Select scene
   - Select car

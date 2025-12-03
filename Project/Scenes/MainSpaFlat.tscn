@@ -16,9 +16,9 @@ script = ExtResource("1_qinwq")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -474.527, 0.1, 59.696)
 
 [node name="CameraGimbal" parent="." instance=ExtResource("4_dtche")]
-transform = Transform3D(-3.93403e-07, 0, -1, 0, 1, 0, 1, 0, -3.93403e-07, 505.007, 5, 24)
+transform = Transform3D(-1, 0, 4.37114e-07, 0, 1, 0, -4.37114e-07, 0, -1, 474, 2.5, 37.5)
 
 [node name="Vehicle" parent="." instance=ExtResource("5_io5rd")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 475.514, 2.40147, 37.7545)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 475.514, 2.5, 37.755)
 
 [node name="UI" parent="." instance=ExtResource("6_neip4")]
