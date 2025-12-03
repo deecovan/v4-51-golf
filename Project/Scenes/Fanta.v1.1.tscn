@@ -89,6 +89,7 @@ max_db = 6.0
 panning_strength = 2.0
 
 [node name="Pow" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.62268e-07, 0, -3)
 stream = ExtResource("5_akpl3")
 max_db = 6.0
 pitch_scale = 0.63

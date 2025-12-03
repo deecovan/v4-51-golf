@@ -3,6 +3,8 @@
 ## Begin Overlays
 - Added Scene loader
   - [F7] next scene
+- Update project.* files
+- Moved Pow sound to th Rear bamper
 
 ### Improved v1.1
 - Sound and Visual improvements in version 1.1

@@ -202,10 +202,6 @@ common/physics_ticks_per_second=30
 
 [rendering]
 
-anti_aliasing/quality/msaa_2d=0
-anti_aliasing/quality/msaa_3d=0
 occlusion_culling/occlusion_rays_per_thread=256
 environment/defaults/default_clear_color=Color(0.535944, 0.447176, 0.243825, 1)
-anti_aliasing/quality/screen_space_aa=0
-anti_aliasing/quality/use_taa=false
 occlusion_culling/use_occlusion_culling=true
