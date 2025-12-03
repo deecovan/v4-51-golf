@@ -1,0 +1,24 @@
+[gd_scene load_steps=7 format=3 uid="uid://0qldpiyk6yjd"]
+
+[ext_resource type="Script" uid="uid://dm8hi5ycng4qe" path="res://Scripts/MainSpaHeight.v1.1.gd" id="1_mccm3"]
+[ext_resource type="PackedScene" uid="uid://cqj403us21hwa" path="res://Sky/world_environment.tscn" id="2_ebms0"]
+[ext_resource type="PackedScene" uid="uid://dy8ifo4lo2dgt" path="res://Scenes/Spa.Height.tscn" id="3_mccm3"]
+[ext_resource type="PackedScene" uid="uid://1nwkd5exeqht" path="res://Scenes/Fanta.v1.1.tscn" id="4_wfv4h"]
+[ext_resource type="PackedScene" uid="uid://d1tqw4jcecxpq" path="res://Scenes/CameraGimbal.v1.1.tscn" id="5_mcomn"]
+[ext_resource type="PackedScene" uid="uid://c2u3c52wwav41" path="res://Scenes/ui.tscn" id="6_obff1"]
+
+[node name="MainSpaHeight_v1_1" type="Node3D"]
+script = ExtResource("1_mccm3")
+
+[node name="WorldEnvironment" parent="." instance=ExtResource("2_ebms0")]
+
+[node name="SpaHeight" parent="." instance=ExtResource("3_mccm3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -475, 0.1, 60)
+
+[node name="Vehicle" parent="." instance=ExtResource("4_wfv4h")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 467.086, -29.2263, 38.1594)
+
+[node name="CameraGimbal_v1_1" parent="." instance=ExtResource("5_mcomn")]
+transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, 467.772, -26.5357, 38.1256)
+
+[node name="UI" parent="." instance=ExtResource("6_obff1")]

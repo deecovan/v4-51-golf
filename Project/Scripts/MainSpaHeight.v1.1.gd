@@ -12,7 +12,7 @@ func _ready():
 	vehicle = find[0]
 	## Using Debug Draw not shaded
 	get_viewport().debug_draw = Viewport.DEBUG_DRAW_UNSHADED
-	UI.show_message("Spa Flat v1.1 Ready!")
+	UI.show_message("Spa Heigh v1.1 Loaded!")
 			
 func _input(_event):
 	use_main_controls(_event)
@@ -61,7 +61,7 @@ func use_main_controls(_event) -> void:
 		
 	## Change Main scene
 	if Input.is_action_just_pressed('next_scene'):
-		get_tree().change_scene_to_file("res://Scenes/MainSpaHeight.v1.1.tscn")
+		get_tree().change_scene_to_file("res://Scenes/MainSpaFlat.v1.1.tscn")
 			
 func reload_scene(message):
 	UI.show_message(message)
