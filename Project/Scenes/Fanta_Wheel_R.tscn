@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=4 uid="uid://c4nshb085yca4"]
+[gd_scene load_steps=6 format=4 uid="uid://c4nshb085yca4"]
 
 [ext_resource type="Texture2D" uid="uid://lyt8l820n4yl" path="res://Import/UV-sharp.png" id="1_sx6r2"]
+[ext_resource type="AudioStream" uid="uid://l0njrpj6bcwf" path="res://Sounds/slip.wav" id="2_xpl1y"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_371fh"]
 resource_name = "Material"
@@ -56,3 +57,11 @@ damping_compression = 0.8
 transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 0, 0, 0)
 mesh = SubResource("ArrayMesh_sx6r2")
 skeleton = NodePath("")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_xpl1y")
+max_db = 6.0
+pitch_scale = 0.5
+max_distance = 100.0
+max_polyphony = 8
+panning_strength = 10.0

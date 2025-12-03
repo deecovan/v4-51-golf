@@ -1,7 +1,11 @@
 # v4-51-golf GitHub repo
 
 ## Begin Overlays
-* Add Sleep indicators
+- Add WheelController to Vehicle
+  - Add Slop indicators
+  - Add Slip sounds to wheels
+- Next:
+
 1. Starting menu
   - Select scene
   - Select car

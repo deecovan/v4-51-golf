@@ -1,5 +1,7 @@
 extends Node
 
+@export var sleep_start = 0.2
+
 var UI: CanvasLayer
 var front_slip_bar: HBoxContainer
 var rear_slip_bar: HBoxContainer
@@ -30,7 +32,27 @@ func _ready() -> void:
 	sleep_rr_bar = find_sleep_rr[0]
 
 func _physics_process(delta: float) -> void:
-	sleep_fl_bar.set_value(wheel_fl.get_skidinfo() * 100.0)
-	sleep_fr_bar.set_value(wheel_fr.get_skidinfo() * 100.0)
-	sleep_rl_bar.set_value(wheel_fl.get_skidinfo() * 100.0)
-	sleep_rr_bar.set_value(wheel_fr.get_skidinfo() * 100.0)
+	sleep_fl_bar.set_value(val_sleep(wheel_fl))
+	sleep_fr_bar.set_value(val_sleep(wheel_fr))
+	sleep_rl_bar.set_value(val_sleep(wheel_rl))
+	sleep_rr_bar.set_value(val_sleep(wheel_rr))
+
+func val_sleep(target: VehicleWheel3D) -> float:
+	var val = target.get_skidinfo()
+	if val < sleep_start: 
+		play_sleep(target, (sleep_start / val))
+	else: stop_sleep(target)
+	return 10.0 - val * 100.0
+	
+func play_sleep(target: VehicleWheel3D, volume: float) -> void:
+	var find_target_player = target.find_children("AudioStreamPlayer3D")
+	var target_player: AudioStreamPlayer3D = find_target_player[0]
+	target_player.volume_db = volume * 20 - 40
+	if (!target_player.playing): target_player.play()
+	pass
+
+func stop_sleep(target: VehicleWheel3D) -> void:
+	var find_target_player = target.find_children("AudioStreamPlayer3D")
+	var target_player: AudioStreamPlayer3D = find_target_player[0]
+	target_player.stop()
+	pass

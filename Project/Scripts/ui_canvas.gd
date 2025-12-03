@@ -20,3 +20,4 @@ func show_message_again():
 	$Message.show()
 	await get_tree().create_timer(5).timeout
 	$Message.hide()
+	
