@@ -7,12 +7,4 @@ environment = ExtResource("1_yemj2")
 
 [node name="Light3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-1, -8.44439e-08, 2.26267e-08, 0, 0.258819, 0.965926, -8.74228e-08, 0.965926, -0.258819, 0, 100, -25)
-light_energy = 0.25
-light_indirect_energy = 0.75
-light_specular = 2.0
 shadow_enabled = true
-shadow_bias = 0.2
-shadow_normal_bias = 4.0
-shadow_blur = 4.0
-directional_shadow_mode = 1
-directional_shadow_max_distance = 200.0
