@@ -10,6 +10,8 @@ var max
 var power
 var max_p
 var snd_start
+## Sound Scale from velocity, Volume from power
+var scale
 var vol
 
 func _ready():
@@ -25,13 +27,13 @@ func _ready():
 func _physics_process(delta: float) -> void:
 	vel = vehicle.linear_velocity.length()
 	power = vehicle.engine_force
+	scale = 1 + vel / max
 	vol = power / max_p
 	if not _start.playing and not _idle.playing:
 		_idle.play()
 	if not _start.playing and not _med.playing:
 		_med.play()
 	if vel > snd_start:
-		var scale = 1 + vel / max
 		_idle.pitch_scale = scale
 		_med.pitch_scale = scale
 		_med.volume_db = vol * 10 - 10
