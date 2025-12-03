@@ -1,36 +1,36 @@
 extends Node3D
 
 ## Keyboard controlled Rotation and Zoom
-@export var zoom_speed = 0.1
-@export var camera_rotation = -0.3
+@export var camera_zoom = 0.2
+@export var zoom_speed = 0.05
+@export var camera_rotation = -0.5
 @export var camera_speed = PI / 2
-@export var camera_FOV = 65
-@export var tween_speed = 8.0
 ## Mouse controlled Rotation sensivity and direction
 @export var mouse_sensivity = 5000
 ## -1 normal or +1 inversed
 @export var mouse_direction = -1
 var gimbal_rotation_x: float
 var gimbal_rotation_y: float
-var gimbal_rotation_z: float
 var vehicle_rotation_x: float
 var vehicle_rotation_y: float
 ## Link objects
 var vehicle: VehicleBody3D
 var gimbal_inner: Node3D
+
+## Camera Follow lerp speed
+@export var camera_lerpx = 8
+@export var camera_lerpz = 8
+@export var camera_lerpy = 4
+
 var zoom: float
-var camera: Camera3D
 
 func _ready() -> void:
 	vehicle = $"../Vehicle"
 	gimbal_inner = $GimbalInner
-	camera = $GimbalInner/Camera3D
-	camera.fov = camera_FOV
-	zoom = 1
+	zoom = camera_zoom
 	gimbal_inner.rotation.x = camera_rotation
 	gimbal_rotation_x = gimbal_inner.rotation.x
 	gimbal_rotation_y = gimbal_inner.rotation.y
-	gimbal_rotation_z = gimbal_inner.rotation.z
 
 func _input(event):
 	if event.is_action_pressed("cam_zoom_in"):
@@ -40,12 +40,16 @@ func _input(event):
 		
 func _process(delta):
 	## Gimbal follow the car, but rotation is modified by player's keyboard
-	var tween_scale = get_tree().create_tween()
-	tween_scale.tween_property(camera, "fov", 
-		camera_FOV * zoom, delta * tween_speed)
-	var tween_position = get_tree().create_tween()
-	tween_position.tween_property(self, "position", 
-		vehicle.position, (delta * tween_speed) / 2)
+	scale = Vector3.ONE * zoom
+	position.x = lerp(
+		position.x, vehicle.position.x, 
+		delta * camera_lerpx)
+	position.y = lerp(
+		position.y, vehicle.position.y, 
+		delta * camera_lerpy)
+	position.z =  lerp(
+		position.z, vehicle.position.z, 
+		delta * camera_lerpz)
 	vehicle_rotation_x = vehicle.rotation.x
 	vehicle_rotation_y = vehicle.rotation.y
 	
@@ -64,11 +68,6 @@ func _process(delta):
 		 	mouse_direction * mouse_velocity.y / mouse_sensivity)
 
 	## Apply Gimbal rotation
-	var tween_rotation = get_tree().create_tween()
-	tween_rotation.tween_property(gimbal_inner, "rotation", 
-		Vector3(gimbal_rotation_x + vehicle_rotation_x,
-			gimbal_rotation_y + vehicle_rotation_y,
-			gimbal_rotation_z), delta * tween_speed)
 	gimbal_inner.rotation.x = gimbal_rotation_x + vehicle_rotation_x
 	gimbal_inner.rotation.y = gimbal_rotation_y + vehicle_rotation_y
 		

@@ -31,7 +31,7 @@ func _ready() -> void:
 	sleep_rl_bar = find_sleep_rl[0]
 	sleep_rr_bar = find_sleep_rr[0]
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	sleep_fl_bar.set_value(val_sleep(wheel_fl))
 	sleep_fr_bar.set_value(val_sleep(wheel_fr))
 	sleep_rl_bar.set_value(val_sleep(wheel_rl))
@@ -49,7 +49,6 @@ func play_sleep(target: VehicleWheel3D, volume: float) -> void:
 	var target_player: AudioStreamPlayer3D = find_target_player[0]
 	target_player.volume_db = volume * 20 - 40
 	if (!target_player.playing): target_player.play()
-	pass
 
 func stop_sleep(target: VehicleWheel3D) -> void:
 	var find_target_player = target.find_children("AudioStreamPlayer3D")

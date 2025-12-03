@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://b16bbxfwqe2mt" path="res://Scenes/stones_short.tscn" id="4_vy5pj"]
 [ext_resource type="PackedScene" uid="uid://6gxcdxc80sgn" path="res://Scenes/sign_highway_wide.tscn" id="5_4kpch"]
 [ext_resource type="PackedScene" uid="uid://btws7edbjvv2w" path="res://Scenes/squares.tscn" id="5_bmxlf"]
-[ext_resource type="PackedScene" uid="uid://d1tqw4jcecxpq" path="res://Scenes/camera_gimbal.tscn" id="6_v1gob"]
+[ext_resource type="PackedScene" uid="uid://d1tqw4jcecxpq" path="res://Scenes/CameraGimbal.v1.1.tscn" id="6_v1gob"]
 [ext_resource type="PackedScene" uid="uid://cv01vjimybqxg" path="res://Scenes/terra.tscn" id="7_4kpch"]
 [ext_resource type="PackedScene" uid="uid://bt677ol3pn1iu" path="res://Scenes/Vehicle.tscn" id="10_bmxlf"]
 

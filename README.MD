@@ -1,6 +1,11 @@
 # v4-51-golf GitHub repo
 
 ## Begin Overlays
+
+### Improved v1.1
+- Sound and Visual improvements in version 1.1
+- tag v1.1
+
 - Add WheelController to Vehicle
   - Add Slop indicators
   - Add Slip sounds to wheels
