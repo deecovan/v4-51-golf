@@ -64,5 +64,5 @@ volume_db = -12.0
 max_db = 0.0
 pitch_scale = 0.5
 max_distance = 100.0
-max_polyphony = 8
-panning_strength = 10.0
+max_polyphony = 16
+panning_strength = 2.0
