@@ -9,7 +9,7 @@ var reverse =  false
 @export var pedal_speed = 0.75
 @export var brake_force = 6.0
 @export var engine_brake_speed = 2.0
-@export var mult_slip_rear = 1.75
+@export var mult_slip_rear = 2.0
 @export var engine_coast = 0.1
 @export var coasting_speed = 0.01
 ## Maximum Steering angle in Radians
@@ -27,7 +27,7 @@ var reverse =  false
 @export var fric_slip_front = 1.25
 ## Rear wheels friction slip ratio ## 0.65
 ## Using with multiply or divide to mult_slip_rear
-@export var fric_slip_rear = 0.7 
+@export var fric_slip_rear = 0.75 
 ## Typical racing car damper ratios are 0.65-0.7 
 ## in ride where 1 is 100% critical damping
 ## Front wheels damper compression ## 0.8
