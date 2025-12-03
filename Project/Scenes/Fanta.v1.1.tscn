@@ -1,14 +1,14 @@
-[gd_scene load_steps=15 format=4 uid="uid://bybuvtl2qbgos"]
+[gd_scene load_steps=15 format=4 uid="uid://1nwkd5exeqht"]
 
-[ext_resource type="Script" uid="uid://g1b5fmyreevn" path="res://Scripts/VehicleFanta.gd" id="1_txrvn"]
-[ext_resource type="Texture2D" uid="uid://bbyxnybki6h8f" path="res://Import/blender/car_UV-sharp.png" id="2_txrvn"]
-[ext_resource type="Script" uid="uid://dp54wm0r2sonc" path="res://Scripts/fanta_wheel.gd" id="3_hfgqs"]
-[ext_resource type="PackedScene" uid="uid://c4nshb085yca4" path="res://Scenes/Fanta_Wheel_R.tscn" id="3_txrvn"]
-[ext_resource type="AudioStream" uid="uid://bqp5wuckj25qq" path="res://Sounds/eng start.wav" id="3_y3urr"]
-[ext_resource type="AudioStream" uid="uid://thyv2bswsxgf" path="res://Sounds/eng idle.wav" id="4_6n2qy"]
-[ext_resource type="PackedScene" uid="uid://bnj10rk4ojq0v" path="res://Scenes/Fanta_Wheel_L.tscn" id="4_hfgqs"]
-[ext_resource type="AudioStream" uid="uid://dlybk1a685jap" path="res://Sounds/eng power.wav" id="5_6n2qy"]
-[ext_resource type="Script" uid="uid://bn2vvwlgnjuak" path="res://Scripts/engine_controller.gd" id="5_u4vwp"]
+[ext_resource type="Script" uid="uid://g1b5fmyreevn" path="res://Scripts/VehicleFanta.gd" id="1_2863i"]
+[ext_resource type="Texture2D" uid="uid://bbyxnybki6h8f" path="res://Import/blender/car_UV-sharp.png" id="2_tcuxl"]
+[ext_resource type="AudioStream" uid="uid://bqp5wuckj25qq" path="res://Sounds/eng start.wav" id="3_2he0m"]
+[ext_resource type="AudioStream" uid="uid://thyv2bswsxgf" path="res://Sounds/eng idle.wav" id="4_4tl3i"]
+[ext_resource type="AudioStream" uid="uid://dlybk1a685jap" path="res://Sounds/eng power.wav" id="5_akpl3"]
+[ext_resource type="Script" uid="uid://bn2vvwlgnjuak" path="res://Scripts/engine_controller.gd" id="6_vwj73"]
+[ext_resource type="Script" uid="uid://dp54wm0r2sonc" path="res://Scripts/fanta_wheel.gd" id="7_xelqv"]
+[ext_resource type="PackedScene" uid="uid://bnj10rk4ojq0v" path="res://Scenes/Fanta_Wheel_L.tscn" id="8_jb5yj"]
+[ext_resource type="PackedScene" uid="uid://c4nshb085yca4" path="res://Scenes/Fanta_Wheel_R.tscn" id="9_lswq4"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_krx02"]
 friction = 0.0
@@ -17,7 +17,7 @@ friction = 0.0
 resource_name = "Material"
 transparency = 4
 cull_mode = 2
-albedo_texture = ExtResource("2_txrvn")
+albedo_texture = ExtResource("2_tcuxl")
 roughness = 0.5
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_hyg3w"]
@@ -62,7 +62,7 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 
 physics_material_override = SubResource("PhysicsMaterial_krx02")
 center_of_mass_mode = 1
 continuous_cd = true
-script = ExtResource("1_txrvn")
+script = ExtResource("1_2863i")
 
 [node name="Car" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -0.305, -0.839)
@@ -77,19 +77,19 @@ shape = SubResource("ConvexPolygonShape3D_txrvn")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.68907e-08, 0.0822849, -0.307594)
 
 [node name="Start" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("3_y3urr")
+stream = ExtResource("3_2he0m")
 max_db = 6.0
 max_polyphony = 4
 panning_strength = 4.0
 
 [node name="Idle" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("4_6n2qy")
+stream = ExtResource("4_4tl3i")
 volume_db = -6.0
 max_db = 6.0
 panning_strength = 4.0
 
 [node name="Pow" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("5_6n2qy")
+stream = ExtResource("5_akpl3")
 max_db = 6.0
 pitch_scale = 0.63
 max_polyphony = 4
@@ -100,12 +100,12 @@ wait_time = 1.2
 one_shot = true
 
 [node name="EngineController" type="Node" parent="."]
-script = ExtResource("5_u4vwp")
+script = ExtResource("6_vwj73")
 
 [node name="WheelsController" type="Node" parent="."]
-script = ExtResource("3_hfgqs")
+script = ExtResource("7_xelqv")
 
-[node name="Wheel3Dfl" parent="." instance=ExtResource("4_hfgqs")]
+[node name="Wheel3Dfl" parent="." instance=ExtResource("8_jb5yj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9, 0.0439357, 0.63)
 use_as_steering = true
 wheel_radius = 0.42
@@ -117,7 +117,7 @@ suspension_max_force = 60000.0
 damping_compression = 0.5
 damping_relaxation = 0.6
 
-[node name="Wheel3Dfr" parent="." instance=ExtResource("3_txrvn")]
+[node name="Wheel3Dfr" parent="." instance=ExtResource("9_lswq4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9, 0.0439357, 0.63)
 use_as_steering = true
 wheel_radius = 0.42
@@ -128,7 +128,7 @@ suspension_max_force = 60000.0
 damping_compression = 0.5
 damping_relaxation = 0.6
 
-[node name="Wheel3Drr" parent="." instance=ExtResource("3_txrvn")]
+[node name="Wheel3Drr" parent="." instance=ExtResource("9_lswq4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9, 0.0439357, -2.37)
 use_as_traction = true
 wheel_radius = 0.42
@@ -139,7 +139,7 @@ suspension_max_force = 40000.0
 damping_compression = 0.3
 damping_relaxation = 0.4
 
-[node name="Wheel3Drl" parent="." instance=ExtResource("4_hfgqs")]
+[node name="Wheel3Drl" parent="." instance=ExtResource("8_jb5yj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9, 0.0439357, -2.37)
 use_as_traction = true
 wheel_radius = 0.42
