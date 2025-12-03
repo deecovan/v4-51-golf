@@ -28,9 +28,10 @@ boot_splash/minimum_display_time=3000
 
 [display]
 
-window/size/viewport_width=800
+window/size/viewport_width=1280
 window/size/mode=2
 window/size/initial_position_type=4
+window/size/initial_position=Vector2i(-1, -1)
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 window/dpi/allow_hidpi=false
@@ -43,6 +44,12 @@ movie_writer/fps=30
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/physics_collision_import_generator/plugin.cfg")
+
+[gui]
+
+theme/custom="res://Themes/MinimalUI44/MinimalUI.tres"
+theme/custom_font="uid://kxpkpf1fnb1i"
+theme/default_font_antialiasing=2
 
 [importer_defaults]
 
@@ -183,6 +190,8 @@ rendering/bg_color=Color(0.772549, 0.662745, 0.415686, 1)
 [physics]
 
 common/physics_ticks_per_second=30
+common/max_physics_steps_per_frame=6
+common/physics_jitter_fix=0.0
 
 [rendering]
 

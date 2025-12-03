@@ -1,10 +1,20 @@
 # v4-51-golf GitHub repo
 
 ## Begin Overlays
+* Add Sleep indicators
 1. Starting menu
   - Select scene
   - Select car
 2. Also used as Escape menu
+
+## Overlay 1.0
+- Add Wheels Grip panel to overlay
+  - 10/1 rate (show 10% as 100%)
+
+- Copy Themes/FlatUI40 v4.0 to v4.4 to edit
+- Edit theme
+- Delete Project/.godot/* and re-import
+- Test teme
 
 ## Fanta v1.1
 - Re-export Fanta Car and Wheel from Blender

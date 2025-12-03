@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=4 uid="uid://c2u3c52wwav41"]
+[gd_scene load_steps=12 format=4 uid="uid://c2u3c52wwav41"]
 
 [ext_resource type="Script" uid="uid://bxgxdgj8xpxwf" path="res://Scripts/ui_canvas.gd" id="1_nf4gj"]
 [ext_resource type="Script" uid="uid://cwhmf0iu4u1ho" path="res://Scripts/draw_graph.gd" id="2_qdvrb"]
+[ext_resource type="Theme" uid="uid://c8m6i742fxd8v" path="res://Themes/MinimalUI44/MinimalUI.tres" id="3_nf4gj"]
 
 [sub_resource type="Image" id="Image_dvm57"]
 data = {
@@ -474,6 +475,14 @@ theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
+[node name="Help" type="Label" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.6)
+text = "F1 help"
+
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 
@@ -504,10 +513,94 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.6)
 text = "99"
 horizontal_alignment = 1
 
-[node name="Help" type="Label" parent="MarginContainer"]
+[node name="States" type="Control" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.6)
-text = "F1 help"
+size_flags_vertical = 10
+
+[node name="WheelsFrontSleep" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+
+[node name="FL" type="Control" parent="MarginContainer/VBoxContainer/WheelsFrontSleep"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+
+[node name="SleepFL" type="ProgressBar" parent="MarginContainer/VBoxContainer/WheelsFrontSleep/FL"]
+layout_mode = 0
+offset_right = 30.0
+offset_bottom = 30.0
+tooltip_text = "SleepFL"
+theme = ExtResource("3_nf4gj")
+theme_override_font_sizes/font_size = 10
+max_value = 10.0
+step = 0.1
+value = 10.0
+fill_mode = 3
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer/WheelsFrontSleep"]
+layout_mode = 2
+
+[node name="FR" type="Control" parent="MarginContainer/VBoxContainer/WheelsFrontSleep"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="SleepFR" type="ProgressBar" parent="MarginContainer/VBoxContainer/WheelsFrontSleep/FR"]
+layout_mode = 0
+offset_right = 30.0
+offset_bottom = 30.0
+tooltip_text = "SleepFR"
+theme = ExtResource("3_nf4gj")
+theme_override_font_sizes/font_size = 10
+max_value = 10.0
+step = 0.1
+value = 10.0
+fill_mode = 3
+
+[node name="VSeparator" type="VSeparator" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="WheelsRearSleep" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+
+[node name="RL" type="Control" parent="MarginContainer/VBoxContainer/WheelsRearSleep"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+tooltip_text = "SleepRL"
+
+[node name="SleepRL" type="ProgressBar" parent="MarginContainer/VBoxContainer/WheelsRearSleep/RL"]
+layout_mode = 0
+offset_right = 30.0
+offset_bottom = 30.0
+tooltip_text = "SleepRL"
+theme = ExtResource("3_nf4gj")
+theme_override_font_sizes/font_size = 10
+max_value = 10.0
+step = 0.1
+value = 10.0
+fill_mode = 3
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer/WheelsRearSleep"]
+layout_mode = 2
+
+[node name="RR" type="Control" parent="MarginContainer/VBoxContainer/WheelsRearSleep"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+tooltip_text = "SleepRR"
+
+[node name="SleepRR" type="ProgressBar" parent="MarginContainer/VBoxContainer/WheelsRearSleep/RR"]
+layout_mode = 0
+offset_right = 30.0
+offset_bottom = 30.0
+tooltip_text = "SleepRR"
+theme = ExtResource("3_nf4gj")
+theme_override_font_sizes/font_size = 10
+max_value = 10.0
+step = 0.1
+value = 10.0
+fill_mode = 3

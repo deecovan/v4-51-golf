@@ -7,7 +7,7 @@ var reverse =  false
 ## Maximum Steering speedss
 @export var steer_speed = 1.4
 @export var pedal_speed = 0.75
-@export var brake_force = 8.0
+@export var brake_force = 6.0
 @export var engine_brake_speed = 2.0
 @export var mult_slip_rear = 1.75
 @export var engine_coast = 0.1

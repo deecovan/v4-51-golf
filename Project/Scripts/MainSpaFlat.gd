@@ -44,13 +44,13 @@ func use_main_controls(_event) -> void:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN \
 			if is_window else DisplayServer.WINDOW_MODE_WINDOWED)
 	## Using Debug Draw not shaded
-	var viewport = get_viewport()
-	viewport.debug_draw = Viewport.DEBUG_DRAW_UNSHADED
+	get_viewport().debug_draw = Viewport.DEBUG_DRAW_UNSHADED
 	## Optional: Toggle between debug draw modes using a key press (e.g., 'P')
 	if Input.is_action_just_pressed('viewport'):
+		var viewport = get_viewport()
 		# Cycle through the available debug draw modes
 		# (DEBUG_DRAW_DISABLED, DEBUG_DRAW_WIREFRAME, DEBUG_DRAW_OVERDRAW, DEBUG_DRAW_UNSHADED)
-		viewport.debug_draw = (viewport.debug_draw + 1) % 5
+		viewport.debug_draw = (viewport.debug_draw + 4) % 5
 			
 func reload_scene(message):
 	$UI.show_message(message)

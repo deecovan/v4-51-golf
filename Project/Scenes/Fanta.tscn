@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=4 uid="uid://bybuvtl2qbgos"]
+[gd_scene load_steps=11 format=4 uid="uid://bybuvtl2qbgos"]
 
 [ext_resource type="Script" uid="uid://g1b5fmyreevn" path="res://Scripts/VehicleFanta.gd" id="1_txrvn"]
 [ext_resource type="Texture2D" uid="uid://bbyxnybki6h8f" path="res://Import/blender/car_UV-sharp.png" id="2_txrvn"]
+[ext_resource type="Script" uid="uid://dp54wm0r2sonc" path="res://Scripts/fanta_wheel.gd" id="3_hfgqs"]
 [ext_resource type="PackedScene" uid="uid://c4nshb085yca4" path="res://Scenes/Fanta_Wheel_R.tscn" id="3_txrvn"]
 [ext_resource type="PackedScene" uid="uid://bnj10rk4ojq0v" path="res://Scenes/Fanta_Wheel_L.tscn" id="4_hfgqs"]
 
@@ -70,6 +71,9 @@ shape = SubResource("ConvexPolygonShape3D_txrvn")
 
 [node name="CenterOfMass" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.68907e-08, 0.0822849, -0.307594)
+
+[node name="WheelsController" type="Node" parent="."]
+script = ExtResource("3_hfgqs")
 
 [node name="Wheel3Dfl" parent="." instance=ExtResource("4_hfgqs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9, 0.0439357, 0.63)
