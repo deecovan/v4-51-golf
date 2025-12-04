@@ -72,11 +72,8 @@ func _process(delta):
 	## Fix Camera rotation jump near y~=0
 	var new_rotation = Vector3(gimbal_rotation_x + vehicle_rotation_x,
 			gimbal_rotation_y + vehicle_rotation_y, gimbal_rotation_z)
-	if new_rotation.y > PI: new_rotation.y -= 2*PI
-	if gimbal_inner.rotation.y > PI: gimbal_inner.rotation.y -= 2*PI
-	if new_rotation.y < 0: new_rotation.y += 2*PI
-	if gimbal_inner.rotation.y < 0: gimbal_inner.rotation.y += 2*PI
-	print(var_to_str(new_rotation - gimbal_inner.rotation))
+	$GimbalInner/Node.look_at(vehicle.global_position)
+	new_rotation = $GimbalInner/Node.rotation
 	
 	var tween_rotation = get_tree().create_tween()
 	tween_rotation.tween_property(gimbal_inner, "rotation", new_rotation, 

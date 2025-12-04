@@ -1,10 +1,15 @@
 extends Node3D
 
-@export var mouse_sensitivity = 150
+@export var DEBUG = true
 var vehicle: Node
 var UI: Node
 
 func _ready():
+	## Use unshaded for tests
+	if DEBUG:
+		var viewport = get_viewport()
+		viewport.debug_draw = viewport.DEBUG_DRAW_UNSHADED
+	
 	var root = get_tree().get_root().get_child(0)
 	var find = root.find_children("UI")
 	UI = find[0]

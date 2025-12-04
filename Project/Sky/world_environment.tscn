@@ -9,4 +9,3 @@ environment = ExtResource("1_yemj2")
 transform = Transform3D(-1, -8.44439e-08, 2.26267e-08, 0, 0.258819, 0.965926, -8.74228e-08, 0.965926, -0.258819, 0, 100, -25)
 light_color = Color(1, 1, 0.815686, 1)
 light_energy = 0.5
-shadow_enabled = true

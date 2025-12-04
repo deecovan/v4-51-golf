@@ -5,21 +5,22 @@
 [node name="CameraGimbal_v1_1" type="Node3D"]
 transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, 0, 0, 0)
 script = ExtResource("1_31ixn")
-camera_speed = 2.0
 
 [node name="GimbalInner" type="Node3D" parent="."]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
+transform = Transform3D(9.33749e-08, 0, 1, 0, 1, 0, -1, 0, 9.33749e-08, 0, 0, 0)
 
 [node name="Light3D" type="DirectionalLight3D" parent="GimbalInner"]
-transform = Transform3D(-1, -8.44439e-08, 2.26267e-08, 0, 0.258819, 0.965926, -8.74228e-08, 0.965926, -0.258819, 0, 100, -25)
+transform = Transform3D(-1, -8.91551e-08, 3.18745e-08, 7.71341e-09, 0.258819, 0.965926, -9.43669e-08, 0.965926, -0.258819, 2.78158e-06, 100, -20)
 light_color = Color(0.8, 1, 1, 1)
 light_energy = 0.5
-shadow_enabled = true
 shadow_blur = 4.0
 
 [node name="Camera3D" type="Camera3D" parent="GimbalInner"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.04908e-06, 0.0999999, 5)
+transform = Transform3D(1, 0, -1.98612e-08, 0, 1, 0, 1.98612e-08, 0, 1, 1.47023e-06, 1.1, 10)
 current = true
 fov = 65.0
 near = 0.01
 far = 1000.0
+
+[node name="Node" type="Node3D" parent="GimbalInner"]
+transform = Transform3D(1, 0, -4.96635e-08, 0, 1, 0, 4.96635e-08, 0, 1, 1.47023e-06, 1, 10)

@@ -39,8 +39,8 @@ func _physics_process(_delta: float) -> void:
 
 func val_sleep(target: VehicleWheel3D) -> float:
 	var val = target.get_skidinfo()
-	if val < sleep_start: 
-		play_sleep(target, (sleep_start / val))
+	if val > 0 and val < sleep_start: 
+		play_sleep(target, sleep_start / (val + sleep_start))
 		return (100 - val * (100 / sleep_start))
 	else: stop_sleep(target)
 	return 0
@@ -48,7 +48,7 @@ func val_sleep(target: VehicleWheel3D) -> float:
 func play_sleep(target: VehicleWheel3D, volume: float) -> void:
 	var find_target_player = target.find_children("AudioStreamPlayer3D")
 	var target_player: AudioStreamPlayer3D = find_target_player[0]
-	target_player.volume_db = volume * 16 - 32
+	target_player.volume_db = volume * 32 - 32
 	if (!target_player.playing): target_player.play()
 
 func stop_sleep(target: VehicleWheel3D) -> void:
