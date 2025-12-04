@@ -1,6 +1,12 @@
 # v4-51-golf GitHub repo
 
-## 25.12.04 Fixed
+## 25.12.04 
+
+### Added
+- Braking with Vehicle3D or Braking with Wheels
+  - separate front/rear values 
+
+### Fixed
 - Power sound too hight on 90%+ power
   - Added soft sounds
 - Slip overlay showing 30% on slip 

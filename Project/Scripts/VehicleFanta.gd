@@ -7,9 +7,15 @@ var reverse =  false
 ## Maximum Steering speedss
 @export var steer_speed = 1.4
 @export var pedal_speed = 0.75
-@export var brake_force = 7.0
+## Vehicle3D body braking force
+@export var vehicle_brake_force = 10.0
+## Wheel3D braking force and balance
+@export var wheel_brake_force = 10.0
+@export var front_brake_power = 1.2
+@export var rear_brake_power = 0.8
 @export var engine_brake_speed = 2.0
-@export var mult_slip_rear = 2.0
+## @HACK used for rebalanced acc/brake friction sleep
+@export var slip_rear_force = 2.0
 @export var engine_coast = 0.1
 @export var coasting_speed = 0.01
 ## Maximum Steering angle in Radians
@@ -26,7 +32,6 @@ var reverse =  false
 ## Front wheels friction slip ratio ## 0.65
 @export var fric_slip_front = 1.35
 ## Rear wheels friction slip ratio ## 0.65
-## Using with multiply or divide to mult_slip_rear
 @export var fric_slip_rear = 1.35 
 ## Typical racing car damper ratios are 0.65-0.7 
 ## in ride where 1 is 100% critical damping
@@ -132,6 +137,7 @@ func _physics_process(delta: float) -> void:
 		reverse = !reverse
 	
 	## Reset wheel_friction_slip before speed changes
+	## @HACK Restore hacked Friction Slip
 	#$Wheel3Drl.wheel_friction_slip = fric_slip_rear
 	#$Wheel3Drr.wheel_friction_slip = fric_slip_rear
 	## Match Vehicle speed to power_curve to get engine_force
@@ -139,8 +145,8 @@ func _physics_process(delta: float) -> void:
 	## Remove reverse
 	engine_force = abs(engine_force)
 	if Input.is_action_pressed("accelerate"):
-		engine_force = lerp(engine_force, MAX_POWER, pedal_speed * delta)
 		pedal_text = "Accel"
+		engine_force = lerp(engine_force, MAX_POWER, pedal_speed * delta)
 		## Match force to power_curve
 		var max_curve_index = power_curve.size() - 5
 		var speed_index = clamp( ## clamp maximal values
@@ -150,23 +156,29 @@ func _physics_process(delta: float) -> void:
 		var match_power = power_curve[speed_index] * MAX_POWER
 		engine_force = clamp(engine_force, 0, match_power)
 		brake = 0.0
-		## @HACK Simulate speed
+		## @HACK Simulate speeding Friction Slip
 		#$Wheel3Drl.wheel_friction_slip = fric_slip_rear * mult_slip_rear
 		#$Wheel3Drr.wheel_friction_slip = fric_slip_rear * mult_slip_rear
 		## Else: Braking with Engine LERP down
 	elif Input.is_action_pressed("brake"):
+		pedal_text = "Brake"
 		engine_force = lerp(
 			engine_force, 0.0, engine_brake_speed * delta)
-		brake = brake_force
-		pedal_text = "Brake"
-		## @HACK Simulate drag
+		## Braking with Vehicle3D
+		#brake = vehicle_brake_force
+		## Braking with Wheels
+		$Wheel3Dfl.brake = wheel_brake_force * front_brake_power
+		$Wheel3Dfr.brake = wheel_brake_force * front_brake_power
+		$Wheel3Drl.brake = wheel_brake_force * rear_brake_power
+		$Wheel3Drr.brake = wheel_brake_force * rear_brake_power
+		## @HACK Simulate braking Friction Slip
 		#$Wheel3Drl.wheel_friction_slip = fric_slip_rear / mult_slip_rear
 		#$Wheel3Drr.wheel_friction_slip = fric_slip_rear / mult_slip_rear
 	## Else: Coasting with Engine LERP down
 	else: 
+		pedal_text = "Coast"
 		brake = 0.0
 		engine_force = lerp(engine_force, 0.0, engine_coast * delta)
-		pedal_text = "Coast"
 	## Apply reverse
 	if reverse:
 		engine_force = - engine_force
