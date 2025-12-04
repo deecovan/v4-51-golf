@@ -3,7 +3,7 @@
 ## 25.12.04 
 
 ### *Fixing*
-- Camera jump
+- Fix Camera rotation jump near y~=0
   - if rotation > 2pi or rotation < 0
 
 ### *Adding*
