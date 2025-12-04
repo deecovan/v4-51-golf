@@ -1,6 +1,6 @@
 extends Node
 
-@export var sleep_start = 0.1
+@export var sleep_start = 0.2
 
 var UI: CanvasLayer
 var front_slip_bar: HBoxContainer
@@ -41,7 +41,7 @@ func val_sleep(target: VehicleWheel3D) -> float:
 	var val = target.get_skidinfo()
 	if val < sleep_start: 
 		play_sleep(target, (sleep_start / val))
-		return (10.0 - val * (10/sleep_start))
+		return (100 - val * (100 / sleep_start))
 	else: stop_sleep(target)
 	return 0
 	

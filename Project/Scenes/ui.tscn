@@ -533,9 +533,6 @@ offset_right = 30.0
 offset_bottom = 30.0
 tooltip_text = "SleepFL"
 theme = ExtResource("3_nf4gj")
-max_value = 20.0
-step = 0.1
-value = 10.0
 fill_mode = 3
 
 [node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer/WheelsFrontSleep"]
@@ -553,9 +550,6 @@ offset_right = 30.0
 offset_bottom = 30.0
 tooltip_text = "SleepFR"
 theme = ExtResource("3_nf4gj")
-max_value = 20.0
-step = 0.1
-value = 10.0
 fill_mode = 3
 
 [node name="VSeparator" type="VSeparator" parent="MarginContainer/VBoxContainer"]
@@ -577,9 +571,6 @@ offset_right = 30.0
 offset_bottom = 30.0
 tooltip_text = "SleepRL"
 theme = ExtResource("3_nf4gj")
-max_value = 20.0
-step = 0.1
-value = 10.0
 fill_mode = 3
 
 [node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer/WheelsRearSleep"]
@@ -596,7 +587,4 @@ offset_right = 30.0
 offset_bottom = 30.0
 tooltip_text = "SleepRR"
 theme = ExtResource("3_nf4gj")
-max_value = 20.0
-step = 0.1
-value = 10.0
 fill_mode = 3
