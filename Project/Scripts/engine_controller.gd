@@ -18,7 +18,7 @@ func _ready():
 	vehicle = $".."
 	max_s = vehicle.MAX_SPEED
 	max_p = vehicle.MAX_POWER
-	snd_start = max_s / 20
+	snd_start = max_s / 32
 	_pow.volume_db = -32.0
 	_timer.connect("timeout", on_timer_timeout)
 	_start.play()
@@ -36,10 +36,10 @@ func _physics_process(_delta: float) -> void:
 	if vel > snd_start:
 		_idle.pitch_scale = scale
 		_pow.pitch_scale = scale
-		_pow.volume_db = vol * 15 - 25
+		_pow.volume_db = vol * 32 - 32
 	## Randomise loops
-	if randf() > 0.95: _idle.play()
-	if randf() > 0.95: _pow.play()
+	if randf() > 0.9: _idle.play()
+	if randf() > 0.9: _pow.play()
 
 func on_timer_timeout():
 	_start.stop()

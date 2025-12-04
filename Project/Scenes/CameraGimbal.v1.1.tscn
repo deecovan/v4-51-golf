@@ -18,7 +18,7 @@ shadow_enabled = true
 shadow_blur = 4.0
 
 [node name="Camera3D" type="Camera3D" parent="GimbalInner"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.62269e-07, 0.5, 6)
 current = true
 fov = 65.0
 near = 0.01

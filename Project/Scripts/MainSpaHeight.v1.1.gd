@@ -11,8 +11,7 @@ func _ready():
 	find = root.find_children("Vehicle")
 	vehicle = find[0]
 	## Using Debug Draw not shaded
-	get_viewport().debug_draw = Viewport.DEBUG_DRAW_UNSHADED
-	UI.show_message("Spa Heigh v1.1 Loaded!")
+	UI.show_message("Spa Flat v1.1 Ready!")
 			
 func _input(_event):
 	use_main_controls(_event)
@@ -54,9 +53,9 @@ func use_main_controls(_event) -> void:
 			if is_window else DisplayServer.WINDOW_MODE_WINDOWED)
 	## Optional: Toggle between debug draw modes using a key press (e.g., 'P')
 	if Input.is_action_just_pressed('viewport'):
-		var viewport = get_viewport()
 		# Cycle through the available debug draw modes
 		# (DEBUG_DRAW_DISABLED, DEBUG_DRAW_WIREFRAME, DEBUG_DRAW_OVERDRAW, DEBUG_DRAW_UNSHADED)
+		var viewport = get_viewport()
 		viewport.debug_draw = (viewport.debug_draw + 1) % 5
 		
 	## Change Main scene

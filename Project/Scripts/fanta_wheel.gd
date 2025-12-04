@@ -48,7 +48,7 @@ func val_sleep(target: VehicleWheel3D) -> float:
 func play_sleep(target: VehicleWheel3D, volume: float) -> void:
 	var find_target_player = target.find_children("AudioStreamPlayer3D")
 	var target_player: AudioStreamPlayer3D = find_target_player[0]
-	target_player.volume_db = volume * 24 - 48
+	target_player.volume_db = volume * 16 - 32
 	if (!target_player.playing): target_player.play()
 
 func stop_sleep(target: VehicleWheel3D) -> void:

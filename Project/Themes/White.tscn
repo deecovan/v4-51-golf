@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://gxklsq2x4tps"]
 
-[ext_resource type="Script" uid="uid://c38lgq0jf848d" path="White.gd" id="1_tt5f1"]
+[ext_resource type="Script" uid="uid://i5kno04v4irc" path="res://Themes/White.gd" id="1_tt5f1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5"]
 resource_name = "white_panel"
