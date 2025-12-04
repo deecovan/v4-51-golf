@@ -48,8 +48,7 @@ var reverse =  false
 @export var max_force_rear = 1600
 
 ## MAX_POWER Used as power for gears (as PFG) 
-## SuperSpeed for this car is 100ms(360KPH) 
-@export var MAX_SPEED = 100.0
+@export var MAX_SPEED = 111.0
 @export var MAX_POWER = 800.0 # per each Traction wheel
 ### TESTED 799f 235kph, 4.5sec to 100kph
 ### First gear 0-40kph

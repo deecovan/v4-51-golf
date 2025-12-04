@@ -1,5 +1,9 @@
 # v4-51-golf GitHub repo
 
+## Need Fixes
+- Power sound too hight on 90%+ power
+- Slip overlay showing 30% on slip 
+
 ## Begin Overlays
 - Added Scene loader
   - [F7] next scene

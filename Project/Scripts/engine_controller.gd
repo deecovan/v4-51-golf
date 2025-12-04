@@ -36,10 +36,10 @@ func _physics_process(_delta: float) -> void:
 	if vel > snd_start:
 		_idle.pitch_scale = scale
 		_pow.pitch_scale = scale
-		_pow.volume_db = vol * 20 - 20
-	## Randomise loop
-	if randf() > 0.9: _idle.play()
-	if randf() > 0.9: _pow.play()
+		_pow.volume_db = vol * 15 - 25
+	## Randomise loops
+	if randf() > 0.95: _idle.play()
+	if randf() > 0.95: _pow.play()
 
 func on_timer_timeout():
 	_start.stop()

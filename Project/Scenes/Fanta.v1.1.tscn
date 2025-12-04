@@ -1,10 +1,10 @@
 [gd_scene load_steps=15 format=4 uid="uid://1nwkd5exeqht"]
 
 [ext_resource type="Script" uid="uid://g1b5fmyreevn" path="res://Scripts/VehicleFanta.gd" id="1_2863i"]
-[ext_resource type="Texture2D" uid="uid://b8yj64u4xr1un" path="res://Import/blender/car_UV-sharp.png" id="2_tcuxl"]
-[ext_resource type="AudioStream" uid="uid://dtdwd2y0behyk" path="res://Sounds/eng start.wav" id="3_2he0m"]
-[ext_resource type="AudioStream" uid="uid://hidjehq1pc4c" path="res://Sounds/eng idle.wav" id="4_4tl3i"]
-[ext_resource type="AudioStream" uid="uid://dpxnx6o6ju3kj" path="res://Sounds/eng power.wav" id="5_akpl3"]
+[ext_resource type="Texture2D" uid="uid://bbyxnybki6h8f" path="res://Import/blender/car_UV-sharp.png" id="2_tcuxl"]
+[ext_resource type="AudioStream" uid="uid://bqp5wuckj25qq" path="res://Sounds/eng start.wav" id="3_2he0m"]
+[ext_resource type="AudioStream" uid="uid://thyv2bswsxgf" path="res://Sounds/eng idle.wav" id="4_4tl3i"]
+[ext_resource type="AudioStream" uid="uid://dlybk1a685jap" path="res://Sounds/eng power.wav" id="5_akpl3"]
 [ext_resource type="Script" uid="uid://bn2vvwlgnjuak" path="res://Scripts/engine_controller.gd" id="6_vwj73"]
 [ext_resource type="Script" uid="uid://dp54wm0r2sonc" path="res://Scripts/fanta_wheel.gd" id="7_xelqv"]
 [ext_resource type="PackedScene" uid="uid://bnj10rk4ojq0v" path="res://Scenes/Fanta_Wheel_L.tscn" id="8_jb5yj"]
@@ -79,24 +79,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.082, -0.308)
 
 [node name="Start" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("3_2he0m")
-max_db = 0.0
-pitch_scale = 1.0
 max_polyphony = 2
 panning_strength = 2.0
 
 [node name="Idle" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("4_4tl3i")
-volume_db = 0.0
-max_db = -6.0
-pitch_scale = 1.0
+volume_db = -6.0
+max_db = 0.0
 max_polyphony = 2
 panning_strength = 2.0
 
 [node name="Pow" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.62268e-07, 0, -3)
 stream = ExtResource("5_akpl3")
-volume_db = 0.0
-max_db = -6.0
+max_db = 0.0
 pitch_scale = 0.63
 max_polyphony = 2
 panning_strength = 2.0

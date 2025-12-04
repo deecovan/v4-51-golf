@@ -1,11 +1,10 @@
 [gd_resource type="Theme" load_steps=54 format=3 uid="uid://c8m6i742fxd8v"]
 
-[ext_resource type="FontFile" uid="uid://dgh8kt3owpv0x" path="res://Themes/MinimalUI44/OpenSans-Regular.ttf" id="1"]
-[ext_resource type="Texture2D" uid="uid://boc8rvse4gx0u" path="res://Themes/MinimalUI44/icons.svg" id="2"]
+[ext_resource type="FontFile" uid="uid://kxpkpf1fnb1i" path="res://Themes/MinimalUI44/OpenSans-Regular.ttf" id="1"]
+[ext_resource type="Texture2D" uid="uid://bh5a4ur3aa7ln" path="res://Themes/MinimalUI44/icons.svg" id="2"]
 
 [sub_resource type="FontFile" id="21"]
 fallbacks = Array[Font]([ExtResource("1")])
-fixed_size = 0
 cache/0/16/0/ascent = 0.0
 cache/0/16/0/descent = 0.0
 cache/0/16/0/underline_position = 0.0
