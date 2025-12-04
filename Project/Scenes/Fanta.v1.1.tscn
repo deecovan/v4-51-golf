@@ -1,10 +1,10 @@
 [gd_scene load_steps=15 format=4 uid="uid://1nwkd5exeqht"]
 
 [ext_resource type="Script" uid="uid://g1b5fmyreevn" path="res://Scripts/VehicleFanta.gd" id="1_2863i"]
-[ext_resource type="Texture2D" uid="uid://bbyxnybki6h8f" path="res://Import/blender/car_UV-sharp.png" id="2_tcuxl"]
-[ext_resource type="AudioStream" uid="uid://bqp5wuckj25qq" path="res://Sounds/eng start.wav" id="3_2he0m"]
-[ext_resource type="AudioStream" uid="uid://thyv2bswsxgf" path="res://Sounds/eng idle.wav" id="4_4tl3i"]
-[ext_resource type="AudioStream" uid="uid://dlybk1a685jap" path="res://Sounds/eng power.wav" id="5_akpl3"]
+[ext_resource type="Texture2D" uid="uid://b8yj64u4xr1un" path="res://Import/blender/car_UV-sharp.png" id="2_tcuxl"]
+[ext_resource type="AudioStream" uid="uid://dtdwd2y0behyk" path="res://Sounds/eng start.wav" id="3_2he0m"]
+[ext_resource type="AudioStream" uid="uid://hidjehq1pc4c" path="res://Sounds/eng idle.wav" id="4_4tl3i"]
+[ext_resource type="AudioStream" uid="uid://dpxnx6o6ju3kj" path="res://Sounds/eng power.wav" id="5_akpl3"]
 [ext_resource type="Script" uid="uid://bn2vvwlgnjuak" path="res://Scripts/engine_controller.gd" id="6_vwj73"]
 [ext_resource type="Script" uid="uid://dp54wm0r2sonc" path="res://Scripts/fanta_wheel.gd" id="7_xelqv"]
 [ext_resource type="PackedScene" uid="uid://bnj10rk4ojq0v" path="res://Scenes/Fanta_Wheel_L.tscn" id="8_jb5yj"]
@@ -63,6 +63,7 @@ physics_material_override = SubResource("PhysicsMaterial_krx02")
 center_of_mass_mode = 1
 continuous_cd = true
 script = ExtResource("1_2863i")
+max_force_front = 7000
 
 [node name="Car" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -0.305, -0.839)
@@ -74,27 +75,30 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -0.305, -0.839)
 shape = SubResource("ConvexPolygonShape3D_txrvn")
 
 [node name="CenterOfMass" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.68907e-08, 0.0822849, -0.307594)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.082, -0.308)
 
 [node name="Start" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("3_2he0m")
-max_db = 6.0
-max_polyphony = 4
+max_db = 0.0
+pitch_scale = 1.0
+max_polyphony = 2
 panning_strength = 2.0
 
 [node name="Idle" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("4_4tl3i")
-volume_db = -6.0
-max_db = 6.0
+volume_db = 0.0
+max_db = -6.0
+pitch_scale = 1.0
+max_polyphony = 2
 panning_strength = 2.0
 
 [node name="Pow" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.62268e-07, 0, -3)
 stream = ExtResource("5_akpl3")
-volume_db = -12.0
-max_db = 6.0
+volume_db = 0.0
+max_db = -6.0
 pitch_scale = 0.63
-max_polyphony = 4
+max_polyphony = 2
 panning_strength = 2.0
 
 [node name="Timer" type="Timer" parent="."]
@@ -108,7 +112,7 @@ script = ExtResource("6_vwj73")
 script = ExtResource("7_xelqv")
 
 [node name="Wheel3Dfl" parent="." instance=ExtResource("8_jb5yj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9, 0.0439357, 0.63)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.92, 0.0439357, 0.63)
 use_as_steering = true
 wheel_radius = 0.42
 wheel_rest_length = 0.075
@@ -120,7 +124,7 @@ damping_compression = 0.5
 damping_relaxation = 0.6
 
 [node name="Wheel3Dfr" parent="." instance=ExtResource("9_lswq4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9, 0.0439357, 0.63)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.92, 0.0439357, 0.63)
 use_as_steering = true
 wheel_radius = 0.42
 wheel_rest_length = 0.075
@@ -131,7 +135,7 @@ damping_compression = 0.5
 damping_relaxation = 0.6
 
 [node name="Wheel3Drr" parent="." instance=ExtResource("9_lswq4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9, 0.0439357, -2.37)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.92, 0.0439357, -2.37)
 use_as_traction = true
 wheel_radius = 0.42
 wheel_rest_length = 0.08
@@ -142,7 +146,7 @@ damping_compression = 0.3
 damping_relaxation = 0.4
 
 [node name="Wheel3Drl" parent="." instance=ExtResource("8_jb5yj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9, 0.0439357, -2.37)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.92, 0.0439357, -2.37)
 use_as_traction = true
 wheel_radius = 0.42
 wheel_rest_length = 0.08
