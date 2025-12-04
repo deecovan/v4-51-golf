@@ -2,6 +2,14 @@
 
 ## 25.12.04 
 
+### *Fixing*
+- Camera jump
+  - if rotation > 2pi or rotation < 0
+
+### *Adding*
+- Add 1PV and side cameras
+- Add Camera vertical following
+
 ### Added
 - Braking with Vehicle3D or Braking with Wheels
   - separate front/rear values 
@@ -12,7 +20,7 @@
 - Slip overlay showing 30% on slip 
   - Fixed using 100% values in function
 
-## Begin Overlays
+## 25.12.03 Begin Overlays
 - Added Scene loader
   - [F7] next scene
 - Update project.* files
