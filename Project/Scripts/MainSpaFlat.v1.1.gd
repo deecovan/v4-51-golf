@@ -1,7 +1,7 @@
 extends Node3D
 
 @export var DEBUG = true
-var vehicle: Node
+var vehicle: VehicleBody3D
 var UI: Node
 
 func _ready():
@@ -29,10 +29,7 @@ func _process(_delta):
 			vehicle.position.x + randf(),
 			vehicle.position.y + 1,
 			vehicle.position.z +  randf())
-		vehicle.rotation = Vector3(
-			0,
-			vehicle.rotation.y,
-			0)
+		vehicle.rotation = Vector3.ZERO
 		vehicle.constant_force = Vector3.ZERO
 		vehicle.constant_torque = Vector3.ZERO
 	if Input.is_action_just_pressed('help'):

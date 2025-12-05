@@ -1,14 +1,15 @@
 # v4-51-golf GitHub repo
 
-## 25.12.04 
-
-### *Fixing*
-- Fix Camera rotation jump near y~=0
-  - if rotation > 2pi or rotation < 0
-
 ### *Adding*
 - Add 1PV and side cameras
 - Add Camera vertical following
+
+## 25.12.04 
+### Fixed
+- Fixed Camera rotation jump when when y=360+n
+  - Updated Gimbal logic
+  - Added log overlay
+  - Damaged keyboard/zoom rotation
 
 ### Added
 - Braking with Vehicle3D or Braking with Wheels
