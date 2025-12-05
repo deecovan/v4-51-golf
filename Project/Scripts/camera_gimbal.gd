@@ -87,6 +87,11 @@ func _process(delta):
 	vehicle_rotation_x = vehicle.rotation.x
 	vehicle_rotation_y = vehicle.rotation.y
 	
+	## Keyboard Gimbal rotation
+	var x = Input.get_axis("ui_up", "ui_down")
+	gimbal_rotation_x = gimbal_rotation_x + x * camera_speed * delta
+	var y = Input.get_axis("ui_right", "ui_left")
+	gimbal_rotation_y = gimbal_rotation_y + y * camera_speed * delta
 	## Mouse Gimbal rotation
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_RIGHT):
 		var mouse_velocity = Input.get_last_mouse_velocity()

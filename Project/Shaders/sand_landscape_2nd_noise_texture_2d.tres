@@ -3,8 +3,6 @@
 [ext_resource type="FastNoiseLite" uid="uid://33pt5plrd7ox" path="res://Shaders/terra_sand_fast_noise_lite.tres" id="1_xb2hd"]
 
 [resource]
-width = 256
-height = 256
 invert = true
 as_normal_map = true
 noise = ExtResource("1_xb2hd")

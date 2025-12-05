@@ -1,11 +1,16 @@
 # v4-51-golf GitHub repo
 
 ### *Adding*
-- Added Sand, Updated Sand shader
 - Start adding Objects
 - Add 1PV and side cameras     
 
 ## 25.12.04 
+
+### MainSpaFlat.v1.2 with shaded terrain, light and camera
+- Added Sand, Updated Sand shader
+- Fixed Gimbal and Camera
+- Modified Light
+
 ### Fixed
 - Fixed Camera rotation jump when when y=360+n
   - Updated Gimbal logic

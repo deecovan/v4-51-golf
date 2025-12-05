@@ -2,11 +2,11 @@
 
 [ext_resource type="Shader" uid="uid://6sqkb3by82s6" path="res://Shaders/terra_sand.gdshader" id="1_wm32s"]
 [ext_resource type="Texture2D" uid="uid://cb3jivsdoy0s4" path="res://Materials/terra_sand_noise_texture_2d.tres" id="2_wm32s"]
-[ext_resource type="Texture2D" uid="uid://nxuvgbguilnf" path="res://Materials/terra_sand_normal_texture_2d.tres" id="3_qvx3v"]
+[ext_resource type="Texture2D" uid="uid://d3p4an811yyr5" path="res://Shaders/sand_landscape_2nd_noise_texture_2d.tres" id="3_0t57k"]
 
 [resource]
 render_priority = 0
 shader = ExtResource("1_wm32s")
 shader_parameter/height_scale = 0.5
 shader_parameter/noise = ExtResource("2_wm32s")
-shader_parameter/normalmap = ExtResource("3_qvx3v")
+shader_parameter/normalmap = ExtResource("3_0t57k")

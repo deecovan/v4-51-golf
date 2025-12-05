@@ -52,7 +52,7 @@ func use_main_controls(_event) -> void:
 	if Input.is_action_just_pressed('Hide Info'):
 		UI.hide_info()
 	if Input.is_action_just_pressed('reload'):
-		get_tree().change_scene_to_file("res://Scenes/MainSpaFlat.v1.1.tscn")
+		get_tree().change_scene_to_file("res://Scenes/MainSpaFlat.v1.2.tscn")
 	if Input.is_action_just_pressed('screen'):
 		var mode := DisplayServer.window_get_mode()
 		var is_window: bool = mode != DisplayServer.WINDOW_MODE_FULLSCREEN

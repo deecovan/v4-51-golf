@@ -1,0 +1,29 @@
+[gd_scene load_steps=8 format=3 uid="uid://dqy35w0t0uaa0"]
+
+[ext_resource type="Script" uid="uid://dv8ykfntlf1at" path="res://Scripts/MainSpaScript.v1.1.gd" id="1_t2t33"]
+[ext_resource type="PackedScene" uid="uid://cqj403us21hwa" path="res://Sky/world_environment.tscn" id="2_o2f4t"]
+[ext_resource type="PackedScene" uid="uid://7koalahrye8x" path="res://Scenes/Spa.Flat.v1.1.tscn" id="3_fydd0"]
+[ext_resource type="PackedScene" uid="uid://bbyuqd4dbdeey" path="res://Scenes/sand_1_km_landscape.tscn" id="4_rousx"]
+[ext_resource type="PackedScene" uid="uid://1nwkd5exeqht" path="res://Scenes/Fanta.v1.1.tscn" id="5_g8hvc"]
+[ext_resource type="PackedScene" uid="uid://d1tqw4jcecxpq" path="res://Scenes/CameraGimbal.v1.1.tscn" id="6_fwol4"]
+[ext_resource type="PackedScene" uid="uid://c2u3c52wwav41" path="res://Scenes/ui.tscn" id="7_30uw3"]
+
+[node name="MainSpaFlat_v1_2" type="Node3D"]
+script = ExtResource("1_t2t33")
+
+[node name="WorldEnvironment" parent="." instance=ExtResource("2_o2f4t")]
+
+[node name="Spa_Flat_v1_1" parent="." instance=ExtResource("3_fydd0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -474.527, 0.1, 59.696)
+
+[node name="Sand 1km Landscape" parent="." instance=ExtResource("4_rousx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
+
+[node name="Vehicle" parent="." instance=ExtResource("5_g8hvc")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 467.086, 1.72039, 37.3828)
+max_force_front = 1600
+
+[node name="CameraGimbal_v1_1" parent="." instance=ExtResource("6_fwol4")]
+transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, 467.772, 2.41105, 37.349)
+
+[node name="UI" parent="." instance=ExtResource("7_30uw3")]

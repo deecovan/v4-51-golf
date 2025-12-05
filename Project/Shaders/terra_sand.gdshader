@@ -11,12 +11,12 @@ void vertex() {
 	float height = texture(noise, tex_position).x;
 	VERTEX.y += height * height_scale;
 	// Add Waves
-	 VERTEX.y += (cos(VERTEX.x*PI) * sin(VERTEX.z*PI))/(PI*PI);
+	// VERTEX.y += (cos(VERTEX.x*PI) * sin(VERTEX.z*PI))/(PI*PI);
 }
 
 void fragment() {
 	// Set Color
-	ALBEDO = vec3(0.5, 0.3, 0.1);
+	ALBEDO = vec3(0.45, 0.24, 0.05);
 	// Add Normals
 	NORMAL_MAP = texture(normalmap, tex_position).xyz;
 }
