@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://dqy35w0t0uaa0"]
 
-[ext_resource type="Script" uid="uid://dv8ykfntlf1at" path="res://Scripts/MainSpaFlat.v1.1.gd" id="1_8p6mp"]
+[ext_resource type="Script" uid="uid://dv8ykfntlf1at" path="res://Scripts/MainSpaScript.v1.1.gd" id="1_ahyfw"]
 [ext_resource type="PackedScene" uid="uid://cqj403us21hwa" path="res://Sky/world_environment.tscn" id="2_vfmpu"]
 [ext_resource type="PackedScene" uid="uid://7koalahrye8x" path="res://Scenes/Spa.Flat.v1.1.tscn" id="3_tp1xe"]
 [ext_resource type="PackedScene" uid="uid://d1tqw4jcecxpq" path="res://Scenes/CameraGimbal.v1.1.tscn" id="4_8xxra"]
@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c2u3c52wwav41" path="res://Scenes/ui.tscn" id="7_1jgfn"]
 
 [node name="MainSpaFlat_v1_1" type="Node3D"]
-script = ExtResource("1_8p6mp")
+script = ExtResource("1_ahyfw")
 
 [node name="WorldEnvironment" parent="." instance=ExtResource("2_vfmpu")]
 

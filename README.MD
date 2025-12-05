@@ -1,15 +1,14 @@
 # v4-51-golf GitHub repo
 
 ### *Adding*
-- Add 1PV and side cameras
-- Add Camera vertical following
+- Add 1PV and side cameras     
 
 ## 25.12.04 
 ### Fixed
 - Fixed Camera rotation jump when when y=360+n
   - Updated Gimbal logic
   - Added log overlay
-  - Damaged keyboard/zoom rotation
+  - Fixed keyboard/zoom rotation
 
 ### Added
 - Braking with Vehicle3D or Braking with Wheels

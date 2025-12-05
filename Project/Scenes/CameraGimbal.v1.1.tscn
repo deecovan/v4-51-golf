@@ -1,19 +1,16 @@
 [gd_scene load_steps=4 format=3 uid="uid://d1tqw4jcecxpq"]
 
 [ext_resource type="Script" uid="uid://q8thn2hxpp14" path="res://Scripts/camera_gimbal.gd" id="1_31ixn"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rp4em"]
-albedo_color = Color(0, 1, 0, 1)
+[ext_resource type="Material" uid="uid://cg7ci0lw3ppl3" path="res://Materials/Yellow_Glass.tres" id="2_t5xco"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_t5xco"]
-material = SubResource("StandardMaterial3D_rp4em")
+material = ExtResource("2_t5xco")
 size = Vector3(0.1, 0.1, 0.1)
 
 [node name="CameraGimbal_v1_1" type="Node3D"]
 script = ExtResource("1_31ixn")
 
 [node name="GimbalInner" type="Node3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9.93884e-21, 2, -5.68434e-14)
 
 [node name="Light3D" type="DirectionalLight3D" parent="GimbalInner"]
 transform = Transform3D(1, 2.56055e-08, -6.18172e-08, 6.18172e-08, -0.707107, 0.707107, -2.56055e-08, -0.707107, -0.707107, 0, 50, -50)
@@ -23,7 +20,7 @@ shadow_enabled = true
 shadow_blur = 4.0
 
 [node name="Camera3D" type="Camera3D" parent="GimbalInner"]
-transform = Transform3D(1, 0, 0, 0, 0.984808, 0.173648, 0, -0.173648, 0.984808, -1.74845e-07, 0, 8)
+transform = Transform3D(1, 0, 0, 0, 0.984808, 0.173648, 0, -0.173648, 0.984808, 0, 2, 8)
 current = true
 fov = 65.0
 near = 0.01

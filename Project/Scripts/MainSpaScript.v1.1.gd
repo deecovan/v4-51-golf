@@ -2,7 +2,7 @@ extends Node3D
 
 @export var DEBUG = true
 var vehicle: VehicleBody3D
-var UI: Node
+var UI: CanvasLayer
 
 func _ready():
 	## Use unshaded for tests
@@ -18,8 +18,9 @@ func _ready():
 	## Using Debug Draw not shaded
 	UI.show_message("Spa Flat v1.1 Ready!")
 			
-func _input(_event):
-	use_main_controls(_event)
+func _unhandled_input(event):
+	if event is InputEventKey and event.pressed and not event.is_echo():
+		use_main_controls(event)
 				
 func _process(_delta):
 	if Input.is_action_just_pressed('restore'):
@@ -46,6 +47,10 @@ func _on_hole_body_entered(body):
 
 ## Fullscreen and Reload Scene
 func use_main_controls(_event) -> void:
+	if Input.is_action_just_pressed('Show Info'):
+		UI.show_info()
+	if Input.is_action_just_pressed('Hide Info'):
+		UI.hide_info()
 	if Input.is_action_just_pressed('reload'):
 		reload_scene('Reloading...')
 	if Input.is_action_just_pressed('screen'):

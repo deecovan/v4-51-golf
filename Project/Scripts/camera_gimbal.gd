@@ -1,11 +1,11 @@
 extends Node3D
 
 ## Keyboard controlled Rotation and Zoom
-@export var camera_speed = PI / 2
-@export var camera_FOV = 32
-@export var zoom_min = 0.8
-@export var zoom_max = 2
-@export var zoom_speed = 0.2
+@export var camera_speed = PI/2
+@export var camera_FOV = PI*10
+@export var zoom_min = 1.0
+@export var zoom_max = PI
+@export var zoom_speed = 1/PI
 var zoom = zoom_min
 var zoom_z_position: float
 var zoom_z_position_min: float
@@ -38,17 +38,22 @@ func _ready() -> void:
 	vehicle = $"../Vehicle"
 	vehicle_eyes = $"../Vehicle/Eyes"
 	gimbal_inner = $GimbalInner
-	## @HACK initial rotation 
+	## Initial position
+	global_position = vehicle.global_position
+	## Initial Gimbal Height
+	gimbal_offset = Vector3.UP
+	## Initial rotation 
 	gimbal_inner.rotation = Vector3(0, PI, 0)
+	## Initial Camera
 	camera = $GimbalInner/Camera3D
-	zoom = 1
+	zoom = zoom_min
 	zoom_z_position = camera.position.z
 	zoom_z_position_min = camera.position.z
 	zoom_z_position_max = camera.position.z + zoom_z_position_step * (
 		(zoom_max - zoom_min) / zoom_speed
 	)
 	camera.fov = camera_FOV
-	gimbal_offset = Vector3.UP * 1.5
+	## Initial Mouse Gimbal rotation
 	gimbal_rotation_x = gimbal_inner.rotation.x
 	gimbal_rotation_y = gimbal_inner.rotation.y
 	gimbal_rotation_z = gimbal_inner.rotation.z
@@ -64,6 +69,7 @@ func _input(event):
 	zoom = clamp(zoom, zoom_min, zoom_max)
 	zoom_z_position = clamp(
 		zoom_z_position, zoom_z_position_min, zoom_z_position_max)
+	
 		
 func _process(delta):
 	## Zoom is modified by player's keyboard/mouse
@@ -80,9 +86,18 @@ func _process(delta):
 		vehicle.position + gimbal_offset, delta * tween_follow_speed)
 	vehicle_rotation_x = vehicle.rotation.x
 	vehicle_rotation_y = vehicle.rotation.y
+	
+	## Mouse Gimbal rotation
+	if Input.is_mouse_button_pressed(MOUSE_BUTTON_RIGHT):
+		var mouse_velocity = Input.get_last_mouse_velocity()
+		gimbal_rotation_y = (gimbal_rotation_y +
+			mouse_direction * mouse_velocity.x / mouse_sensivity)
+		gimbal_rotation_x = (gimbal_rotation_x +
+		 	mouse_direction * mouse_velocity.y / mouse_sensivity)
 
 	## Remember Gimbal rotation
-	var new_rotation = Vector3(gimbal_rotation_x + vehicle_rotation_x,
+	var new_rotation = Vector3(
+		gimbal_rotation_x + vehicle_rotation_x + 1/PI - zoom/PI,
 			gimbal_rotation_y + vehicle_rotation_y, gimbal_rotation_z)
 			
 	## @BAD Jumping Camera rotation when y=360+n
@@ -100,15 +115,21 @@ func _process(delta):
 			current_rotation_y + s_delta_y, 
 			new_rotation.z), 
 		delta * tween_speed)
-		
-	## Apply Gimbal rotation
 	
 	logs.text = \
-	"camera.position:" + var_to_str(camera.position) + "\n" + \
-	"camera.rotation:" + var_to_str(camera.rotation) + "\n" + \
-	"camera.global_position:" + var_to_str(camera.global_position) + "\n" + \
-	"camera.global_rotation:" + var_to_str(camera.global_rotation)
-		
+	"vehicle.global_position: " + var_to_str(vehicle.global_position) + "\n" + \
+	"global_position: " + var_to_str(global_position) + "\n" + \
+	"gimbal_inner.rotation: " + var_to_str(gimbal_inner.rotation) + "\n" + \
+	"zoom: " + var_to_str(zoom) + "\n" + \
+	"zoom_z_position: " + var_to_str(zoom_z_position) + "\n" + \
+	"camera.fov: " + var_to_str(camera.fov) + "\n" + \
+	"new_rotation: " + var_to_str(new_rotation)
+	#logs.text = \
+	#"camera.position: " + var_to_str(camera.position) + "\n" + \
+	#"camera.rotation: " + var_to_str(camera.rotation) + "\n" + \
+	#"camera.global_position: " + var_to_str(camera.global_position) + "\n" + \
+	#"camera.global_rotation: " + var_to_str(camera.global_rotation)
+	""
 func logstop(v) -> void:
 	if not stop:
 		logs.text = var_to_str(v)
