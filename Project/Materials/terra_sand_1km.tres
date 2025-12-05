@@ -1,6 +1,9 @@
-[gd_resource type="PlaneMesh" format=3 uid="uid://bnxfeu3xab6fl"]
+[gd_resource type="PlaneMesh" load_steps=2 format=3 uid="uid://bnxfeu3xab6fl"]
+
+[ext_resource type="Material" uid="uid://coe5g71vgrhm1" path="res://Materials/terra_sand_surface_material.tres" id="1_a2ubu"]
 
 [resource]
+material = ExtResource("1_a2ubu")
 size = Vector2(1400, 700)
 subdivide_width = 140
 subdivide_depth = 70

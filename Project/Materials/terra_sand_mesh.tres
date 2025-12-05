@@ -1,6 +1,6 @@
 [gd_resource type="PlaneMesh" format=3 uid="uid://cngk36k3y8314"]
 
 [resource]
-size = Vector2(130, 128)
-subdivide_width = 31
-subdivide_depth = 31
+size = Vector2(1400, 700)
+subdivide_width = 140
+subdivide_depth = 70
