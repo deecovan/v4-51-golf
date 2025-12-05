@@ -1,8 +1,14 @@
 # v4-51-golf GitHub repo
 
 ### *Adding*
-- Start adding Objects
-- Add 1PV and side cameras     
+* Started adding Objects
+* Started Main scene 
+- Add Driving overlays
+- Add 1PV and side cameras
+- Add Escape menus
+  - Game settings
+  - Scene settings
+  - Car setup
 
 ## 25.12.04 
 

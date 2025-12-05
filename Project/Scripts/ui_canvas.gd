@@ -27,7 +27,7 @@ func show_message(text):
 		message = $Message
 	message.text = text
 	message.show()
-	await get_tree().create_timer(2).timeout
+	await get_tree().create_timer(2.5).timeout
 	message.hide()
 	
 func show_message_again():

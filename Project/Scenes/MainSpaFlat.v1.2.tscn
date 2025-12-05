@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dqy35w0t0uaa0"]
+[gd_scene load_steps=9 format=3 uid="uid://dqy35w0t0uaa0"]
 
 [ext_resource type="Script" uid="uid://dv8ykfntlf1at" path="res://Scripts/MainSpaScript.v1.1.gd" id="1_t2t33"]
 [ext_resource type="PackedScene" uid="uid://cqj403us21hwa" path="res://Sky/world_environment.tscn" id="2_o2f4t"]
@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://dpmlsd6ukmkua" path="res://Import/Kenney/Road/construction-light.glb" id="5_fydd0"]
 [ext_resource type="PackedScene" uid="uid://1nwkd5exeqht" path="res://Scenes/Fanta.v1.1.tscn" id="5_g8hvc"]
 [ext_resource type="PackedScene" uid="uid://d1tqw4jcecxpq" path="res://Scenes/CameraGimbal.v1.1.tscn" id="6_fwol4"]
-[ext_resource type="PackedScene" uid="uid://c2u3c52wwav41" path="res://Scenes/ui.tscn" id="7_30uw3"]
 
 [node name="MainSpaFlat_v1_2" type="Node3D"]
 script = ExtResource("1_t2t33")
@@ -108,5 +107,3 @@ transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, 467.772,
 
 [node name="CameraGimbal_v1_2" parent="." instance=ExtResource("6_fwol4")]
 transform = Transform3D(0.564895, 0, -0.825163, 0, 1, 0, 0.825163, 0, 0.564895, -42.6033, 2.41105, 199.198)
-
-[node name="UI" parent="." instance=ExtResource("7_30uw3")]

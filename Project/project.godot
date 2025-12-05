@@ -14,10 +14,8 @@ general/updates_per_second=30
 
 [application]
 
-config/name="Golf"
-config/version="4.41"
-run/main_scene="uid://dqy35w0t0uaa0"
-run/print_header=false
+config/name="G-Drive"
+run/main_scene="uid://dexp0d75btgj0"
 config/features=PackedStringArray("4.4", "Forward Plus")
 run/max_fps=30
 boot_splash/bg_color=Color(0.772549, 0.662745, 0.415686, 1)
@@ -25,17 +23,6 @@ boot_splash/fullsize=false
 boot_splash/image="uid://bllvjdvktpodv"
 config/icon="uid://bllvjdvktpodv"
 boot_splash/minimum_display_time=3000
-
-[display]
-
-window/size/viewport_width=1280
-window/size/viewport_height=720
-window/size/mode=3
-window/size/initial_position_type=0
-window/stretch/mode="viewport"
-window/stretch/aspect="expand"
-window/dpi/allow_hidpi=false
-window/vsync/vsync_mode=0
 
 [editor]
 
@@ -49,7 +36,6 @@ enabled=PackedStringArray("res://addons/physics_collision_import_generator/plugi
 
 theme/custom="res://Themes/MinimalUI44/MinimalUI.tres"
 theme/custom_font="uid://kxpkpf1fnb1i"
-theme/default_font_antialiasing=2
 
 [importer_defaults]
 
@@ -199,7 +185,7 @@ next_scene={
 
 [internationalization]
 
-rendering/defaults/default_clear_color=Color(0.535944, 0.447176, 0.243825, 1)
+rendering/defaults/default_clear_color=Color(0.772549, 0.662745, 0.415686, 1)
 rendering/bg_color=Color(0.772549, 0.662745, 0.415686, 1)
 
 [physics]
@@ -210,8 +196,10 @@ common/physics_ticks_per_second=30
 
 [rendering]
 
+occlusion_culling/bvh_build_quality=1
+camera/depth_of_field/depth_of_field_bokeh_shape=0
 occlusion_culling/occlusion_rays_per_thread=256
 environment/glow/upscale_mode=0
-environment/defaults/default_clear_color=Color(0.535944, 0.447176, 0.243825, 1)
+environment/defaults/default_clear_color=Color(0.772549, 0.662745, 0.415686, 1)
 occlusion_culling/use_occlusion_culling=true
 mesh_lod/lod_change/threshold_pixels=10.0
