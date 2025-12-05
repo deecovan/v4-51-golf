@@ -7,11 +7,11 @@ varying vec2 tex_position;
 
 void vertex() {
 	// Add Noise
-	tex_position = VERTEX.xz / 3.0 + 0.5;
+	tex_position = VERTEX.xz / 30.0 + 0.5;
 	float height = texture(noise, tex_position).x;
 	VERTEX.y += height * height_scale - 0.5;
 	// Add Waves
-	VERTEX.y += cos(VERTEX.x) * sin(VERTEX.z) / (2.0 * PI);
+	VERTEX.y += cos(VERTEX.x*10.0) * sin(VERTEX.z*10.0) / (2.0 * PI);
 	// Clamp Borders
 	if ((VERTEX.z < -63.0 || VERTEX.z > 63.0) 
 			|| (VERTEX.x < -63.0 || VERTEX.x > 63.0)) {

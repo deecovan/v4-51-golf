@@ -1,7 +1,7 @@
 # v4-51-golf GitHub repo
 
 ### *Adding*
-- Added Sand
+- Added Sand, Updated Sand shader
 - Start adding Objects
 - Add 1PV and side cameras     
 
