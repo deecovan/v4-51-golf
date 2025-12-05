@@ -4,12 +4,14 @@ var logs: RichTextLabel
 var help: Label
 var PFG: Control 
 var message: Label
+var speedometer_label: Label
 
 func _ready() -> void:
 	logs = $MarginContainer/VBoxContainer/Info/Logs
 	help = $MarginContainer/Help
 	PFG = $MarginContainer/VBoxContainer/PFG
 	message = $Message
+	speedometer_label = $MarginContainer/VBoxContainer/Speedometer/Label
 
 func _process(_delta: float) -> void:
 	help.text = (str(Engine.get_frames_per_second())
@@ -41,4 +43,10 @@ func hide_info() -> void:
 	
 func show_info() -> void:
 	logs.show()
+	
+func set_speedometer_label(text) -> void:
+	speedometer_label.text = text
+	
+func get_logs() -> RichTextLabel:
+	return $MarginContainer/VBoxContainer/Info/Logs
 	

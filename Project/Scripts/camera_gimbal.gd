@@ -32,9 +32,12 @@ var camera: Camera3D
 var logs: RichTextLabel
 
 var stop = false
+var UI = CanvasItem
 
 func _ready() -> void:
-	logs = $"../UI/MarginContainer/VBoxContainer/Info/Logs"
+	var root = get_tree().get_root().get_child(0)
+	UI = root.find_children("UI")[0]
+	logs = UI.get_logs()
 	vehicle = $"../Vehicle"
 	vehicle_eyes = $"../Vehicle/Eyes"
 	gimbal_inner = $GimbalInner

@@ -1,12 +1,12 @@
 extends Node3D
 
-var find: Array
 var vehicle: VehicleBody3D
 var UI: CanvasLayer
 
 func _ready():
 	vehicle = find_child("Vehicle")
-	UI = get_parent().find_child("UI")
+	var root = get_tree().get_root().get_child(0)
+	UI = root.find_children("UI")[0]
 	UI.show_message("Spa Flat Ready!")
 
 func _process(_delta):

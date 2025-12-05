@@ -65,7 +65,12 @@ var power_curve: Array = [
 	0.85, 0.60, 0.30, 0.10, 0.01, 0.00 
 ]
 
+var UI = CanvasLayer
+
 func _ready() -> void:
+	
+	var root = get_tree().get_root().get_child(0)
+	UI = root.find_children("UI")[0]
 	
 	if true:
 		## Setup Vehicle3D values
@@ -124,8 +129,7 @@ func _ready() -> void:
 	rotation = randomis(rotation, PI)
 	
 	## Init PFG screen
-	$"../UI".call_draw_curve(power_curve)
-	speedtometer_label = $"../UI/MarginContainer/VBoxContainer/Speedometer/Label"
+	UI.call_draw_curve(power_curve)
 	
 func _physics_process(delta: float) -> void:
 	steering = move_toward(
@@ -183,7 +187,7 @@ func _physics_process(delta: float) -> void:
 	if reverse:
 		engine_force = - engine_force
 	## Update UI
-	speedtometer_label.text = (
+	UI.set_speedometer_label(
 		pedal_text + ' ' + 
 		str(int(engine_force)) + ' f, ' +
 		str(int(linear_velocity.length()*3.6)) + ' kph ' )

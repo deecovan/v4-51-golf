@@ -1,7 +1,7 @@
 extends Node3D
 
 @export var DEBUG = true
-var UI: CanvasItem
+var UI: CanvasLayer
 var scene: Node3D
 
 func _ready():
