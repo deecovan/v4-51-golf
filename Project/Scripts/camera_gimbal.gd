@@ -1,12 +1,12 @@
 extends Node3D
 
 ## Keyboard controlled Rotation and Zoom
-@export var camera_speed = PI/2
+@export var camera_speed = PI/3
 @export var camera_FOV = PI*10
-@export var zoom_min = 1.0
+@export var zoom_min = PI/3
 @export var zoom_max = PI
 @export var zoom_speed = 1/PI
-var zoom = zoom_min
+var zoom = PI/2
 var zoom_z_position: float
 var zoom_z_position_min: float
 var zoom_z_position_max: float
@@ -46,7 +46,6 @@ func _ready() -> void:
 	gimbal_inner.rotation = Vector3(0, PI, 0)
 	## Initial Camera
 	camera = $GimbalInner/Camera3D
-	zoom = zoom_min
 	zoom_z_position = camera.position.z
 	zoom_z_position_min = camera.position.z
 	zoom_z_position_max = camera.position.z + zoom_z_position_step * (

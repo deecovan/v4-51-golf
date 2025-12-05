@@ -13,7 +13,7 @@ script = ExtResource("1_31ixn")
 [node name="GimbalInner" type="Node3D" parent="."]
 
 [node name="Camera3D" type="Camera3D" parent="GimbalInner"]
-transform = Transform3D(1, 0, 0, 0, 0.984808, 0.173648, 0, -0.173648, 0.984808, 0, 2, 8)
+transform = Transform3D(1, 0, 0, 0, 0.991445, 0.130526, 0, -0.130526, 0.991445, 0, 1.5, 8)
 current = true
 fov = 65.0
 near = 0.01
