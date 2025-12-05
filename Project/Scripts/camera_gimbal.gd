@@ -42,8 +42,6 @@ func _ready() -> void:
 	global_position = vehicle.global_position
 	## Initial Gimbal Height
 	gimbal_offset = Vector3.UP
-	## Initial rotation 
-	gimbal_inner.rotation = Vector3(0, PI, 0)
 	## Initial Camera
 	camera = $GimbalInner/Camera3D
 	zoom_z_position = camera.position.z
@@ -56,7 +54,8 @@ func _ready() -> void:
 	gimbal_rotation_x = gimbal_inner.rotation.x
 	gimbal_rotation_y = gimbal_inner.rotation.y
 	gimbal_rotation_z = gimbal_inner.rotation.z
-	
+	## Initial Camera rotation 
+	gimbal_inner.rotation = Vector3(0, PI, 0)
 
 func _input(event):
 	if event.is_action_pressed("cam_zoom_in"):

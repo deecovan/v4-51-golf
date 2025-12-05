@@ -16,7 +16,7 @@ func _ready():
 	find = root.find_children("Vehicle")
 	vehicle = find[0]
 	## Using Debug Draw not shaded
-	UI.show_message("Spa Flat v1.1 Ready!")
+	UI.show_message("Spa Flat Ready!")
 			
 func _unhandled_input(event):
 	if event is InputEventKey and event.pressed and not event.is_echo():
@@ -52,7 +52,9 @@ func use_main_controls(_event) -> void:
 	if Input.is_action_just_pressed('Hide Info'):
 		UI.hide_info()
 	if Input.is_action_just_pressed('reload'):
-		get_tree().change_scene_to_file("res://Scenes/MainSpaFlat.v1.2.tscn")
+		UI.show_message("Reloading...")
+		await get_tree().create_timer(3).timeout
+		get_tree().reload_current_scene()
 	if Input.is_action_just_pressed('screen'):
 		var mode := DisplayServer.window_get_mode()
 		var is_window: bool = mode != DisplayServer.WINDOW_MODE_FULLSCREEN
@@ -73,3 +75,4 @@ func reload_scene(message):
 	UI.show_message(message)
 	await get_tree().create_timer(2).timeout
 	get_tree().call_deferred("reload_current_scene")
+	
