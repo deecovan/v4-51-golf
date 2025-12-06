@@ -5,6 +5,7 @@ var help: Label
 var PFG: Control 
 var message: Label
 var speedometer_label: Label
+var Analometer: Control
 
 func _ready() -> void:
 	logs = $MarginContainer/VBoxContainer/Info/Logs
@@ -47,6 +48,14 @@ func show_info() -> void:
 func set_speedometer_label(text) -> void:
 	speedometer_label.text = text
 	
+func logs_hide() -> void:
+	logs = $MarginContainer/VBoxContainer/Info/Logs
+	logs.hide()
+	
+func logs_show() -> void:
+	logs = $MarginContainer/VBoxContainer/Info/Logs
+	logs.show()
+	
 func logs_get() -> RichTextLabel:
 	logs = $MarginContainer/VBoxContainer/Info/Logs
 	return logs
@@ -60,3 +69,7 @@ func logs_add_text(text) -> void:
 func logs_ins_text(text) -> void:
 	$MarginContainer/VBoxContainer/Info/Logs.text = text +\
 			$MarginContainer/VBoxContainer/Info/Logs.text
+			
+func get_analometer() -> Control:
+	Analometer = $MarginContainer/VBoxContainer/Analometer
+	return Analometer

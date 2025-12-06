@@ -1,16 +1,19 @@
 extends Node3D
 
-@export var DEBUG = false
+@export var DEBUG = true
 var UI: CanvasLayer
 var scene: Node3D
 
 func _ready():
-	## Use unshaded for tests
-	if DEBUG:
-		var viewport = get_viewport()
-		viewport.debug_draw = viewport.DEBUG_DRAW_UNSHADED
 	UI = find_child("UI")
 	scene = find_child("Scene")
+	if DEBUG:
+		var viewport = get_viewport()
+		## Use unshaded for tests
+		viewport.debug_draw = viewport.DEBUG_DRAW_UNSHADED
+		UI.logs_show()
+	else:
+		UI.logs_hide()
 	
 func _unhandled_input(event):
 	if event is InputEventKey and event.pressed and not event.is_echo():

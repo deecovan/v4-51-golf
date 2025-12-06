@@ -4,6 +4,8 @@
 - Added proto Analometer:
   - Speedometer
   - Tachometer
+- Added Analometer script
+- Improved UI script and view
 - modified overlay: added log screen
   - print basic values of vihicle, engine and wheels
 - modified vehicle: more rear wheels slip

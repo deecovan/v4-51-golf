@@ -2,6 +2,7 @@ extends VehicleBody3D
 
 var speedtometer_label
 var reverse =  false
+var DEBUG = false
 
 @export var grav_scale = 2.0
 ## Maximum Steering speedss
@@ -68,11 +69,14 @@ var power_curve: Array = [
 	0.85, 0.60, 0.30, 0.10, 0.01, 0.00 
 ]
 enum engine_index_list {Rear, Neutral, First, Second, Third, Fourth, Fifth, Sixth, Seventh, Eighth}
+var root: Node3D
 var UI: CanvasLayer
+var Analometer
 
 func _ready() -> void:
-	var root = get_tree().get_root().get_child(0)
+	root = get_tree().get_root().get_child(0)
 	UI = root.find_children("UI")[0]
+	Analometer = UI.get_analometer()
 	
 	## Setup Vehicle3D values
 	gravity_scale = grav_scale
@@ -200,15 +204,17 @@ func _physics_process(delta: float) -> void:
 		$Wheel3Drl.wheel_friction_slip = fric_slip_rear * fric_slip_rear_mult
 		$Wheel3Drr.wheel_friction_slip = fric_slip_rear * fric_slip_rear_mult
 
-	UI.logs_clr_text()
-	UI.logs_add_text("\n Engine power        : %6.2f" % engine_force)
-	UI.logs_add_text("\n Engine index        : %6s" % engine_index_list.keys()[engine_index])
-	UI.logs_add_text("\n Angular_velocity.y  : %6.2f" % rad_to_deg(angular_velocity.y) + " deg")
-	UI.logs_add_text("\n  Linear_velocity.l  : %6.2f" % (linear_velocity.length() * 3.6) + " kph" )
-	UI.logs_add_text("\n Front friction_slip : %6.2f" % $Wheel3Dfl.wheel_friction_slip)
-	UI.logs_add_text("\n  Rear friction_slip : %6.2f" % $Wheel3Drl.wheel_friction_slip)
-	UI.logs_add_text("\n Front wheel rotation: %6.2f" % $Wheel3Dfl.get_rpm() + " rpm" )
-	UI.logs_add_text("\n  Rear wheel rotation: %6.2f" % $Wheel3Drl.get_rpm() + " kph" )
+	## Update UI logs screen
+	if root.DEBUG:
+		UI.logs_clr_text()
+		UI.logs_add_text("\n Engine power        : %6.2f" % engine_force)
+		UI.logs_add_text("\n Engine index        : %6s" % engine_index_list.keys()[engine_index])
+		UI.logs_add_text("\n Angular_velocity.y  : %6.2f" % rad_to_deg(angular_velocity.y) + " deg")
+		UI.logs_add_text("\n  Linear_velocity.l  : %6.2f" % (linear_velocity.length() * 3.6) + " kph" )
+		UI.logs_add_text("\n Front friction_slip : %6.2f" % $Wheel3Dfl.wheel_friction_slip)
+		UI.logs_add_text("\n  Rear friction_slip : %6.2f" % $Wheel3Drl.wheel_friction_slip)
+		UI.logs_add_text("\n Front wheel rotation: %6.2f" % $Wheel3Dfl.get_rpm() + " rpm" )
+		UI.logs_add_text("\n  Rear wheel rotation: %6.2f" % $Wheel3Drl.get_rpm() + " kph" )
 
 	## @HACK Simulate Braking Drif
 	if state == States.BRAKING:
