@@ -1,9 +1,12 @@
 # v4-51-golf GitHub repo
 
 ## 25.12.06 Branch lap-counted
-- modify overlay: add log screen
+- Added proto Analometer:
+  - Speedometer
+  - Tachometer
+- modified overlay: added log screen
   - print basic values of vihicle, engine and wheels
-- modify vehicle: more rear wheels slip
+- modified vehicle: more rear wheels slip
   - Separate sleep_start values in Wheels script
   - Separate sleep_start and sleep_start_rear
     - Modified val_sleep and functions to process rear slip
