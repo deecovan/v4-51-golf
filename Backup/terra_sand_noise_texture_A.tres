@@ -1,0 +1,7 @@
+[gd_resource type="NoiseTexture2D" load_steps=2 format=3 uid="uid://3u7uc72qkk82"]
+
+[ext_resource type="FastNoiseLite" uid="uid://bjilcuqame0sw" path="res://Shaders/terra_sand_fast_noise_A.tres" id="1_j3jvq"]
+
+[resource]
+as_normal_map = true
+noise = ExtResource("1_j3jvq")

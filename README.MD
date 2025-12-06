@@ -1,8 +1,16 @@
 # v4-51-golf GitHub repo
 
 ### *Adding*
+- Added landscapes:
+  - One Sand__landscape with height waves
+  - Two Sand__landlow A,B for fast FPS
 * Started adding Objects
+  - Add Gates and Turn markers
 * Started Main scene 
+  - Add Main scene
+  - Updated scenes and scripts
+
+### *Add Next*
 - Add Driving overlays
 - Add 1PV and side cameras
 - Add Escape menus

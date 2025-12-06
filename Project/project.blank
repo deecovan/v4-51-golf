@@ -18,21 +18,9 @@ config/name="G-Drive"
 run/main_scene="uid://dexp0d75btgj0"
 config/features=PackedStringArray("4.4", "Forward Plus")
 run/max_fps=30
-boot_splash/bg_color=Color(0.772549, 0.662745, 0.415686, 1)
-boot_splash/fullsize=false
 boot_splash/image="uid://bllvjdvktpodv"
 config/icon="uid://bllvjdvktpodv"
 boot_splash/minimum_display_time=3000
-
-[display]
-
-window/size/viewport_width=1280
-window/size/viewport_height=720
-window/size/mode=3
-
-[editor]
-
-movie_writer/fps=30
 
 [editor_plugins]
 
@@ -42,39 +30,6 @@ enabled=PackedStringArray("res://addons/physics_collision_import_generator/plugi
 
 theme/custom="res://Themes/MinimalUI44/MinimalUI.tres"
 theme/custom_font="uid://kxpkpf1fnb1i"
-
-[importer_defaults]
-
-3d_texture={
-"compress/channel_pack": 0,
-"compress/hdr_compression": 1,
-"compress/high_quality": true,
-"compress/lossy_quality": 0.7,
-"compress/mode": 2,
-"mipmaps/generate": false,
-"mipmaps/limit": -1,
-"slices/horizontal": 8,
-"slices/vertical": 8
-}
-texture={
-"compress/channel_pack": 0,
-"compress/hdr_compression": 1,
-"compress/high_quality": true,
-"compress/lossy_quality": 0.7,
-"compress/mode": 2,
-"compress/normal_map": 0,
-"detect_3d/compress_to": 1,
-"mipmaps/generate": false,
-"mipmaps/limit": -1,
-"process/fix_alpha_border": true,
-"process/hdr_as_srgb": false,
-"process/hdr_clamp_exposure": false,
-"process/normal_map_invert_y": false,
-"process/premult_alpha": false,
-"process/size_limit": 0,
-"roughness/mode": 0,
-"roughness/src_normal": ""
-}
 
 [input]
 
@@ -189,24 +144,6 @@ next_scene={
 ]
 }
 
-[internationalization]
-
-rendering/defaults/default_clear_color=Color(0.772549, 0.662745, 0.415686, 1)
-rendering/bg_color=Color(0.772549, 0.662745, 0.415686, 1)
-
 [physics]
 
 common/physics_ticks_per_second=30
-3d/default_linear_damp=0.01
-3d/default_angular_damp=0.01
-
-[rendering]
-
-occlusion_culling/bvh_build_quality=1
-camera/depth_of_field/depth_of_field_bokeh_shape=0
-anti_aliasing/quality/msaa_2d=2
-occlusion_culling/occlusion_rays_per_thread=256
-environment/glow/upscale_mode=0
-environment/defaults/default_clear_color=Color(0.772549, 0.662745, 0.415686, 1)
-occlusion_culling/use_occlusion_culling=true
-mesh_lod/lod_change/threshold_pixels=10.0

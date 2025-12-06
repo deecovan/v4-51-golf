@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://dv8ykfntlf1at" path="res://Scripts/MainSpaScript.v1.1.gd" id="1_t2t33"]
 [ext_resource type="PackedScene" uid="uid://cqj403us21hwa" path="res://Sky/world_environment.tscn" id="2_o2f4t"]
 [ext_resource type="PackedScene" uid="uid://7koalahrye8x" path="res://Scenes/Spa.Flat.v1.1.tscn" id="3_fydd0"]
+[ext_resource type="PackedScene" uid="uid://dxg5vswamqboc" path="res://Materials/sand_1_km_landlow A.tscn" id="4_fydd0"]
 [ext_resource type="PackedScene" uid="uid://k0763yewpvlv" path="res://Import/Kenney/Road/sign-highway-wide.glb" id="4_o2f4t"]
-[ext_resource type="PackedScene" uid="uid://bbyuqd4dbdeey" path="res://Scenes/sand_1_km_landscape.tscn" id="4_rousx"]
 [ext_resource type="PackedScene" uid="uid://dpmlsd6ukmkua" path="res://Import/Kenney/Road/construction-light.glb" id="5_fydd0"]
 [ext_resource type="PackedScene" uid="uid://1nwkd5exeqht" path="res://Scenes/Fanta.v1.1.tscn" id="5_g8hvc"]
 [ext_resource type="PackedScene" uid="uid://d1tqw4jcecxpq" path="res://Scenes/CameraGimbal.v1.1.tscn" id="6_fwol4"]
@@ -17,6 +17,8 @@ script = ExtResource("1_t2t33")
 [node name="Spa_Flat_v1_1" parent="." instance=ExtResource("3_fydd0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -474.527, 0.1, 59.696)
 
+[node name="Sand 1km Landlow A" parent="." instance=ExtResource("4_fydd0")]
+
 [node name="Spa_Flat_Objects" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
 
@@ -24,79 +26,184 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
 transform = Transform3D(-18.27, 0, -2.75869e-06, 0, 18.27, 0, 2.75869e-06, 0, -18.27, 464.3, 0, 37.5153)
 
 [node name="construction-light" parent="Spa_Flat_Objects" instance=ExtResource("5_fydd0")]
-transform = Transform3D(8.89209, 0, 4.57501, 0, 10, 0, -4.57501, 0, 8.89209, 396.715, 0.409131, 132.994)
+transform = Transform3D(-8.89209, 0, -4.57501, 0, 10, 0, 4.57501, 0, -8.89209, 396.714, 0.409131, 132.994)
 
 [node name="construction-light5" parent="Spa_Flat_Objects" instance=ExtResource("5_fydd0")]
-transform = Transform3D(8.89209, 0, 4.57501, 0, 10, 0, -4.57501, 0, 8.89209, 397.172, 0.409131, 133.883)
+transform = Transform3D(-8.89209, 0, -4.57501, 0, 10, 0, 4.57501, 0, -8.89209, 396.257, 0.409131, 132.105)
 
 [node name="construction-light2" parent="Spa_Flat_Objects" instance=ExtResource("5_fydd0")]
-transform = Transform3D(8.89209, 0, 4.57501, 0, 10, 0, -4.57501, 0, 8.89209, 396.257, 0.409131, 132.105)
+transform = Transform3D(-8.89209, 0, -4.57501, 0, 10, 0, 4.57501, 0, -8.89209, 397.172, 0.409131, 133.883)
 
 [node name="construction-light7" parent="Spa_Flat_Objects" instance=ExtResource("5_fydd0")]
-transform = Transform3D(8.27267, 0, 5.61809, 0, 10, 0, -5.61809, 0, 8.27267, 441.512, 0.409131, 107.211)
+transform = Transform3D(-8.27267, 0, -5.61809, 0, 10, 0, 5.61809, 0, -8.27267, 440.389, 0.409131, 105.557)
 
 [node name="construction-light8" parent="Spa_Flat_Objects" instance=ExtResource("5_fydd0")]
-transform = Transform3D(8.27267, 0, 5.61809, 0, 10, 0, -5.61809, 0, 8.27267, 440.389, 0.409131, 105.557)
+transform = Transform3D(-8.27267, 0, -5.61809, 0, 10, 0, 5.61809, 0, -8.27267, 441.512, 0.409131, 107.211)
 
 [node name="construction-light3" parent="Spa_Flat_Objects" instance=ExtResource("5_fydd0")]
-transform = Transform3D(3.59459, 0, 9.33161, 0, 10, 0, -9.33161, 0, 3.59459, 478.384, 0.409131, 70.5625)
+transform = Transform3D(-4.27373, 0, -9.04075, 0, 10, 0, 9.04075, 0, -4.27373, 478.096, 0.409131, 70.4609)
 
-[node name="construction-light19" parent="Spa_Flat_Objects" instance=ExtResource("5_fydd0")]
-transform = Transform3D(8.99008, 0, -4.37932, 0, 10, 0, 4.37932, 0, 8.99008, -161.414, 0.409131, 194.162)
+[node name="construction-light29" parent="Spa_Flat_Objects" instance=ExtResource("5_fydd0")]
+transform = Transform3D(-9.36605, 0, 3.50387, 0, 10, 0, -3.50387, 0, -9.36605, 46.334, 0.409131, 177.459)
+
+[node name="construction-light30" parent="Spa_Flat_Objects" instance=ExtResource("5_fydd0")]
+transform = Transform3D(-9.36605, 0, 3.50387, 0, 10, 0, -3.50387, 0, -9.36605, 45.6333, 0.409131, 179.332)
+
+[node name="construction-light31" parent="Spa_Flat_Objects" instance=ExtResource("5_fydd0")]
+transform = Transform3D(-8.68839, 0, 4.95094, 0, 10, 0, -4.95094, 0, -8.68839, 88.062, 0.409131, 208.552)
+
+[node name="construction-light32" parent="Spa_Flat_Objects" instance=ExtResource("5_fydd0")]
+transform = Transform3D(7.73365, 0, 6.33961, 0, 10, 0, -6.33961, 0, 7.73365, -15.1438, 0.389658, 232.588)
+
+[node name="construction-light33" parent="Spa_Flat_Objects" instance=ExtResource("5_fydd0")]
+transform = Transform3D(7.73365, 0, 6.33961, 0, 10, 0, -6.33961, 0, 7.73365, -16.4111, 0.389658, 231.041)
+
+[node name="construction-light25" parent="Spa_Flat_Objects" instance=ExtResource("5_fydd0")]
+transform = Transform3D(7.05699, 0, -7.08512, 0, 10, 0, 7.08512, 0, 7.05699, 478.256, 0.409131, 50.7655)
 
 [node name="construction-light20" parent="Spa_Flat_Objects" instance=ExtResource("5_fydd0")]
-transform = Transform3D(8.99008, 0, -4.37932, 0, 10, 0, 4.37932, 0, 8.99008, -161.852, 0.409131, 195.061)
-
-[node name="construction-light21" parent="Spa_Flat_Objects" instance=ExtResource("5_fydd0")]
-transform = Transform3D(8.99008, 0, -4.37932, 0, 10, 0, 4.37932, 0, 8.99008, -160.976, 0.409131, 193.263)
+transform = Transform3D(-9.10496, 0, 4.13518, 0, 10, 0, -4.13518, 0, -9.10496, -187.156, 0.409131, 180.173)
 
 [node name="construction-light22" parent="Spa_Flat_Objects" instance=ExtResource("5_fydd0")]
-transform = Transform3D(9.30903, 0, -3.65267, 0, 10, 0, 3.65267, 0, 9.30903, -115.085, 0.409131, 216.995)
+transform = Transform3D(-8.83806, 0, 4.67853, 0, 10, 0, -4.67853, 0, -8.83806, -140.829, 0.409131, 203.618)
 
 [node name="construction-light23" parent="Spa_Flat_Objects" instance=ExtResource("5_fydd0")]
-transform = Transform3D(9.30903, 0, -3.65267, 0, 10, 0, 3.65267, 0, 9.30903, -114.355, 0.409131, 215.133)
+transform = Transform3D(-8.83806, 0, 4.67853, 0, 10, 0, -4.67853, 0, -8.83806, -141.764, 0.409131, 205.386)
 
 [node name="construction-light24" parent="Spa_Flat_Objects" instance=ExtResource("5_fydd0")]
-transform = Transform3D(9.98242, 0, 0.592716, 0, 10, 0, -0.592716, 0, 9.98242, -63.8284, 0.409131, 226.104)
+transform = Transform3D(9.67144, 0, -2.54231, 0, 10, 0, 2.54231, 0, 9.67144, -94.2054, 0.409131, 223.82)
+
+[node name="construction-light56" parent="Spa_Flat_Objects" instance=ExtResource("5_fydd0")]
+transform = Transform3D(9.86386, 0, 1.64445, 0, 10, 0, -1.64445, 0, 9.86386, -57.5455, 0.409131, 227.826)
 
 [node name="construction-light4" parent="Spa_Flat_Objects" instance=ExtResource("5_fydd0")]
-transform = Transform3D(-6.85438, 0, 7.28132, 0, 10, 0, -7.28132, 0, -6.85438, -154.604, 0.409131, -77.145)
+transform = Transform3D(6.85438, 0, -7.28132, 0, 10, 0, 7.28132, 0, 6.85438, -154.621, 0.409131, -76.75)
 
 [node name="construction-light6" parent="Spa_Flat_Objects" instance=ExtResource("5_fydd0")]
-transform = Transform3D(-6.85438, 0, 7.28132, 0, 10, 0, -7.28132, 0, -6.85438, -153.876, 0.409131, -77.8304)
+transform = Transform3D(6.85438, 0, -7.28132, 0, 10, 0, 7.28132, 0, 6.85438, -155.349, 0.409131, -76.0646)
 
 [node name="construction-light9" parent="Spa_Flat_Objects" instance=ExtResource("5_fydd0")]
-transform = Transform3D(-6.85438, 0, 7.28132, 0, 10, 0, -7.28132, 0, -6.85438, -155.332, 0.409131, -76.4595)
+transform = Transform3D(6.85438, 0, -7.28132, 0, 10, 0, 7.28132, 0, 6.85438, -153.893, 0.409131, -77.4355)
 
 [node name="construction-light10" parent="Spa_Flat_Objects" instance=ExtResource("5_fydd0")]
-transform = Transform3D(-8.02984, 0, 5.96001, 0, 10, 0, -5.96001, 0, -8.02984, -193.007, 0.409131, -111.46)
+transform = Transform3D(8.01953, 0, -5.97388, 0, 10, 0, 5.97388, 0, 8.01953, -194.303, 0.409131, -109.237)
 
 [node name="construction-light11" parent="Spa_Flat_Objects" instance=ExtResource("5_fydd0")]
-transform = Transform3D(-8.02984, 0, 5.96001, 0, 10, 0, -5.96001, 0, -8.02984, -194.199, 0.409131, -109.854)
+transform = Transform3D(8.01953, 0, -5.97388, 0, 10, 0, 5.97388, 0, 8.01953, -193.109, 0.409131, -110.841)
 
 [node name="construction-light12" parent="Spa_Flat_Objects" instance=ExtResource("5_fydd0")]
-transform = Transform3D(-9.49486, 0, 3.1381, 0, 10, 0, -3.1381, 0, -9.49486, -237.159, 0.409131, -135.738)
+transform = Transform3D(9.49486, 0, -3.1381, 0, 10, 0, 3.1381, 0, 9.49486, -237.159, 0.409131, -135.738)
 
-[node name="construction-light13" parent="Spa_Flat_Objects" instance=ExtResource("5_fydd0")]
+[node name="construction-light42" parent="Spa_Flat_Objects" instance=ExtResource("5_fydd0")]
+transform = Transform3D(-9.92156, 0, -1.25004, 0, 10, 0, 1.25004, 0, -9.92156, 85.9679, 0.409131, 24.4738)
+
+[node name="construction-light43" parent="Spa_Flat_Objects" instance=ExtResource("5_fydd0")]
+transform = Transform3D(-9.92156, 0, -1.25004, 0, 10, 0, 1.25004, 0, -9.92156, 86.2179, 0.409131, 26.4582)
+
+[node name="construction-light44" parent="Spa_Flat_Objects" instance=ExtResource("5_fydd0")]
+transform = Transform3D(-9.95056, 0, 0.993195, 0, 10, 0, -0.993195, 0, -9.95056, 35.906, 0.409131, 30.3847)
+
+[node name="construction-light45" parent="Spa_Flat_Objects" instance=ExtResource("5_fydd0")]
+transform = Transform3D(-9.31101, 0, -3.64763, 0, 10, 0, 3.64763, 0, -9.31101, 324.238, 0.409128, 80.3258)
+
+[node name="construction-light48" parent="Spa_Flat_Objects" instance=ExtResource("5_fydd0")]
+transform = Transform3D(-8.98863, 0, -4.3823, 0, 10, 0, 4.3823, 0, -8.98863, 371.841, 0.409128, 60.199)
+
+[node name="construction-light49" parent="Spa_Flat_Objects" instance=ExtResource("5_fydd0")]
+transform = Transform3D(-8.98863, 0, -4.3823, 0, 10, 0, 4.3823, 0, -8.98863, 372.717, 0.409128, 61.9968)
+
+[node name="construction-light86" parent="Spa_Flat_Objects" instance=ExtResource("5_fydd0")]
+transform = Transform3D(-8.98863, 0, -4.3823, 0, 10, 0, 4.3823, 0, -8.98863, 372.246, 0.409128, 61.101)
+
+[node name="construction-light50" parent="Spa_Flat_Objects" instance=ExtResource("5_fydd0")]
+transform = Transform3D(-8.98863, 0, -4.3823, 0, 10, 0, 4.3823, 0, -8.98863, 313.181, -3.19498, 64.1641)
+
+[node name="construction-light36" parent="Spa_Flat_Objects" instance=ExtResource("5_fydd0")]
+transform = Transform3D(-1.51554, 0, -9.88449, 0, 10, 0, 9.88449, 0, -1.51554, -349.69, 0.409131, -34.0529)
+
+[node name="construction-light38" parent="Spa_Flat_Objects" instance=ExtResource("5_fydd0")]
+transform = Transform3D(-1.51554, 0, -9.88449, 0, 10, 0, 9.88449, 0, -1.51554, -348.734, 0.409131, -33.8417)
+
+[node name="construction-light37" parent="Spa_Flat_Objects" instance=ExtResource("5_fydd0")]
+transform = Transform3D(-1.51554, 0, -9.88449, 0, 10, 0, 9.88449, 0, -1.51554, -347.713, 0.409131, -33.7497)
+
+[node name="construction-light39" parent="Spa_Flat_Objects" instance=ExtResource("5_fydd0")]
+transform = Transform3D(9.36568, 0, 3.50485, 0, 10, 0, -3.50485, 0, 9.36568, -285.568, 0.409124, -137.33)
+
+[node name="construction-light40" parent="Spa_Flat_Objects" instance=ExtResource("5_fydd0")]
+transform = Transform3D(9.36568, 0, 3.50485, 0, 10, 0, -3.50485, 0, 9.36568, -286.269, 0.409124, -139.204)
+
+[node name="construction-light67" parent="Spa_Flat_Objects" instance=ExtResource("5_fydd0")]
+transform = Transform3D(6.29808, 0, 7.7675, 0, 10, 0, -7.7675, 0, 6.29808, -330.797, 0.409124, -114.992)
+
+[node name="construction-light41" parent="Spa_Flat_Objects" instance=ExtResource("5_fydd0")]
+transform = Transform3D(-0.866519, 0, 9.96239, 0, 10, 0, -9.96239, 0, -0.866519, -396.552, 3.26803, -139.971)
+
+[node name="construction-light28" parent="Spa_Flat_Objects" instance=ExtResource("5_fydd0")]
+transform = Transform3D(9.99936, 0, 0.113093, 0, 10, 0, -0.113093, 0, 9.99936, -438.51, 0.409135, 69.3358)
+
+[node name="construction-light35" parent="Spa_Flat_Objects" instance=ExtResource("5_fydd0")]
+transform = Transform3D(9.99936, 0, 0.113093, 0, 10, 0, -0.113093, 0, 9.99936, -438.51, 0.409135, 70.3524)
+
+[node name="construction-light55" parent="Spa_Flat_Objects" instance=ExtResource("5_fydd0")]
+transform = Transform3D(9.97306, 0, 0.733598, 0, 10, 0, -0.733598, 0, 9.97306, -394.927, 0.409131, 121.749)
+
+[node name="construction-light59" parent="Spa_Flat_Objects" instance=ExtResource("5_fydd0")]
+transform = Transform3D(9.93522, 0, 1.13637, 0, 10, 0, -1.13637, 0, 9.93522, 23.2375, 0.409131, 196.55)
+
+[node name="construction-light60" parent="Spa_Flat_Objects" instance=ExtResource("5_fydd0")]
+transform = Transform3D(-9.10496, 0, 4.13518, 0, 10, 0, -4.13518, 0, -9.10496, -187.569, 0.409131, 181.084)
+
+[node name="construction-light62" parent="Spa_Flat_Objects" instance=ExtResource("5_fydd0")]
+transform = Transform3D(-9.10496, 0, 4.13518, 0, 10, 0, -4.13518, 0, -9.10496, -187.983, 0.409131, 181.994)
+
+[node name="construction-light65" parent="Spa_Flat_Objects" instance=ExtResource("5_fydd0")]
+transform = Transform3D(9.67144, 0, -2.54231, 0, 10, 0, 2.54231, 0, 9.67144, 23.244, 86.4121, 340.298)
+
+[node name="construction-light68" parent="Spa_Flat_Objects" instance=ExtResource("5_fydd0")]
+transform = Transform3D(-9.31101, 0, -3.64763, 0, 10, 0, 3.64763, 0, -9.31101, 324.968, 0.409128, 82.1881)
+
+[node name="construction-light69" parent="Spa_Flat_Objects" instance=ExtResource("5_fydd0")]
+transform = Transform3D(-9.99999, 0, -0.0118713, 0, 10, 0, 0.0118713, 0, -9.99999, 274.552, 0.409129, 91.0326)
+
+[node name="construction-light85" parent="Spa_Flat_Objects" instance=ExtResource("5_fydd0")]
+transform = Transform3D(8.60262, 0, -5.09853, 0, 10, 0, 5.09853, 0, 8.60262, 218.769, 0.409128, 95.3044)
+
+[node name="construction-light90" parent="Spa_Flat_Objects" instance=ExtResource("5_fydd0")]
+transform = Transform3D(8.47576, 0, -5.30674, 0, 10, 0, 5.30674, 0, 8.47576, 180.643, 0.409129, 61.2287)
+
+[node name="construction-light92" parent="Spa_Flat_Objects" instance=ExtResource("5_fydd0")]
+transform = Transform3D(8.60262, 0, -5.09853, 0, 10, 0, 5.09853, 0, 8.60262, 219.789, 0.409128, 93.5838)
+
+[node name="construction-light70" parent="Spa_Flat_Objects" instance=ExtResource("5_fydd0")]
 transform = Transform3D(-5.65039, 0, -8.25064, 0, 10, 0, 8.25064, 0, -5.65039, -369.148, 0.409131, 9.35828)
 
-[node name="construction-light14" parent="Spa_Flat_Objects" instance=ExtResource("5_fydd0")]
+[node name="construction-light71" parent="Spa_Flat_Objects" instance=ExtResource("5_fydd0")]
 transform = Transform3D(-5.65039, 0, -8.25064, 0, 10, 0, 8.25064, 0, -5.65039, -367.498, 0.409131, 10.4884)
 
-[node name="construction-light15" parent="Spa_Flat_Objects" instance=ExtResource("5_fydd0")]
-transform = Transform3D(-8.54187, 0, -5.19967, 0, 10, 0, 5.19967, 0, -8.54187, -403.276, 0.409131, 44.4852)
+[node name="construction-light72" parent="Spa_Flat_Objects" instance=ExtResource("5_fydd0")]
+transform = Transform3D(-8.54187, 0, -5.19967, 0, 10, 0, 5.19967, 0, -8.54187, -402.248, 0.457116, 45.7835)
 
-[node name="construction-light16" parent="Spa_Flat_Objects" instance=ExtResource("5_fydd0")]
-transform = Transform3D(-9.94886, 0, -1.01004, 0, 10, 0, 1.01004, 0, -9.94886, -488.939, 0.409131, 69.5553)
+[node name="construction-light73" parent="Spa_Flat_Objects" instance=ExtResource("5_fydd0")]
+transform = Transform3D(9.99936, 0, 0.113093, 0, 10, 0, -0.113093, 0, 9.99936, -488.827, 0.409131, 71.5502)
 
-[node name="construction-light17" parent="Spa_Flat_Objects" instance=ExtResource("5_fydd0")]
-transform = Transform3D(-9.94886, 0, -1.01004, 0, 10, 0, 1.01004, 0, -9.94886, -488.737, 0.409131, 71.5451)
+[node name="construction-light74" parent="Spa_Flat_Objects" instance=ExtResource("5_fydd0")]
+transform = Transform3D(9.99936, 0, 0.113093, 0, 10, 0, -0.113093, 0, 9.99936, -488.849, 0.409131, 69.5503)
 
-[node name="construction-light18" parent="Spa_Flat_Objects" instance=ExtResource("5_fydd0")]
-transform = Transform3D(-6.74689, 0, -7.38102, 0, 10, 0, 7.38102, 0, -6.74689, -536.155, 0.409131, 74.9457)
+[node name="construction-light75" parent="Spa_Flat_Objects" instance=ExtResource("5_fydd0")]
+transform = Transform3D(9.99936, 0, 0.113093, 0, 10, 0, -0.113093, 0, 9.99936, -438.487, 0.409135, 71.3357)
 
-[node name="Sand 1km Landscape" parent="." instance=ExtResource("4_rousx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
+[node name="construction-light78" parent="Spa_Flat_Objects" instance=ExtResource("5_fydd0")]
+transform = Transform3D(6.74689, 0, 7.38102, 0, 10, 0, -7.38102, 0, 6.74689, -537.825, 0.409131, 73.5428)
+
+[node name="construction-light79" parent="Spa_Flat_Objects" instance=ExtResource("5_fydd0")]
+transform = Transform3D(-7.75198, 0, 6.31718, 0, 10, 0, -6.31718, 0, -7.75198, -520.253, 0.409131, 115.578)
+
+[node name="construction-light82" parent="Spa_Flat_Objects" instance=ExtResource("5_fydd0")]
+transform = Transform3D(9.16188, 0, 4.00749, 0, 10, 0, -4.00749, 0, 9.16188, -441.216, 0.409131, 136.814)
+
+[node name="construction-light83" parent="Spa_Flat_Objects" instance=ExtResource("5_fydd0")]
+transform = Transform3D(9.16188, 0, 4.00749, 0, 10, 0, -4.00749, 0, 9.16188, -442.018, 0.409131, 134.982)
 
 [node name="Vehicle" parent="." instance=ExtResource("5_g8hvc")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 467.086, 1.72039, 37.3828)
@@ -104,6 +211,3 @@ max_force_front = 1600
 
 [node name="CameraGimbal_v1_1" parent="." instance=ExtResource("6_fwol4")]
 transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, 467.772, 2.41105, 37.349)
-
-[node name="CameraGimbal_v1_2" parent="." instance=ExtResource("6_fwol4")]
-transform = Transform3D(0.564895, 0, -0.825163, 0, 1, 0, 0.825163, 0, 0.564895, -42.6033, 2.41105, 199.198)

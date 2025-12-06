@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://dv3bs3qc6bsa2"]
+
+[ext_resource type="Shader" uid="uid://c8he2qmexe2fi" path="res://Shaders/landlow_shader_B.gdshader" id="1_7tax3"]
+[ext_resource type="Texture2D" uid="uid://e7st6xc6jxrw" path="res://Materials/landlow_normal_texture_B.tres" id="2_7tax3"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_7tax3")
+shader_parameter/height_scale = 1.0
+shader_parameter/normalmap = ExtResource("2_7tax3")

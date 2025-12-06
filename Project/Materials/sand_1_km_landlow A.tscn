@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://dxg5vswamqboc"]
+
+[ext_resource type="PhysicsMaterial" uid="uid://ciba2lsgwkqhn" path="res://Materials/sand_landscape_material.tres" id="1_34u2p"]
+[ext_resource type="PlaneMesh" uid="uid://k4oburg70mh8" path="res://Materials/landlow_mesh_A.tres" id="2_6vex3"]
+[ext_resource type="Shape3D" uid="uid://dd3ehs5n8gt4p" path="res://Materials/sand_landscape_shape.tres" id="3_4winm"]
+
+[node name="Sand 1km Landlow A" type="Node3D"]
+
+[node name="Sand" type="StaticBody3D" parent="."]
+physics_material_override = ExtResource("1_34u2p")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Sand"]
+mesh = ExtResource("2_6vex3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sand"]
+shape = ExtResource("3_4winm")

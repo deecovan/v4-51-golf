@@ -6,8 +6,7 @@
 environment = ExtResource("1_yemj2")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.422618, -0.453154, 0.784886, 0, 0.866026, 0.5, -0.906308, 0.211309, -0.365998, 0, 48.4432, 0)
-light_energy = 0.5
+transform = Transform3D(-0.173648, -0.696365, 0.696364, 0, 0.707107, 0.707107, -0.984808, 0.122788, -0.122788, 0, 48.4432, 0)
 light_indirect_energy = 2.0
 light_volumetric_fog_energy = 2.0
 light_specular = 2.0
