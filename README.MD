@@ -1,7 +1,7 @@
 # v4-51-golf GitHub repo
 
-### *Adding*
-- Added landscapes:
+### Tag landscapes
+- Added landscapes: 
   - One Sand__landscape with height waves
   - Two Sand__landlow A,B for fast FPS
 * Started adding Objects
