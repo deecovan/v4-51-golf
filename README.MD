@@ -1,5 +1,15 @@
 # v4-51-golf GitHub repo
 
+## 25.12.06 Branch lap-counted
+- Add collisions, triggers, overlays
+  - Count lap
+  - Show last lap time
+  - Show best lap time
+  - Store results
+  - Additionally 
+    - count segments
+    - add statistics overlays
+
 ### Tag landscapes
 - Added landscapes: 
   - One Sand__landscape with height waves
