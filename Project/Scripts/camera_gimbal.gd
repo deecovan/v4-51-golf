@@ -29,7 +29,6 @@ var vehicle_eyes : Marker3D
 var vehicle: VehicleBody3D
 var gimbal_inner: Node3D
 var camera: Camera3D
-var logs: RichTextLabel
 
 var stop = false
 var UI = CanvasItem
@@ -37,7 +36,6 @@ var UI = CanvasItem
 func _ready() -> void:
 	var root = get_tree().get_root().get_child(0)
 	UI = root.find_children("UI")[0]
-	logs = UI.get_logs()
 	vehicle = $"../Vehicle"
 	vehicle_eyes = $"../Vehicle/Eyes"
 	gimbal_inner = $GimbalInner
@@ -118,8 +116,3 @@ func _process(delta):
 			current_rotation_y + s_delta_y, 
 			new_rotation.z), 
 		delta * tween_speed)
-	
-func logstop(v) -> void:
-	if not stop:
-		logs.text = var_to_str(v)
-		stop = true

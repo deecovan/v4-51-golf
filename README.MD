@@ -1,12 +1,16 @@
 # v4-51-golf GitHub repo
 
 ## 25.12.06 Branch lap-counted
+- modify overlay: add log screen
+  - print basic values of vihicle, engine and wheels
 - modify vehicle: more rear wheels slip
   - Separate sleep_start values in Wheels script
   - Separate sleep_start and sleep_start_rear
     - Modified val_sleep and functions to process rear slip
   - Changed fric_slip_front and rear
   - Changed vehicle maximum speed according to new values
+
+###  @NEXT
 - Add collisions, triggers, overlays
   - Count lap
   - Show last lap time
@@ -25,14 +29,6 @@
 * Started Main scene 
   - Add Main scene
   - Updated scenes and scripts
-
-### *Add Next*
-- Add Driving overlays
-- Add 1PV and side cameras
-- Add Escape menus
-  - Game settings
-  - Scene settings
-  - Car setup
 
 ## 25.12.04 
 

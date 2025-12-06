@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=4 uid="uid://c2u3c52wwav41"]
+[gd_scene load_steps=13 format=4 uid="uid://c2u3c52wwav41"]
 
 [ext_resource type="Script" uid="uid://bxgxdgj8xpxwf" path="res://Scripts/ui_canvas.gd" id="1_nf4gj"]
 [ext_resource type="Script" uid="uid://cwhmf0iu4u1ho" path="res://Scripts/draw_graph.gd" id="2_qdvrb"]
+[ext_resource type="FontFile" uid="uid://djfsvawybk7ho" path="res://Themes/MinimalUI44/ShareTechMono.ttf" id="3_2246s"]
 [ext_resource type="Theme" uid="uid://c8m6i742fxd8v" path="res://Themes/MinimalUI44/MinimalUI.tres" id="3_nf4gj"]
 
 [sub_resource type="Image" id="Image_dvm57"]
@@ -526,7 +527,6 @@ layout_mode = 2
 size_flags_vertical = 3
 
 [node name="Logs" type="RichTextLabel" parent="MarginContainer/VBoxContainer/Info"]
-visible = false
 clip_contents = false
 layout_mode = 1
 anchors_preset = 15
@@ -535,6 +535,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_2246s")
 text = "111 logs"
 scroll_active = false
 autowrap_mode = 0

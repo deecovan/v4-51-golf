@@ -31,14 +31,15 @@ var reverse =  false
 
 enum States { ACCELERATING, BRAKING, COASTING, REVERSING}
 var state = States.COASTING
+var engine_index: int = 0
 
 ## Next values used for reconfiguring the Wheel3Ds values
 ## Front wheels friction slip ratio ## 0.65
-@export var fric_slip_front = 1.1
+@export var fric_slip_front = 1.3
 ## Rear wheels friction slip ratio ## 0.65
-@export var fric_slip_rear = 0.9 
+@export var fric_slip_rear = 1.3 
 ## @HACK Acceleration multiplier for rear slip
-@export var fric_slip_rear_mult = 1.5
+@export var fric_slip_rear_mult = 0.7
 ## Typical racing car damper ratios are 0.65-0.7 
 ## in ride where 1 is 100% critical damping
 ## Front wheels damper compression ## 0.8
@@ -66,60 +67,58 @@ var power_curve: Array = [
 	0.85, 0.95, 1.00, 1.00, 0.95, 
 	0.85, 0.60, 0.30, 0.10, 0.01, 0.00 
 ]
-
-var UI = CanvasLayer
+enum engine_index_list {Rear, Neutral, First, Second, Third, Fourth, Fifth, Sixth, Seventh, Eighth}
+var UI: CanvasLayer
 
 func _ready() -> void:
-	
 	var root = get_tree().get_root().get_child(0)
 	UI = root.find_children("UI")[0]
 	
-	if true:
-		## Setup Vehicle3D values
-		gravity_scale = grav_scale
-		linear_damp = car_linear_damp
-		angular_damp = car_angular_damp
-		## Setup Vehicle3D Physics Material
-		physics_material_override.friction = car_friction
-		physics_material_override.rough = car_rough
-		physics_material_override.bounce = car_bounce
-		physics_material_override.absorbent = car_absorb
-		
-		## Setup Wheel2Ds Front and Rear values
-		## Grip
-		$Wheel3Dfl.wheel_friction_slip = fric_slip_front
-		$Wheel3Dfr.wheel_friction_slip = fric_slip_front
-		$Wheel3Drl.wheel_friction_slip = fric_slip_rear
-		$Wheel3Drr.wheel_friction_slip = fric_slip_rear
-		### Damper
-		$Wheel3Dfl.damping_compression = damp_compr_front
-		$Wheel3Dfr.damping_compression = damp_compr_front
-		$Wheel3Drl.damping_compression = damp_compr_rear
-		$Wheel3Drr.damping_compression = damp_compr_rear
-		$Wheel3Dfl.damping_relaxation = damp_relax_front
-		$Wheel3Dfr.damping_relaxation = damp_relax_front
-		$Wheel3Drl.damping_relaxation = damp_relax_rear
-		$Wheel3Drr.damping_relaxation = damp_relax_rear
-		### Rest
-		$Wheel3Dfl.wheel_rest_length = rest_front
-		$Wheel3Dfr.wheel_rest_length = rest_front
-		$Wheel3Drl.wheel_rest_length = rest_rear
-		$Wheel3Drr.wheel_rest_length = rest_rear
-		### Travel
-		$Wheel3Dfl.suspension_travel = travel_front
-		$Wheel3Dfr.suspension_travel = travel_front
-		$Wheel3Drl.suspension_travel = travel_rear
-		$Wheel3Drr.suspension_travel = travel_rear
-		### Stiffness
-		$Wheel3Dfl.suspension_stiffness = stiff_front
-		$Wheel3Dfr.suspension_stiffness = stiff_front
-		$Wheel3Drl.suspension_stiffness = stiff_rear
-		$Wheel3Drr.suspension_stiffness = stiff_rear
-		### Maximum Suspension force
-		$Wheel3Dfl.suspension_max_force = max_force_front
-		$Wheel3Dfr.suspension_max_force = max_force_front
-		$Wheel3Drl.suspension_max_force = max_force_rear
-		$Wheel3Drr.suspension_max_force = max_force_rear
+	## Setup Vehicle3D values
+	gravity_scale = grav_scale
+	linear_damp = car_linear_damp
+	angular_damp = car_angular_damp
+	## Setup Vehicle3D Physics Material
+	physics_material_override.friction = car_friction
+	physics_material_override.rough = car_rough
+	physics_material_override.bounce = car_bounce
+	physics_material_override.absorbent = car_absorb
+	
+	## Setup Wheel2Ds Front and Rear values
+	## Grip
+	$Wheel3Dfl.wheel_friction_slip = fric_slip_front
+	$Wheel3Dfr.wheel_friction_slip = fric_slip_front
+	$Wheel3Drl.wheel_friction_slip = fric_slip_rear
+	$Wheel3Drr.wheel_friction_slip = fric_slip_rear
+	### Damper
+	$Wheel3Dfl.damping_compression = damp_compr_front
+	$Wheel3Dfr.damping_compression = damp_compr_front
+	$Wheel3Drl.damping_compression = damp_compr_rear
+	$Wheel3Drr.damping_compression = damp_compr_rear
+	$Wheel3Dfl.damping_relaxation = damp_relax_front
+	$Wheel3Dfr.damping_relaxation = damp_relax_front
+	$Wheel3Drl.damping_relaxation = damp_relax_rear
+	$Wheel3Drr.damping_relaxation = damp_relax_rear
+	### Rest
+	$Wheel3Dfl.wheel_rest_length = rest_front
+	$Wheel3Dfr.wheel_rest_length = rest_front
+	$Wheel3Drl.wheel_rest_length = rest_rear
+	$Wheel3Drr.wheel_rest_length = rest_rear
+	### Travel
+	$Wheel3Dfl.suspension_travel = travel_front
+	$Wheel3Dfr.suspension_travel = travel_front
+	$Wheel3Drl.suspension_travel = travel_rear
+	$Wheel3Drr.suspension_travel = travel_rear
+	### Stiffness
+	$Wheel3Dfl.suspension_stiffness = stiff_front
+	$Wheel3Dfr.suspension_stiffness = stiff_front
+	$Wheel3Drl.suspension_stiffness = stiff_rear
+	$Wheel3Drr.suspension_stiffness = stiff_rear
+	### Maximum Suspension force
+	$Wheel3Dfl.suspension_max_force = max_force_front
+	$Wheel3Dfr.suspension_max_force = max_force_front
+	$Wheel3Drl.suspension_max_force = max_force_rear
+	$Wheel3Drr.suspension_max_force = max_force_rear
 
 	## Set Center of Mass from CenterOfMass Node
 	## Move it Forward to oversteer
@@ -142,19 +141,13 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("reverse"):
 		reverse = !reverse
 	
-	## @HACK Reset wheel_friction_slip before speed changes
-	$Wheel3Drl.wheel_friction_slip = fric_slip_rear
-	$Wheel3Drr.wheel_friction_slip = fric_slip_rear
-	## Match Vehicle speed to power_curve to get engine_force
+## Match Vehicle speed to power_curve to get engine_force
 	var pedal_text
 	## Remove reverse
 	engine_force = abs(engine_force)
 	if Input.is_action_pressed("accelerate"):
 		if state != States.ACCELERATING:
 			state = States.ACCELERATING
-		## @HACK Simulate speeding Friction Slip
-		$Wheel3Drl.wheel_friction_slip = fric_slip_rear * fric_slip_rear_mult
-		$Wheel3Drr.wheel_friction_slip = fric_slip_rear * fric_slip_rear_mult
 		pedal_text = "Accel"
 		engine_force = lerp(engine_force, MAX_POWER, pedal_speed * delta)
 		## Match force to power_curve
@@ -164,6 +157,7 @@ func _physics_process(delta: float) -> void:
 			2 + linear_velocity.length()/(MAX_SPEED/max_curve_index),  
 			2, power_curve.size() - 5)      ## @TESTED
 		var match_power = power_curve[speed_index] * MAX_POWER
+		engine_index = speed_index
 		engine_force = clamp(engine_force, 0, match_power)
 		brake = 0.0
 		## Else: Braking with Engine LERP down
@@ -197,18 +191,38 @@ func _physics_process(delta: float) -> void:
 	if reverse:
 		state = States.REVERSING
 		engine_force = - engine_force
+		
+	## @HACK Simulate Accelerating Friction Slip
+	if state == States.ACCELERATING:
+		$Wheel3Drl.wheel_friction_slip = fric_slip_rear
+		$Wheel3Drr.wheel_friction_slip = fric_slip_rear
+	else:
+		$Wheel3Drl.wheel_friction_slip = fric_slip_rear * fric_slip_rear_mult
+		$Wheel3Drr.wheel_friction_slip = fric_slip_rear * fric_slip_rear_mult
+
+	UI.logs_clr_text()
+	UI.logs_add_text("\n Engine power        : %6.2f" % engine_force)
+	UI.logs_add_text("\n Engine index        : %6s" % engine_index_list.keys()[engine_index])
+	UI.logs_add_text("\n Angular_velocity.y  : %6.2f" % rad_to_deg(angular_velocity.y) + " deg")
+	UI.logs_add_text("\n  Linear_velocity.l  : %6.2f" % (linear_velocity.length() * 3.6) + " kph" )
+	UI.logs_add_text("\n Front friction_slip : %6.2f" % $Wheel3Dfl.wheel_friction_slip)
+	UI.logs_add_text("\n  Rear friction_slip : %6.2f" % $Wheel3Drl.wheel_friction_slip)
+	UI.logs_add_text("\n Front wheel rotation: %6.2f" % $Wheel3Dfl.get_rpm() + " rpm" )
+	UI.logs_add_text("\n  Rear wheel rotation: %6.2f" % $Wheel3Drl.get_rpm() + " kph" )
+
+	## @HACK Simulate Braking Drif
+	if state == States.BRAKING:
+		pass
+		
 	## Update UI
 	UI.set_speedometer_label(
 		pedal_text + ' ' + 
 		str(int(engine_force)) + ' f, ' +
-		str(int(linear_velocity.length()*3.6)) + ' kph ' )
+		str(int(linear_velocity.length() * 3.6)) + ' kph ' )
 		
 	## Car fell off course!
 	if position.y < -50:
 		UI.show_message("Car is out! Reload with [F5]")
-		
-	var logs = UI.get_logs()
-	logs.text = "Rear fric slip: " + var_to_str($Wheel3Drl.wheel_friction_slip)
 	
 func randomis(v: Vector3, mult) -> Vector3:
 	return v + mult * Vector3(

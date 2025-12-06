@@ -56,4 +56,3 @@ func stop_sleep(target: VehicleWheel3D) -> void:
 	var find_target_player = target.find_children("AudioStreamPlayer3D")
 	var target_player: AudioStreamPlayer3D = find_target_player[0]
 	target_player.stop()
-	pass

@@ -47,6 +47,16 @@ func show_info() -> void:
 func set_speedometer_label(text) -> void:
 	speedometer_label.text = text
 	
-func get_logs() -> RichTextLabel:
-	return $MarginContainer/VBoxContainer/Info/Logs
+func logs_get() -> RichTextLabel:
+	logs = $MarginContainer/VBoxContainer/Info/Logs
+	return logs
 	
+func logs_clr_text() -> void:
+	$MarginContainer/VBoxContainer/Info/Logs.text = ""
+	
+func logs_add_text(text) -> void:
+	$MarginContainer/VBoxContainer/Info/Logs.text += text
+	
+func logs_ins_text(text) -> void:
+	$MarginContainer/VBoxContainer/Info/Logs.text = text +\
+			$MarginContainer/VBoxContainer/Info/Logs.text
