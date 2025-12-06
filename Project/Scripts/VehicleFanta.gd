@@ -8,16 +8,19 @@ var reverse =  false
 @export var steer_speed = 1.4
 @export var pedal_speed = 0.75
 ## Vehicle3D body braking force
+@export var use_wheel_brake = true
 @export var vehicle_brake_force = 10.0
 ## Wheel3D braking force and balance
 @export var wheel_brake_force = 10.0
 @export var front_brake_power = 1.2
 @export var rear_brake_power = 0.8
-@export var engine_brake_speed = 2.0
+@export var pedal_brake_speed = 2.0
 ## @HACK used for rebalanced acc/brake friction sleep
 @export var slip_rear_force = 2.0
+## Coasting starting value
+@export var coast_init = 0.5
+## Coasting lerp speed
 @export var engine_coast = 0.1
-@export var coasting_speed = 0.01
 ## Maximum Steering angle in Radians
 @export var MAX_STEER  = 0.55
 ## Next values used for reconfiguring the Vehicle3Ds values
@@ -28,11 +31,14 @@ var reverse =  false
 @export var car_bounce = 0.1
 @export var car_absorb = false
 
+enum States { ACCELERATING, BRAKING, COASTING, REVERSING}
+var state = States.COASTING
+
 ## Next values used for reconfiguring the Wheel3Ds values
 ## Front wheels friction slip ratio ## 0.65
-@export var fric_slip_front = 1.35
+@export var fric_slip_front = 1.05
 ## Rear wheels friction slip ratio ## 0.65
-@export var fric_slip_rear = 1.35 
+@export var fric_slip_rear = 0.95 
 ## Typical racing car damper ratios are 0.65-0.7 
 ## in ride where 1 is 100% critical damping
 ## Front wheels damper compression ## 0.8
@@ -53,7 +59,7 @@ var reverse =  false
 @export var max_force_rear = 1600
 
 ## MAX_POWER Used as power for gears (as PFG) 
-@export var MAX_SPEED = 111.0
+@export var MAX_SPEED = 80.0
 @export var MAX_POWER = 800.0 # per each Traction wheel
 ### TESTED 799f 235kph, 4.5sec to 100kph
 ### First gear 0-40kph
@@ -149,6 +155,7 @@ func _physics_process(delta: float) -> void:
 	## Remove reverse
 	engine_force = abs(engine_force)
 	if Input.is_action_pressed("accelerate"):
+		state = States.ACCELERATING
 		pedal_text = "Accel"
 		engine_force = lerp(engine_force, MAX_POWER, pedal_speed * delta)
 		## Match force to power_curve
@@ -165,26 +172,34 @@ func _physics_process(delta: float) -> void:
 		#$Wheel3Drr.wheel_friction_slip = fric_slip_rear * mult_slip_rear
 		## Else: Braking with Engine LERP down
 	elif Input.is_action_pressed("brake"):
+		state = States.BRAKING
 		pedal_text = "Brake"
 		engine_force = lerp(
-			engine_force, 0.0, engine_brake_speed * delta)
+			engine_force, 0.0, pedal_brake_speed * delta)
 		## Braking with Vehicle3D
-		#brake = vehicle_brake_force
+		if not use_wheel_brake:
+			brake = vehicle_brake_force
 		## Braking with Wheels
-		$Wheel3Dfl.brake = wheel_brake_force * front_brake_power
-		$Wheel3Dfr.brake = wheel_brake_force * front_brake_power
-		$Wheel3Drl.brake = wheel_brake_force * rear_brake_power
-		$Wheel3Drr.brake = wheel_brake_force * rear_brake_power
+		else:
+			$Wheel3Dfl.brake = wheel_brake_force * front_brake_power
+			$Wheel3Dfr.brake = wheel_brake_force * front_brake_power
+			$Wheel3Drl.brake = wheel_brake_force * rear_brake_power
+			$Wheel3Drr.brake = wheel_brake_force * rear_brake_power
 		## @HACK Simulate braking Friction Slip
 		#$Wheel3Drl.wheel_friction_slip = fric_slip_rear / mult_slip_rear
 		#$Wheel3Drr.wheel_friction_slip = fric_slip_rear / mult_slip_rear
 	## Else: Coasting with Engine LERP down
 	else: 
+		if state != States.COASTING:
+			## Decrease engine power on state changed
+			engine_force = engine_force * coast_init
+			state = States.COASTING
 		pedal_text = "Coast"
 		brake = 0.0
 		engine_force = lerp(engine_force, 0.0, engine_coast * delta)
 	## Apply reverse
 	if reverse:
+		state = States.REVERSING
 		engine_force = - engine_force
 	## Update UI
 	UI.set_speedometer_label(

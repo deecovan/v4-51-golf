@@ -1,6 +1,12 @@
 # v4-51-golf GitHub repo
 
 ## 25.12.06 Branch lap-counted
+- modify vehicle: more rear wheels slip
+  - Separate sleep_start values in Wheels script
+  - Separate sleep_start and sleep_start_rear
+    - Modified val_sleep and functions to process rear slip
+  - Changed fric_slip_front and rear
+  - Changed vehicle maximum speed according to new values
 - Add collisions, triggers, overlays
   - Count lap
   - Show last lap time

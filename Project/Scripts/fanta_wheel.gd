@@ -1,6 +1,7 @@
 extends Node
 
 @export var sleep_start = 0.2
+@export var sleep_start_rear = 0.4
 
 var UI: CanvasLayer
 var front_slip_bar: HBoxContainer
@@ -32,16 +33,16 @@ func _ready() -> void:
 	sleep_rr_bar = find_sleep_rr[0]
 
 func _physics_process(_delta: float) -> void:
-	sleep_fl_bar.set_value(val_sleep(wheel_fl))
-	sleep_fr_bar.set_value(val_sleep(wheel_fr))
-	sleep_rl_bar.set_value(val_sleep(wheel_rl))
-	sleep_rr_bar.set_value(val_sleep(wheel_rr))
+	sleep_fl_bar.set_value(val_sleep(wheel_fl, sleep_start))
+	sleep_fr_bar.set_value(val_sleep(wheel_fr, sleep_start))
+	sleep_rl_bar.set_value(val_sleep(wheel_rl, sleep_start_rear))
+	sleep_rr_bar.set_value(val_sleep(wheel_rr, sleep_start_rear))
 
-func val_sleep(target: VehicleWheel3D) -> float:
+func val_sleep(target: VehicleWheel3D, sleep_value) -> float:
 	var val = target.get_skidinfo()
-	if val > 0 and val < sleep_start: 
-		play_sleep(target, sleep_start / (val + sleep_start))
-		return (100 - val * (100 / sleep_start))
+	if val > 0 and val < sleep_value: 
+		play_sleep(target, sleep_value / (val + sleep_value))
+		return (100 - val * (100 / sleep_value))
 	else: stop_sleep(target)
 	return 0
 	

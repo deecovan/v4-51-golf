@@ -13,7 +13,7 @@ void vertex() {
 	//// Add Waves
 	//VERTEX.y += cos(VERTEX.x*PI) * sin(VERTEX.z*PI)/(PI*PI);
 	//// Clamp Borders
-	//if ((VERTEX.z < -63.0 || VERTEX.z > 63.0) 
+	//if ((VERTEX.z < -63.0 || VERTEX.z > 63.0)
 			//|| (VERTEX.x < -63.0 || VERTEX.x > 63.0)) {
 		//VERTEX.y = 0.0;
 	//}

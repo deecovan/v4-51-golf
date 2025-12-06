@@ -63,7 +63,6 @@ physics_material_override = SubResource("PhysicsMaterial_krx02")
 center_of_mass_mode = 1
 continuous_cd = true
 script = ExtResource("1_2863i")
-max_force_front = 7000
 
 [node name="Car" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -0.305, -0.839)
