@@ -3,7 +3,7 @@ extends VehicleBody3D
 var speedtometer_label
 var reverse =  false
 
-@export var grav_scale =2.25
+@export var grav_scale = 2.0
 ## Maximum Steering speedss
 @export var steer_speed = 1.4
 @export var pedal_speed = 0.75
