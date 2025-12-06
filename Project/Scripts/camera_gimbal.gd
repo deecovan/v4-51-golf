@@ -34,8 +34,6 @@ var logs: RichTextLabel
 var stop = false
 var UI = CanvasItem
 
-var rem_val
-
 func _ready() -> void:
 	var root = get_tree().get_root().get_child(0)
 	UI = root.find_children("UI")[0]
@@ -104,8 +102,6 @@ func _process(delta):
 		 	mouse_direction * mouse_velocity.y / mouse_sensivity)
 			
 	## Remember Gimbal rotation
-	if not rem_val:
-		rem_val = gimbal_inner.rotation
 	var new_rotation = Vector3(
 		gimbal_rotation_x + vehicle_rotation_x + 1/PI - zoom/PI,
 			gimbal_rotation_y + vehicle_rotation_y, gimbal_rotation_z)
@@ -123,10 +119,6 @@ func _process(delta):
 			new_rotation.z), 
 		delta * tween_speed)
 	
-	logs.text = \
-	"gimbal_inner.rotation: " + var_to_str(gimbal_inner.rotation) + "\n" + \
-	"remember: " + var_to_str(rem_val)
-	""
 func logstop(v) -> void:
 	if not stop:
 		logs.text = var_to_str(v)

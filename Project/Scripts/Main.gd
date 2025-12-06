@@ -25,7 +25,7 @@ func use_main_controls(_event) -> void:
 		UI.hide_info()
 	if Input.is_action_just_pressed('reload'):
 		UI.show_message("Reloading...")
-		await get_tree().create_timer(3).timeout
+		await get_tree().create_timer(1).timeout
 		scene.get_tree().reload_current_scene()
 	## Change fullscreen (ONLY if Project Propery Run Windowed)
 	if Input.is_action_just_pressed('screen'):
