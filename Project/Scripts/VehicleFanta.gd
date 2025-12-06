@@ -15,8 +15,8 @@ var reverse =  false
 @export var front_brake_power = 1.2
 @export var rear_brake_power = 0.8
 @export var pedal_brake_speed = 2.0
-## @HACK used for rebalanced acc/brake friction sleep
-@export var slip_rear_force = 2.0
+## @HACK Acceleration multiplier for rear slip
+@export var mult_slip_rear = 2.0
 ## Coasting starting value
 @export var coast_init = 0.5
 ## Coasting lerp speed
@@ -36,9 +36,9 @@ var state = States.COASTING
 
 ## Next values used for reconfiguring the Wheel3Ds values
 ## Front wheels friction slip ratio ## 0.65
-@export var fric_slip_front = 1.05
+@export var fric_slip_front = 1.1
 ## Rear wheels friction slip ratio ## 0.65
-@export var fric_slip_rear = 0.95 
+@export var fric_slip_rear = 0.9 
 ## Typical racing car damper ratios are 0.65-0.7 
 ## in ride where 1 is 100% critical damping
 ## Front wheels damper compression ## 0.8
@@ -59,7 +59,7 @@ var state = States.COASTING
 @export var max_force_rear = 1600
 
 ## MAX_POWER Used as power for gears (as PFG) 
-@export var MAX_SPEED = 80.0
+@export var MAX_SPEED = 111.0
 @export var MAX_POWER = 800.0 # per each Traction wheel
 ### TESTED 799f 235kph, 4.5sec to 100kph
 ### First gear 0-40kph
@@ -148,14 +148,18 @@ func _physics_process(delta: float) -> void:
 	
 	## Reset wheel_friction_slip before speed changes
 	## @HACK Restore hacked Friction Slip
-	#$Wheel3Drl.wheel_friction_slip = fric_slip_rear
-	#$Wheel3Drr.wheel_friction_slip = fric_slip_rear
+	$Wheel3Drl.wheel_friction_slip = fric_slip_rear
+	$Wheel3Drr.wheel_friction_slip = fric_slip_rear
 	## Match Vehicle speed to power_curve to get engine_force
 	var pedal_text
 	## Remove reverse
 	engine_force = abs(engine_force)
 	if Input.is_action_pressed("accelerate"):
-		state = States.ACCELERATING
+		if state != States.ACCELERATING:
+			state = States.ACCELERATING
+			## @HACK Simulate speeding Friction Slip
+			$Wheel3Drl.wheel_friction_slip = fric_slip_rear * mult_slip_rear
+			$Wheel3Drr.wheel_friction_slip = fric_slip_rear * mult_slip_rear
 		pedal_text = "Accel"
 		engine_force = lerp(engine_force, MAX_POWER, pedal_speed * delta)
 		## Match force to power_curve
@@ -167,9 +171,6 @@ func _physics_process(delta: float) -> void:
 		var match_power = power_curve[speed_index] * MAX_POWER
 		engine_force = clamp(engine_force, 0, match_power)
 		brake = 0.0
-		## @HACK Simulate speeding Friction Slip
-		#$Wheel3Drl.wheel_friction_slip = fric_slip_rear * mult_slip_rear
-		#$Wheel3Drr.wheel_friction_slip = fric_slip_rear * mult_slip_rear
 		## Else: Braking with Engine LERP down
 	elif Input.is_action_pressed("brake"):
 		state = States.BRAKING

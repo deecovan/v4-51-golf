@@ -34,6 +34,8 @@ var logs: RichTextLabel
 var stop = false
 var UI = CanvasItem
 
+var rem_val
+
 func _ready() -> void:
 	var root = get_tree().get_root().get_child(0)
 	UI = root.find_children("UI")[0]
@@ -100,15 +102,14 @@ func _process(delta):
 			mouse_direction * mouse_velocity.x / mouse_sensivity)
 		gimbal_rotation_x = (gimbal_rotation_x +
 		 	mouse_direction * mouse_velocity.y / mouse_sensivity)
-
+			
 	## Remember Gimbal rotation
+	if not rem_val:
+		rem_val = gimbal_inner.rotation
 	var new_rotation = Vector3(
 		gimbal_rotation_x + vehicle_rotation_x + 1/PI - zoom/PI,
 			gimbal_rotation_y + vehicle_rotation_y, gimbal_rotation_z)
-			
-	## @BAD Jumping Camera rotation when y=360+n
-	#tween_rotation.tween_property(gimbal_inner, "rotation", new_rotation, 
-	#delta * tween_speed)
+
 	## @GOOD Fix Camera rotation jump when when y=360+n
 	var current_rotation_y = gimbal_inner.rotation.y
 	var target_rotation_y = new_rotation.y
@@ -123,18 +124,8 @@ func _process(delta):
 		delta * tween_speed)
 	
 	logs.text = \
-	"vehicle.global_position: " + var_to_str(vehicle.global_position) + "\n" + \
-	"global_position: " + var_to_str(global_position) + "\n" + \
 	"gimbal_inner.rotation: " + var_to_str(gimbal_inner.rotation) + "\n" + \
-	"zoom: " + var_to_str(zoom) + "\n" + \
-	"zoom_z_position: " + var_to_str(zoom_z_position) + "\n" + \
-	"camera.fov: " + var_to_str(camera.fov) + "\n" + \
-	"new_rotation: " + var_to_str(new_rotation)
-	#logs.text = \
-	#"camera.position: " + var_to_str(camera.position) + "\n" + \
-	#"camera.rotation: " + var_to_str(camera.rotation) + "\n" + \
-	#"camera.global_position: " + var_to_str(camera.global_position) + "\n" + \
-	#"camera.global_rotation: " + var_to_str(camera.global_rotation)
+	"remember: " + var_to_str(rem_val)
 	""
 func logstop(v) -> void:
 	if not stop:
