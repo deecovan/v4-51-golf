@@ -1,10 +1,11 @@
-[gd_scene load_steps=16 format=4 uid="uid://c2u3c52wwav41"]
+[gd_scene load_steps=17 format=4 uid="uid://c2u3c52wwav41"]
 
 [ext_resource type="Script" uid="uid://bxgxdgj8xpxwf" path="res://Scripts/ui_canvas.gd" id="1_nf4gj"]
 [ext_resource type="Script" uid="uid://cwhmf0iu4u1ho" path="res://Scripts/draw_graph.gd" id="2_qdvrb"]
 [ext_resource type="FontFile" uid="uid://djfsvawybk7ho" path="res://Themes/MinimalUI44/ShareTechMono.ttf" id="3_2246s"]
 [ext_resource type="Theme" uid="uid://c8m6i742fxd8v" path="res://Themes/MinimalUI44/MinimalUI.tres" id="3_nf4gj"]
 [ext_resource type="Texture2D" uid="uid://gvy0ceh2vadg" path="res://Images/SpeedometerBG.png" id="5_smcll"]
+[ext_resource type="Texture2D" uid="uid://43a0m001neks" path="res://Images/SpeedometarPointer.png" id="6_mmixe"]
 [ext_resource type="Texture2D" uid="uid://c264l56f7huv0" path="res://Images/TachometerBG.png" id="6_ryf15"]
 [ext_resource type="Texture2D" uid="uid://b2cb0mc3qto1e" path="res://Images/SpeedometerPointer.png" id="7_mmixe"]
 
@@ -643,9 +644,9 @@ grow_vertical = 0
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("5_smcll")
 
-[node name="TachoBG" type="TextureRect" parent="MarginContainer/VBoxContainer/Analometer"]
+[node name="SpeedPS" type="TextureRect" parent="MarginContainer/VBoxContainer/Analometer"]
 modulate = Color(1, 1, 1, 0.6)
-z_index = 20
+z_index = 25
 texture_filter = 4
 layout_mode = 1
 anchors_preset = 7
@@ -653,14 +654,15 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 37.3149
-offset_top = -187.375
-offset_right = 1117.31
-offset_bottom = 892.625
+offset_left = -686.685
+offset_top = -652.375
+offset_right = 393.315
+offset_bottom = 427.625
 grow_horizontal = 2
 grow_vertical = 0
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("6_ryf15")
+scale = Vector2(0.15, 0.15)
+pivot_offset = Vector2(540, 575)
+texture = ExtResource("6_mmixe")
 
 [node name="SpeedPT" type="TextureRect" parent="MarginContainer/VBoxContainer/Analometer"]
 z_index = 20
@@ -678,8 +680,47 @@ offset_bottom = 427.625
 grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(0.215, 0.215)
-pivot_offset = Vector2(541, 575)
+pivot_offset = Vector2(540, 575)
 texture = ExtResource("7_mmixe")
+
+[node name="TachoBG" type="TextureRect" parent="MarginContainer/VBoxContainer/Analometer"]
+modulate = Color(1, 1, 1, 0.6)
+z_index = 20
+texture_filter = 4
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 37.31
+offset_top = -187.375
+offset_right = 1117.31
+offset_bottom = 892.625
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("6_ryf15")
+
+[node name="TachoPS" type="TextureRect" parent="MarginContainer/VBoxContainer/Analometer"]
+modulate = Color(1, 1, 1, 0.6)
+z_index = 25
+texture_filter = 4
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -395.0
+offset_top = -652.4
+offset_right = 685.0
+offset_bottom = 427.6
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.15, 0.15)
+pivot_offset = Vector2(540, 575)
+texture = ExtResource("6_mmixe")
 
 [node name="TachoPT" type="TextureRect" parent="MarginContainer/VBoxContainer/Analometer"]
 z_index = 20
@@ -690,10 +731,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -394.685
-offset_top = -652.375
-offset_right = 685.315
-offset_bottom = 427.625
+offset_left = -395.0
+offset_top = -652.4
+offset_right = 685.0
+offset_bottom = 427.6
 grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(0.215, 0.215)
