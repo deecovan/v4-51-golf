@@ -1,6 +1,7 @@
 # v4-51-golf GitHub repo
 
 ## 25.12.06 Branch lap-counted
+- Tested: Tag v1.2
 - Updated Flat track:
   - Smooth edges
   - Rough materials

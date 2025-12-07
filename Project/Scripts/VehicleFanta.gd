@@ -260,7 +260,7 @@ func rotate_tacho_ps(tachof: float, delta) -> void:
 		(max_rad - min_rad) / max_tac
 		) * tachof
 	Analometer.rotate_tacho_ps(
-		lerp(tach_ps, tachor, delta))
+		lerp(tach_ps, tachor, PI*delta))
 	
 func rotate_speed_ps(deltavf: float, delta) -> void:
 	var deltavr = 0.0
