@@ -14,7 +14,7 @@ func get_speed_ps() -> float:
 	return $SpeedPS.rotation
 	
 func get_tach_ps() -> float:
-	return $TachPS.rotation
+	return $TachoPS.rotation
 
 func rotate_tacho_pt(rad: float) -> void:
 	$TachoPT.rotation = rad
