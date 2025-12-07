@@ -1,9 +1,15 @@
 # v4-51-golf GitHub repo
 
 ## 25.12.06 Branch lap-counted
-- Added proto Analometer:
+- Updated Flat track:
+  - Smooth edges
+  - Rough materials
+    - Less Reflection
+- Added Analometer:
   - Speedometer
-  - Tachometer
+    - With Velocity Delta Vector
+  - Wheel RPM
+    - With Engine Power
 - Added Analometer script
   - Added Speedometer; tested
 - Improved UI script and view
@@ -131,7 +137,9 @@
   - Generate collisions from central-top menu
     - from Mesh, Create collision shape
     - use Static body child, trimesh
-  - Save as, new scene, than add it to the project
+  - Save as, Ctrl+Shift+S 
+    - new scene, 
+    - than add it to the project
 
 - Create Spa and Spa Height track
   - Path-based

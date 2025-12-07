@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://c2u3c52wwav41"]
+[gd_scene load_steps=20 format=4 uid="uid://c2u3c52wwav41"]
 
 [ext_resource type="Script" uid="uid://bxgxdgj8xpxwf" path="res://Scripts/ui_canvas.gd" id="1_nf4gj"]
 [ext_resource type="Script" uid="uid://cwhmf0iu4u1ho" path="res://Scripts/draw_graph.gd" id="2_qdvrb"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://43a0m001neks" path="res://Images/SpeedometarPointer.png" id="6_mmixe"]
 [ext_resource type="Texture2D" uid="uid://c264l56f7huv0" path="res://Images/TachometerBG.png" id="6_ryf15"]
 [ext_resource type="Texture2D" uid="uid://b2cb0mc3qto1e" path="res://Images/SpeedometerPointer.png" id="7_mmixe"]
+[ext_resource type="FontFile" uid="uid://dlgkspckhvbp4" path="res://Assets/Xolonium-Regular.ttf" id="10_nt8jn"]
 
 [sub_resource type="Image" id="Image_dvm57"]
 data = {
@@ -743,3 +744,87 @@ grow_vertical = 0
 scale = Vector2(0.15, 0.15)
 pivot_offset = Vector2(540, 575)
 texture = ExtResource("6_mmixe")
+
+[node name="Speed" type="Label" parent="MarginContainer/VBoxContainer/Analometer"]
+z_index = 140
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -187.5
+offset_top = -68.0
+offset_right = -106.5
+offset_bottom = -38.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.720002, 0.720002)
+pivot_offset = Vector2(39.5, 22)
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_nt8jn")
+theme_override_font_sizes/font_size = 24
+text = "Speed"
+
+[node name="Delta V" type="Label" parent="MarginContainer/VBoxContainer/Analometer"]
+z_index = 140
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -186.0
+offset_top = -46.0
+offset_right = -108.0
+offset_bottom = -21.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.720002, 0.720002)
+pivot_offset = Vector2(38, 0)
+theme_override_colors/font_color = Color(1, 0.501961, 0, 1)
+theme_override_fonts/font = ExtResource("10_nt8jn")
+theme_override_font_sizes/font_size = 20
+text = "Delta V"
+
+[node name="RPM" type="Label" parent="MarginContainer/VBoxContainer/Analometer"]
+z_index = 140
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 108.6
+offset_top = -68.0
+offset_right = 189.6
+offset_bottom = -38.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.76, 0.76)
+pivot_offset = Vector2(35, 26)
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_nt8jn")
+theme_override_font_sizes/font_size = 24
+text = " RPM"
+
+[node name="Power" type="Label" parent="MarginContainer/VBoxContainer/Analometer"]
+z_index = 140
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 112.1
+offset_top = -47.0
+offset_right = 190.1
+offset_bottom = -22.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.76, 0.76)
+pivot_offset = Vector2(33.5, 4)
+theme_override_colors/font_color = Color(1, 0.501961, 0, 1)
+theme_override_fonts/font = ExtResource("10_nt8jn")
+theme_override_font_sizes/font_size = 20
+text = "Power"

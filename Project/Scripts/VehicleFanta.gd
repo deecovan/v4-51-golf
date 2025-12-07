@@ -71,7 +71,8 @@ var power_curve: Array = [
 enum engine_index_list {Rear, Neutral, First, Second, Third, Fourth, Fifth, Sixth, Seventh, Eighth}
 var root: Node3D
 var UI: CanvasLayer
-var Analometer
+var Analometer: Control
+var rem_linear_velocity = Vector3.ZERO
 
 func _ready() -> void:
 	root = get_tree().get_root().get_child(0)
@@ -146,13 +147,11 @@ func _physics_process(delta: float) -> void:
 		reverse = !reverse
 	
 ## Match Vehicle speed to power_curve to get engine_force
-	var pedal_text
 	## Remove reverse
 	engine_force = abs(engine_force)
 	if Input.is_action_pressed("accelerate"):
 		if state != States.ACCELERATING:
 			state = States.ACCELERATING
-		pedal_text = "Accel"
 		engine_force = lerp(engine_force, MAX_POWER, pedal_speed * delta)
 		## Match force to power_curve
 		var max_curve_index = power_curve.size() - 5
@@ -167,7 +166,6 @@ func _physics_process(delta: float) -> void:
 		## Else: Braking with Engine LERP down
 	elif Input.is_action_pressed("brake"):
 		state = States.BRAKING
-		pedal_text = "Brake"
 		engine_force = lerp(
 			engine_force, 0.0, pedal_brake_speed * delta)
 		## Braking with Vehicle3D
@@ -188,7 +186,6 @@ func _physics_process(delta: float) -> void:
 			## Decrease engine power on state changed
 			engine_force = engine_force * coast_init
 			state = States.COASTING
-		pedal_text = "Coast"
 		brake = 0.0
 		engine_force = lerp(engine_force, 0.0, engine_coast * delta)
 	## Apply reverse
@@ -205,16 +202,16 @@ func _physics_process(delta: float) -> void:
 		$Wheel3Drr.wheel_friction_slip = fric_slip_rear * fric_slip_rear_mult
 
 	## Update UI logs screen
-	if root.DEBUG:
-		UI.logs_clr_text()
-		UI.logs_add_text("\n Engine power        : %6.2f" % engine_force)
-		UI.logs_add_text("\n Engine index        : %6s" % engine_index_list.keys()[engine_index])
-		UI.logs_add_text("\n Angular_velocity.y  : %6.2f" % rad_to_deg(angular_velocity.y) + " deg")
-		UI.logs_add_text("\n  Linear_velocity.l  : %6.2f" % (linear_velocity.length() * 3.6) + " kph" )
-		UI.logs_add_text("\n Front friction_slip : %6.2f" % $Wheel3Dfl.wheel_friction_slip)
-		UI.logs_add_text("\n  Rear friction_slip : %6.2f" % $Wheel3Drl.wheel_friction_slip)
-		UI.logs_add_text("\n Front wheel rotation: %6.2f" % $Wheel3Dfl.get_rpm() + " rpm" )
-		UI.logs_add_text("\n  Rear wheel rotation: %6.2f" % $Wheel3Drl.get_rpm() + " kph" )
+	#if root.DEBUG:
+		#UI.logs_clr_text()
+		#UI.logs_add_text("\n Engine power        : %6.2f" % engine_force)
+		#UI.logs_add_text("\n Engine index        : %6s" % engine_index_list.keys()[engine_index])
+		#UI.logs_add_text("\n Angular_velocity.y  : %6.2f" % rad_to_deg(angular_velocity.y) + " deg")
+		#UI.logs_add_text("\n  Linear_velocity.l  : %6.2f" % (linear_velocity.length() * 3.6) + " kph" )
+		#UI.logs_add_text("\n Front friction_slip : %6.2f" % $Wheel3Dfl.wheel_friction_slip)
+		#UI.logs_add_text("\n  Rear friction_slip : %6.2f" % $Wheel3Drl.wheel_friction_slip)
+		#UI.logs_add_text("\n Front wheel rotation: %6.2f" % $Wheel3Dfl.get_rpm() + " rpm" )
+		#UI.logs_add_text("\n  Rear wheel rotation: %6.2f" % $Wheel3Drl.get_rpm() + " kph" )
 
 	## @HACK Simulate Braking Drift
 	if state == States.BRAKING:
@@ -223,7 +220,11 @@ func _physics_process(delta: float) -> void:
 	## Update UI
 	UI.set_speedometer_label(
 		States.keys()[state] + ' ' + engine_index_list.keys()[engine_index])
+	
 	rotate_speed_pt(linear_velocity.length() * 3.6)
+	rotate_speed_ps(get_delta_velocity(delta), delta)
+	rotate_tacho_pt(($Wheel3Drl.get_rpm() + $Wheel3Drl.get_rpm()) / 2)
+	rotate_tacho_ps(engine_force, delta)
 		
 	## Car fell off course!
 	if position.y < -50:
@@ -231,14 +232,56 @@ func _physics_process(delta: float) -> void:
 
 func rotate_speed_pt(speedf: float) -> void:
 	var speedr = 0.0
-	var min_deg = -135.0
-	var max_deg = +135.0
-	var max_spd = 240.0
-	speedr = deg_to_rad(min_deg) + (
-		deg_to_rad(max_deg-min_deg) / max_spd
+	var min_rad = Analometer.get_min_rad() 
+	var max_rad = Analometer.get_max_rad() 
+	var max_spd = Analometer.get_max_spd()
+	speedr = min_rad + (
+		(max_rad-min_rad) / max_spd
 		) * speedf
-	UI.logs_add_text("\nrotate_speed_pt(%6.2f)" % speedr)
 	Analometer.rotate_speed_pt(speedr)
+	
+func rotate_tacho_pt(tachof: float) -> void:
+	var tachor = 0.0
+	var min_rad = Analometer.get_min_rad() 
+	var max_rad = Analometer.get_max_rad() 
+	var max_rot = Analometer.get_max_rot() 
+	tachor = min_rad + (
+		(max_rad - min_rad) / max_rot
+		) * tachof
+	Analometer.rotate_tacho_pt(tachor)
+		
+func rotate_tacho_ps(tachof: float, delta) -> void:
+	var tachor = 0.0
+	var min_rad = Analometer.get_min_rad() 
+	var max_rad = Analometer.get_max_rad() 
+	var max_tac = Analometer.get_max_tac() 
+	var tach_ps = Analometer.get_tach_ps() 
+	tachor = min_rad + (
+		(max_rad - min_rad) / max_tac
+		) * tachof
+	Analometer.rotate_tacho_ps(
+		lerp(tach_ps, tachor, delta))
+	
+func rotate_speed_ps(deltavf: float, delta) -> void:
+	var deltavr = 0.0
+	var min_rad = Analometer.get_min_rad() 
+	var max_rad = Analometer.get_max_rad() 
+	var max_dev = Analometer.get_max_dev() 
+	var speed_ps = Analometer.get_speed_ps() 
+	deltavr = min_rad + (
+		(max_rad - min_rad) / max_dev
+		) * deltavf
+	Analometer.rotate_speed_ps(
+		lerp(speed_ps, deltavr, delta))
+
+func get_delta_velocity(delta) -> float:
+	## Remember last velocity
+	var rem_vel = rem_linear_velocity
+	rem_linear_velocity = linear_velocity
+	var cur_vel = linear_velocity
+	## Gat Vector diff
+	var delta_vel = cur_vel - rem_vel
+	return (delta_vel.length() * 3.6) / delta
 	
 func randomis(v: Vector3, mult) -> Vector3:
 	return v + mult * Vector3(
