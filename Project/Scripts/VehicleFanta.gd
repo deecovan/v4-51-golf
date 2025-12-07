@@ -216,19 +216,29 @@ func _physics_process(delta: float) -> void:
 		UI.logs_add_text("\n Front wheel rotation: %6.2f" % $Wheel3Dfl.get_rpm() + " rpm" )
 		UI.logs_add_text("\n  Rear wheel rotation: %6.2f" % $Wheel3Drl.get_rpm() + " kph" )
 
-	## @HACK Simulate Braking Drif
+	## @HACK Simulate Braking Drift
 	if state == States.BRAKING:
 		pass
 		
 	## Update UI
 	UI.set_speedometer_label(
-		pedal_text + ' ' + 
-		str(int(engine_force)) + ' f, ' +
-		str(int(linear_velocity.length() * 3.6)) + ' kph ' )
+		States.keys()[state] + ' ' + engine_index_list.keys()[engine_index])
+	rotate_speed_pt(linear_velocity.length() * 3.6)
 		
 	## Car fell off course!
 	if position.y < -50:
 		UI.show_message("Car is out! Reload with [F5]")
+
+func rotate_speed_pt(speedf: float) -> void:
+	var speedr = 0.0
+	var min_deg = -135.0
+	var max_deg = +135.0
+	var max_spd = 240.0
+	speedr = deg_to_rad(min_deg) + (
+		deg_to_rad(max_deg-min_deg) / max_spd
+		) * speedf
+	UI.logs_add_text("\nrotate_speed_pt(%6.2f)" % speedr)
+	Analometer.rotate_speed_pt(speedr)
 	
 func randomis(v: Vector3, mult) -> Vector3:
 	return v + mult * Vector3(

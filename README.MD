@@ -5,6 +5,7 @@
   - Speedometer
   - Tachometer
 - Added Analometer script
+  - Added Speedometer; tested
 - Improved UI script and view
 - modified overlay: added log screen
   - print basic values of vihicle, engine and wheels

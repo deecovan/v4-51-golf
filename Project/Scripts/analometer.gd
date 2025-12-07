@@ -1,19 +1,13 @@
 extends Control
 
-func _ready() -> void:
-	pass
-	
-func _process(_delta: float) -> void:
-	pass
+func rotate_speed_pt(rad: float) -> void:
+	$SpeedPT.rotation = rad
 
-func rotate_speed_pt(_rad: float) -> void:
-	pass
+func rotate_speed_ps(rad: float) -> void:
+	$SpeedPS.rotation = rad
 
-func rotate_speed_ps(_rad: float) -> void:
-	pass
+func rotate_tacho_pt(rad: float) -> void:
+	$TachoPT.rotation = rad
 
-func rotate_tacho_pt(_rad: float) -> void:
-	pass
-
-func rotate_tacho_ps(_rad: float) -> void:
-	pass
+func rotate_tacho_ps(rad: float) -> void:
+	$TachoPS.rotation = rad
