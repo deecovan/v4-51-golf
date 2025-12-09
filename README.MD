@@ -1,5 +1,11 @@
 # v4-51-golf GitHub repo
 
+## Tag v1.3
+- Started New branch git-shit BECAUSE
+  - Deleted broken branches with large files
+  - Manually added last 2 days changes
+  - Merged, tested
+
 ## 25.12.09 Joystick control has been added and the controls have been completely rewritten.
 - Joystick controls have been improved.
   - Controls have been completely rewritten.
