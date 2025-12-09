@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://ba6oivsxst478"]
+[gd_scene load_steps=11 format=3 uid="uid://ba6oivsxst478"]
 
 [ext_resource type="Script" uid="uid://dv8ykfntlf1at" path="res://Scripts/MainSceneScript.v1.2.gd" id="1_e4nrb"]
 [ext_resource type="PackedScene" uid="uid://cqj403us21hwa" path="res://Sky/world_environment.tscn" id="2_qqyye"]
@@ -7,7 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://dwvh36svgbyi0" path="res://Scenes/GLBs/Cup.3.ThorusObjects.glb" id="5_ppgg2"]
 [ext_resource type="PackedScene" uid="uid://126yicuwavhn" path="res://Scenes/Objects/CupTab.tscn" id="6_vjncq"]
 [ext_resource type="PackedScene" uid="uid://1nwkd5exeqht" path="res://Scenes/Fanta.v1.2.RedFlat.tscn" id="7_1pco8"]
+[ext_resource type="Script" uid="uid://dx8xl0toym1sl" path="res://Scripts/TabArea3d.gd" id="7_jykfb"]
 [ext_resource type="PackedScene" uid="uid://d1tqw4jcecxpq" path="res://Scenes/CameraGimbal.v1.1.tscn" id="8_gx3kq"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vjncq"]
+size = Vector3(0.1, 9, 23)
 
 [node name="MainCupScene_v0_1" type="Node3D"]
 script = ExtResource("1_e4nrb")
@@ -23,11 +27,19 @@ script = ExtResource("1_e4nrb")
 [node name="Objects" type="Node3D" parent="."]
 
 [node name="Tab" parent="Objects" instance=ExtResource("6_vjncq")]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 10, 100)
-
-[node name="Tab2" parent="Objects" instance=ExtResource("6_vjncq")]
 transform = Transform3D(-1.5, 0, 1.31134e-07, 0, 1.5, 0, -1.31134e-07, 0, -1.5, 0, 10, -100)
-skeleton = NodePath("")
+
+[node name="Area3D" type="Area3D" parent="Objects"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7.62939e-06)
+script = ExtResource("7_jykfb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/Area3D"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 7, 107.5)
+shape = SubResource("BoxShape3D_vjncq")
+
+[node name="Tab" parent="Objects/Area3D" instance=ExtResource("6_vjncq")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 10, 100)
+skeleton = NodePath("../..")
 
 [node name="Vehicle" parent="." instance=ExtResource("7_1pco8")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -177.649, 1.5007, 0.0439444)
@@ -35,3 +47,5 @@ MAX_STEER = 0.4
 
 [node name="CameraGimbal_v1_1" parent="." instance=ExtResource("8_gx3kq")]
 transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, -176.963, 2.41105, 0.0101423)
+
+[connection signal="body_entered" from="Objects/Area3D" to="Objects/Area3D" method="_on_body_entered"]

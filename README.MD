@@ -2,6 +2,7 @@
 
 ## New branch escape-menus
 - Added proto TabObjects
+- Added simple LapTimer
 - Start LapCouner with database
 
 - Add menus:
