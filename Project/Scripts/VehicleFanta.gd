@@ -247,7 +247,6 @@ func _physics_process(delta: float) -> void:
 	rotate_tacho_ps(engine_force, delta)
 	
 	UI.logs_clr_text()
-	UI.logs_show()
 	UI.logs_add_text("\n steering.....: %6.2f" % steering)
 	UI.logs_add_text("\n accelerating.: %6.2f" % accelerating)
 	UI.logs_add_text("\n engine brake.: %6.2f" % brake)
