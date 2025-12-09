@@ -6,6 +6,8 @@
   - Controls
   - Track control
   - Vehicle control
+- Maybe add lap counter 
+- Maybe fix camera overlap
 
 ## Tag v1.3
 - Started New branch git-shit BECAUSE
