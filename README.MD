@@ -1,5 +1,12 @@
 # v4-51-golf GitHub repo
 
+## New branch escape-menus
+- Add menus:
+  - Game settings
+  - Controls
+  - Track control
+  - Vehicle control
+
 ## Tag v1.3
 - Started New branch git-shit BECAUSE
   - Deleted broken branches with large files
