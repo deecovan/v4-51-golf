@@ -1,6 +1,9 @@
 # v4-51-golf GitHub repo
 
 ## New branch escape-menus
+- Added proto TabObjects
+- Start LapCouner with database
+
 - Add menus:
   - Game settings
   - Controls

@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://ba6oivsxst478"]
+[gd_scene load_steps=9 format=3 uid="uid://ba6oivsxst478"]
 
 [ext_resource type="Script" uid="uid://dv8ykfntlf1at" path="res://Scripts/MainSceneScript.v1.2.gd" id="1_e4nrb"]
 [ext_resource type="PackedScene" uid="uid://cqj403us21hwa" path="res://Sky/world_environment.tscn" id="2_qqyye"]
 [ext_resource type="PackedScene" uid="uid://v5ggol28gyfa" path="res://Scenes/GLBs/Cup.3.TorusTop.glb" id="3_ppgg2"]
 [ext_resource type="PackedScene" uid="uid://fxalgehxt3ky" path="res://Scenes/GLBs/Cup.3.ThorusColored.glb" id="4_ppgg2"]
 [ext_resource type="PackedScene" uid="uid://dwvh36svgbyi0" path="res://Scenes/GLBs/Cup.3.ThorusObjects.glb" id="5_ppgg2"]
+[ext_resource type="PackedScene" uid="uid://126yicuwavhn" path="res://Scenes/Objects/CupTab.tscn" id="6_vjncq"]
 [ext_resource type="PackedScene" uid="uid://1nwkd5exeqht" path="res://Scenes/Fanta.v1.2.RedFlat.tscn" id="7_1pco8"]
 [ext_resource type="PackedScene" uid="uid://d1tqw4jcecxpq" path="res://Scenes/CameraGimbal.v1.1.tscn" id="8_gx3kq"]
 
@@ -19,9 +20,17 @@ script = ExtResource("1_e4nrb")
 
 [node name="Cup_3_ThorusObjects" parent="." instance=ExtResource("5_ppgg2")]
 
+[node name="Objects" type="Node3D" parent="."]
+
+[node name="Tab" parent="Objects" instance=ExtResource("6_vjncq")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 10, 100)
+
+[node name="Tab2" parent="Objects" instance=ExtResource("6_vjncq")]
+transform = Transform3D(-1.5, 0, 1.31134e-07, 0, 1.5, 0, -1.31134e-07, 0, -1.5, 0, 10, -100)
+skeleton = NodePath("")
+
 [node name="Vehicle" parent="." instance=ExtResource("7_1pco8")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -177.649, 1.5007, 0.0439444)
-steer_speed = 1.0
 MAX_STEER = 0.4
 
 [node name="CameraGimbal_v1_1" parent="." instance=ExtResource("8_gx3kq")]
