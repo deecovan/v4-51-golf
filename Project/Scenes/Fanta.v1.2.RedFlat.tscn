@@ -154,6 +154,3 @@ suspension_stiffness = 110.0
 suspension_max_force = 40000.0
 damping_compression = 0.3
 damping_relaxation = 0.4
-
-[node name="Eyes" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.352395, 0.944957, -0.30142)

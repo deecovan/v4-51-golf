@@ -154,7 +154,8 @@ func _ready() -> void:
 	## Init PFG screen
 	UI.call_draw_curve(power_curve)
 	
-func _physics_process(delta: float) -> void:
+func _physics_process(delta: float) -> void:			
+			
 	## Reverse in the simpliest way
 	if Input.is_action_just_pressed("reverse"):
 		REVERSE = !REVERSE

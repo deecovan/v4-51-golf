@@ -37,7 +37,6 @@ func _ready() -> void:
 	var root = get_tree().get_root().get_child(0)
 	UI = root.find_children("UI")[0]
 	vehicle = $"../Vehicle"
-	vehicle_eyes = $"../Vehicle/Eyes"
 	gimbal_inner = $GimbalInner
 	## Initial position
 	global_position = vehicle.global_position
