@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://0qldpiyk6yjd"]
 
-[ext_resource type="Script" uid="uid://dv8ykfntlf1at" path="res://Scripts/MainSpaScript.v1.1.gd" id="1_mccm3"]
+[ext_resource type="Script" uid="uid://dv8ykfntlf1at" path="res://Scripts/MainSceneScript.v1.2.gd" id="1_mccm3"]
 [ext_resource type="PackedScene" uid="uid://cqj403us21hwa" path="res://Sky/world_environment.tscn" id="2_ebms0"]
 [ext_resource type="PackedScene" uid="uid://dy8ifo4lo2dgt" path="res://Scenes/Spa.Height.tscn" id="3_mccm3"]
-[ext_resource type="PackedScene" uid="uid://1nwkd5exeqht" path="res://Scenes/Fanta.v1.1.tscn" id="4_wfv4h"]
+[ext_resource type="PackedScene" uid="uid://1nwkd5exeqht" path="res://Scenes/Fanta.v1.2.RedFlat.tscn" id="4_wfv4h"]
 [ext_resource type="PackedScene" uid="uid://d1tqw4jcecxpq" path="res://Scenes/CameraGimbal.v1.1.tscn" id="5_mcomn"]
 [ext_resource type="PackedScene" uid="uid://c2u3c52wwav41" path="res://Scenes/ui.tscn" id="6_obff1"]
 

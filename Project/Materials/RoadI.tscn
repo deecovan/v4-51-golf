@@ -1,0 +1,49 @@
+[gd_scene load_steps=9 format=3 uid="uid://dyfi7qijn161q"]
+
+[ext_resource type="PhysicsMaterial" uid="uid://dc4ryen62a01q" path="res://Materials/Asphalt_physics.tres" id="1_2bmuu"]
+[ext_resource type="BoxMesh" uid="uid://bdiivb33jc1us" path="res://Materials/RoadI_mesh.tres" id="2_2bmuu"]
+[ext_resource type="Material" uid="uid://dnsoc0llbwvt7" path="res://Materials/RoadI_material.tres" id="2_gsp4l"]
+[ext_resource type="BoxMesh" uid="uid://e6x4jlkx215f" path="res://Materials/RoadIB_mesh.tres" id="3_6txkf"]
+[ext_resource type="Material" uid="uid://c1rb1j1x6st35" path="res://Materials/RoadIB_material.tres" id="5_t5n4s"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_h7nin"]
+size = Vector3(16, 0.19, 16)
+
+[sub_resource type="BoxMesh" id="BoxMesh_rxcrp"]
+lightmap_size_hint = Vector2i(84, 47)
+material = ExtResource("2_gsp4l")
+size = Vector3(8, 0.19, 8)
+
+[sub_resource type="BoxMesh" id="BoxMesh_7ae5n"]
+lightmap_size_hint = Vector2i(84, 47)
+material = ExtResource("5_t5n4s")
+size = Vector3(8, 0.19, 8)
+
+[node name="RoadI" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+physics_material_override = ExtResource("1_2bmuu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+visible = false
+shape = SubResource("BoxShape3D_h7nin")
+
+[node name="Square" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -4)
+mesh = SubResource("BoxMesh_rxcrp")
+skeleton = NodePath("../..")
+
+[node name="Square2" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -4)
+mesh = ExtResource("2_2bmuu")
+skeleton = NodePath("../..")
+
+[node name="Square0" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 4)
+mesh = ExtResource("3_6txkf")
+skeleton = NodePath("../..")
+
+[node name="Square1" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4)
+mesh = SubResource("BoxMesh_7ae5n")
+skeleton = NodePath("../..")

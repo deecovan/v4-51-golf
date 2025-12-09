@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://bqv87j216dsug" path="res://Materials/Brown.tscn" id="1_0anrj"]
 [ext_resource type="PackedScene" uid="uid://chslqxxtesmdt" path="res://Materials/Asphalt.tscn" id="2_4pinq"]
-[ext_resource type="PackedScene" uid="uid://dyfi7qijn161q" path="res://Scenes/RoadI.tscn" id="3_6b742"]
-[ext_resource type="PackedScene" uid="uid://cu6l1dgjtpjbo" path="res://Scenes/RoadIB.tscn" id="4_50k2u"]
+[ext_resource type="PackedScene" uid="uid://dyfi7qijn161q" path="res://Materials/RoadI.tscn" id="3_6b742"]
+[ext_resource type="PackedScene" uid="uid://cu6l1dgjtpjbo" path="res://Materials/RoadIB.tscn" id="4_50k2u"]
 [ext_resource type="PackedScene" uid="uid://djhjrcq01vwan" path="res://Materials/Bitum.tscn" id="5_nht15"]
 [ext_resource type="PackedScene" uid="uid://b53stiy4efih3" path="res://Materials/BiitumI.tscn" id="6_7wqx2"]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://1nwkd5exeqht"]
+[gd_scene load_steps=15 format=4 uid="uid://dwvj01m63kp5o"]
 
 [ext_resource type="Script" uid="uid://g1b5fmyreevn" path="res://Scripts/VehicleFanta.gd" id="1_2863i"]
 [ext_resource type="Texture2D" uid="uid://bbyxnybki6h8f" path="res://Import/blender/car_UV-sharp.png" id="2_tcuxl"]

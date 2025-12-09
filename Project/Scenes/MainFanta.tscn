@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b16bbxfwqe2mt" path="res://Scenes/stones_short.tscn" id="4_yabwv"]
 [ext_resource type="PackedScene" uid="uid://6gxcdxc80sgn" path="res://Scenes/sign_highway_wide.tscn" id="5_hblro"]
 [ext_resource type="PackedScene" uid="uid://btws7edbjvv2w" path="res://Scenes/squares.tscn" id="6_3scko"]
-[ext_resource type="PackedScene" uid="uid://cv01vjimybqxg" path="res://Scenes/terra.tscn" id="7_o8rth"]
+[ext_resource type="PackedScene" uid="uid://cv01vjimybqxg" path="res://Materials/terra.tscn" id="7_o8rth"]
 [ext_resource type="PackedScene" uid="uid://d1tqw4jcecxpq" path="res://Scenes/CameraGimbal.v1.1.tscn" id="7_t81v0"]
 [ext_resource type="PackedScene" uid="uid://dy8ifo4lo2dgt" path="res://Scenes/Spa.Height.tscn" id="8_3kqjl"]
 [ext_resource type="PackedScene" uid="uid://bybuvtl2qbgos" path="res://Scenes/Fanta.tscn" id="8_g750u"]

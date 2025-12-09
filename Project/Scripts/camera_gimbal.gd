@@ -6,7 +6,7 @@ extends Node3D
 @export var zoom_min = PI/3
 @export var zoom_max = PI
 @export var zoom_speed = 1/PI
-var zoom = PI/2
+@export var zoom = PI/1.5
 var zoom_z_position: float
 var zoom_z_position_min: float
 var zoom_z_position_max: float
@@ -56,7 +56,7 @@ func _ready() -> void:
 	gimbal_rotation_y = gimbal_inner.rotation.y
 	gimbal_rotation_z = gimbal_inner.rotation.z
 	## Initial Camera rotation 
-	gimbal_inner.rotation = Vector3(0, PI, 0)
+	gimbal_inner.rotation = Vector3(0, 0, 0)
 
 func _input(event):
 	if event.is_action_pressed("cam_zoom_in"):
@@ -101,8 +101,9 @@ func _process(delta):
 			
 	## Remember Gimbal rotation
 	var new_rotation = Vector3(
-		gimbal_rotation_x + vehicle_rotation_x + 1/PI - zoom/PI,
-			gimbal_rotation_y + vehicle_rotation_y, gimbal_rotation_z)
+		gimbal_rotation_x + vehicle_rotation_x,
+			gimbal_rotation_y + vehicle_rotation_y, 
+			gimbal_rotation_z)
 
 	## @GOOD Fix Camera rotation jump when when y=360+n
 	var current_rotation_y = gimbal_inner.rotation.y

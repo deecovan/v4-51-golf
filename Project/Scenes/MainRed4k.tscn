@@ -1,0 +1,12 @@
+[gd_scene load_steps=4 format=3 uid="uid://camiwg8mwc5x1"]
+
+[ext_resource type="Script" uid="uid://dcr051st1pfo4" path="res://Scripts/Main.gd" id="1_4y62m"]
+[ext_resource type="PackedScene" uid="uid://c7duq47sotida" path="res://Scenes/MainRedFlat.v0.1.tscn" id="3_4y62m"]
+[ext_resource type="PackedScene" uid="uid://c2u3c52wwav41" path="res://Scenes/ui.tscn" id="3_tbame"]
+
+[node name="MainRed4k" type="Node3D"]
+script = ExtResource("1_4y62m")
+
+[node name="UI" parent="." instance=ExtResource("3_tbame")]
+
+[node name="Scene" parent="." instance=ExtResource("3_4y62m")]

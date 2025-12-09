@@ -1,23 +1,32 @@
 extends VehicleBody3D
 
 var speedtometer_label
-var reverse =  false
+var REVERSE =  false
 var DEBUG = false
 
 @export var grav_scale = 2.0
-## Maximum Steering speedss
-@export var steer_speed = 1.4
-@export var pedal_speed = 0.75
+## Maximum Steering speed
+@export var steer_control_speed = 0.4
+## Maximum Braking speed
+@export var brake_control_speed = 0.4
+## Control's lerp speed
+# Use 0..10 for keyboard or controller
+# Use 100 for racing wheels
+@export var control_speed = 4.0
 ## Vehicle3D body braking force
 @export var use_wheel_brake = true
+## Applied with Use Wheel Brake = false
 @export var vehicle_brake_force = 10.0
 ## Wheel3D braking force and balance
-@export var wheel_brake_force = 10.0
-@export var front_brake_power = 1.2
-@export var rear_brake_power = 0.8
-@export var pedal_brake_speed = 2.0
+@export var wheel_brake_force = 8.0
+## wheel_brake_force multiplier
+@export var front_brake_force = 1.2
+## wheel_brake_force multiplier
+@export var rear_brake_force = 1.0
+## Brake lerp speed
+@export var pedal_brake_speed = 1.6
 ## Coasting starting value
-@export var coast_init = 0.5
+@export var coast_init = 0.75
 ## Coasting lerp speed
 @export var engine_coast = 0.1
 ## Maximum Steering angle in Radians
@@ -30,17 +39,14 @@ var DEBUG = false
 @export var car_bounce = 0.1
 @export var car_absorb = false
 
-enum States { ACCELERATING, BRAKING, COASTING, REVERSING}
-var state = States.COASTING
-var engine_index: int = 0
 
 ## Next values used for reconfiguring the Wheel3Ds values
 ## Front wheels friction slip ratio ## 0.65
-@export var fric_slip_front = 1.3
+@export var fric_slip_front = 1.6
 ## Rear wheels friction slip ratio ## 0.65
-@export var fric_slip_rear = 1.3 
-## @HACK Acceleration multiplier for rear slip
-@export var fric_slip_rear_mult = 0.7
+@export var fric_slip_rear = 1.6 
+## @HACK Acceleration multiplier for rear slip. Used if NOT accelerating.
+@export var fric_slip_rear_demult = 0.45
 ## Typical racing car damper ratios are 0.65-0.7 
 ## in ride where 1 is 100% critical damping
 ## Front wheels damper compression ## 0.8
@@ -49,6 +55,7 @@ var engine_index: int = 0
 @export var damp_relax_front = 15.0
 ## Rear ## 0.7 0.77
 @export var damp_compr_rear = 0.75
+## Rear wheels damper relaxation ## 0.88
 @export var damp_relax_rear = 15.0
 ## Rest, Travel, Stiff, MaxV
 @export var rest_front = 0.12
@@ -59,16 +66,26 @@ var engine_index: int = 0
 @export var stiff_rear = 200
 @export var max_force_front = 1600
 @export var max_force_rear = 1600
-@export var MAX_SPEED = 111.0
-@export var MAX_POWER = 750.0
+@export var MAX_SPEED = 130.0
+@export var MAX_POWER = 800.0
+## (-Z) value (meters) - Move Center Of Mass backward, (-Y): up
+@export var COM_MOD_VECTOR = Vector3(0.0,-0.3,-0.3)
 
-## Array values of Used power for PFG 
+## Array values of power function.
+## @TODO we need to implement the engine power function.
 var power_curve: Array = [
 	0.06, 0.12, 0.25, 0.50, 0.70, 
 	0.85, 0.95, 1.00, 1.00, 0.95, 
 	0.85, 0.60, 0.30, 0.10, 0.01, 0.00 
 ]
+enum States { ACCELERATING, BRAKING, COASTING, REVERSING}
+var engine_state = States.COASTING
 enum engine_index_list {Rear, Neutral, First, Second, Third, Fourth, Fifth, Sixth, Seventh, Eighth}
+var engine_index: int = 0
+var acceleration_power = 0.0
+var matching_power = 0.0
+var accelerating = 0.0
+
 var root: Node3D
 var UI: CanvasLayer
 var Analometer: Control
@@ -129,7 +146,7 @@ func _ready() -> void:
 	## Move it Forward to oversteer
 	## Backward for understeer but less rear slip
 	center_of_mass_mode = RigidBody3D.CENTER_OF_MASS_MODE_CUSTOM
-	center_of_mass = $CenterOfMass.position
+	center_of_mass = $CenterOfMass.position + COM_MOD_VECTOR
 	
 	## Randomize initial rotation
 	rotation = randomis(rotation, PI)
@@ -138,97 +155,146 @@ func _ready() -> void:
 	UI.call_draw_curve(power_curve)
 	
 func _physics_process(delta: float) -> void:
-	steering = move_toward(
-		steering,
-		Input.get_axis("steer_right", "steer_left") * MAX_STEER,
-		delta * steer_speed
-		)
+	## Reverse in the simpliest way
 	if Input.is_action_just_pressed("reverse"):
-		reverse = !reverse
-	
-## Match Vehicle speed to power_curve to get engine_force
-	## Remove reverse
-	engine_force = abs(engine_force)
-	if Input.is_action_pressed("accelerate"):
-		if state != States.ACCELERATING:
-			state = States.ACCELERATING
-		engine_force = lerp(engine_force, MAX_POWER, pedal_speed * delta)
-		## Match force to power_curve
-		var max_curve_index = power_curve.size() - 5
-		var speed_index = clamp( ## clamp maximal values
-			## for maximal gear, starting from index 2, limited to index -5
-			2 + linear_velocity.length()/(MAX_SPEED/max_curve_index),  
-			2, power_curve.size() - 5)      ## @TESTED
-		var match_power = power_curve[speed_index] * MAX_POWER
-		engine_index = speed_index
-		engine_force = clamp(engine_force, 0, match_power)
-		brake = 0.0
-		## Else: Braking with Engine LERP down
-	elif Input.is_action_pressed("brake"):
-		state = States.BRAKING
-		engine_force = lerp(
-			engine_force, 0.0, pedal_brake_speed * delta)
-		## Braking with Vehicle3D
-		if not use_wheel_brake:
-			brake = vehicle_brake_force
-		## Braking with Wheels
-		else:
-			$Wheel3Dfl.brake = wheel_brake_force * front_brake_power
-			$Wheel3Dfr.brake = wheel_brake_force * front_brake_power
-			$Wheel3Drl.brake = wheel_brake_force * rear_brake_power
-			$Wheel3Drr.brake = wheel_brake_force * rear_brake_power
-		## @HACK Simulate braking Friction Slip
-		#$Wheel3Drl.wheel_friction_slip = fric_slip_rear / mult_slip_rear
-		#$Wheel3Drr.wheel_friction_slip = fric_slip_rear / mult_slip_rear
+		REVERSE = !REVERSE
+		
+	## Use controller's axes, joy or key input
+	var _steering = Input.get_axis("steer_right", "steer_left") * MAX_STEER
+	var _accelerating = Input.get_axis("brake", "accelerate")
+	## Simulate axes if keys are used
+	if Input.is_action_pressed("steer_right")\
+		or Input.is_action_pressed("steer_left"):
+			steering = lerp(steering, _steering, 
+			steer_control_speed * control_speed * delta)
+	else: steering = _steering
+	if Input.is_action_pressed("brake")\
+		or Input.is_action_pressed("accelerate"):
+			accelerating = lerp(accelerating, _accelerating, 
+			brake_control_speed * control_speed * delta)
+	else: accelerating = _accelerating
+		
+	## Set acceleration state
+	if accelerating > 0:
+		engine_state = States.ACCELERATING
+	## Else: Braking key
+	elif accelerating < 0:
+		engine_state = States.BRAKING
+
 	## Else: Coasting with Engine LERP down
 	else: 
-		if state != States.COASTING:
+		if engine_state != States.COASTING:
 			## Decrease engine power on state changed
+			engine_state = States.COASTING
 			engine_force = engine_force * coast_init
-			state = States.COASTING
-		brake = 0.0
+		## Engine coasting lerp down
 		engine_force = lerp(engine_force, 0.0, engine_coast * delta)
-	## Apply reverse
-	if reverse:
-		state = States.REVERSING
-		engine_force = - engine_force
-		
-	## @HACK Simulate Accelerating Friction Slip
-	if state == States.ACCELERATING:
-		$Wheel3Drl.wheel_friction_slip = fric_slip_rear
-		$Wheel3Drr.wheel_friction_slip = fric_slip_rear
-	else:
-		$Wheel3Drl.wheel_friction_slip = fric_slip_rear * fric_slip_rear_mult
-		$Wheel3Drr.wheel_friction_slip = fric_slip_rear * fric_slip_rear_mult
 
-	## Update UI logs screen
-	#if root.DEBUG:
-		#UI.logs_clr_text()
-		#UI.logs_add_text("\n Engine power        : %6.2f" % engine_force)
-		#UI.logs_add_text("\n Engine index        : %6s" % engine_index_list.keys()[engine_index])
-		#UI.logs_add_text("\n Angular_velocity.y  : %6.2f" % rad_to_deg(angular_velocity.y) + " deg")
-		#UI.logs_add_text("\n  Linear_velocity.l  : %6.2f" % (linear_velocity.length() * 3.6) + " kph" )
-		#UI.logs_add_text("\n Front friction_slip : %6.2f" % $Wheel3Dfl.wheel_friction_slip)
-		#UI.logs_add_text("\n  Rear friction_slip : %6.2f" % $Wheel3Drl.wheel_friction_slip)
-		#UI.logs_add_text("\n Front wheel rotation: %6.2f" % $Wheel3Dfl.get_rpm() + " rpm" )
-		#UI.logs_add_text("\n  Rear wheel rotation: %6.2f" % $Wheel3Drl.get_rpm() + " kph" )
+	## Process the curent state
+	if engine_state == States.ACCELERATING:
+		acceleration_power = MAX_POWER * accelerating
+		## Remove REVERSE
+		engine_force = abs(engine_force)
+		## Apply accelerating
+		matching_power = engine_match_power(
+			acceleration_power, 
+			power_curve, 
+			delta)
+		## Match force to power_curve
+		engine_force = lerp(
+			engine_force, 
+			clamp(matching_power, 0, matching_power), 
+			control_speed * delta) 
+		## Apply REVERSE
+	if REVERSE:
+		engine_state = States.REVERSING
+		engine_force = - engine_force
+	
+	if engine_state == States.BRAKING:
+		## Drop engine
+		engine_force = lerp(engine_force, 0.0, control_speed * delta)
+		## Braking with Vehicle3D
+		if not use_wheel_brake:
+			var set_vehicle_brake_force = \
+				-accelerating * vehicle_brake_force
+			change_vehicle_brake(set_vehicle_brake_force, delta)
+		## Braking with Wheelsa
+		else:
+			var set_wheel_brake_force = \
+				-accelerating * vehicle_brake_force
+			change_wheel_brake(set_wheel_brake_force, 
+				front_brake_force, rear_brake_force, delta)
+	else: 
+		change_vehicle_brake(0.0, delta)
+		change_wheel_brake(0.0, 0.0, 0.0, delta)
+
+	## @HACK Simulate Accelerating Friction Slip
+	if engine_state == States.ACCELERATING:
+		set_fric_slip_rear(fric_slip_rear)
+	else:
+		set_fric_slip_rear(fric_slip_rear * fric_slip_rear_demult)
 
 	## @HACK Simulate Braking Drift
-	if state == States.BRAKING:
+	if engine_state == States.BRAKING:
 		pass
 		
 	## Update UI
 	UI.set_speedometer_label(
-		States.keys()[state] + ' ' + engine_index_list.keys()[engine_index])
-	
+		States.keys()[engine_state] + ' ' + engine_index_list.keys()[engine_index])
 	rotate_speed_pt(linear_velocity.length() * 3.6)
 	rotate_speed_ps(get_delta_velocity(delta), delta)
 	rotate_tacho_pt(($Wheel3Drl.get_rpm() + $Wheel3Drl.get_rpm()) / 2)
 	rotate_tacho_ps(engine_force, delta)
+	
+	UI.logs_clr_text()
+	UI.logs_show()
+	UI.logs_add_text("\n steering.....: %6.2f" % steering)
+	UI.logs_add_text("\n accelerating.: %6.2f" % accelerating)
+	UI.logs_add_text("\n engine brake.: %6.2f" % brake)
+	UI.logs_add_text("\n wheel f.brake: %6.2f" % $Wheel3Dfl.brake)
+	UI.logs_add_text("\n wheel r.brake: %6.2f" % $Wheel3Drl.brake)
+	UI.logs_add_text("\n engine_force.: %6.2f" % engine_force)
+	UI.logs_add_text("\n matching_pow.: %6.2f" % matching_power)
+	UI.logs_add_text("\n engine_index.: %6.2f" % engine_index)
+	UI.logs_add_text("\n eng.ind.text.:   %s"  % engine_index_list.keys()[engine_index])
+	UI.logs_add_text("\n STATE........:   %s"  % States.keys()[engine_state])
+	UI.logs_add_text("\n REVERSE......:   %s"   % var_to_str(REVERSE))
 		
 	## Car fell off course!
 	if position.y < -50:
 		UI.show_message("Car is out! Reload with [F5]")
+		
+func set_fric_slip_rear(_fric_slip_rear) -> void:
+	$Wheel3Drl.wheel_friction_slip = _fric_slip_rear
+	$Wheel3Drr.wheel_friction_slip = _fric_slip_rear
+
+## Apply Vehicle Brake lerp
+func change_vehicle_brake(_vehicle_brake_force, _delta) -> void:
+	brake = lerp(brake, _vehicle_brake_force, _delta)
+
+## Apply Wheels Brake lerp
+func change_wheel_brake(_brake_force, _front_brake_power, _rear_brake_power, _delta) -> void:
+
+	$Wheel3Dfl.brake = _brake_force * _front_brake_power
+	$Wheel3Dfr.brake = _brake_force * _front_brake_power
+	$Wheel3Drl.brake = _brake_force * _rear_brake_power
+	$Wheel3Drr.brake = _brake_force * _rear_brake_power
+
+## @TODO we need to implement the speed function, having _power_curve.
+## Speed Index to use as Gear number
+## Match Power as engine power output
+func engine_match_power(_acceleration_power, _power_curve, _delta) -> float:
+		var max_curve_index = power_curve.size() - 5
+		var speed_index = clamp( ## clamp maximal values
+			## for maximal gear, starting from index 2, limited to index -5
+			2 + linear_velocity.length()/(MAX_SPEED/max_curve_index),  
+			2, _power_curve.size() - 5)
+		var match_power = _power_curve[speed_index] * MAX_POWER
+		set_engine_index(speed_index)
+		return match_power
+		
+func set_engine_index(_speed_index) -> void:
+	engine_index = _speed_index
 
 func rotate_speed_pt(speedf: float) -> void:
 	var speedr = 0.0

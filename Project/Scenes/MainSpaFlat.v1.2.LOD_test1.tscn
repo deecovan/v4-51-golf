@@ -1,12 +1,12 @@
 [gd_scene load_steps=9 format=3 uid="uid://e23alpp57t45"]
 
-[ext_resource type="Script" uid="uid://dv8ykfntlf1at" path="res://Scripts/MainSpaScript.v1.1.gd" id="1_0a7im"]
+[ext_resource type="Script" uid="uid://dv8ykfntlf1at" path="res://Scripts/MainSceneScript.v1.2.gd" id="1_0a7im"]
 [ext_resource type="PackedScene" uid="uid://cqj403us21hwa" path="res://Sky/world_environment.tscn" id="2_hbbr7"]
 [ext_resource type="PackedScene" uid="uid://b30n8gwfqoirt" path="res://Scenes/Spa.Flat.LOD.test1.tscn" id="3_rn85l"]
 [ext_resource type="PackedScene" uid="uid://dxg5vswamqboc" path="res://Materials/sand_1_km_landlow A.tscn" id="4_7n4ge"]
 [ext_resource type="PackedScene" uid="uid://k0763yewpvlv" path="res://Import/Kenney/Road/sign-highway-wide.glb" id="5_dg5fp"]
 [ext_resource type="PackedScene" uid="uid://dpmlsd6ukmkua" path="res://Import/Kenney/Road/construction-light.glb" id="6_s645b"]
-[ext_resource type="PackedScene" uid="uid://1nwkd5exeqht" path="res://Scenes/Fanta.v1.1.tscn" id="7_ca3vk"]
+[ext_resource type="PackedScene" uid="uid://1nwkd5exeqht" path="res://Scenes/Fanta.v1.2.RedFlat.tscn" id="7_ca3vk"]
 [ext_resource type="PackedScene" uid="uid://d1tqw4jcecxpq" path="res://Scenes/CameraGimbal.v1.1.tscn" id="8_ln43q"]
 
 [node name="MainSpaFlat_v1_2" type="Node3D"]

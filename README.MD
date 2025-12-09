@@ -1,6 +1,37 @@
 # v4-51-golf GitHub repo
 
-## 25.12.06 Branch lap-counted
+## 25.12.09 Joystick control has been added and the controls have been completely rewritten.
+- Joystick controls have been improved.
+  - Controls have been completely rewritten.
+  - Tested with both joystick and keyboard.
+  - Ready for implementation of engine and transmission control functions.
+
+### Fixes in Cup
+- Merged Thorus vertexes
+- Changed materials
+  - Black B darker
+  - Black C DARK!
+- Checked tribune's sizes (2m height)
+- Added 1cm height to circles
+
+## 25.12.08 New track Cup
+- Created Oval R100 RR200 1km
+- Added main scene MainCup
+- Added Objects layer
+- Added Thorus Colored and Thorus layers 
+- GoDot Can use GLBs as is without instancing
+  - Can import physics from Blender
+  - Decimate is better than Merge by distance!
+
+## 25.12.07 New track RedFlat.v0.1 Updated Fanta.v1.2.RedFlat
+- Modify Veficle 
+  - Update Fanta v1.2
+- New Blender ptoject 2.2x2.2km
+- New scene MainRed4k to start
+- New scene MainRedFlat.v0.1
+- Updated car Fanta.v1.2.RedFlat
+
+## 25.12.07 Branch lap-counted
 - Tested: Tag v1.2
 - Updated Flat track:
   - Smooth edges
@@ -271,14 +302,4 @@
   - Follow the car
 - Created Vehicle2D scene with Wheel3D nodes
 - Add Vehicle to Main scene
-
-## @STORY
-1. CarBall online duel game
-  - Drive and bounce the ball 
-  - Hit the opponent's gate
-  - 1x1 ELO rated duels
-2. Build your own Course
-  - The Courses are built with 3D Grids
-  - City driving between the Courses
-  - StreetRacing duels in the City
 

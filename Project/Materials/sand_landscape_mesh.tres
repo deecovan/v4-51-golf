@@ -1,4 +1,4 @@
-[gd_resource type="PlaneMesh" load_steps=2 format=3 uid="uid://cigm7new40aek"]
+[gd_resource type="PlaneMesh" load_steps=2 format=3]
 
 [ext_resource type="Material" uid="uid://c6mra1g50umsa" path="res://Materials/sand_landscape_surface_material.tres" id="1_5lou5"]
 
