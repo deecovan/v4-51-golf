@@ -1,14 +1,8 @@
-[gd_resource type="Environment" load_steps=4 format=3 uid="uid://h8envrf8adi6"]
+[gd_resource type="Environment" load_steps=2 format=3 uid="uid://h8envrf8adi6"]
 
-[ext_resource type="Texture2D" uid="uid://b702vbu78w30j" path="res://Sky/d6vv4hs-5c92c1f1-945e-446a-befb-087adc8ae8bb.jpg" id="1_3ycdp"]
-
-[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_wjt3k"]
-panorama = ExtResource("1_3ycdp")
-
-[sub_resource type="Sky" id="Sky_4kpch"]
-sky_material = SubResource("PanoramaSkyMaterial_wjt3k")
+[ext_resource type="Sky" uid="uid://dxtkt51wykw2t" path="res://Sky/EveningSkyHDRI006A_2K.tres" id="1_3ycdp"]
 
 [resource]
 background_mode = 2
-sky = SubResource("Sky_4kpch")
+sky = ExtResource("1_3ycdp")
 tonemap_mode = 2

@@ -14,7 +14,8 @@ general/updates_per_second=30
 
 [application]
 
-config/name="G-Drive"
+config/name="Add Drive"
+config/version="0.1.3"
 run/main_scene="uid://cvih1p5jklf0a"
 config/features=PackedStringArray("4.4", "Forward Plus")
 run/max_fps=30
