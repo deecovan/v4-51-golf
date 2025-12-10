@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c6w3v5fwt2vuo"
+path="res://.godot/imported/eng power s.wav-9cf32850596b45651055c48ab0dfec36.sample"
+
+[deps]
+
+source_file="res://Sounds/eng power s.wav"
+dest_files=["res://.godot/imported/eng power s.wav-9cf32850596b45651055c48ab0dfec36.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
