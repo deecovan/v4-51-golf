@@ -1,5 +1,12 @@
 # v4-51-golf GitHub repo
 
+## 25.12.10
+- Fix Timer
+  - Use right project architecture
+- Add changing times on lap counted
+- Add timer colors
+
+
 ## New branch escape-menus
 - Added proto TabObjects
 - Added simple LapTimer
