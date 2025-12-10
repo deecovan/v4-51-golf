@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=4 uid="uid://djkuoryhc3mal"]
 
-[ext_resource type="Texture2D" uid="uid://bbyxnybki6h8f" path="res://Import/blender/car_UV-sharp.png" id="1_dc76x"]
+[ext_resource type="Texture2D" uid="uid://b8yj64u4xr1un" path="res://Import/blender/car_UV-sharp.png" id="1_dc76x"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_74iso"]
 resource_name = "Material"

@@ -2,19 +2,21 @@
 
 [ext_resource type="Script" uid="uid://dv8ykfntlf1at" path="res://Scripts/MainSceneScript.v1.2.gd" id="1_sekj0"]
 [ext_resource type="PackedScene" uid="uid://cqj403us21hwa" path="res://Sky/world_environment.tscn" id="2_kpmci"]
-[ext_resource type="PackedScene" uid="uid://6kkvxcefrwog" path="res://Scenes/RadTrack.MainSegLineDraw.tscn" id="3_sekj0"]
 [ext_resource type="PackedScene" uid="uid://b20rk1whlk7r2" path="res://Materials/sand_4k_landlow A.tscn" id="4_sekj0"]
-[ext_resource type="PackedScene" uid="uid://k0763yewpvlv" path="res://Import/Kenney/Road/sign-highway-wide.glb" id="5_7ps14"]
-[ext_resource type="PackedScene" uid="uid://dpmlsd6ukmkua" path="res://Import/Kenney/Road/construction-light.glb" id="6_0atsv"]
+[ext_resource type="PackedScene" uid="uid://ovpx4ni6ewxn" path="res://Import/Kenney/Road/sign-highway-wide.glb" id="5_7ps14"]
+[ext_resource type="PackedScene" uid="uid://bo8ghjy40pqyf" path="res://Import/Kenney/Road/construction-light.glb" id="6_0atsv"]
 [ext_resource type="PackedScene" uid="uid://1nwkd5exeqht" path="res://Scenes/Fanta.v1.2.RedFlat.tscn" id="7_vvi4l"]
 [ext_resource type="PackedScene" uid="uid://d1tqw4jcecxpq" path="res://Scenes/CameraGimbal.v1.1.tscn" id="8_05iy4"]
+
+[sub_resource type="Resource" id="Resource_l537d"]
+metadata/__load_path__ = "res://Scenes/RadTrack.MainSegLineDraw.tscn"
 
 [node name="MainRedFlat_v0_1" type="Node3D"]
 script = ExtResource("1_sekj0")
 
 [node name="WorldEnvironment" parent="." instance=ExtResource("2_kpmci")]
 
-[node name="RadTrack_MainSegLineDraw" parent="." instance=ExtResource("3_sekj0")]
+[node name="RadTrack_MainSegLineDraw" parent="."]
 
 [node name="Sand 4k Landlow A" parent="." instance=ExtResource("4_sekj0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 825, -0.1, 780)

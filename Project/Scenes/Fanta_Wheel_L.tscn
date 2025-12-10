@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=4 uid="uid://bnj10rk4ojq0v"]
 
-[ext_resource type="Texture2D" uid="uid://lyt8l820n4yl" path="res://Import/UV-sharp.png" id="1_5hgxi"]
+[ext_resource type="Texture2D" uid="uid://do6oimow4qltx" path="res://Import/UV-sharp.png" id="1_5hgxi"]
 [ext_resource type="AudioStream" uid="uid://l0njrpj6bcwf" path="res://Sounds/slip.wav" id="2_lvhif"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_371fh"]

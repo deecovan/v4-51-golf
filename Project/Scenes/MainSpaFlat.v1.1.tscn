@@ -3,9 +3,9 @@
 [ext_resource type="Script" uid="uid://dv8ykfntlf1at" path="res://Scripts/MainSceneScript.v1.2.gd" id="1_t2t33"]
 [ext_resource type="PackedScene" uid="uid://cqj403us21hwa" path="res://Sky/world_environment.tscn" id="2_o2f4t"]
 [ext_resource type="PackedScene" uid="uid://dxg5vswamqboc" path="res://Materials/sand_1_km_landlow A.tscn" id="4_fydd0"]
-[ext_resource type="PackedScene" uid="uid://k0763yewpvlv" path="res://Import/Kenney/Road/sign-highway-wide.glb" id="4_o2f4t"]
+[ext_resource type="PackedScene" uid="uid://ovpx4ni6ewxn" path="res://Import/Kenney/Road/sign-highway-wide.glb" id="4_o2f4t"]
 [ext_resource type="PackedScene" uid="uid://b30n8gwfqoirt" path="res://Scenes/Spa.Flat.LOD.test1.tscn" id="4_rousx"]
-[ext_resource type="PackedScene" uid="uid://dpmlsd6ukmkua" path="res://Import/Kenney/Road/construction-light.glb" id="5_fydd0"]
+[ext_resource type="PackedScene" uid="uid://bo8ghjy40pqyf" path="res://Import/Kenney/Road/construction-light.glb" id="5_fydd0"]
 [ext_resource type="PackedScene" uid="uid://1nwkd5exeqht" path="res://Scenes/Fanta.v1.2.RedFlat.tscn" id="5_g8hvc"]
 [ext_resource type="PackedScene" uid="uid://d1tqw4jcecxpq" path="res://Scenes/CameraGimbal.v1.1.tscn" id="6_fwol4"]
 
@@ -204,6 +204,8 @@ transform = Transform3D(9.16188, 0, 4.00749, 0, 10, 0, -4.00749, 0, 9.16188, -44
 
 [node name="Vehicle" parent="." instance=ExtResource("5_g8hvc")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 467.086, 1.5007, 37.3828)
+MAX_SPEED = 65.0
+MAX_POWER = 600.0
 
 [node name="CameraGimbal_v1_1" parent="." instance=ExtResource("6_fwol4")]
 transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, 467.772, 2.41105, 37.349)

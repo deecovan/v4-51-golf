@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://dv8ykfntlf1at" path="res://Scripts/MainSceneScript.v1.2.gd" id="1_e4nrb"]
 [ext_resource type="PackedScene" uid="uid://cqj403us21hwa" path="res://Sky/world_environment.tscn" id="2_qqyye"]
-[ext_resource type="PackedScene" uid="uid://v5ggol28gyfa" path="res://Scenes/GLBs/Cup.3.TorusTop.glb" id="3_ppgg2"]
-[ext_resource type="PackedScene" uid="uid://fxalgehxt3ky" path="res://Scenes/GLBs/Cup.3.ThorusColored.glb" id="4_ppgg2"]
-[ext_resource type="PackedScene" uid="uid://dwvh36svgbyi0" path="res://Scenes/GLBs/Cup.3.ThorusObjects.glb" id="5_ppgg2"]
+[ext_resource type="PackedScene" uid="uid://8omc8gkj4yq1" path="res://Scenes/GLBs/Cup.3.TorusTop.glb" id="3_ppgg2"]
+[ext_resource type="PackedScene" uid="uid://bmvqvobswlomi" path="res://Scenes/GLBs/Cup.3.ThorusColored.glb" id="4_ppgg2"]
+[ext_resource type="PackedScene" uid="uid://blfttvf13hf36" path="res://Scenes/GLBs/Cup.3.ThorusObjects.glb" id="5_ppgg2"]
 [ext_resource type="PackedScene" uid="uid://1nwkd5exeqht" path="res://Scenes/Fanta.v1.2.RedFlat.tscn" id="7_1pco8"]
 [ext_resource type="PackedScene" uid="uid://d1tqw4jcecxpq" path="res://Scenes/CameraGimbal.v1.1.tscn" id="8_gx3kq"]
 
@@ -21,8 +21,15 @@ script = ExtResource("1_e4nrb")
 
 [node name="Vehicle" parent="." instance=ExtResource("7_1pco8")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -177.649, 1.5007, 0.0439444)
-steer_speed = 1.0
+mass = 80.0
+grav_scale = 1.0
 MAX_STEER = 0.4
+fric_slip_rear = 1.8
+fric_slip_rear_demult = 1.0
+stiff_front = 160
+stiff_rear = 100
+MAX_SPEED = 110.0
+MAX_POWER = 1200.0
 
 [node name="CameraGimbal_v1_1" parent="." instance=ExtResource("8_gx3kq")]
 transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, -176.963, 2.41105, 0.0101423)

@@ -71,11 +71,13 @@ var DEBUG = false
 ## (-Z) value (meters) - Move Center Of Mass backward, (-Y): up
 @export var COM_MOD_VECTOR = Vector3(0.0,-0.3,-0.3)
 
+@export var scale_curve: Curve
+
 ## Array values of power function.
 ## @TODO we need to implement the engine power function.
 var power_curve: Array = [
-	0.06, 0.12, 0.25, 0.50, 0.70, 
-	0.85, 0.95, 1.00, 1.00, 0.95, 
+	0.06, 0.12, 0.50, 0.8, 0.85, 
+	0.9, 0.95, 1.00, 1.00, 0.95, 
 	0.85, 0.60, 0.30, 0.10, 0.01, 0.00 
 ]
 enum States { ACCELERATING, BRAKING, COASTING, REVERSING}
@@ -198,7 +200,7 @@ func _physics_process(delta: float) -> void:
 		## Apply accelerating
 		matching_power = engine_match_power(
 			acceleration_power, 
-			power_curve, 
+			scale_curve, 
 			delta)
 		## Match force to power_curve
 		engine_force = lerp(
@@ -283,14 +285,20 @@ func change_wheel_brake(_brake_force, _front_brake_power, _rear_brake_power, _de
 ## @TODO we need to implement the speed function, having _power_curve.
 ## Speed Index to use as Gear number
 ## Match Power as engine power output
-func engine_match_power(_acceleration_power, _power_curve, _delta) -> float:
+func engine_match_power(_acceleration_power, _power_curve:Curve, _delta) -> float:
 		var max_curve_index = power_curve.size() - 5
-		var speed_index = clamp( ## clamp maximal values
-			## for maximal gear, starting from index 2, limited to index -5
-			2 + linear_velocity.length()/(MAX_SPEED/max_curve_index),  
-			2, _power_curve.size() - 5)
-		var match_power = _power_curve[speed_index] * MAX_POWER
-		set_engine_index(speed_index)
+		# Next 3 lines implementation through speed array simulates gear box.
+		#var speed_index = clamp( ## clamp maximal values
+			### for maximal gear, starting from index 2, limited to index -5
+			#	2 + linear_velocity.length()/(MAX_SPEED/max_curve_index),  
+			#2, _power_curve.size() - 5)
+		#var match_power = _power_curve[speed_index] * MAX_POWER
+		#set_engine_index(speed_index)
+		
+		#New implementation using scale_curve
+		var normalized_speed=linear_velocity.length()/MAX_SPEED
+		var match_power=_power_curve.sample_baked(normalized_speed)*MAX_POWER
+		
 		return match_power
 		
 func set_engine_index(_speed_index) -> void:

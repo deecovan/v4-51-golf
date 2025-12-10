@@ -1,28 +1,50 @@
-[gd_scene load_steps=2 format=3 uid="uid://cv01vjimybqxg"]
+[gd_scene load_steps=9 format=3 uid="uid://cv01vjimybqxg"]
 
-[ext_resource type="PackedScene" uid="uid://c87smutbsv8rh" path="res://Scenes/terra_sand.tscn" id="2_g1p57"]
+[sub_resource type="Resource" id="Resource_6872y"]
+metadata/__load_path__ = "res://Scenes/terra_sand.tscn"
+
+[sub_resource type="Resource" id="Resource_31af6"]
+metadata/__load_path__ = "res://Scenes/terra_sand.tscn"
+
+[sub_resource type="Resource" id="Resource_d226r"]
+metadata/__load_path__ = "res://Scenes/terra_sand.tscn"
+
+[sub_resource type="Resource" id="Resource_0rs3e"]
+metadata/__load_path__ = "res://Scenes/terra_sand.tscn"
+
+[sub_resource type="Resource" id="Resource_2gh8n"]
+metadata/__load_path__ = "res://Scenes/terra_sand.tscn"
+
+[sub_resource type="Resource" id="Resource_3uloo"]
+metadata/__load_path__ = "res://Scenes/terra_sand.tscn"
+
+[sub_resource type="Resource" id="Resource_re6jv"]
+metadata/__load_path__ = "res://Scenes/terra_sand.tscn"
+
+[sub_resource type="Resource" id="Resource_rqvn4"]
+metadata/__load_path__ = "res://Scenes/terra_sand.tscn"
 
 [node name="Terra" type="Node3D"]
 
-[node name="MeshInstance3D" parent="." instance=ExtResource("2_g1p57")]
+[node name="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -128, 0, 0)
 
-[node name="MeshInstance3D5" parent="." instance=ExtResource("2_g1p57")]
+[node name="MeshInstance3D5" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -256, 0, 0)
 
-[node name="MeshInstance3D6" parent="." instance=ExtResource("2_g1p57")]
+[node name="MeshInstance3D6" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -384, 0, 0)
 
-[node name="MeshInstance3D2" parent="." instance=ExtResource("2_g1p57")]
+[node name="MeshInstance3D2" parent="."]
 
-[node name="MeshInstance3D3" parent="." instance=ExtResource("2_g1p57")]
+[node name="MeshInstance3D3" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 128, 0, 0)
 
-[node name="MeshInstance3D4" parent="." instance=ExtResource("2_g1p57")]
+[node name="MeshInstance3D4" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 256, 0, 0)
 
-[node name="MeshInstance3D8" parent="." instance=ExtResource("2_g1p57")]
+[node name="MeshInstance3D8" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 384, 0, 0)
 
-[node name="MeshInstance3D9" parent="." instance=ExtResource("2_g1p57")]
+[node name="MeshInstance3D9" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 513, 0, 0)

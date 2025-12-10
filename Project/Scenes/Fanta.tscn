@@ -1,13 +1,13 @@
 [gd_scene load_steps=15 format=4 uid="uid://bybuvtl2qbgos"]
 
 [ext_resource type="Script" uid="uid://g1b5fmyreevn" path="res://Scripts/VehicleFanta.gd" id="1_txrvn"]
-[ext_resource type="Texture2D" uid="uid://bbyxnybki6h8f" path="res://Import/blender/car_UV-sharp.png" id="2_txrvn"]
+[ext_resource type="Texture2D" uid="uid://b8yj64u4xr1un" path="res://Import/blender/car_UV-sharp.png" id="2_txrvn"]
 [ext_resource type="Script" uid="uid://dp54wm0r2sonc" path="res://Scripts/fanta_wheel.gd" id="3_hfgqs"]
 [ext_resource type="PackedScene" uid="uid://c4nshb085yca4" path="res://Scenes/Fanta_Wheel_R.tscn" id="3_txrvn"]
-[ext_resource type="AudioStream" uid="uid://bqp5wuckj25qq" path="res://Sounds/eng start.wav" id="3_y3urr"]
-[ext_resource type="AudioStream" uid="uid://thyv2bswsxgf" path="res://Sounds/eng idle.wav" id="4_6n2qy"]
+[ext_resource type="AudioStream" uid="uid://dtdwd2y0behyk" path="res://Sounds/eng start.wav" id="3_y3urr"]
+[ext_resource type="AudioStream" uid="uid://hidjehq1pc4c" path="res://Sounds/eng idle.wav" id="4_6n2qy"]
 [ext_resource type="PackedScene" uid="uid://bnj10rk4ojq0v" path="res://Scenes/Fanta_Wheel_L.tscn" id="4_hfgqs"]
-[ext_resource type="AudioStream" uid="uid://dlybk1a685jap" path="res://Sounds/eng power.wav" id="5_6n2qy"]
+[ext_resource type="AudioStream" uid="uid://dpxnx6o6ju3kj" path="res://Sounds/eng power.wav" id="5_6n2qy"]
 [ext_resource type="Script" uid="uid://bn2vvwlgnjuak" path="res://Scripts/engine_controller.gd" id="5_u4vwp"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_krx02"]
