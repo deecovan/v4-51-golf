@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://g2vvom06rwsx"
+path="res://.godot/imported/eng run overpower.wav-b42a9478dac75ad9129b4720277955d8.sample"
+
+[deps]
+
+source_file="res://Sounds/eng run overpower.wav"
+dest_files=["res://.godot/imported/eng run overpower.wav-b42a9478dac75ad9129b4720277955d8.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
