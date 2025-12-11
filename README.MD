@@ -1,5 +1,12 @@
 # v4-51-golf GitHub repo
 
+## 25.12.10 Hypercup New thorus track
+- Exported proto
+- Tested 1x1 1x0.75
+  - Need more minor segments
+  - 0.75 looks good
+
+
 ## 25.12.10
 - Fix Timer
   - Use right project architecture

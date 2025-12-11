@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://c2u3c52wwav41"]
+[gd_scene load_steps=20 format=4]
 
 [ext_resource type="Script" uid="uid://bxgxdgj8xpxwf" path="res://Scripts/ui_canvas.gd" id="1_nf4gj"]
 [ext_resource type="Script" uid="uid://cwhmf0iu4u1ho" path="res://Scripts/draw_graph.gd" id="2_qdvrb"]
@@ -546,7 +546,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("3_2246s")
-theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/normal_font_size = 32
 text = "Oops... 
 Logs are somewhere 
 But not here o.0"
