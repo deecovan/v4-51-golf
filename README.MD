@@ -1,6 +1,11 @@
 # v4-51-golf GitHub repo
 
 ## 25.12.10
+- New thorus tracks HyperCup and H3 
+  - Tested, needs more details 
+  - normalize bootom in HyperCup 
+  - more juicy geometry in H3
+
 - Fix Timer
   - Use right project architecture
 - Add changing times on lap counted

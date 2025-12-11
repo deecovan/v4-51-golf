@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bymr1lsg8fff5"]
+[gd_scene load_steps=10 format=3 uid="uid://bymr1lsg8fff5"]
 
 [ext_resource type="Script" uid="uid://dv8ykfntlf1at" path="res://Scripts/MainSceneScript.v1.2.gd" id="1_oasgk"]
 [ext_resource type="PackedScene" uid="uid://epwatr8gworp" path="res://Sky/EveningSky.tscn" id="2_y4yhr"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://126yicuwavhn" path="res://Scenes/CupTab.tscn" id="5_d1i4t"]
 [ext_resource type="PackedScene" uid="uid://1nwkd5exeqht" path="res://Scenes/Fanta.v1.2.RedFlat.tscn" id="6_tr758"]
 [ext_resource type="PackedScene" uid="uid://d1tqw4jcecxpq" path="res://Scenes/CameraGimbal.v1.1.tscn" id="7_p4syj"]
+[ext_resource type="Curve" uid="uid://blyn6acj4dogd" path="res://Scenes/Fanta_curve.tres" id="7_y4yhr"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vjncq"]
 size = Vector3(0.1, 10, 40)
@@ -34,6 +35,7 @@ transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 15, 108)
 
 [node name="Vehicle" parent="." instance=ExtResource("6_tr758")]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -101.281, -40.6956, -70.7875)
+scale_curve = ExtResource("7_y4yhr")
 
 [node name="CameraGimbal_v1_1" parent="." instance=ExtResource("7_p4syj")]
 transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, -101.967, -39.7852, -70.7535)

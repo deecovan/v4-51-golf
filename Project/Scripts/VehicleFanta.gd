@@ -30,7 +30,7 @@ var DEBUG = false
 ## Coasting lerp speed
 @export var engine_coast = 0.1
 ## Maximum Steering angle in Radians
-@export var MAX_STEER  = 0.55
+@export var MAX_STEER  = 0.4
 ## Next values used for reconfiguring the Vehicle3Ds values
 @export var car_linear_damp = 0.5
 @export var car_angular_damp = 0.5
@@ -66,18 +66,16 @@ var DEBUG = false
 @export var stiff_rear = 200
 @export var max_force_front = 1600
 @export var max_force_rear = 1600
-@export var MAX_SPEED = 130.0
+@export var MAX_SPEED = 100.0
 @export var MAX_POWER = 800.0
 ## (-Z) value (meters) - Move Center Of Mass backward, (-Y): up
 @export var COM_MOD_VECTOR = Vector3(0.0,-0.3,-0.3)
+@export var scale_curve: Curve
+var scale_array : Array
 
 ## Array values of power function.
 ## @TODO we need to implement the engine power function.
-var power_curve: Array = [
-	0.06, 0.12, 0.25, 0.50, 0.70, 
-	0.85, 0.95, 1.00, 1.00, 0.95, 
-	0.85, 0.60, 0.30, 0.10, 0.01, 0.00 
-]
+
 enum States { ACCELERATING, BRAKING, COASTING, REVERSING}
 var engine_state = States.COASTING
 enum engine_index_list {Rear, Neutral, First, Second, Third, Fourth, Fifth, Sixth, Seventh, Eighth}
@@ -152,9 +150,12 @@ func _ready() -> void:
 	rotation = randomis(rotation, PI)
 	
 	## Init PFG screen
-	UI.call_draw_curve(power_curve)
+	# _scale_curve.sample_baked(i)*MAX_POWER
+	for i in 100:
+		scale_array.append(scale_curve.sample_baked(i/100.0)*MAX_POWER)
+	UI.call_draw_curve(scale_array)
 	
-func _physics_process(delta: float) -> void:			
+func _physics_process(delta: float) -> void:
 			
 	## Reverse in the simpliest way
 	if Input.is_action_just_pressed("reverse"):
@@ -199,9 +200,9 @@ func _physics_process(delta: float) -> void:
 		## Apply accelerating
 		matching_power = engine_match_power(
 			acceleration_power, 
-			power_curve, 
+			scale_curve, 
 			delta)
-		## Match force to power_curve
+		## Match force to scale_curve
 		engine_force = lerp(
 			engine_force, 
 			clamp(matching_power, 0, matching_power), 
@@ -280,17 +281,9 @@ func change_wheel_brake(_brake_force, _front_brake_power, _rear_brake_power, _de
 	$Wheel3Drl.brake = _brake_force * _rear_brake_power
 	$Wheel3Drr.brake = _brake_force * _rear_brake_power
 
-## @TODO we need to implement the speed function, having _power_curve.
-## Speed Index to use as Gear number
-## Match Power as engine power output
-func engine_match_power(_acceleration_power, _power_curve, _delta) -> float:
-		var max_curve_index = power_curve.size() - 5
-		var speed_index = clamp( ## clamp maximal values
-			## for maximal gear, starting from index 2, limited to index -5
-			2 + linear_velocity.length()/(MAX_SPEED/max_curve_index),  
-			2, _power_curve.size() - 5)
-		var match_power = _power_curve[speed_index] * MAX_POWER
-		set_engine_index(speed_index)
+func engine_match_power(_acceleration_power, _scale_curve:Curve, _delta) -> float:
+		var normalized_speed=linear_velocity.length()/MAX_SPEED
+		var match_power = _scale_curve.sample_baked(normalized_speed)*MAX_POWER
 		return match_power
 		
 func set_engine_index(_speed_index) -> void:
