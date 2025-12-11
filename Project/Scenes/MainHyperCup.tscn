@@ -1,0 +1,12 @@
+[gd_scene load_steps=4 format=3 uid="uid://clubx84di33ut"]
+
+[ext_resource type="Script" uid="uid://dcr051st1pfo4" path="res://Scripts/Main.gd" id="1_lc5qf"]
+[ext_resource type="PackedScene" uid="uid://c4fgmpy3831yj" path="res://Scenes/MainHyperCupScene.v0.1.tscn" id="2_lc5qf"]
+[ext_resource type="PackedScene" uid="uid://c2u3c52wwav41" path="res://Scenes/ui.tscn" id="3_7rmm2"]
+
+[node name="Main" type="Node3D"]
+script = ExtResource("1_lc5qf")
+
+[node name="MainCupScene_v0_1" parent="." instance=ExtResource("2_lc5qf")]
+
+[node name="UI" parent="." instance=ExtResource("3_7rmm2")]
