@@ -1,6 +1,12 @@
 # v4-51-golf GitHub repo
 
-## 25.12.10
+## 25.12.11 Merged Tested from 26395dd
+- Merged code from 26395dd (origin/zc/new-engine-power-curve)
+- Tested on H3 track
+  - Used new curve
+  - New Vehicle settings
+
+## 25.12.11
 - New thorus tracks HyperCup and H3 
   - Tested, needs more details 
   - normalize bootom in HyperCup 
