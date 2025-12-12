@@ -1,5 +1,11 @@
 # v4-51-golf GitHub repo
 
+## 25.12.12
+- New GyperThorus track
+- Reposished Fanta car
+  - 4x faces, smooth
+  - Base colors (started)
+
 ## 25.12.11 Merged Tested from 26395dd
 - Merged code from 26395dd (origin/zc/new-engine-power-curve)
 - Tested on H3 track
