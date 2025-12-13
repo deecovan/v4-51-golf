@@ -34,8 +34,9 @@ animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={
 "nodes": {
-"PATH:Grass": {
-"generate/physics": true
+"PATH:Land": {
+"generate/physics": true,
+"physics/shape_type": 2
 }
 }
 }

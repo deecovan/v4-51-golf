@@ -34,7 +34,7 @@ animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={
 "nodes": {
-"PATH:Torus_005": {
+"PATH:Track": {
 "generate/physics": true
 }
 }
