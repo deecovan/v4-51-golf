@@ -20,6 +20,8 @@ script = ExtResource("1_qvwn0")
 
 [node name="Vehicle" parent="." instance=ExtResource("4_lbec1")]
 transform = Transform3D(1.94707e-07, 0, 1, 0, 1, 0, -1, 0, 1.94707e-07, -46, 0, -34)
+mass = 60.0
+MAX_POWER = 1000.0
 
 [node name="CameraGimbal" parent="." instance=ExtResource("5_6gbbb")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -46, 0, -34)

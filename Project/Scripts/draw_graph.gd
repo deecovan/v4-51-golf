@@ -3,7 +3,7 @@ extends Control
 var curve_array: Array
 var graph_width = 170
 var graph_height = 170
-var curve_point = 0.2
+var curve_point = 0.15
 var p = true
 
 ## Draw the curve in the graph box. 

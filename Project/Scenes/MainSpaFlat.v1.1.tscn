@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dqy35w0t0uaa0"]
+[gd_scene load_steps=12 format=3 uid="uid://dqy35w0t0uaa0"]
 
 [ext_resource type="Script" uid="uid://dv8ykfntlf1at" path="res://Scripts/MainSceneScript.v1.2.gd" id="1_t2t33"]
 [ext_resource type="PackedScene" uid="uid://cqj403us21hwa" path="res://Sky/world_environment.tscn" id="2_o2f4t"]
@@ -8,6 +8,11 @@
 [ext_resource type="PackedScene" uid="uid://dpmlsd6ukmkua" path="res://Import/Kenney/Road/construction-light.glb" id="5_fydd0"]
 [ext_resource type="PackedScene" uid="uid://b5hxbo26pr6uh" path="res://Scenes/CameraGimbal.tscn" id="7_vfmpu"]
 [ext_resource type="PackedScene" uid="uid://dhu7in61tkfit" path="res://Scenes/FantaCup.tscn" id="8_tp1xe"]
+[ext_resource type="Script" uid="uid://dx8xl0toym1sl" path="res://Scripts/TabAreaScript.gd" id="9_8xxra"]
+[ext_resource type="PackedScene" uid="uid://126yicuwavhn" path="res://Scenes/CupTab.tscn" id="10_t7fem"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_clapc"]
+size = Vector3(0.1, 10, 11.6)
 
 [node name="MainSpaFlat_v1_2" type="Node3D"]
 script = ExtResource("1_t2t33")
@@ -203,7 +208,25 @@ transform = Transform3D(9.16188, 0, 4.00749, 0, 10, 0, -4.00749, 0, 9.16188, -44
 transform = Transform3D(9.16188, 0, 4.00749, 0, 10, 0, -4.00749, 0, 9.16188, -442.018, 0.409131, 134.982)
 
 [node name="Vehicle" parent="." instance=ExtResource("8_tp1xe")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 490, 0, 66)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 490, 2, 66)
+mass = 60.0
+MAX_POWER = 1000.0
 
 [node name="CameraGimbal" parent="." instance=ExtResource("7_vfmpu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 490, 0, 66)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 490, 2, 66)
+
+[node name="Objects" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 465.629, 9.41782, 127.997)
+
+[node name="Area3D" type="Area3D" parent="Objects"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.983406, -89.5251)
+script = ExtResource("9_8xxra")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/Area3D"]
+transform = Transform3D(-1.5, 0, 1.31134e-07, 0, 1.5, 0, -1.31134e-07, 0, -1.5, -1.35001, -7.44262, -0.993851)
+shape = SubResource("BoxShape3D_clapc")
+
+[node name="Tab" parent="Objects/Area3D" instance=ExtResource("10_t7fem")]
+transform = Transform3D(-1.5, 0, 1.31134e-07, 0, 1.5, 0, -1.31134e-07, 0, -1.5, -0.75, 2, -0.899841)
+
+[connection signal="body_entered" from="Objects/Area3D" to="Objects/Area3D" method="_on_body_entered"]

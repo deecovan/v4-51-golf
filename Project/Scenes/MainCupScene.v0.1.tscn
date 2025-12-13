@@ -42,6 +42,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -102, 1, 93)
 
 [node name="Vehicle" parent="." instance=ExtResource("9_7nink")]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -102, 0, 93)
-COM_MOD_VECTOR = Vector3(0, 0.2, -0.3)
+mass = 60.0
+MAX_POWER = 1000.0
 
 [connection signal="body_entered" from="Objects/Area3D" to="Objects/Area3D" method="_on_body_entered"]
