@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bb2xhgco6s35x"
-path.bptc="res://.godot/imported/bitum.png-16735f716162d41e6091309770e48274.bptc.ctex"
+path.bptc="res://.godot/imported/Bitum.png-ed0e2835baba23fe31d805e16d879a8e.bptc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Images/bitum.png"
-dest_files=["res://.godot/imported/bitum.png-16735f716162d41e6091309770e48274.bptc.ctex"]
+source_file="res://Images/Bitum.png"
+dest_files=["res://.godot/imported/Bitum.png-ed0e2835baba23fe31d805e16d879a8e.bptc.ctex"]
 
 [params]
 

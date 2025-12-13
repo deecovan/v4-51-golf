@@ -39,7 +39,7 @@ var DEBUG = false
 @export var car_bounce = 0.1
 @export var car_absorb = false
 
-
+@export_category("Wheel Friction")
 ## Next values used for reconfiguring the Wheel3Ds values
 ## Front wheels friction slip ratio ## 0.65
 @export var fric_slip_front = 1.6
@@ -47,6 +47,8 @@ var DEBUG = false
 @export var fric_slip_rear = 1.6 
 ## @HACK Acceleration multiplier for rear slip. Used if NOT accelerating.
 @export var fric_slip_rear_demult = 0.45
+
+@export_category("Suspention")
 ## Typical racing car damper ratios are 0.65-0.7 
 ## in ride where 1 is 100% critical damping
 ## Front wheels damper compression ## 0.8
@@ -58,6 +60,7 @@ var DEBUG = false
 ## Rear wheels damper relaxation ## 0.88
 @export var damp_relax_rear = 15.0
 ## Rest, Travel, Stiff, MaxV
+
 @export var rest_front = 0.12
 @export var rest_rear = 0.11
 @export var travel_front = 0.2
@@ -66,11 +69,17 @@ var DEBUG = false
 @export var stiff_rear = 200
 @export var max_force_front = 1600
 @export var max_force_rear = 1600
+@export_category("Power Settings")
 @export var MAX_SPEED = 100.0
 @export var MAX_POWER = 800.0
 ## (-Z) value (meters) - Move Center Of Mass backward, (-Y): up
 @export var COM_MOD_VECTOR = Vector3(0.0,-0.3,-0.3)
 @export var scale_curve: Curve
+@export_category("Body Aero")
+@export var airDensity = 1.1
+@export var bodySquare = 2.25
+@export var bodySquareFill=0.77
+@export var bodyDrag = 0.19
 var scale_array : Array
 
 ## Array values of power function.
@@ -202,6 +211,8 @@ func _physics_process(delta: float) -> void:
 			acceleration_power, 
 			scale_curve, 
 			delta)
+
+		#matching_power -=aeroDragddddd
 		## Match force to scale_curve
 		engine_force = lerp(
 			engine_force, 
@@ -229,14 +240,22 @@ func _physics_process(delta: float) -> void:
 	else: 
 		change_vehicle_brake(0.0, delta)
 		change_wheel_brake(0.0, 0.0, 0.0, delta)
-
+		
+	#aero drag force
+	var  aeroDrag_force:Vector3 =-(linear_velocity.normalized())
+	var aeroDrag=bodyDrag*airDensity*(bodySquare*bodySquareFill)*linear_velocity.length_squared()
+	apply_central_force(aeroDrag_force*aeroDrag)
+	print(aeroDrag)
+	
 	## @HACK Simulate Accelerating Friction Slip
 	if engine_state == States.ACCELERATING:
 		set_fric_slip_rear(fric_slip_rear)
 	else:
 		set_fric_slip_rear(fric_slip_rear * fric_slip_rear_demult)
+		
 
-	## @HACK Simulate Braking Drift
+
+	## @HACK Simulate Braking Driftwa
 	if engine_state == States.BRAKING:
 		pass
 		
