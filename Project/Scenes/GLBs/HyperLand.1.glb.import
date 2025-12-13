@@ -35,7 +35,6 @@ import_script/path=""
 _subresources={
 "nodes": {
 "PATH:Land": {
-"generate/physics": true,
 "physics/shape_type": 2
 }
 }

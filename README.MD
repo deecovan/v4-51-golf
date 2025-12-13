@@ -3,8 +3,9 @@
 ## 25.12.13 Try Bool modifier to compound Terrain with Track
 * Add collision to Track, remove from Land
 * Try variants:
-  - Normalize Land borders with Track
   - Modify borders with random move, like trees
+  - (maybe) Normalize Land down to with Track
+	- Land collisions wan't work!
 
 - Test export
   - Also change all Dumps to 0, to test gravity 
