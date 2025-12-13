@@ -227,8 +227,8 @@ rendering/bg_color=Color(0.772549, 0.662745, 0.415686, 1)
 [physics]
 
 common/physics_ticks_per_second=30
-3d/default_linear_damp=0.01
-3d/default_angular_damp=0.01
+3d/default_linear_damp=0.0
+3d/default_angular_damp=0.0
 
 [rendering]
 
@@ -237,8 +237,5 @@ lights_and_shadows/directional_shadow/soft_shadow_filter_quality.mobile=2
 lights_and_shadows/positional_shadow/soft_shadow_filter_quality.mobile=2
 camera/depth_of_field/depth_of_field_bokeh_shape=0
 anti_aliasing/quality/msaa_2d=2
-occlusion_culling/occlusion_rays_per_thread=256
-environment/glow/upscale_mode=0
 environment/defaults/default_clear_color=Color(0.772549, 0.662745, 0.415686, 1)
 occlusion_culling/use_occlusion_culling=true
-mesh_lod/lod_change/threshold_pixels=10.0

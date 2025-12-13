@@ -1,5 +1,9 @@
 # v4-51-golf GitHub repo
 
+## 25.12.13 Try Bool modifier to compound Terrain with Track
+- Test export
+  - Also change all Dumps to 0, to test gravity 
+
 ## 25.12.12
 - New GyperThorus track
 - Reposished Fanta car
