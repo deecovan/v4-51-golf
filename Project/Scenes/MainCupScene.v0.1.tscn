@@ -5,10 +5,10 @@
 [ext_resource type="PackedScene" uid="uid://v5ggol28gyfa" path="res://Scenes/GLBs/Cup.3.TorusTop.glb" id="3_ppgg2"]
 [ext_resource type="PackedScene" uid="uid://fxalgehxt3ky" path="res://Scenes/GLBs/Cup.3.ThorusColored.glb" id="4_ppgg2"]
 [ext_resource type="PackedScene" uid="uid://dwvh36svgbyi0" path="res://Scenes/GLBs/Cup.3.ThorusObjects.glb" id="5_ppgg2"]
-[ext_resource type="PackedScene" uid="uid://1nwkd5exeqht" path="res://Scenes/Fanta.v1.2.RedFlat.tscn" id="7_1pco8"]
 [ext_resource type="PackedScene" uid="uid://126yicuwavhn" path="res://Scenes/CupTab.tscn" id="7_7nink"]
 [ext_resource type="Script" uid="uid://dx8xl0toym1sl" path="res://Scripts/TabAreaScript.gd" id="7_jykfb"]
-[ext_resource type="PackedScene" uid="uid://d1tqw4jcecxpq" path="res://Scenes/CameraGimbal.v1.1.tscn" id="8_gx3kq"]
+[ext_resource type="PackedScene" uid="uid://dhu7in61tkfit" path="res://Scenes/FantaCup.tscn" id="9_7nink"]
+[ext_resource type="PackedScene" uid="uid://b5hxbo26pr6uh" path="res://Scenes/CameraGimbal.tscn" id="9_jykfb"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vjncq"]
 size = Vector3(0.1, 9, 23)
@@ -37,11 +37,11 @@ shape = SubResource("BoxShape3D_vjncq")
 [node name="Tab" parent="Objects/Area3D" instance=ExtResource("7_7nink")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 10, 98)
 
-[node name="Vehicle" parent="." instance=ExtResource("7_1pco8")]
-transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -101.281, 1.5007, 93.0101)
-MAX_STEER = 0.4
+[node name="CameraGimbal" parent="." instance=ExtResource("9_jykfb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -102, 1, 93)
 
-[node name="CameraGimbal_v1_1" parent="." instance=ExtResource("8_gx3kq")]
-transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, -101.967, 2.41105, 93.0439)
+[node name="Vehicle" parent="." instance=ExtResource("9_7nink")]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -102, 0, 93)
+COM_MOD_VECTOR = Vector3(0, 0.2, -0.3)
 
 [connection signal="body_entered" from="Objects/Area3D" to="Objects/Area3D" method="_on_body_entered"]

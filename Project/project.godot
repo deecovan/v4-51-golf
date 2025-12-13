@@ -16,7 +16,7 @@ general/updates_per_second=30
 
 config/name="Add Drive"
 config/version="0.1.3"
-run/main_scene="uid://cvih1p5jklf0a"
+run/main_scene="uid://dp105l827ahlf"
 config/features=PackedStringArray("4.4", "Forward Plus")
 run/max_fps=30
 boot_splash/bg_color=Color(0.772549, 0.662745, 0.415686, 1)
@@ -27,9 +27,10 @@ boot_splash/minimum_display_time=3000
 
 [display]
 
-window/size/viewport_width=1280
-window/size/viewport_height=720
-window/size/mode=3
+window/size/viewport_width=1000
+window/size/viewport_height=600
+window/size/mode=2
+window/size/initial_position_type=4
 
 [editor]
 
@@ -236,6 +237,5 @@ occlusion_culling/bvh_build_quality=1
 lights_and_shadows/directional_shadow/soft_shadow_filter_quality.mobile=2
 lights_and_shadows/positional_shadow/soft_shadow_filter_quality.mobile=2
 camera/depth_of_field/depth_of_field_bokeh_shape=0
-anti_aliasing/quality/msaa_2d=2
 environment/defaults/default_clear_color=Color(0.772549, 0.662745, 0.415686, 1)
 occlusion_culling/use_occlusion_culling=true

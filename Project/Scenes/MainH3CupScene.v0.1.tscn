@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://dx8xl0toym1sl" path="res://Scripts/TabAreaScript.gd" id="4_8s4lm"]
 [ext_resource type="PackedScene" uid="uid://126yicuwavhn" path="res://Scenes/CupTab.tscn" id="5_d1i4t"]
 [ext_resource type="PackedScene" uid="uid://dhu7in61tkfit" path="res://Scenes/FantaCup.tscn" id="7_oasgk"]
-[ext_resource type="PackedScene" uid="uid://d1tqw4jcecxpq" path="res://Scenes/CameraGimbal.v1.1.tscn" id="7_p4syj"]
+[ext_resource type="PackedScene" uid="uid://b5hxbo26pr6uh" path="res://Scenes/CameraGimbal.tscn" id="7_p4syj"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vjncq"]
 size = Vector3(0.1, 10, 40)
@@ -32,10 +32,10 @@ shape = SubResource("BoxShape3D_vjncq")
 [node name="Tab" parent="Objects/Area3D" instance=ExtResource("5_d1i4t")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 15, 108)
 
-[node name="CameraGimbal_v1_1" parent="." instance=ExtResource("7_p4syj")]
+[node name="CameraGimbal" parent="." instance=ExtResource("7_p4syj")]
 transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, -100, -40, -70)
 
 [node name="Vehicle" parent="." instance=ExtResource("7_oasgk")]
-transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -74.927, -31.5964, -61.7811)
+transform = Transform3D(0.0713757, 0, 0.99745, 0, 1, 0, -0.99745, 0, 0.0713757, -74.927, -39.5964, -53.7811)
 
 [connection signal="body_entered" from="Objects/Area3D" to="Objects/Area3D" method="_on_body_entered"]

@@ -26,7 +26,7 @@ var DEBUG = false
 ## Brake lerp speed
 @export var pedal_brake_speed = 1.6
 ## Coasting starting value
-@export var coast_init = 0.75
+@export var coast_init = 0.8
 ## Coasting lerp speed
 @export var engine_coast = 0.1
 ## Maximum Steering angle in Radians
@@ -46,7 +46,7 @@ var DEBUG = false
 ## Rear wheels friction slip ratio ## 0.65
 @export var fric_slip_rear = 1.6 
 ## @HACK Acceleration multiplier for rear slip. Used if NOT accelerating.
-@export var fric_slip_rear_demult = 0.45
+@export var fric_slip_rear_demult = 0.6
 ## Typical racing car damper ratios are 0.65-0.7 
 ## in ride where 1 is 100% critical damping
 ## Front wheels damper compression ## 0.8
@@ -69,7 +69,7 @@ var DEBUG = false
 @export var MAX_SPEED = 100.0
 @export var MAX_POWER = 800.0
 ## (-Z) value (meters) - Move Center Of Mass backward, (-Y): up
-@export var COM_MOD_VECTOR = Vector3(0.0,-0.3,-0.3)
+@export var COM_MOD_VECTOR = Vector3(0.0,0.2,-0.3)
 @export var scale_curve: Curve
 var scale_array : Array
 

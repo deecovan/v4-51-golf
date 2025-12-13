@@ -3,10 +3,10 @@
 [ext_resource type="Script" uid="uid://dv8ykfntlf1at" path="res://Scripts/MainSceneScript.v1.2.gd" id="1_qvwn0"]
 [ext_resource type="PackedScene" uid="uid://epwatr8gworp" path="res://Sky/EveningSky.tscn" id="2_bmnhi"]
 [ext_resource type="PackedScene" uid="uid://cveey2oxbwdah" path="res://Scenes/GLBs/HyperCup.exported.glb" id="3_lbec1"]
+[ext_resource type="PackedScene" uid="uid://dhu7in61tkfit" path="res://Scenes/FantaCup.tscn" id="4_lbec1"]
+[ext_resource type="PackedScene" uid="uid://b5hxbo26pr6uh" path="res://Scenes/CameraGimbal.tscn" id="5_6gbbb"]
 [ext_resource type="Script" uid="uid://dx8xl0toym1sl" path="res://Scripts/TabAreaScript.gd" id="6_ro37j"]
 [ext_resource type="PackedScene" uid="uid://126yicuwavhn" path="res://Scenes/CupTab.tscn" id="7_8gb58"]
-[ext_resource type="PackedScene" uid="uid://1nwkd5exeqht" path="res://Scenes/Fanta.v1.2.RedFlat.tscn" id="8_vwflf"]
-[ext_resource type="PackedScene" uid="uid://d1tqw4jcecxpq" path="res://Scenes/CameraGimbal.v1.1.tscn" id="9_sfyit"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vjncq"]
 size = Vector3(0.1, 10, 35)
@@ -17,6 +17,12 @@ script = ExtResource("1_qvwn0")
 [node name="EveningSky" parent="." instance=ExtResource("2_bmnhi")]
 
 [node name="HyperCup_1_3faces_075_exported" parent="." instance=ExtResource("3_lbec1")]
+
+[node name="Vehicle" parent="." instance=ExtResource("4_lbec1")]
+transform = Transform3D(1.94707e-07, 0, 1, 0, 1, 0, -1, 0, 1.94707e-07, -46, 0, -34)
+
+[node name="CameraGimbal" parent="." instance=ExtResource("5_6gbbb")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -46, 0, -34)
 
 [node name="Objects" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.41782, 127.997)
@@ -31,12 +37,5 @@ shape = SubResource("BoxShape3D_vjncq")
 
 [node name="Tab" parent="Objects/Area3D" instance=ExtResource("7_8gb58")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, -1, 105.649)
-
-[node name="Vehicle" parent="." instance=ExtResource("8_vwflf")]
-transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -101.281, 5.9019, -34.2006)
-MAX_STEER = 0.4
-
-[node name="CameraGimbal_v1_1" parent="." instance=ExtResource("9_sfyit")]
-transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, -101.967, 6.8123, -34.1666)
 
 [connection signal="body_entered" from="Objects/Area3D" to="Objects/Area3D" method="_on_body_entered"]

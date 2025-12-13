@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5hxbo26pr6uh"]
+
+[ext_resource type="Script" uid="uid://q8thn2hxpp14" path="res://Scripts/camera_gimbal.gd" id="1_q172i"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_t5xco"]
+
+[node name="CameraGimbal" type="Node3D"]
+script = ExtResource("1_q172i")
+
+[node name="GimbalInner" type="SpringArm3D" parent="."]
+transform = Transform3D(-1, 2.26267e-08, -8.44439e-08, 0, 0.965926, 0.258819, 8.74228e-08, 0.258819, -0.965926, 0, 1, 0)
+collision_mask = 255
+shape = SubResource("SphereShape3D_t5xco")
+spring_length = 8.0
+margin = 0.2
+
+[node name="Camera3D" type="Camera3D" parent="GimbalInner"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.99382e-07, 0, 8)
+current = true
+fov = 65.0
+near = 0.01
+far = 1000.0

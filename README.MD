@@ -1,5 +1,11 @@
 # v4-51-golf GitHub repo
 
+## 25.12.13 Project organisation and fixes
+- Delete redundant scene files
+ - Try one more Environment panorama
+- Fix Camera Gimbal
+  - Add SpringArm to collide with obstacles
+
 ## 25.12.13 Try Bool modifier to compound Terrain with Track
 * Add collision to Track, remove from Land
 * Try variants:
