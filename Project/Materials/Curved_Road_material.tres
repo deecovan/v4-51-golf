@@ -1,7 +1,6 @@
 [gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://c1rb1j1x6st35"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2m2pw"]
-load_path = "res://.godot/imported/RoadIB.png-2c72ca3b08d983eba17b8f61b0bca7df.bptc.ctex"
 
 [resource]
 albedo_color = Color(0.74978, 0.74978, 0.74978, 1)

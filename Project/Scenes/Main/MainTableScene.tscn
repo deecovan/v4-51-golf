@@ -1,0 +1,220 @@
+[gd_scene load_steps=12 format=3 uid="uid://c18875gk1aala"]
+
+[ext_resource type="Script" uid="uid://dv8ykfntlf1at" path="res://Scripts/MainSceneScript.gd" id="1_cg4wr"]
+[ext_resource type="PackedScene" uid="uid://epwatr8gworp" path="res://Sky/EveningSky.tscn" id="2_m3t4o"]
+[ext_resource type="BoxMesh" uid="uid://bs15aki0gy6yg" path="res://Materials/Asphalt_mesh_3600m.tres" id="3_bfrac"]
+[ext_resource type="Material" uid="uid://cxs1hk3ati5so" path="res://Materials/Sign_material_RED.tres" id="6_bfrac"]
+[ext_resource type="Script" uid="uid://dx8xl0toym1sl" path="res://Scripts/TabAreaScript.gd" id="6_tfk74"]
+[ext_resource type="PackedScene" uid="uid://126yicuwavhn" path="res://Scenes/CupTab.tscn" id="7_yqa6l"]
+[ext_resource type="PackedScene" uid="uid://b5hxbo26pr6uh" path="res://Scenes/CameraGimbal.tscn" id="8_npx3o"]
+[ext_resource type="PackedScene" uid="uid://dhu7in61tkfit" path="res://Scenes/FantaCup.tscn" id="9_ici2k"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bfrac"]
+margin = 0.0
+size = Vector3(3600, 0.01, 3600)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vjncq"]
+size = Vector3(0.1, 9, 23)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_m3t4o"]
+material = ExtResource("6_bfrac")
+top_radius = 0.0
+bottom_radius = 0.3
+
+[node name="MainTableScene" type="Node3D"]
+script = ExtResource("1_cg4wr")
+
+[node name="EveningSky" parent="." instance=ExtResource("2_m3t4o")]
+
+[node name="Table" type="MeshInstance3D" parent="."]
+mesh = ExtResource("3_bfrac")
+
+[node name="Static" type="StaticBody3D" parent="Table"]
+
+[node name="Collision" type="CollisionShape3D" parent="Table/Static"]
+shape = SubResource("BoxShape3D_bfrac")
+debug_color = Color(0, 1, 0.6, 0.6)
+
+[node name="Objects" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.6, 0)
+
+[node name="Area3D" type="Area3D" parent="Objects"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7.62939e-06)
+script = ExtResource("6_tfk74")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+shape = SubResource("BoxShape3D_vjncq")
+
+[node name="Tab" parent="Objects/Area3D" instance=ExtResource("7_yqa6l")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 6, 0)
+
+[node name="Cone" type="MeshInstance3D" parent="Objects/Area3D"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, -1, -12)
+mesh = SubResource("CylinderMesh_m3t4o")
+skeleton = NodePath("../Tab")
+
+[node name="Cone2" type="MeshInstance3D" parent="Objects/Area3D"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, -1, 12)
+mesh = SubResource("CylinderMesh_m3t4o")
+skeleton = NodePath("../Tab")
+
+[node name="Cone13" type="MeshInstance3D" parent="Objects/Area3D"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -100, -1, -5)
+mesh = SubResource("CylinderMesh_m3t4o")
+skeleton = NodePath("../Tab")
+
+[node name="Cone14" type="MeshInstance3D" parent="Objects/Area3D"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -100, -1, 5)
+mesh = SubResource("CylinderMesh_m3t4o")
+skeleton = NodePath("../Tab")
+
+[node name="Cone3" type="MeshInstance3D" parent="Objects/Area3D"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 100, -1, -12)
+mesh = SubResource("CylinderMesh_m3t4o")
+skeleton = NodePath("../Tab")
+
+[node name="Cone4" type="MeshInstance3D" parent="Objects/Area3D"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 100, -1, 12)
+mesh = SubResource("CylinderMesh_m3t4o")
+skeleton = NodePath("../Tab")
+
+[node name="Cone5" type="MeshInstance3D" parent="Objects/Area3D"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 200, -1, -12)
+mesh = SubResource("CylinderMesh_m3t4o")
+skeleton = NodePath("../Tab")
+
+[node name="Cone6" type="MeshInstance3D" parent="Objects/Area3D"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 200, -1, 12)
+mesh = SubResource("CylinderMesh_m3t4o")
+skeleton = NodePath("../Tab")
+
+[node name="Cone7" type="MeshInstance3D" parent="Objects/Area3D"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 300, -1, -12)
+mesh = SubResource("CylinderMesh_m3t4o")
+skeleton = NodePath("../Tab")
+
+[node name="Cone8" type="MeshInstance3D" parent="Objects/Area3D"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 300, -1, 12)
+mesh = SubResource("CylinderMesh_m3t4o")
+skeleton = NodePath("../Tab")
+
+[node name="Cone9" type="MeshInstance3D" parent="Objects/Area3D"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 400, -1, -12)
+mesh = SubResource("CylinderMesh_m3t4o")
+skeleton = NodePath("../Tab")
+
+[node name="Cone10" type="MeshInstance3D" parent="Objects/Area3D"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 400, -1, 12)
+mesh = SubResource("CylinderMesh_m3t4o")
+skeleton = NodePath("../Tab")
+
+[node name="Cone11" type="MeshInstance3D" parent="Objects/Area3D"]
+transform = Transform3D(2, 0, 0, 0, 3, 0, 0, 0, 2, 500, -1, -12)
+mesh = SubResource("CylinderMesh_m3t4o")
+skeleton = NodePath("../Tab")
+
+[node name="Cone12" type="MeshInstance3D" parent="Objects/Area3D"]
+transform = Transform3D(2, 0, 0, 0, 3, 0, 0, 0, 2, 500, -1, 12)
+mesh = SubResource("CylinderMesh_m3t4o")
+skeleton = NodePath("../Tab")
+
+[node name="100m" type="Label3D" parent="Objects/Area3D"]
+transform = Transform3D(1.31134e-07, 5.96046e-08, -1, -7.10543e-15, 1, 5.96046e-08, 1, 0, 1.31134e-07, -100, 1.5, 0)
+pixel_size = 0.05
+text = "100m to Start
+"
+
+[node name="1000mTable" type="Label3D" parent="Objects/Area3D"]
+transform = Transform3D(3.0598e-07, 7.54979e-08, -1, -1.20315e-14, 1, 7.54979e-08, 1, -1.32005e-14, 3.0598e-07, 0, -0.8, 0)
+pixel_size = 0.05
+text = "1000m Table
+Start/Finish
+
+"
+
+[node name="1000mTableStart" type="Label3D" parent="Objects/Area3D"]
+transform = Transform3D(4.37114e-08, 7.54979e-08, -1, -8.74228e-08, 1, 7.54979e-08, 1, 8.74228e-08, 4.37114e-08, 1000, 1.5, 0)
+pixel_size = 0.05
+text = "1000m to Table
+Turn Back
+
+"
+
+[node name="Area3D2" type="Area3D" parent="Objects"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 1001, 0, -7.62939e-06)
+script = ExtResource("6_tfk74")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/Area3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+shape = SubResource("BoxShape3D_vjncq")
+
+[node name="Cone" type="MeshInstance3D" parent="Objects/Area3D2"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, -1, -12)
+mesh = SubResource("CylinderMesh_m3t4o")
+skeleton = NodePath("")
+
+[node name="Cone2" type="MeshInstance3D" parent="Objects/Area3D2"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, -1, 12)
+mesh = SubResource("CylinderMesh_m3t4o")
+skeleton = NodePath("")
+
+[node name="Cone3" type="MeshInstance3D" parent="Objects/Area3D2"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 100, -1, -12)
+mesh = SubResource("CylinderMesh_m3t4o")
+skeleton = NodePath("")
+
+[node name="Cone4" type="MeshInstance3D" parent="Objects/Area3D2"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 100, -1, 12)
+mesh = SubResource("CylinderMesh_m3t4o")
+skeleton = NodePath("")
+
+[node name="Cone5" type="MeshInstance3D" parent="Objects/Area3D2"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 200, -1, -12)
+mesh = SubResource("CylinderMesh_m3t4o")
+skeleton = NodePath("")
+
+[node name="Cone6" type="MeshInstance3D" parent="Objects/Area3D2"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 200, -1, 12)
+mesh = SubResource("CylinderMesh_m3t4o")
+skeleton = NodePath("")
+
+[node name="Cone7" type="MeshInstance3D" parent="Objects/Area3D2"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 300, -1, -12)
+mesh = SubResource("CylinderMesh_m3t4o")
+skeleton = NodePath("")
+
+[node name="Cone8" type="MeshInstance3D" parent="Objects/Area3D2"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 300, -1, 12)
+mesh = SubResource("CylinderMesh_m3t4o")
+skeleton = NodePath("")
+
+[node name="Cone9" type="MeshInstance3D" parent="Objects/Area3D2"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 400, -1, -12)
+mesh = SubResource("CylinderMesh_m3t4o")
+skeleton = NodePath("")
+
+[node name="Cone10" type="MeshInstance3D" parent="Objects/Area3D2"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 400, -1, 12)
+mesh = SubResource("CylinderMesh_m3t4o")
+skeleton = NodePath("")
+
+[node name="Cone11" type="MeshInstance3D" parent="Objects/Area3D2"]
+transform = Transform3D(2, 0, 0, 0, 3, 0, 0, 0, 2, 500, -1, -12)
+mesh = SubResource("CylinderMesh_m3t4o")
+skeleton = NodePath("")
+
+[node name="Cone12" type="MeshInstance3D" parent="Objects/Area3D2"]
+transform = Transform3D(2, 0, 0, 0, 3, 0, 0, 0, 2, 500, -1, 12)
+mesh = SubResource("CylinderMesh_m3t4o")
+skeleton = NodePath("")
+
+[node name="CameraGimbal" parent="." instance=ExtResource("8_npx3o")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -100, 4, 0)
+
+[node name="Vehicle" parent="." instance=ExtResource("9_ici2k")]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -102, 4, 0)
+mass = 60.0
+
+[connection signal="body_entered" from="Objects/Area3D" to="Objects/Area3D" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/Area3D2" to="Objects/Area3D2" method="_on_body_entered"]

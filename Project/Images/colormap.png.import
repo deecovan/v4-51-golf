@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cg64vy37iaqxk"
-path.bptc="res://.godot/imported/Curved_Road_Normal_map.png-7b6bd2110bf6cde373e94ade35531179.bptc.ctex"
+uid="uid://cxbck5gsupjxs"
+path.bptc="res://.godot/imported/colormap.png-a55bc368b2973700d18d040f447ef3ca.bptc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Materials/Curved_Road_Normal_map.png"
-dest_files=["res://.godot/imported/Curved_Road_Normal_map.png-7b6bd2110bf6cde373e94ade35531179.bptc.ctex"]
+source_file="res://Images/colormap.png"
+dest_files=["res://.godot/imported/colormap.png-a55bc368b2973700d18d040f447ef3ca.bptc.ctex"]
 
 [params]
 

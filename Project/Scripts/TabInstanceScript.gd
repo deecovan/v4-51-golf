@@ -19,7 +19,6 @@ func _ready() -> void:
 	SetLastTime(0.0)
 	SetBestTime(20.55)
 	SetBeatTime(15.46)
-
 	
 func SetCurrTime(t: float) -> void:
 	CurrTimeValue = t

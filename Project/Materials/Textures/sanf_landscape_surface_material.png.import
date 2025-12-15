@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4d821demqj51"
-path.bptc="res://.godot/imported/IntroBox.png-75940bd98d6952c3f2ebdc9ae07ec3ef.bptc.ctex"
+uid="uid://bd5ipq38ru0sk"
+path.bptc="res://.godot/imported/sanf_landscape_surface_material.png-68889ce9c3a4135296bd0b2e10577f94.bptc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Images/IntroBox.png"
-dest_files=["res://.godot/imported/IntroBox.png-75940bd98d6952c3f2ebdc9ae07ec3ef.bptc.ctex"]
+source_file="res://Materials/Textures/sanf_landscape_surface_material.png"
+dest_files=["res://.godot/imported/sanf_landscape_surface_material.png-68889ce9c3a4135296bd0b2e10577f94.bptc.ctex"]
 
 [params]
 
@@ -22,7 +22,7 @@ compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -32,4 +32,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

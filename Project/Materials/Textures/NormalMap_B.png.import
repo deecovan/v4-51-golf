@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c6r8mfwfypkj0"
-path.bptc="res://.godot/imported/NormalMap_B.png-e5114cf2b84934a71561706f10dc19cb.bptc.ctex"
+path.bptc="res://.godot/imported/NormalMap_B.png-4a2d019c49c5b4ac275b577e3261a324.bptc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Materials/NormalMap_B.png"
-dest_files=["res://.godot/imported/NormalMap_B.png-e5114cf2b84934a71561706f10dc19cb.bptc.ctex"]
+source_file="res://Materials/Textures/NormalMap_B.png"
+dest_files=["res://.godot/imported/NormalMap_B.png-4a2d019c49c5b4ac275b577e3261a324.bptc.ctex"]
 
 [params]
 
@@ -20,12 +20,12 @@ compress/mode=2
 compress/high_quality=true
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/normal_map=0
+compress/normal_map=1
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=0
-roughness/src_normal=""
+roughness/mode=1
+roughness/src_normal="res://Materials/Textures/NormalMap_B.png"
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false

@@ -67,7 +67,7 @@ var DEBUG = false
 @export var max_force_front = 1600
 @export var max_force_rear = 1600
 @export var MAX_SPEED = 100.0
-@export var MAX_POWER = 800.0
+@export var MAX_POWER = 1000.0
 ## (-Z) value (meters) - Move Center Of Mass backward, (-Y): up
 @export var COM_MOD_VECTOR = Vector3(0.0,0.2,-0.3)
 @export var scale_curve: Curve

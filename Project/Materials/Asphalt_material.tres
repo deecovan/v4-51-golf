@@ -1,9 +1,15 @@
-[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://d2t3sfe6er582"]
+[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://d2t3sfe6er582"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_nfsar"]
-load_path = "res://.godot/imported/asphalt.png-de1d23f2d5304e14c8b44aeb7f7670d6.bptc.ctex"
+[ext_resource type="Texture2D" uid="uid://kxgm4rffxxvh" path="res://Materials/Textures/asphalt.png" id="1_p1ghp"]
+[ext_resource type="Texture2D" uid="uid://c6r8mfwfypkj0" path="res://Materials/Textures/NormalMap_B.png" id="2_43wq7"]
+[ext_resource type="Texture2D" uid="uid://b02xqvhldmp6i" path="res://Materials/roughness_texture_2d.tres" id="3_43wq7"]
 
 [resource]
-albedo_color = Color(0.74978, 0.74978, 0.74978, 1)
-albedo_texture = SubResource("CompressedTexture2D_nfsar")
-uv1_scale = Vector3(2, 2, 2)
+albedo_color = Color(0.214703, 0.214703, 0.214703, 1)
+albedo_texture = ExtResource("1_p1ghp")
+roughness = 0.6
+roughness_texture = ExtResource("3_43wq7")
+normal_enabled = true
+normal_texture = ExtResource("2_43wq7")
+uv1_scale = Vector3(-7200, -7200, -7200)
+uv1_world_triplanar = true
