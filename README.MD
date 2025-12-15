@@ -1,10 +1,26 @@
 # v4-51-golf GitHub repo
 
+- Add Loader scene
+  - Load and switch scenes
+  - Deeper vertical arrangement
+
+## 25.12.15 Manual merg into Initial Because fcknlfs
+- Because fcknlfs
+ 
+## New track Curves C3 Testeded OK
+- Track Curves C3 Testeded OK
+- Added Gimbal light
+  - Modified Light at all
+  - Removed Car self-shadowing
+
+- New track Curves 1.5min with heights
+- New materials created
+
 ## 25.12.13 Project organisation and fixes - All 5 tracks tested
 - All 5 tracks tested
   - Mass 60kg/1G
   - Engine Power 1000
-*! Tag i-like-it  
+*!Tag i-like-it
 
 - Delete redundant scene files
  - Try one more Environment panorama

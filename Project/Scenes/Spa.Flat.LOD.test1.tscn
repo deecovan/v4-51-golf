@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=4 uid="uid://b30n8gwfqoirt"]
 
-[ext_resource type="Script" uid="uid://dv8ykfntlf1at" path="res://Scripts/MainSceneScript.v1.2.gd" id="1_kgkkf"]
+[ext_resource type="Script" uid="uid://dv8ykfntlf1at" path="res://Scripts/MainSceneScript.gd" id="1_kgkkf"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vwgup"]
 resource_name = "Material.001"

@@ -20,9 +20,8 @@ func _ready() -> void:
 	wheel_fr = $"../Wheel3Dfr"
 	wheel_rl = $"../Wheel3Drl"
 	wheel_rr = $"../Wheel3Drr"
-	var root = get_tree().get_root().get_child(0)
-	var find_UI = root.find_children("UI")
-	UI = find_UI[0]
+	var loader = get_tree().get_root().get_child(0)
+	UI = loader.get_node("UI")
 	var find_sleep_fl = UI.find_children("SleepFL")
 	var find_sleep_fr= UI.find_children("SleepFR")
 	var find_sleep_rl = UI.find_children("SleepRL")

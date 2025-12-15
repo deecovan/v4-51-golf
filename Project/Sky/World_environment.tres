@@ -11,4 +11,8 @@ sky_material = SubResource("acg_rjz182vm")
 [resource]
 background_mode = 2
 sky = SubResource("Sky_rhwjb")
-tonemap_mode = 2
+ambient_light_color = Color(0.851729, 0.675888, 0.337249, 1)
+tonemap_mode = 3
+fog_light_color = Color(0.85098, 0.67451, 0.337255, 1)
+fog_light_energy = 0.2
+fog_sky_affect = 0.42

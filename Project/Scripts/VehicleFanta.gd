@@ -90,8 +90,8 @@ var Analometer: Control
 var rem_linear_velocity = Vector3.ZERO
 
 func _ready() -> void:
-	root = get_tree().get_root().get_child(0)
-	UI = root.find_children("UI")[0]
+	var loader = get_tree().get_root().get_child(0)
+	UI = loader.get_node("UI")
 	Analometer = UI.get_analometer()
 	
 	## Setup Vehicle3D values

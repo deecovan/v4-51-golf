@@ -1,0 +1,12 @@
+[gd_scene load_steps=4 format=3 uid="uid://t5mevm52qk66"]
+
+[ext_resource type="Script" uid="uid://i5kno04v4irc" path="res://Scripts/LoaderScript.gd" id="1_jorir"]
+[ext_resource type="PackedScene" uid="uid://gxklsq2x4tps" path="res://Scenes/MainMenuScene.tscn" id="2_xm1ns"]
+[ext_resource type="PackedScene" uid="uid://c2u3c52wwav41" path="res://Scenes/ui.tscn" id="3_ttvog"]
+
+[node name="LoaderScene" type="Node3D"]
+script = ExtResource("1_jorir")
+
+[node name="MainMenuScene" parent="." instance=ExtResource("2_xm1ns")]
+
+[node name="UI" parent="." instance=ExtResource("3_ttvog")]

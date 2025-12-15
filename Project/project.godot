@@ -16,7 +16,7 @@ general/updates_per_second=30
 
 config/name="Add Drive"
 config/version="0.1.3"
-run/main_scene="uid://dp105l827ahlf"
+run/main_scene="uid://t5mevm52qk66"
 config/features=PackedStringArray("4.4", "Forward Plus")
 run/max_fps=30
 boot_splash/bg_color=Color(0.772549, 0.662745, 0.415686, 1)
@@ -39,6 +39,10 @@ movie_writer/fps=30
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/physics_collision_import_generator/plugin.cfg")
+
+[global_group]
+
+Menus=""
 
 [gui]
 
@@ -222,8 +226,8 @@ next_scene={
 
 [internationalization]
 
-rendering/defaults/default_clear_color=Color(0.772549, 0.662745, 0.415686, 1)
-rendering/bg_color=Color(0.772549, 0.662745, 0.415686, 1)
+rendering/defaults/default_clear_color=Color(0.85098, 0.67451, 0.337255, 1)
+rendering/bg_color=Color(0.85098, 0.67451, 0.337255, 1)
 
 [physics]
 
@@ -237,5 +241,5 @@ occlusion_culling/bvh_build_quality=1
 lights_and_shadows/directional_shadow/soft_shadow_filter_quality.mobile=2
 lights_and_shadows/positional_shadow/soft_shadow_filter_quality.mobile=2
 camera/depth_of_field/depth_of_field_bokeh_shape=0
-environment/defaults/default_clear_color=Color(0.772549, 0.662745, 0.415686, 1)
+environment/defaults/default_clear_color=Color(0.85098, 0.67451, 0.337255, 1)
 occlusion_culling/use_occlusion_culling=true

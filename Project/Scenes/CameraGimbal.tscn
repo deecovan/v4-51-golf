@@ -20,3 +20,11 @@ current = true
 fov = 65.0
 near = 0.01
 far = 1000.0
+
+[node name="SpotLight3D" type="SpotLight3D" parent="GimbalInner/Camera3D"]
+transform = Transform3D(-1, -1.09775e-07, -2.42144e-08, 5.02243e-09, -0.258819, 0.965926, -1.12301e-07, 0.965926, 0.258819, -6.99381e-07, 15.4548, -3.8589)
+light_color = Color(0.768627, 0.776471, 0.8, 1)
+shadow_enabled = true
+spot_range = 60.0
+spot_attenuation = -0.1
+spot_angle = 70.0
