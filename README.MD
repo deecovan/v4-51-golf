@@ -1,11 +1,12 @@
 # v4-51-golf GitHub repo
 
+## 25.12.15 Manual merge into Initial Because fckn LFS
+- Because fckn LFS
+- Delete redundant branches
+
 - Add Loader scene
   - Load and switch scenes
   - Deeper vertical arrangement
-
-## 25.12.15 Manual merg into Initial Because fcknlfs
-- Because fcknlfs
  
 ## New track Curves C3 Testeded OK
 - Track Curves C3 Testeded OK
