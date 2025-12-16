@@ -2,20 +2,17 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnt7k3umwt4x2"
-path.bptc="res://.godot/imported/FantaCar_UV-sharp.png-c836c6f4b9d995df094e7016d18f8893.bptc.ctex"
+uid="uid://dc6a8g6yl17p4"
+path.bptc="res://.godot/imported/Blue.png-8fa8918c27866f75c39de2029c418c84.bptc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={
-"md5": "d50830057af51235decab86794dca0f8"
-}
 
 [deps]
 
-source_file="res://Scenes/GLBs/FantaCar_UV-sharp.png"
-dest_files=["res://.godot/imported/FantaCar_UV-sharp.png-c836c6f4b9d995df094e7016d18f8893.bptc.ctex"]
+source_file="res://Materials/Textures/Blue.png"
+dest_files=["res://.godot/imported/Blue.png-8fa8918c27866f75c39de2029c418c84.bptc.ctex"]
 
 [params]
 

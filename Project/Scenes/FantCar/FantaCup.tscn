@@ -1,15 +1,15 @@
 [gd_scene load_steps=19 format=4 uid="uid://dhu7in61tkfit"]
 
 [ext_resource type="Script" uid="uid://g1b5fmyreevn" path="res://Scripts/VehicleFanta.gd" id="1_jmfj5"]
-[ext_resource type="Curve" uid="uid://blyn6acj4dogd" path="res://Scenes/Fanta_curve.tres" id="2_rrsn0"]
+[ext_resource type="Curve" uid="uid://blyn6acj4dogd" path="res://Scenes/FantCar/Fanta_curve.tres" id="2_rrsn0"]
 [ext_resource type="AudioStream" uid="uid://d32nahn6656wp" path="res://Sounds/eng run start.wav" id="3_ux3g5"]
 [ext_resource type="AudioStream" uid="uid://d0a2tqcfnno11" path="res://Sounds/eng run idle.wav" id="4_v5438"]
 [ext_resource type="AudioStream" uid="uid://g2vvom06rwsx" path="res://Sounds/eng run overpower.wav" id="5_juvg4"]
 [ext_resource type="Script" uid="uid://bn2vvwlgnjuak" path="res://Scripts/engine_controller.gd" id="6_t1iem"]
 [ext_resource type="Script" uid="uid://dp54wm0r2sonc" path="res://Scripts/fanta_wheel.gd" id="7_75rqe"]
 [ext_resource type="AudioStream" uid="uid://bs18n8xr22toi" path="res://Sounds/scrap.wav" id="7_ux3g5"]
-[ext_resource type="PackedScene" uid="uid://bnj10rk4ojq0v" path="res://Scenes/Fanta_Wheel_L.tscn" id="8_0hei6"]
-[ext_resource type="PackedScene" uid="uid://c4nshb085yca4" path="res://Scenes/Fanta_Wheel_R.tscn" id="9_lgnrw"]
+[ext_resource type="PackedScene" uid="uid://bnj10rk4ojq0v" path="res://Scenes/FantCar/Fanta_Wheel_L.tscn" id="8_0hei6"]
+[ext_resource type="PackedScene" uid="uid://c4nshb085yca4" path="res://Scenes/FantCar/Fanta_Wheel_R.tscn" id="9_lgnrw"]
 [ext_resource type="Texture2D" uid="uid://bbyxnybki6h8f" path="res://Import/blender/car_UV-sharp.png" id="11_ux3g5"]
 [ext_resource type="Material" uid="uid://c1rb1j1x6st35" path="res://Materials/Curved_Road_material.tres" id="12_v5438"]
 

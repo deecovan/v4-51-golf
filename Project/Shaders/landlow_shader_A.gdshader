@@ -1,15 +1,15 @@
 shader_type spatial;
 
-uniform float height_scale = 3;
-uniform sampler2D noise;
+//uniform float height_scale = 3;
+//uniform sampler2D noise;
 uniform sampler2D normalmap;
 varying vec2 tex_position;
 
 void vertex() {
 	//// Add Noise
 	tex_position = VERTEX.xz / 10.0 + 0.5;
-	float height = texture(noise, tex_position).x;
-	//VERTEX.y += height * height_scale - 0.5;
+	//float height = texture(noise, tex_position).x;
+	// VERTEX.y += height * height_scale - 0.5;
 	//// Add Waves
 	//VERTEX.y += cos(VERTEX.x*PI) * sin(VERTEX.z*PI)/(PI*PI);
 	//// Clamp Borders

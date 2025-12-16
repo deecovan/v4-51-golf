@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8b67ytg2dqnh"]
+
+[ext_resource type="PackedScene" uid="uid://buq7b2isveo45" path="res://Scenes/GLBs/HyperLand.1.glb" id="1_ng26l"]
+[ext_resource type="Material" uid="uid://bdytq72ln35t0" path="res://Materials/Spa_Green_Hyper_material.tres" id="2_ng26l"]
+
+[node name="HyperLand_1" instance=ExtResource("1_ng26l")]
+
+[node name="Land" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_ng26l")

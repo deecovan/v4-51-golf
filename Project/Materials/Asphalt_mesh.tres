@@ -1,8 +1,6 @@
 [gd_resource type="BoxMesh" load_steps=2 format=3 uid="uid://b5oihxtmef01l"]
 
-[ext_resource type="Material" uid="uid://d2t3sfe6er582" path="res://Materials/Asphalt_material.tres" id="1_4mo5g"]
+[ext_resource type="Material" uid="uid://c1rb1j1x6st35" path="res://Materials/Curved_Road_material.tres" id="1_nwtfv"]
 
 [resource]
-lightmap_size_hint = Vector2i(104, 57)
-material = ExtResource("1_4mo5g")
-size = Vector3(8, 0.19, 8)
+material = ExtResource("1_nwtfv")

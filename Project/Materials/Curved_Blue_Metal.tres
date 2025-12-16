@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cwwrckcmefikt"]
+
+[ext_resource type="Texture2D" uid="uid://b02xqvhldmp6i" path="res://Materials/roughness_texture_2d.tres" id="1_qhnui"]
+
+[resource]
+albedo_color = Color(0.235332, 0.000506143, 0.643597, 1)
+metallic = 0.4
+metallic_specular = 0.2
+roughness = 0.01
+normal_enabled = true
+normal_scale = -0.16
+normal_texture = ExtResource("1_qhnui")
+uv1_scale = Vector3(5, 5, 5)
+uv1_triplanar = true

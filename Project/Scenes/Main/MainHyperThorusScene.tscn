@@ -1,13 +1,55 @@
-[gd_scene load_steps=10 format=3 uid="uid://cu1pqcqcl7lcw"]
+[gd_scene load_steps=18 format=3 uid="uid://cu1pqcqcl7lcw"]
 
 [ext_resource type="Script" uid="uid://dv8ykfntlf1at" path="res://Scripts/MainSceneScript.gd" id="1_16bhx"]
 [ext_resource type="PackedScene" uid="uid://ch15y8d6ajcll" path="res://Scenes/GLBs/HyperThorus.1.glb" id="2_cnovw"]
 [ext_resource type="PackedScene" uid="uid://epwatr8gworp" path="res://Sky/EveningSky.tscn" id="3_tf3om"]
 [ext_resource type="Script" uid="uid://dx8xl0toym1sl" path="res://Scripts/TabAreaScript.gd" id="4_8b1lb"]
-[ext_resource type="PackedScene" uid="uid://buq7b2isveo45" path="res://Scenes/GLBs/HyperLand.1.glb" id="4_cnovw"]
+[ext_resource type="PackedScene" uid="uid://b8b67ytg2dqnh" path="res://Scenes/GLBs/hyper_land_1.tscn" id="4_rgf0m"]
 [ext_resource type="PackedScene" uid="uid://126yicuwavhn" path="res://Scenes/CupTab.tscn" id="5_kgwjd"]
 [ext_resource type="PackedScene" uid="uid://b5hxbo26pr6uh" path="res://Scenes/CameraGimbal.tscn" id="7_16bhx"]
-[ext_resource type="PackedScene" uid="uid://dhu7in61tkfit" path="res://Scenes/FantaCup.tscn" id="7_v6ju3"]
+[ext_resource type="PackedScene" uid="uid://dhu7in61tkfit" path="res://Scenes/FantCar/FantaCup.tscn" id="7_v6ju3"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bxj37"]
+load_path = "res://.godot/imported/Green.png-9ec633106adf94fcfc9e8ae6c2c4609b.bptc.ctex"
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_aep0d"]
+frequency = 0.1668
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_nc03y"]
+noise = SubResource("FastNoiseLite_aep0d")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ljdxl"]
+load_path = "res://.godot/imported/Green.png-9ec633106adf94fcfc9e8ae6c2c4609b.bptc.ctex"
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_cbneg"]
+noise_type = 3
+frequency = 0.0129
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_hsbyv"]
+as_normal_map = true
+bump_strength = 16.0
+noise = SubResource("FastNoiseLite_cbneg")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sv53f"]
+albedo_color = Color(0.890196, 0.819608, 0.352941, 1)
+albedo_texture = SubResource("CompressedTexture2D_bxj37")
+roughness = 0.86
+roughness_texture = SubResource("NoiseTexture2D_hsbyv")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_scale = -0.64
+normal_texture = SubResource("CompressedTexture2D_ljdxl")
+ao_enabled = true
+ao_light_affect = 0.68
+ao_texture = SubResource("NoiseTexture2D_nc03y")
+uv1_scale = Vector3(0.009, 0.009, 0.009)
+uv1_triplanar = true
+uv1_triplanar_sharpness = 0.277392
+uv1_world_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_a0d2i"]
+material = SubResource("StandardMaterial3D_sv53f")
+size = Vector3(3000, 1, 3000)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vjncq"]
 size = Vector3(0.1, 10, 20.495)
@@ -19,7 +61,11 @@ script = ExtResource("1_16bhx")
 
 [node name="HyperThorus_1" parent="." instance=ExtResource("2_cnovw")]
 
-[node name="HyperLand_1" parent="." instance=ExtResource("4_cnovw")]
+[node name="HyperLand_1" parent="." instance=ExtResource("4_rgf0m")]
+
+[node name="Back" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 23, 0)
+mesh = SubResource("BoxMesh_a0d2i")
 
 [node name="Objects" type="Node3D" parent="."]
 transform = Transform3D(0.267844, 0, -0.963462, 0, 1, 0, 0.963462, 0, 0.267844, -196.391, 31.4356, 290.096)
@@ -40,7 +86,6 @@ transform = Transform3D(0.965927, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965927, 
 mass = 60.0
 linear_damp_mode = 1
 car_angular_damp = 0.0
-MAX_POWER = 1000.0
 
 [node name="CameraGimbal" parent="." instance=ExtResource("7_16bhx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66, 47, 176)

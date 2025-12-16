@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://dx8xl0toym1sl" path="res://Scripts/TabAreaScript.gd" id="6_keng5"]
 [ext_resource type="PackedScene" uid="uid://126yicuwavhn" path="res://Scenes/CupTab.tscn" id="7_ghipl"]
 [ext_resource type="PackedScene" uid="uid://b5hxbo26pr6uh" path="res://Scenes/CameraGimbal.tscn" id="8_je2b3"]
-[ext_resource type="PackedScene" uid="uid://dhu7in61tkfit" path="res://Scenes/FantaCup.tscn" id="9_of6gy"]
+[ext_resource type="PackedScene" uid="uid://dhu7in61tkfit" path="res://Scenes/FantCar/FantaCup.tscn" id="9_of6gy"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vjncq"]
 size = Vector3(0.1, 9, 23)
@@ -38,6 +38,5 @@ transform = Transform3D(-0.221004, 0, 0.975273, 0, 1, 0, -0.975273, 0, -0.221004
 [node name="Vehicle" parent="." instance=ExtResource("9_of6gy")]
 transform = Transform3D(-0.236957, 0, 0.97152, 0, 1, 0, -0.97152, 0, -0.236957, -17.1629, 1.93191, 8.82545)
 mass = 60.0
-MAX_POWER = 1000.0
 
 [connection signal="body_entered" from="Objects/Area3D" to="Objects/Area3D" method="_on_body_entered"]

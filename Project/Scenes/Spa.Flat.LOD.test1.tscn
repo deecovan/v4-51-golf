@@ -1,6 +1,8 @@
-[gd_scene load_steps=8 format=4 uid="uid://b30n8gwfqoirt"]
+[gd_scene load_steps=10 format=4 uid="uid://b30n8gwfqoirt"]
 
 [ext_resource type="Script" uid="uid://dv8ykfntlf1at" path="res://Scripts/MainSceneScript.gd" id="1_kgkkf"]
+[ext_resource type="Material" uid="uid://b3j1wfc16pljl" path="res://Materials/Spa_Road_material.tres" id="2_xrf2f"]
+[ext_resource type="Material" uid="uid://cfqk7ptfp3ue" path="res://Materials/Spa_Green_material.tres" id="3_5kvuo"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vwgup"]
 resource_name = "Material.001"
@@ -99,6 +101,8 @@ script = ExtResource("1_kgkkf")
 transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, -0.0331664, 0, 0.00682068)
 mesh = SubResource("ArrayMesh_0dude")
 skeleton = NodePath("")
+surface_material_override/0 = ExtResource("2_xrf2f")
+surface_material_override/2 = ExtResource("3_5kvuo")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Track"]
 

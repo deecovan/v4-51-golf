@@ -2,20 +2,17 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://mytjxbovx87s"
-path.bptc="res://.godot/imported/FantaCup_UV-sharp.png-666998a871d40d59ebeb471e1801f88c.bptc.ctex"
+uid="uid://cfcti5durbla3"
+path.bptc="res://.godot/imported/Curved_Road_Texture.png-611dd7ca36151e2eebd722da7e6c0a30.bptc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={
-"md5": "d50830057af51235decab86794dca0f8"
-}
 
 [deps]
 
-source_file="res://Scenes/GLBs/FantaCup_UV-sharp.png"
-dest_files=["res://.godot/imported/FantaCup_UV-sharp.png-666998a871d40d59ebeb471e1801f88c.bptc.ctex"]
+source_file="res://Materials/Textures/Curved_Road_Texture.png"
+dest_files=["res://.godot/imported/Curved_Road_Texture.png-611dd7ca36151e2eebd722da7e6c0a30.bptc.ctex"]
 
 [params]
 

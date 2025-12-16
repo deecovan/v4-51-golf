@@ -1,16 +1,11 @@
 [gd_scene load_steps=5 format=3 uid="uid://126yicuwavhn"]
 
 [ext_resource type="Script" uid="uid://rt5joe5umdfx" path="res://Scripts/TabInstanceScript.gd" id="1_4el8h"]
+[ext_resource type="Material" uid="uid://cwwrckcmefikt" path="res://Materials/Curved_Blue_Metal.tres" id="1_bun3e"]
 [ext_resource type="FontFile" uid="uid://djfsvawybk7ho" path="res://Themes/MinimalUI44/ShareTechMono.ttf" id="2_bun3e"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yrs23"]
-albedo_color = Color(0.0859681, 5.77569e-07, 0.506114, 1)
-metallic = 0.5
-backlight_enabled = true
-backlight = Color(0.452995, 0.627446, 1, 1)
-
 [sub_resource type="BoxMesh" id="BoxMesh_7nink"]
-material = SubResource("StandardMaterial3D_yrs23")
+material = ExtResource("1_bun3e")
 size = Vector3(0.2, 5, 10)
 
 [node name="Tab" type="MeshInstance3D"]

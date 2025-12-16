@@ -33,6 +33,12 @@ animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={
+"materials": {
+"Grass": {
+"use_external/enabled": false,
+"use_external/path": "uid://cfqk7ptfp3ue"
+}
+},
 "nodes": {
 "PATH:Land": {
 "physics/shape_type": 2

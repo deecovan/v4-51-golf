@@ -7,14 +7,14 @@
 [ext_resource type="PackedScene" uid="uid://b30n8gwfqoirt" path="res://Scenes/Spa.Flat.LOD.test1.tscn" id="4_rousx"]
 [ext_resource type="PackedScene" uid="uid://dpmlsd6ukmkua" path="res://Import/Kenney/Road/construction-light.glb" id="5_fydd0"]
 [ext_resource type="PackedScene" uid="uid://b5hxbo26pr6uh" path="res://Scenes/CameraGimbal.tscn" id="7_vfmpu"]
-[ext_resource type="PackedScene" uid="uid://dhu7in61tkfit" path="res://Scenes/FantaCup.tscn" id="8_tp1xe"]
+[ext_resource type="PackedScene" uid="uid://dhu7in61tkfit" path="res://Scenes/FantCar/FantaCup.tscn" id="8_tp1xe"]
 [ext_resource type="Script" uid="uid://dx8xl0toym1sl" path="res://Scripts/TabAreaScript.gd" id="9_8xxra"]
 [ext_resource type="PackedScene" uid="uid://126yicuwavhn" path="res://Scenes/CupTab.tscn" id="10_t7fem"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_clapc"]
 size = Vector3(0.1, 10, 11.6)
 
-[node name="MainSpaFlat_v1_2" type="Node3D"]
+[node name="MainSpaFlat" type="Node3D"]
 script = ExtResource("1_t2t33")
 
 [node name="WorldEnvironment" parent="." instance=ExtResource("2_o2f4t")]
@@ -158,9 +158,6 @@ transform = Transform3D(-9.10496, 0, 4.13518, 0, 10, 0, -4.13518, 0, -9.10496, -
 
 [node name="construction-light62" parent="Spa_Flat_Objects" instance=ExtResource("5_fydd0")]
 transform = Transform3D(-9.10496, 0, 4.13518, 0, 10, 0, -4.13518, 0, -9.10496, -187.983, 0.409131, 181.994)
-
-[node name="construction-light65" parent="Spa_Flat_Objects" instance=ExtResource("5_fydd0")]
-transform = Transform3D(9.67144, 0, -2.54231, 0, 10, 0, 2.54231, 0, 9.67144, 23.244, 86.4121, 340.298)
 
 [node name="construction-light68" parent="Spa_Flat_Objects" instance=ExtResource("5_fydd0")]
 transform = Transform3D(-9.31101, 0, -3.64763, 0, 10, 0, 3.64763, 0, -9.31101, 324.968, 0.409128, 82.1881)

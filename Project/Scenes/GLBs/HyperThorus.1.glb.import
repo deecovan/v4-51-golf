@@ -33,6 +33,16 @@ animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={
+"materials": {
+"Black": {
+"use_external/enabled": true,
+"use_external/path": "uid://b3j1wfc16pljl"
+},
+"Gray": {
+"use_external/enabled": true,
+"use_external/path": "uid://d3ajard5hkhny"
+}
+},
 "nodes": {
 "PATH:Track": {
 "generate/physics": true

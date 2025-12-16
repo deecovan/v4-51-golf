@@ -6,5 +6,4 @@
 [resource]
 render_priority = 0
 shader = ExtResource("1_exxw1")
-shader_parameter/height_scale = 3.0
 shader_parameter/normalmap = ExtResource("2_exxw1")

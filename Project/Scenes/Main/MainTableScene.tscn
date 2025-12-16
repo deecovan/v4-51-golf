@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://dx8xl0toym1sl" path="res://Scripts/TabAreaScript.gd" id="6_tfk74"]
 [ext_resource type="PackedScene" uid="uid://126yicuwavhn" path="res://Scenes/CupTab.tscn" id="7_yqa6l"]
 [ext_resource type="PackedScene" uid="uid://b5hxbo26pr6uh" path="res://Scenes/CameraGimbal.tscn" id="8_npx3o"]
-[ext_resource type="PackedScene" uid="uid://dhu7in61tkfit" path="res://Scenes/FantaCup.tscn" id="9_ici2k"]
+[ext_resource type="PackedScene" uid="uid://dhu7in61tkfit" path="res://Scenes/FantCar/FantaCup.tscn" id="9_ici2k"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bfrac"]
 margin = 0.0
@@ -33,7 +33,7 @@ mesh = ExtResource("3_bfrac")
 
 [node name="Collision" type="CollisionShape3D" parent="Table/Static"]
 shape = SubResource("BoxShape3D_bfrac")
-debug_color = Color(0, 1, 0.6, 0.6)
+debug_color = Color(0, 1, 0.6, 0)
 
 [node name="Objects" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.6, 0)

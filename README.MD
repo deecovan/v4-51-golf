@@ -1,5 +1,10 @@
 # v4-51-golf GitHub repo
 
+## All tracks tested 
+- Added normal textures
+   - Textures shared
+- Scripts and scenes corrected
+
 ## Added Table track 
 - Flat square 1600m x 3600m
 - Marked each 100m up 1km

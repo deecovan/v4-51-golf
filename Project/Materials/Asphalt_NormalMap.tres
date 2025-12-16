@@ -1,0 +1,11 @@
+[gd_resource type="NoiseTexture2D" load_steps=3 format=3 uid="uid://b3yp2o4yvdwny"]
+
+[ext_resource type="Gradient" uid="uid://dtsqyueiloc71" path="res://Materials/Asphalt_ColorRamp.tres" id="1_ww06s"]
+[ext_resource type="FastNoiseLite" uid="uid://b0y1a0mh6estl" path="res://Materials/Asphalt_FastNoise.tres" id="2_2q8k3"]
+
+[resource]
+width = 1024
+height = 1024
+as_normal_map = true
+color_ramp = ExtResource("1_ww06s")
+noise = ExtResource("2_2q8k3")
