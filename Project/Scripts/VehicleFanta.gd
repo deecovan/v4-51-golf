@@ -6,7 +6,7 @@ var DEBUG = false
 
 ## Values for curve Fanta_Curve_damp02
 ## Real maximum 240
-## Tested fixed 
+## Tested fixed waaw
 @export var car_linear_damp = 0.2
 ## @TODO merge ZC's aerodynamic from f9cfddd zc/aeroDrag
 @export var vehicle_mass = 1000.0
@@ -15,9 +15,9 @@ var DEBUG = false
 @export var MAX_POWER = 6600.0
 
 ## Maximum Steering speed
-@export var steer_control_speed = 0.4
+@export var steer_control_speed = 0.8
 ## Maximum Braking speed
-@export var brake_control_speed = 0.4
+@export var brake_control_speed = 0.6
 ## Control's lerp speed
 # Use 0..10 for keyboard or controller
 # Use 100 for racing wheels

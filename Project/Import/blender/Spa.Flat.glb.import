@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://2m6t24qkdua1"
-path="res://.godot/imported/Spa.Height.glb-41491d41e4a4398f757eba2907bcc4a7.scn"
+uid="uid://bvanhb864au7k"
+path="res://.godot/imported/Spa.Flat.glb-4b7222129aea0520f29c3659dfc179c3.scn"
 
 [deps]
 
-source_file="res://Import/blender/Spa.Height.glb"
-dest_files=["res://.godot/imported/Spa.Height.glb-41491d41e4a4398f757eba2907bcc4a7.scn"]
+source_file="res://Import/blender/Spa.Flat.glb"
+dest_files=["res://.godot/imported/Spa.Flat.glb-4b7222129aea0520f29c3659dfc179c3.scn"]
 
 [params]
 
