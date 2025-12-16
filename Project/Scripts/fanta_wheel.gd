@@ -14,6 +14,7 @@ var sleep_fl_bar = ProgressBar
 var sleep_fr_bar = ProgressBar
 var sleep_rl_bar = ProgressBar
 var sleep_rr_bar = ProgressBar
+var handbrake_pressed = false
 
 func _ready() -> void:
 	wheel_fl = $"../Wheel3Dfl"
@@ -30,6 +31,9 @@ func _ready() -> void:
 	sleep_fr_bar = find_sleep_fr[0]
 	sleep_rl_bar = find_sleep_rl[0]
 	sleep_rr_bar = find_sleep_rr[0]
+	
+func _input(event: InputEvent) -> void:
+	handbrake_pressed = event.is_action_pressed("handbrake")
 
 func _physics_process(_delta: float) -> void:
 	sleep_fl_bar.set_value(val_sleep(wheel_fl, sleep_start))
@@ -39,9 +43,11 @@ func _physics_process(_delta: float) -> void:
 
 func val_sleep(target: VehicleWheel3D, sleep_value) -> float:
 	var val = target.get_skidinfo()
-	if val > 0 and val < sleep_value: 
-		play_sleep(target, sleep_value / (val + sleep_value))
-		return (100 - val * (100 / sleep_value))
+	if (val > 0 and val < sleep_value) or \
+		## Used HandBrake
+		handbrake_pressed: 
+			play_sleep(target, sleep_value / (val + sleep_value))
+			return (100 - val * (100 / sleep_value))
 	else: stop_sleep(target)
 	return 0
 	

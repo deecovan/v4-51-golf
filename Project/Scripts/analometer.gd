@@ -4,6 +4,8 @@ var min_deg = -135.0
 var med_deg =    0.0
 var max_deg =  135.0
 
+var max_tac: float
+
 func rotate_speed_pt(rad: float) -> void:
 	$SpeedPT.rotation = rad
 
@@ -34,8 +36,11 @@ func get_med_rad() -> float:
 func get_max_spd() -> float:
 	return 240.0
 	
+func set_max_tac(t: float) -> void:
+	max_tac = t
+	
 func get_max_tac() -> float:
-	return 900.0
+	return max_tac
 	
 func get_max_rot() -> float:
 	return 1800.0

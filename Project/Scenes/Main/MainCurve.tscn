@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://doha07y8r0p6b" path="res://Scripts/MainScript.gd" id="1_3urv7"]
 [ext_resource type="PackedScene" uid="uid://soo6h56asawe" path="res://Scenes/Main/MainCurveScene.tscn" id="2_3urv7"]
 [ext_resource type="PackedScene" uid="uid://c2u3c52wwav41" path="res://Scenes/ui.tscn" id="3_jyyhf"]
-[ext_resource type="BoxMesh" uid="uid://b5oihxtmef01l" path="res://Materials/Asphalt_Mesh.tres" id="4_3581v"]
+[ext_resource type="BoxMesh" uid="uid://b5oihxtmef01l" path="res://Materials/Asphalt_mesh.tres" id="4_3581v"]
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_3urv7")

@@ -1,5 +1,14 @@
 # v4-51-golf GitHub repo
 
+## Dragster @GOOD and ideas and @BAD ideas implementations
+- @GOOD ideas to deploy
+  - Added HandBrake
+  - Found Zero Drag Force parameters
+  - Normalized Steering returning to zero
+- @BAD physics of dragster
+  - Tested dragster on Curves. It suks.
+  - Cant drive on the track, only cones.
+
 ## All 6+1 tracks tested 
 - Added normal textures
    - Textures shared
