@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://dhu7in61tkfit"]
+[gd_scene load_steps=18 format=4 uid="uid://dhu7in61tkfit"]
 
 [ext_resource type="Script" uid="uid://g1b5fmyreevn" path="res://Scripts/VehicleFanta.gd" id="1_jmfj5"]
 [ext_resource type="Curve" uid="uid://blyn6acj4dogd" path="res://Scenes/FantCar/Fanta_curve.tres" id="2_rrsn0"]
@@ -12,9 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://c4nshb085yca4" path="res://Scenes/FantCar/Fanta_Wheel_R.tscn" id="9_lgnrw"]
 [ext_resource type="Texture2D" uid="uid://bbyxnybki6h8f" path="res://Import/blender/car_UV-sharp.png" id="11_ux3g5"]
 [ext_resource type="Material" uid="uid://c1rb1j1x6st35" path="res://Materials/Curved_Road_material.tres" id="12_v5438"]
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_krx02"]
-friction = 0.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_74iso"]
 resource_name = "Material"
@@ -66,7 +63,6 @@ size = Vector2(3.6, 10)
 
 [node name="Vehicle" type="VehicleBody3D"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
-physics_material_override = SubResource("PhysicsMaterial_krx02")
 center_of_mass_mode = 1
 continuous_cd = true
 script = ExtResource("1_jmfj5")

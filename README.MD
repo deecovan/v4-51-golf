@@ -1,6 +1,8 @@
 # v4-51-golf GitHub repo
 
 ## Dragster @GOOD and ideas and @BAD ideas implementations
+- Merged Drag into Cup version. 
+- Next merge ZC's aerodynamics
 - @GOOD ideas to deploy
   - Added HandBrake
   - Found Zero Drag Force parameters

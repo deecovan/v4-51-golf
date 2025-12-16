@@ -36,7 +36,6 @@ transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 10, 106.918)
 transform = Transform3D(-0.221004, 0, 0.975273, 0, 1, 0, -0.975273, 0, -0.221004, -17.1629, 2.93191, 8.82545)
 
 [node name="Vehicle" parent="." instance=ExtResource("9_of6gy")]
-transform = Transform3D(-0.236957, 0, 0.97152, 0, 1, 0, -0.97152, 0, -0.236957, -17.1629, 1.93191, 8.82545)
-mass = 60.0
+transform = Transform3D(0.384424, 0, -0.923157, 0, 1, 0, 0.923157, 0, 0.384424, -24.827, 0, 10.6149)
 
 [connection signal="body_entered" from="Objects/Area3D" to="Objects/Area3D" method="_on_body_entered"]
