@@ -1,6 +1,6 @@
 # v4-51-golf GitHub repo
 
-## All tracks tested 
+## All 6+1 tracks tested 
 - Added normal textures
    - Textures shared
 - Scripts and scenes corrected
