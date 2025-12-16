@@ -1,7 +1,7 @@
 [gd_scene load_steps=18 format=4 uid="uid://dhu7in61tkfit"]
 
 [ext_resource type="Script" uid="uid://g1b5fmyreevn" path="res://Scripts/VehicleFanta.gd" id="1_jmfj5"]
-[ext_resource type="Curve" uid="uid://blyn6acj4dogd" path="res://Scenes/FantCar/Fanta_curve.tres" id="2_rrsn0"]
+[ext_resource type="Curve" uid="uid://cd06h0p5amxe2" path="res://Scenes/FantCar/Fanta_curve_dump02.tres" id="2_lqoco"]
 [ext_resource type="AudioStream" uid="uid://d32nahn6656wp" path="res://Sounds/eng run start.wav" id="3_ux3g5"]
 [ext_resource type="AudioStream" uid="uid://d0a2tqcfnno11" path="res://Sounds/eng run idle.wav" id="4_v5438"]
 [ext_resource type="AudioStream" uid="uid://g2vvom06rwsx" path="res://Sounds/eng run overpower.wav" id="5_juvg4"]
@@ -66,7 +66,7 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 
 center_of_mass_mode = 1
 continuous_cd = true
 script = ExtResource("1_jmfj5")
-scale_curve = ExtResource("2_rrsn0")
+scale_curve = ExtResource("2_lqoco")
 
 [node name="CenterOfMass" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, -0.3)

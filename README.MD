@@ -1,6 +1,8 @@
 # v4-51-golf GitHub repo
 
 ## Dragster @GOOD and ideas and @BAD ideas implementations
+- Tested fixed Values for curve Fanta_Curve_damp02
+- @TAG curve_damp02
 - Merged Drag into Cup version. 
 - Next merge ZC's aerodynamics.
 - @GOOD ideas to deploy

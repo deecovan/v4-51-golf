@@ -4,8 +4,16 @@ var speedtometer_label
 var REVERSE =  false
 var DEBUG = false
 
+## Values for curve Fanta_Curve_damp02
+## Real maximum 240
+## Tested fixed 
+@export var car_linear_damp = 0.2
+## @TODO merge ZC's aerodynamic from f9cfddd zc/aeroDrag
 @export var vehicle_mass = 1000.0
 @export var grav_scale = 1.0
+@export var MAX_SPEED = 100.0
+@export var MAX_POWER = 6600.0
+
 ## Maximum Steering speed
 @export var steer_control_speed = 0.4
 ## Maximum Braking speed
@@ -35,13 +43,11 @@ var DEBUG = false
 ## Maximum Steering angle in Radians
 @export var MAX_STEER  = 0.4
 ## Next values used for reconfiguring the Vehicle3Ds values
-@export var car_linear_damp = 0.0
 @export var car_angular_damp = 0.0
 @export var car_friction = 0.0
 @export var car_rough = false
 @export var car_bounce = 0.25
 @export var car_absorb = false
-
 
 ## Next values used for reconfiguring the Wheel3Ds values
 ## Front wheels friction slip ratio ## 0.65
@@ -69,8 +75,6 @@ var DEBUG = false
 @export var stiff_rear = 200
 @export var max_force_front = 16000
 @export var max_force_rear = 16000
-@export var MAX_SPEED = 100.0
-@export var MAX_POWER = 6000.0
 ## (-Z) value (meters) - Move Center Of Mass backward, (-Y): up
 @export var COM_MOD_VECTOR = Vector3(0.0,0.2,-0.3)
 @export var scale_curve: Curve
