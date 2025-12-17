@@ -1,6 +1,7 @@
-[gd_scene load_steps=18 format=4 uid="uid://dhu7in61tkfit"]
+[gd_scene load_steps=19 format=4 uid="uid://bsf2ofjitrh6v"]
 
-[ext_resource type="Script" uid="uid://de8x62k3oo3ki" path="res://Scripts/VehicleFanta40.gd" id="1_inae7"]
+[ext_resource type="Script" uid="uid://8n2pd8iv0kna" path="res://Scripts/VehicleFanta40.gd" id="1_inae7"]
+[ext_resource type="Curve" uid="uid://dg0l640t63r3" path="res://Scenes/FantCar/Fanta_curve_40.tres" id="2_qamhy"]
 [ext_resource type="AudioStream" uid="uid://d32nahn6656wp" path="res://Sounds/eng run start.wav" id="3_ux3g5"]
 [ext_resource type="AudioStream" uid="uid://d0a2tqcfnno11" path="res://Sounds/eng run idle.wav" id="4_v5438"]
 [ext_resource type="AudioStream" uid="uid://g2vvom06rwsx" path="res://Sounds/eng run overpower.wav" id="5_juvg4"]
@@ -69,6 +70,9 @@ physics_material_override = SubResource("PhysicsMaterial_krx02")
 center_of_mass_mode = 1
 continuous_cd = true
 script = ExtResource("1_inae7")
+front_brake_force = 1.0
+COM_MOD_VECTOR = Vector3(0, 0.1, -0.3)
+scale_curve = ExtResource("2_qamhy")
 
 [node name="CenterOfMass" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, -0.3)

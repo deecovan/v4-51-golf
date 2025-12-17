@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://d1mpex1cs81xy" path="res://Scenes/GLBs/Curved.b1.re-export.glb" id="2_rtsg7"]
 [ext_resource type="Script" uid="uid://dx8xl0toym1sl" path="res://Scripts/TabAreaScript.gd" id="6_keng5"]
 [ext_resource type="PackedScene" uid="uid://126yicuwavhn" path="res://Scenes/CupTab.tscn" id="7_ghipl"]
-[ext_resource type="PackedScene" uid="uid://c653ypnptku1j" path="res://Scenes/FantCar/FantaCup500.tscn" id="7_rtsg7"]
+[ext_resource type="PackedScene" uid="uid://bsf2ofjitrh6v" path="res://Scenes/FantCar/FantaCup40.tscn" id="7_rtsg7"]
 [ext_resource type="PackedScene" uid="uid://b5hxbo26pr6uh" path="res://Scenes/CameraGimbal.tscn" id="8_je2b3"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vjncq"]
@@ -36,6 +36,5 @@ transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 10, 106.918)
 transform = Transform3D(-0.221004, 0, 0.975273, 0, 1, 0, -0.975273, 0, -0.221004, -2.81692, 2.93191, 0.260344)
 
 [node name="Vehicle" parent="." instance=ExtResource("7_rtsg7")]
-transform = Transform3D(-0.159605, 0, 0.987181, 0, 1, 0, -0.987181, 0, -0.159605, 0, 0, 0)
 
 [connection signal="body_entered" from="Objects/Area3D" to="Objects/Area3D" method="_on_body_entered"]
