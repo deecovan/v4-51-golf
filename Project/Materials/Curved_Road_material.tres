@@ -15,7 +15,7 @@ color_ramp = SubResource("Gradient_msn78")
 noise = SubResource("FastNoiseLite_7h42y")
 
 [resource]
-albedo_color = Color(0, 0, 0, 0)
+albedo_color = Color(0.133333, 0.133333, 0.133333, 1)
 roughness = 0.7
 normal_enabled = true
 normal_scale = -2.51

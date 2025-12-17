@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dwvh36svgbyi0" path="res://Scenes/GLBs/Cup.3.ThorusObjects.glb" id="5_ppgg2"]
 [ext_resource type="PackedScene" uid="uid://126yicuwavhn" path="res://Scenes/CupTab.tscn" id="7_7nink"]
 [ext_resource type="Script" uid="uid://dx8xl0toym1sl" path="res://Scripts/TabAreaScript.gd" id="7_jykfb"]
-[ext_resource type="PackedScene" uid="uid://dhu7in61tkfit" path="res://Scenes/FantCar/FantaCup.tscn" id="9_7nink"]
+[ext_resource type="PackedScene" uid="uid://dhu7in61tkfit" path="res://Scenes/FantCar/FantaCup40.tscn" id="9_7nink"]
 [ext_resource type="PackedScene" uid="uid://b5hxbo26pr6uh" path="res://Scenes/CameraGimbal.tscn" id="9_jykfb"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vjncq"]

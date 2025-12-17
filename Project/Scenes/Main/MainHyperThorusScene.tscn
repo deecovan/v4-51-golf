@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b8b67ytg2dqnh" path="res://Scenes/GLBs/hyper_land_1.tscn" id="4_rgf0m"]
 [ext_resource type="PackedScene" uid="uid://126yicuwavhn" path="res://Scenes/CupTab.tscn" id="5_kgwjd"]
 [ext_resource type="PackedScene" uid="uid://b5hxbo26pr6uh" path="res://Scenes/CameraGimbal.tscn" id="7_16bhx"]
-[ext_resource type="PackedScene" uid="uid://dhu7in61tkfit" path="res://Scenes/FantCar/FantaCup.tscn" id="7_v6ju3"]
+[ext_resource type="PackedScene" uid="uid://dhu7in61tkfit" path="res://Scenes/FantCar/FantaCup40.tscn" id="7_v6ju3"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bxj37"]
 load_path = "res://.godot/imported/Green.png-9ec633106adf94fcfc9e8ae6c2c4609b.bptc.ctex"

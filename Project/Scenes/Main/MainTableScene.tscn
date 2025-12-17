@@ -6,7 +6,7 @@
 [ext_resource type="Material" uid="uid://cxs1hk3ati5so" path="res://Materials/Sign_material_RED.tres" id="6_bfrac"]
 [ext_resource type="Script" uid="uid://dx8xl0toym1sl" path="res://Scripts/TabAreaScript.gd" id="6_tfk74"]
 [ext_resource type="PackedScene" uid="uid://126yicuwavhn" path="res://Scenes/CupTab.tscn" id="7_yqa6l"]
-[ext_resource type="PackedScene" uid="uid://dhu7in61tkfit" path="res://Scenes/FantCar/FantaCup.tscn" id="8_bfrac"]
+[ext_resource type="PackedScene" uid="uid://dhu7in61tkfit" path="res://Scenes/FantCar/FantaCup40.tscn" id="8_bfrac"]
 [ext_resource type="PackedScene" uid="uid://b5hxbo26pr6uh" path="res://Scenes/CameraGimbal.tscn" id="8_npx3o"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bfrac"]
