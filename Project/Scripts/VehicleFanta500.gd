@@ -58,7 +58,7 @@ var DEBUG = false
 ## Rear wheels friction slip ratio ## 0.65
 @export var fric_slip_rear = 0.9
 ## Handbrake rear slip modificator. Used if NOT accelerating.
-@export var fric_slip_rear_hb_demult = 1.4
+@export var fric_slip_rear_hb_mult = 1.4
 ## Typical racing car damper ratios are 0.65-0.7 
 ## in ride where 1 is 100% critical damping
 ## Front wheels damper compression ## 0.8
@@ -259,7 +259,7 @@ func _physics_process(delta: float) -> void:
 			hand_brake_force * vehicle_brake_force
 		if use_wheel_brake:
 			## Now using handbrake rear friction demultiplier
-			set_fric_slip_rear(fric_slip_rear / fric_slip_rear_hb_demult)
+			set_fric_slip_rear(fric_slip_rear / fric_slip_rear_hb_mult)
 			change_wheel_brake(set_brake_force, 
 				front_brake_force, rear_brake_force, delta)
 		else:

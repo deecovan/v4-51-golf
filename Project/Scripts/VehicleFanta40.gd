@@ -26,6 +26,8 @@ var DEBUG = false
 @export var rear_brake_force = 1.0
 ## Brake lerp speed
 @export var pedal_brake_speed = 1.6
+## hand_brake_force multiplier
+@export var hand_brake_force = 2.0
 ## Coasting starting value
 @export var coast_init = 0.8
 ## Coasting lerp speed
@@ -47,6 +49,8 @@ var DEBUG = false
 @export var fric_slip_rear = 1.2 
 ## @HACK Acceleration multiplier for rear slip. Used if NOT accelerating.
 @export var fric_slip_rear_demult = 0.6
+## Handbrake rear slip modificator. Used if NOT accelerating.
+@export var fric_slip_rear_hb_mult = 1.4
 ## Typical racing car damper ratios are 0.65-0.7 
 ## in ride where 1 is 100% critical damping
 ## Front wheels damper compression ## 0.8
@@ -76,7 +80,7 @@ var scale_array : Array
 ## Array values of power function.
 ## @TODO we need to implement the engine power function.
 
-enum States { ACCELERATING, BRAKING, COASTING, REVERSING}
+enum States { ACCELERATING, BRAKING, COASTING, REVERSING, CHILL}
 var engine_state = States.COASTING
 enum engine_index_list {Rear, Neutral, First, Second, Third, Fourth, Fifth, Sixth, Seventh, Eighth}
 var engine_index: int = 0
@@ -237,9 +241,22 @@ func _physics_process(delta: float) -> void:
 	else:
 		set_fric_slip_rear(fric_slip_rear * fric_slip_rear_demult)
 
-	## @HACK Simulate Braking Drift
-	if engine_state == States.BRAKING:
-		pass
+	if Input.is_action_pressed("handbrake"):
+		if engine_state == States.COASTING:
+			engine_state = States.CHILL
+		## Function?
+		var set_brake_force = \
+			hand_brake_force * vehicle_brake_force
+		if use_wheel_brake:
+			## Now using handbrake rear friction demultiplier
+			set_fric_slip_rear(fric_slip_rear / fric_slip_rear_hb_mult)
+			change_wheel_brake(set_brake_force, 
+				front_brake_force, rear_brake_force, delta)
+		else:
+			change_vehicle_brake(set_brake_force, delta)
+	else: 
+		## Now restore handbrake rear friction
+		set_fric_slip_rear(fric_slip_rear)
 		
 	## Update UI
 	UI.set_speedometer_label(
