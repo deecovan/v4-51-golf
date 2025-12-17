@@ -3,13 +3,12 @@
 [ext_resource type="PhysicsMaterial" uid="uid://d4e10cdfll3in" path="res://Materials/BitumI_physics_material.tres" id="1_j6ru4"]
 [ext_resource type="BoxMesh" uid="uid://cb671i8txfebf" path="res://Materials/BitumI_mesh.tres" id="2_5semg"]
 [ext_resource type="Material" uid="uid://8tkt2r7wnlhp" path="res://Materials/BitumI_material_3d.tres" id="3_j6ru4"]
-[ext_resource type="Material" uid="uid://d3ajard5hkhny" path="res://Materials/Bitum_material_3d.tres" id="5_46ku4"]
+[ext_resource type="Material" uid="uid://d3ajard5hkhny" path="res://Materials/Curved_Panel_material.tres" id="5_46ku4"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_h7nin"]
 size = Vector3(16, 0.19, 16)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_o1wyn"]
-load_path = "res://.godot/imported/bitumI.png-37f4ad8eb8b9e7a389e387fa5bcca224.bptc.ctex"
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bpr6w"]
 albedo_color = Color(0.74978, 0.74978, 0.74978, 1)

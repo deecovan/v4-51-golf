@@ -8,6 +8,7 @@ var DEBUG = false
 ## Real maximum 240
 ## Tested fixed waaw
 @export var car_linear_damp = 0.2
+@export var car_angular_damp = 0.0
 ## @TODO merge ZC's aerodynamic from f9cfddd zc/aeroDrag
 @export var grav_scale = 2.0
 @export var vehicle_mass = 500.0
@@ -45,7 +46,6 @@ var DEBUG = false
 ## Maximum Steering angle in Radians
 @export var MAX_STEER  = 0.4
 ## Next values used for reconfiguring the Vehicle3Ds values
-@export var car_angular_damp = 0.0
 @export var car_friction = 0.0
 @export var car_rough = true
 @export var car_bounce = 0.5
@@ -56,28 +56,28 @@ var DEBUG = false
 ## Affected by grav_scale and vehicle_mass
 @export var fric_slip_front = 1.2
 ## Rear wheels friction slip ratio ## 0.65
-@export var fric_slip_rear = 0.9
+@export var fric_slip_rear = 1.0
 ## Handbrake rear slip modificator. Used if NOT accelerating.
-@export var fric_slip_rear_hb_mult = 1.4
+@export var fric_slip_rear_hb_mult = 1.5
 ## Typical racing car damper ratios are 0.65-0.7 
 ## in ride where 1 is 100% critical damping
 ## Front wheels damper compression ## 0.8
-@export var damp_compr_front = 0.66
+@export var damp_compr_front = 10.0
 ## Rear ## 0.7 0.77
-@export var damp_compr_rear = 0.66
+@export var damp_compr_rear = 8.0
 ## Front wheels damper relaxation ## 0.88
 ## Affected by grav_scale and vehicle_mass
-@export var damp_relax_front = 7.5
+@export var damp_relax_front = 6.5
 ## Rear wheels damper relaxation ## 0.88
-@export var damp_relax_rear = 7.5
+@export var damp_relax_rear = 5.5
 ## Rest, Travel, Stiff, MaxV
 @export var rest_front = 0.12
 @export var rest_rear = 0.11
 @export var travel_front = 0.2
 @export var travel_rear = 0.2
 ## Affected by grav_scale and vehicle_mass
-@export var stiff_front = 200
-@export var stiff_rear = 100
+@export var stiff_front = 240
+@export var stiff_rear = 160
 @export var max_force_front = 24000
 @export var max_force_rear = 16000
 ## Affected by grav_scale and vehicle_mass

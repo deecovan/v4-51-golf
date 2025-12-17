@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://d1mpex1cs81xy" path="res://Scenes/GLBs/Curved.b1.re-export.glb" id="2_rtsg7"]
 [ext_resource type="Script" uid="uid://dx8xl0toym1sl" path="res://Scripts/TabAreaScript.gd" id="6_keng5"]
 [ext_resource type="PackedScene" uid="uid://126yicuwavhn" path="res://Scenes/CupTab.tscn" id="7_ghipl"]
-[ext_resource type="PackedScene" uid="uid://bsf2ofjitrh6v" path="res://Scenes/FantCar/FantaCup40.tscn" id="7_rtsg7"]
+[ext_resource type="PackedScene" uid="uid://dhu7in61tkfit" path="res://Scenes/FantCar/FantaCup1000.tscn" id="7_rtsg7"]
 [ext_resource type="PackedScene" uid="uid://b5hxbo26pr6uh" path="res://Scenes/CameraGimbal.tscn" id="8_je2b3"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vjncq"]

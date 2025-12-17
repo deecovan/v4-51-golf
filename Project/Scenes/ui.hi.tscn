@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4]
+[gd_scene load_steps=20 format=4 uid="uid://dno2asvb48grf"]
 
 [ext_resource type="Script" uid="uid://bxgxdgj8xpxwf" path="res://Scripts/ui_canvas.gd" id="1_nf4gj"]
 [ext_resource type="Script" uid="uid://cwhmf0iu4u1ho" path="res://Scripts/draw_graph.gd" id="2_qdvrb"]

@@ -1,5 +1,10 @@
 # v4-51-golf GitHub repo
 
+## Commit 3 Cars 
+- Fanta 40, 500 and 1000
+- Different weight
+- Different physics
+
 ## Dragster @GOOD and ideas and @BAD ideas implementations
 - Tested fixed Values for curve Fanta_Curve_damp02
 - @TAG curve_damp02

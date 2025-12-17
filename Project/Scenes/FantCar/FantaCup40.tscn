@@ -14,7 +14,6 @@
 [ext_resource type="Material" uid="uid://c1rb1j1x6st35" path="res://Materials/Curved_Road_material.tres" id="12_v5438"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_krx02"]
-friction = 0.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_74iso"]
 resource_name = "Material"
