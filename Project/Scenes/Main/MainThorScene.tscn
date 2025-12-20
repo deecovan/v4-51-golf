@@ -1,0 +1,43 @@
+[gd_scene load_steps=9 format=3 uid="uid://dlq2qey5d6dvi"]
+
+[ext_resource type="Script" uid="uid://dv8ykfntlf1at" path="res://Scripts/MainSceneScript.gd" id="1_ttffm"]
+[ext_resource type="PackedScene" uid="uid://epwatr8gworp" path="res://Sky/EveningSky.tscn" id="2_3mr44"]
+[ext_resource type="PackedScene" uid="uid://cm2b0thjtbsyl" path="res://Scenes/GLBs/thor.2.glb" id="3_0qp61"]
+[ext_resource type="Script" uid="uid://dx8xl0toym1sl" path="res://Scripts/TabAreaScript.gd" id="6_6n0or"]
+[ext_resource type="PackedScene" uid="uid://c653ypnptku1j" path="res://Scenes/FantCar/FantaCup500.tscn" id="7_0qp61"]
+[ext_resource type="PackedScene" uid="uid://126yicuwavhn" path="res://Scenes/CupTab.tscn" id="7_f0w5d"]
+[ext_resource type="PackedScene" uid="uid://b5hxbo26pr6uh" path="res://Scenes/CameraGimbal.tscn" id="8_a6ow5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vjncq"]
+size = Vector3(0.1, 9, 26.8202)
+
+[node name="MainThorScene" type="Node3D"]
+script = ExtResource("1_ttffm")
+
+[node name="EveningSky" parent="." instance=ExtResource("2_3mr44")]
+
+[node name="thor_2" parent="." instance=ExtResource("3_0qp61")]
+
+[node name="Objects" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -47.5886, 20.2601)
+
+[node name="Area3D" type="Area3D" parent="Objects"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7.62939e-06)
+script = ExtResource("6_6n0or")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/Area3D"]
+transform = Transform3D(1.61358, 0, 0, 0, 1.5, 0, 0, 0, 3.16581, 0, 7, 138.746)
+shape = SubResource("BoxShape3D_vjncq")
+
+[node name="Tab" parent="Objects/Area3D" instance=ExtResource("7_f0w5d")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 10, 104.344)
+
+[node name="CameraGimbal" parent="." instance=ExtResource("8_a6ow5")]
+transform = Transform3D(-0.00715581, 0, 0.999974, 0, 1, 0, -0.999974, 0, -0.00715581, -15.5041, -46.6173, 119.03)
+
+[node name="Vehicle" parent="." instance=ExtResource("7_0qp61")]
+transform = Transform3D(0.00750488, 0, 0.999972, 0, 1, 0, -0.999972, 0, 0.00750488, -14.1662, -45.3116, 119.05)
+steer_control_speed = 0.6
+MAX_STEER = 0.3
+
+[connection signal="body_entered" from="Objects/Area3D" to="Objects/Area3D" method="_on_body_entered"]

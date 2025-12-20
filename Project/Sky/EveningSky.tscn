@@ -9,6 +9,5 @@ environment = ExtResource("1_khi10")
 transform = Transform3D(-0.373441, -0.65595, 0.65595, -2.98023e-08, 0.707107, 0.707106, -0.927654, 0.264063, -0.264063, 0, 48.4432, 0)
 light_color = Color(0.882353, 0.870588, 0.890196, 1)
 light_indirect_energy = 2.0
-shadow_enabled = true
 directional_shadow_mode = 0
 directional_shadow_max_distance = 200.0
