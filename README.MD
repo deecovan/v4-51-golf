@@ -1,5 +1,12 @@
 # v4-51-golf GitHub repo
 
+## New track A1, F500 changed
+- Thor replaced with Thor A1
+- F500 modified
+  - Steering towards
+  - Parameters changed for A1
+  - Tested
+
 ## Commit 3 Cars 
 - Fanta 40, 500 and 1000
 - Different weight
