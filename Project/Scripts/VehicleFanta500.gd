@@ -22,9 +22,9 @@ var DEBUG = false
 @export var COM_MOD_VECTOR = Vector3(0.0,0.1,-0.3)
 
 ## Maximum Steering speed
-@export var steer_control_speed = 0.8
+@export var steer_control_speed = 0.6
 ## Maximum Braking speed
-@export var brake_control_speed = 0.6
+@export var brake_control_speed = 0.4
 ## Control's lerp speed
 # Use 0..10 for keyboard or controller
 # Use 100 for racing wheels
@@ -44,7 +44,7 @@ var DEBUG = false
 ## Coasting lerp speed
 @export var engine_coast = 0.1
 ## Maximum Steering angle in Radians
-@export var MAX_STEER  = 0.4
+@export var MAX_STEER  = 0.3
 ## Next values used for reconfiguring the Vehicle3Ds values
 @export var car_friction = 0.0
 @export var car_rough = true
@@ -56,9 +56,9 @@ var DEBUG = false
 ## Affected by grav_scale and vehicle_mass
 @export var fric_slip_front = 1.2
 ## Rear wheels friction slip ratio ## 0.65
-@export var fric_slip_rear = 1.0
+@export var fric_slip_rear = 1.1
 ## Handbrake rear slip modificator. Used if NOT accelerating.
-@export var fric_slip_rear_hb_mult = 1.5
+@export var fric_slip_rear_hb_mult = 1.8
 ## Typical racing car damper ratios are 0.65-0.7 
 ## in ride where 1 is 100% critical damping
 ## Front wheels damper compression ## 0.8
@@ -183,8 +183,8 @@ func _physics_process(delta: float) -> void:
 	## Simulate axes if keys are used
 	if Input.is_action_pressed("steer_right")\
 		or Input.is_action_pressed("steer_left"):
-			steering = lerp(steering, _steering, 
-			steer_control_speed * control_speed * delta)
+			steering = move_toward(steering, _steering, 
+			steer_control_speed * delta)
 	else: 
 		## Do Not LERP, move linearly
 		steering = move_toward(steering, 0.0 , 

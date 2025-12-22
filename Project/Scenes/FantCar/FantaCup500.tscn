@@ -114,7 +114,7 @@ script = ExtResource("7_a8a6t")
 script = ExtResource("8_2nxkg")
 
 [node name="Wheel3Dfl" parent="." instance=ExtResource("9_fdk0u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.92, 0.0439357, 0.63)
+transform = Transform3D(0.999385, -0.0348993, -0.00349065, 0.0348995, 0.999391, 0, 0.00348853, -0.000121822, 0.999994, 0.92, 0.0439357, 0.63)
 use_as_steering = true
 wheel_radius = 0.42
 wheel_rest_length = 0.075
@@ -126,7 +126,7 @@ damping_compression = 0.5
 damping_relaxation = 0.6
 
 [node name="Wheel3Dfr" parent="." instance=ExtResource("10_1ufo7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.92, 0.0439357, 0.63)
+transform = Transform3D(0.999385, 0.0348993, 0.00349065, -0.0348995, 0.999391, 0, -0.00348853, -0.000121822, 0.999994, -0.92, 0.0439357, 0.63)
 use_as_steering = true
 wheel_radius = 0.42
 wheel_rest_length = 0.075
