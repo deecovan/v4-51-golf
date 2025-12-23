@@ -104,7 +104,6 @@ func _ready() -> void:
 	var loader = get_tree().get_root().get_child(0)
 	UI = loader.get_node("UI")
 	Analometer = UI.get_analometer()
-	
 	## Setup Vehicle3D values
 	mass = vehicle_mass
 	gravity_scale = grav_scale
